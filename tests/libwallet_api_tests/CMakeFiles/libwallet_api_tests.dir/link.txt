@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/libwallet_api_tests.dir/main.o  -o libwallet_api_tests -rdynamic -lwallet -lepee -Wl,-Bstatic -lgtest -Wl,-Bdynamic -lpthread 

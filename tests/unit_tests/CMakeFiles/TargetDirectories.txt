@@ -1,0 +1,3 @@
+/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles/rebuild_cache.dir
+/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles/edit_cache.dir
+/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles/unit_tests.dir

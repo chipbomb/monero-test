@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/cold-outputs_fuzz_tests.dir/cold-outputs.o CMakeFiles/cold-outputs_fuzz_tests.dir/fuzzer.o  -o cold-outputs_fuzz_tests -rdynamic -lwallet -lcryptonote_core -lp2p -lepee -lpthread 

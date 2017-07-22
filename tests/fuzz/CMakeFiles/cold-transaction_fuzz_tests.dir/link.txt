@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/cold-transaction_fuzz_tests.dir/cold-transaction.o CMakeFiles/cold-transaction_fuzz_tests.dir/fuzzer.o  -o cold-transaction_fuzz_tests -rdynamic -lwallet -lcryptonote_core -lp2p -lepee -lpthread 

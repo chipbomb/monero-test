@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/hash-tests.dir/main.o  -o hash-tests -rdynamic -lcncrypto 

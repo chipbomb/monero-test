@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/performance_tests.dir/main.o  -o performance_tests -rdynamic -lcryptonote_core -lcommon -lcncrypto -lepee -lpthread 

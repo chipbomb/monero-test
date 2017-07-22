@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/signature_fuzz_tests.dir/signature.o CMakeFiles/signature_fuzz_tests.dir/fuzzer.o  -o signature_fuzz_tests -rdynamic -lwallet -lcryptonote_core -lp2p -lepee -lpthread 

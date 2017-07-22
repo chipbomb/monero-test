@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/hash-target-tests.dir/hash-target.o  -o hash-target-tests -rdynamic -lcryptonote_core 

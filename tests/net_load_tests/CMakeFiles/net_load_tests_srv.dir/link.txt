@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/net_load_tests_srv.dir/srv.o  -o net_load_tests_srv -rdynamic -lp2p -lcryptonote_core -lepee -Wl,-Bstatic -lgtest -Wl,-Bdynamic -lpthread 

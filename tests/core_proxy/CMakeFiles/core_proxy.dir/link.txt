@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/core_proxy.dir/core_proxy.o  -o core_proxy -rdynamic -lcryptonote_core -lcryptonote_protocol -lp2p -lepee -lpthread 

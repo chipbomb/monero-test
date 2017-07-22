@@ -1,0 +1,17 @@
+Start testing: Jul 14 13:41 EDT
+----------------------------------------------------------
+1/13 Testing: hash-target
+1/13 Test: hash-target
+Command: "/home/chip/Downloads/monero/build/release/tests/hash-target-tests"
+Directory: /home/chip/Downloads/monero/build/release/tests
+"hash-target" start time: Jul 14 13:41 EDT
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.09 sec
+----------------------------------------------------------
+Test Passed.
+"hash-target" end time: Jul 14 13:41 EDT
+"hash-target" time elapsed: 00:00:00
+----------------------------------------------------------
+

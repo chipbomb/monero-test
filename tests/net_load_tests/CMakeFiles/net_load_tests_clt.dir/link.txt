@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/net_load_tests_clt.dir/clt.o  -o net_load_tests_clt -rdynamic -lp2p -lcryptonote_core -lepee -Wl,-Bstatic -lgtest -Wl,-Bdynamic -lpthread 
