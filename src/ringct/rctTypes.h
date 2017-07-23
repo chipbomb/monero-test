@@ -144,10 +144,13 @@ namespace rct {
         keyM ss;
         key cc;
         keyV II;
-
+        key Mout;
+		ecdhTuple ecdhInfo;
         BEGIN_SERIALIZE_OBJECT()
             FIELD(ss)
             FIELD(cc)
+            FIELD(Mout)
+            FIELD(ecdhInfo)
             // FIELD(II) - not serialized, it can be reconstructed
         END_SERIALIZE()
     };
@@ -177,12 +180,14 @@ namespace rct {
       RCTTypeNull = 0,
       RCTTypeFull = 1,
       RCTTypeSimple = 2,
+      RCTTypeCap = 3
     };
     struct rctSigBase {
         uint8_t type;
         key message;
         ctkeyM mixRing; //the set of all pubkeys / copy
         keyM mixRingCap; // added for capability
+        key Mc; // added for obfuscated capability
         //pairs that you mix with
         keyV pseudoOuts; //C - for simple rct
         vector<ecdhTuple> ecdhInfo;
@@ -193,9 +198,9 @@ namespace rct {
         bool serialize_rctsig_base(Archive<W> &ar, size_t inputs, size_t outputs)
         {
           FIELD(type)
-          if (type == RCTTypeNull)
+          if (type == RCTTypeNull )
             return true;
-          if (type != RCTTypeFull && type != RCTTypeSimple)
+          if (type != RCTTypeFull && type != RCTTypeSimple && type != RCTTypeCap)
             return false;
           VARINT_FIELD(txnFee)
           // inputs/outputs not saved, only here for serialization help
@@ -220,8 +225,11 @@ namespace rct {
           ar.tag("ecdhInfo");
           ar.begin_array();
           PREPARE_CUSTOM_VECTOR_SERIALIZATION(outputs, ecdhInfo);
-          if (ecdhInfo.size() != outputs)
-            return false;
+          if (ecdhInfo.size() != outputs) {
+          	cout << "hehe" << endl;
+          	return false;
+          }
+            
           for (size_t i = 0; i < outputs; ++i)
           {
             FIELDS(ecdhInfo[i])
@@ -233,8 +241,10 @@ namespace rct {
           ar.tag("outPk");
           ar.begin_array();
           PREPARE_CUSTOM_VECTOR_SERIALIZATION(outputs, outPk);
-          if (outPk.size() != outputs)
+          if (outPk.size() != outputs) {
+          	cout << "hehe2" << endl;
             return false;
+          }
           for (size_t i = 0; i < outputs; ++i)
           {
             FIELDS(outPk[i].mask)
@@ -254,9 +264,9 @@ namespace rct {
         template<bool W, template <bool> class Archive>
         bool serialize_rctsig_prunable(Archive<W> &ar, uint8_t type, size_t inputs, size_t outputs, size_t mixin)
         {
-          if (type == RCTTypeNull)
+          if (type == RCTTypeNull || type == RCTTypeCap)
             return true;
-          if (type != RCTTypeFull && type != RCTTypeSimple)
+          if (type != RCTTypeFull && type != RCTTypeSimple && type != RCTTypeCap)
             return false;
           ar.tag("rangeSigs");
           ar.begin_array();

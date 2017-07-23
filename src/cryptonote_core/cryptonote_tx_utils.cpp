@@ -146,7 +146,6 @@ namespace cryptonote
     tx.vin.clear();
     tx.vout.clear();
     tx.extra.clear();
-    //tx.capid.clear();
 
     keypair txkey = keypair::generate();
     add_tx_pub_key_to_extra(tx, txkey.pub);
@@ -158,11 +157,10 @@ namespace cryptonote
     in.height = height;
 
     uint64_t block_reward = 4119879553; // until year 2100
-    tx.capid = 10;
     
 #if defined(DEBUG_CREATE_BLOCK_TEMPLATE)
     LOG_PRINT_L1("Creating capability expiry " << block_reward);
-    DP(tx.cap_id);
+    //DP(tx.cap_id);
 #endif
     //block_reward += fee;
 
@@ -176,45 +174,76 @@ namespace cryptonote
       block_reward = block_reward - block_reward % ::config::BASE_REWARD_CLAMP_THRESHOLD;
     }
 
-    std::vector<uint64_t> out_amounts;
-    out_amounts.push_back(block_reward);
+    //std::vector<uint64_t> out_amounts;
+    //out_amounts.push_back(block_reward);
     
-    uint64_t summary_amounts = 0;
-    for (size_t no = 0; no < out_amounts.size(); no++)
-    {
+    //uint64_t summary_amounts = 0;
+   
       crypto::key_derivation derivation = AUTO_VAL_INIT(derivation);;
       crypto::public_key out_eph_public_key = AUTO_VAL_INIT(out_eph_public_key);
       bool r = crypto::generate_key_derivation(miner_address.m_view_public_key, txkey.sec, derivation);
       CHECK_AND_ASSERT_MES(r, false, "while creating outs: failed to generate_key_derivation(" << miner_address.m_view_public_key << ", " << txkey.sec << ")");
 
-      r = crypto::derive_public_key(derivation, no, miner_address.m_spend_public_key, out_eph_public_key);
-      CHECK_AND_ASSERT_MES(r, false, "while creating outs: failed to derive_public_key(" << derivation << ", " << no << ", "<< miner_address.m_spend_public_key << ")");
+      r = crypto::derive_public_key(derivation, 0, miner_address.m_spend_public_key, out_eph_public_key);
+      CHECK_AND_ASSERT_MES(r, false, "while creating outs: failed to derive_public_key(" << derivation << ", " << 0 << ", "<< miner_address.m_spend_public_key << ")");
 
       txout_to_key tk;
       tk.key = out_eph_public_key;
 
       tx_out out;
-      summary_amounts += out.amount = out_amounts[no];
+      //summary_amounts += out.amount = out_amounts[no];
       out.target = tk;
-      tx.vout.push_back(out);
-    }
+      
+	  //rct::xmr_amount a = 4119879553;
+	  // create capability
+	  	std::vector<rct::key> amount_keys;
+		amount_keys.clear();
+		crypto::secret_key scalar1;
+        crypto::derivation_to_scalar(derivation, 0, scalar1);
+        amount_keys.push_back(rct::sk2rct(scalar1));
+		  rct::rctSig sig;
+		  sig.type = rct::RCTTypeCap;
+		  sig.message = rct::zero();
+		  sig.txnFee = 0;
+        
+		  rct::key M = rct::pkGen();
+		  rct::ctkey sk, pk; 
+		rct::skpkGen(sk.dest, pk.dest);
+		rct::skpkGen(sk.mask, pk.mask);
+		rct::key am = rct::d2h(block_reward);
+		cout << "here!" << endl;
+		rct::key bM = scalarmultKey(M, am);
+		cout << "here2!" << endl;
+		rct::addKeys(pk.mask, pk.mask, bM);
 
-    CHECK_AND_ASSERT_MES(summary_amounts == block_reward, false, "Failed to construct miner tx, summary_amounts = " << summary_amounts << " not equal block_reward = " << block_reward);
+		sig.Mc = M;
+		sig.outPk.push_back(pk);
+		sig.outPk[0].dest = rct::pk2rct(boost::get<txout_to_key>(out.target).key);
+		
+		sig.ecdhInfo.resize(sig.outPk.size());
+		sig.ecdhInfo[0].mask = copy(sk.mask);
+        sig.ecdhInfo[0].amount = rct::d2h(block_reward);
+        rct::ecdhEncode(sig.ecdhInfo[0], amount_keys[0]);
 
-    if (hard_fork_version >= 4)
+		out.amount = 0;
+		tx.vout.push_back(out);
+		tx.rct_signatures = sig;
+    
       tx.version = 2;
-    else
-      tx.version = 1;
+    
 
     //lock
     tx.unlock_time = height + CRYPTONOTE_MINED_MONEY_UNLOCK_WINDOW;
     tx.vin.push_back(in);
-
+	
+	MCINFO("construct_tx", "transaction_created: " << get_transaction_hash(tx) << ENDL << obj_to_json_str(tx) << ENDL);
+	
     tx.invalidate_hashes();
 
    
     return true;
   } 
+  
   
   
   //---------------------------------------------------------------
@@ -536,7 +565,10 @@ namespace cryptonote
 
     return true;
   }
-  //---------------------------------------------------------------
+  
+  
+  
+  
   bool construct_tx(const account_keys& sender_account_keys, const std::vector<tx_source_entry>& sources, const std::vector<tx_destination_entry>& destinations, std::vector<uint8_t> extra, transaction& tx, uint64_t unlock_time)
   {
      crypto::secret_key tx_key;

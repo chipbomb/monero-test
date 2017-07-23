@@ -171,8 +171,6 @@ namespace cryptonote
     std::vector<tx_out> vout;
     //extra
     std::vector<uint8_t> extra;
-    //added cap
-     uint64_t capid;
 
     BEGIN_SERIALIZE()
       VARINT_FIELD(version)
@@ -181,7 +179,6 @@ namespace cryptonote
       FIELD(vin)
       FIELD(vout)
       FIELD(extra)
-      VARINT_FIELD(capid)
     END_SERIALIZE()
 
   public:
@@ -320,7 +317,6 @@ namespace cryptonote
   {
     version = 1;
     unlock_time = 0;
-    capid = 0; // added cap
     vin.clear();
     vout.clear();
     extra.clear();

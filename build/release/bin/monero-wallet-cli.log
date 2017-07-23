@@ -1,0 +1,82 @@
+2017-07-23 03:17:49.060	    7fc088bcc740	INFO 	logging	contrib/epee/src/mlog.cpp:148	New log categories: *:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO,logging:INFO
+2017-07-23 03:18:01.450	    7fc088bcc740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Wallet and key files found, loading...
+2017-07-23 03:18:05.202	    7fc088bcc740	WARN 	wallet.wallet2	src/wallet/wallet2.cpp:2434	Loaded wallet keys file, with public address: 46PAiPrNjr2XS82k2ovp5EUYLzBt9pYNW2LXUFsZiv8S3Mt21FZ5qQaAroko1enzw3eGr9qC7X1D7Geoo2RrAotYPvzt9vB
+2017-07-23 03:18:05.286	    7fc088bcc740	ERROR	wallet.wallet2	src/wallet/wallet2.cpp:2523	genesis_hash != m_blockchain[0]. THROW EXCEPTION: error::wallet_internal_error
+2017-07-23 03:18:05.286	    7fc088bcc740	WARN 	net.http	src/wallet/wallet_errors.h:707	/home/chip/Downloads/monero/src/wallet/wallet2.cpp:2523:N5tools5error21wallet_internal_errorE: Genesis block mismatch. You probably use wallet without testnet flag with blockchain from test network or vice versa
+2017-07-23 03:18:05.286	    7fc088bcc740	INFO 	stacktrace	src/common/stack_trace.cpp:119	Exception: tools::error::wallet_internal_error
+2017-07-23 03:18:05.286	    7fc088bcc740	INFO 	stacktrace	src/common/stack_trace.cpp:120	Unwound call stack:
+2017-07-23 03:18:05.288	    7fc088bcc740	INFO 	stacktrace	src/common/stack_trace.cpp:158	    [1] /home/chip/Downloads/monero/build/release/bin/monero-wallet-cli:__cxa_throw+0x106 [0x777de6]
+2017-07-23 03:18:05.288	    7fc088bcc740	INFO 	stacktrace	src/common/stack_trace.cpp:158	    [2] /home/chip/Downloads/monero/build/release/bin/monero-wallet-cli:void tools::error::throw_wallet_ex<tools::error::wallet_internal_error, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > >(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x150 [0x6e5830]
+2017-07-23 03:18:05.288	    7fc088bcc740	INFO 	stacktrace	src/common/stack_trace.cpp:158	    [3] /home/chip/Downloads/monero/build/release/bin/monero-wallet-cli:tools::wallet2::check_genesis(crypto::hash const&) const+0x158 [0x687628]
+2017-07-23 03:18:05.289	    7fc088bcc740	INFO 	stacktrace	src/common/stack_trace.cpp:158	    [4] /home/chip/Downloads/monero/build/release/bin/monero-wallet-cli:tools::wallet2::load(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0x7b8 [0x699c68]
+2017-07-23 03:18:05.289	    7fc088bcc740	INFO 	stacktrace	src/common/stack_trace.cpp:158	    [5] /home/chip/Downloads/monero/build/release/bin/monero-wallet-cli:tools::wallet2::make_from_file(boost::program_options::variables_map const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)+0xea [0x69ae1a]
+2017-07-23 03:18:05.289	    7fc088bcc740	INFO 	stacktrace	src/common/stack_trace.cpp:158	    [6] /home/chip/Downloads/monero/build/release/bin/monero-wallet-cli:cryptonote::simple_wallet::open_wallet(boost::program_options::variables_map const&)+0xde [0x5e251e]
+2017-07-23 03:18:05.289	    7fc088bcc740	INFO 	stacktrace	src/common/stack_trace.cpp:158	    [7] /home/chip/Downloads/monero/build/release/bin/monero-wallet-cli:cryptonote::simple_wallet::init(boost::program_options::variables_map const&)+0x712 [0x5ec262]
+2017-07-23 03:18:05.289	    7fc088bcc740	INFO 	stacktrace	src/common/stack_trace.cpp:158	    [8] /home/chip/Downloads/monero/build/release/bin/monero-wallet-cli:main+0x265 [0x5c2875]
+2017-07-23 03:18:05.289	    7fc088bcc740	INFO 	stacktrace	src/common/stack_trace.cpp:158	    [9] /lib/x86_64-linux-gnu/libc.so.6:__libc_start_main+0xf0 [0x7fc086049830]
+2017-07-23 03:18:05.289	    7fc088bcc740	INFO 	stacktrace	src/common/stack_trace.cpp:158	    [10] /home/chip/Downloads/monero/build/release/bin/monero-wallet-cli:_start+0x29 [0x5ca4a9]
+2017-07-23 03:18:05.289	    7fc088bcc740	INFO 	stacktrace	src/common/stack_trace.cpp:158	
+2017-07-23 03:18:05.289	    7fc088bcc740	ERROR	global	src/simplewallet/simplewallet.cpp:190	Error: failed to load wallet: Genesis block mismatch. You probably use wallet without testnet flag with blockchain from test network or vice versa
+2017-07-23 03:18:05.289	    7fc088bcc740	ERROR	wallet.simplewallet	src/simplewallet/simplewallet.cpp:1199	failed to open account
+2017-07-23 03:18:05.289	    7fc088bcc740	ERROR	wallet.simplewallet	src/simplewallet/simplewallet.cpp:4614	Failed to initialize wallet
+2017-07-23 03:18:20.647	    7fa4cbaf4740	INFO 	logging	contrib/epee/src/mlog.cpp:148	New log categories: *:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO,logging:INFO
+2017-07-23 03:18:29.470	    7fa4cbaf4740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Wallet and key files found, loading...
+2017-07-23 03:18:31.300	    7fa4cbaf4740	WARN 	wallet.wallet2	src/wallet/wallet2.cpp:2434	Loaded wallet keys file, with public address: 9wviCeWe2D8XS82k2ovp5EUYLzBt9pYNW2LXUFsZiv8S3Mt21FZ5qQaAroko1enzw3eGr9qC7X1D7Geoo2RrAotYPwq9Gm8
+2017-07-23 03:18:31.382	    7fa4cbaf4740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Opened wallet: 9wviCeWe2D8XS82k2ovp5EUYLzBt9pYNW2LXUFsZiv8S3Mt21FZ5qQaAroko1enzw3eGr9qC7X1D7Geoo2RrAotYPwq9Gm8
+2017-07-23 03:18:31.382	    7fa4cbaf4740	INFO 	global	src/simplewallet/simplewallet.cpp:190	**********************************************************************
+Use "help" command to see the list of available commands.
+**********************************************************************
+2017-07-23 03:18:31.470	    7fa4cbaf4740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Starting refresh...
+2017-07-23 03:18:31.822	    7fa4cbaf4740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Refresh done, blocks received: 0
+2017-07-23 03:18:31.823	    7fa4cbaf4740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Balance: 0.000000000000, unlocked balance: 0.000000000000
+2017-07-23 03:18:31.823	    7fa4cbaf4740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Background refresh thread started
+2017-07-23 04:28:37.953	    7f18c6755740	INFO 	logging	contrib/epee/src/mlog.cpp:148	New log categories: *:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO,logging:INFO
+2017-07-23 04:28:45.263	    7f18c6755740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Key file found but not wallet file. Regenerating...
+2017-07-23 04:28:46.037	    7f18c6755740	WARN 	wallet.wallet2	src/wallet/wallet2.cpp:2434	Loaded wallet keys file, with public address: 9wviCeWe2D8XS82k2ovp5EUYLzBt9pYNW2LXUFsZiv8S3Mt21FZ5qQaAroko1enzw3eGr9qC7X1D7Geoo2RrAotYPwq9Gm8
+2017-07-23 04:28:46.037	    7f18c6755740	WARN 	wallet.wallet2	src/wallet/wallet2.cpp:2440	file not found: wallet_01.bin, starting with empty blockchain
+2017-07-23 04:28:46.038	    7f18c6755740	ERROR	net.http	src/cryptonote_basic/cryptonote_format_utils.h:160	obj_to_json_str failed: serialization::serialize returned false
+2017-07-23 04:28:46.039	    7f18c6755740	ERROR	cn	src/cryptonote_basic/cryptonote_format_utils.cpp:628	Failed to serialize rct signatures base
+2017-07-23 04:28:46.101	    7f18c6755740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Opened wallet: 9wviCeWe2D8XS82k2ovp5EUYLzBt9pYNW2LXUFsZiv8S3Mt21FZ5qQaAroko1enzw3eGr9qC7X1D7Geoo2RrAotYPwq9Gm8
+2017-07-23 04:28:46.101	    7f18c6755740	INFO 	global	src/simplewallet/simplewallet.cpp:190	**********************************************************************
+Use "help" command to see the list of available commands.
+**********************************************************************
+2017-07-23 04:28:46.132	    7f18c6755740	ERROR	global	src/simplewallet/simplewallet.cpp:190	Error: wallet failed to connect to daemon: http://localhost:28081. Daemon either is not started or wrong port was passed. Please make sure daemon is running or restart the wallet with the correct daemon address.
+2017-07-23 04:28:46.132	    7f18c6755740	ERROR	global	src/simplewallet/simplewallet.cpp:190	Error: wallet failed to connect to daemon: http://localhost:28081. Daemon either is not started or wrong port was passed. Please make sure daemon is running or restart the wallet with the correct daemon address.
+2017-07-23 04:28:46.132	    7f18c6755740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Background refresh thread started
+2017-07-23 04:29:11.211	    7f7590d85740	INFO 	logging	contrib/epee/src/mlog.cpp:148	New log categories: *:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO,logging:INFO
+2017-07-23 04:29:14.957	    7f7590d85740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Wallet and key files found, loading...
+2017-07-23 04:29:16.827	    7f7590d85740	WARN 	wallet.wallet2	src/wallet/wallet2.cpp:2434	Loaded wallet keys file, with public address: 9wviCeWe2D8XS82k2ovp5EUYLzBt9pYNW2LXUFsZiv8S3Mt21FZ5qQaAroko1enzw3eGr9qC7X1D7Geoo2RrAotYPwq9Gm8
+2017-07-23 04:29:16.868	    7f7590d85740	ERROR	net.http	src/cryptonote_basic/cryptonote_format_utils.h:160	obj_to_json_str failed: serialization::serialize returned false
+2017-07-23 04:29:16.868	    7f7590d85740	ERROR	cn	src/cryptonote_basic/cryptonote_format_utils.cpp:628	Failed to serialize rct signatures base
+2017-07-23 04:29:16.920	    7f7590d85740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Opened wallet: 9wviCeWe2D8XS82k2ovp5EUYLzBt9pYNW2LXUFsZiv8S3Mt21FZ5qQaAroko1enzw3eGr9qC7X1D7Geoo2RrAotYPwq9Gm8
+2017-07-23 04:29:16.921	    7f7590d85740	INFO 	global	src/simplewallet/simplewallet.cpp:190	**********************************************************************
+Use "help" command to see the list of available commands.
+**********************************************************************
+2017-07-23 04:29:17.010	    7f7590d85740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Starting refresh...
+2017-07-23 04:29:17.414	    7f7590d85740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Refresh done, blocks received: 0
+2017-07-23 04:29:17.414	    7f7590d85740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Balance: 0.000000000000, unlocked balance: 0.000000000000
+2017-07-23 04:29:17.415	    7f7590d85740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Background refresh thread started
+2017-07-23 21:22:01.165	    7f4317a35740	INFO 	logging	contrib/epee/src/mlog.cpp:148	New log categories: *:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO,logging:INFO
+2017-07-23 21:22:08.809	    7f4317a35740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Wallet and key files found, loading...
+2017-07-23 21:22:10.683	    7f4317a35740	WARN 	wallet.wallet2	src/wallet/wallet2.cpp:2434	Loaded wallet keys file, with public address: 9wviCeWe2D8XS82k2ovp5EUYLzBt9pYNW2LXUFsZiv8S3Mt21FZ5qQaAroko1enzw3eGr9qC7X1D7Geoo2RrAotYPwq9Gm8
+2017-07-23 21:22:10.780	    7f4317a35740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Opened wallet: 9wviCeWe2D8XS82k2ovp5EUYLzBt9pYNW2LXUFsZiv8S3Mt21FZ5qQaAroko1enzw3eGr9qC7X1D7Geoo2RrAotYPwq9Gm8
+2017-07-23 21:22:10.780	    7f4317a35740	INFO 	global	src/simplewallet/simplewallet.cpp:190	**********************************************************************
+Use "help" command to see the list of available commands.
+**********************************************************************
+2017-07-23 21:22:10.870	    7f4317a35740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Starting refresh...
+2017-07-23 21:22:11.222	    7f4317a35740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Refresh done, blocks received: 0
+2017-07-23 21:22:11.222	    7f4317a35740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Balance: 0.000000000000, unlocked balance: 0.000000000000
+2017-07-23 21:22:11.222	    7f4317a35740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Background refresh thread started
+2017-07-23 21:23:41.760	    7f4311d67700	ERROR	wallet.wallet2	src/wallet/wallet2.cpp:627	Unsupported rct type: 
+2017-07-23 21:23:41.761	    7f4311d67700	WARN 	wallet.wallet2	src/wallet/wallet2.cpp:900	Received money: 0.000000000000, with tx: <37733c9b2fa7ba95519505357a80bed0fc078aed40080662e18a8265160b6dfc>
+2017-07-23 21:23:41.761	    7f4311d67700	INFO 	global	src/simplewallet/simplewallet.cpp:190	Height 1, transaction <37733c9b2fa7ba95519505357a80bed0fc078aed40080662e18a8265160b6dfc>, received 0.000000000000
+2017-07-23 21:23:41.766	    7f4311d67700	ERROR	wallet.wallet2	src/wallet/wallet2.cpp:627	Unsupported rct type: 
+2017-07-23 21:23:41.767	    7f4311d67700	WARN 	wallet.wallet2	src/wallet/wallet2.cpp:900	Received money: 0.000000000000, with tx: <69038d6c98523b8f6e4e566ddf48e1a3d5719ab53193d8f37396324b94bc706e>
+2017-07-23 21:23:41.767	    7f4311d67700	INFO 	global	src/simplewallet/simplewallet.cpp:190	Height 2, transaction <69038d6c98523b8f6e4e566ddf48e1a3d5719ab53193d8f37396324b94bc706e>, received 0.000000000000
+2017-07-23 21:23:41.768	    7f4311d67700	ERROR	wallet.wallet2	src/wallet/wallet2.cpp:627	Unsupported rct type: 
+2017-07-23 21:23:41.769	    7f4311d67700	WARN 	wallet.wallet2	src/wallet/wallet2.cpp:900	Received money: 0.000000000000, with tx: <4a2f3c2bf71567271602ee338dcf14bc2baff4b0c2b48fcb667e2662e1b66718>
+2017-07-23 21:23:41.769	    7f4311d67700	INFO 	global	src/simplewallet/simplewallet.cpp:190	Height 3, transaction <4a2f3c2bf71567271602ee338dcf14bc2baff4b0c2b48fcb667e2662e1b66718>, received 0.000000000000
+2017-07-23 21:23:41.774	    7f4311d67700	ERROR	wallet.wallet2	src/wallet/wallet2.cpp:627	Unsupported rct type: 
+2017-07-23 21:23:41.774	    7f4311d67700	WARN 	wallet.wallet2	src/wallet/wallet2.cpp:900	Received money: 0.000000000000, with tx: <05110d1d15068d24e4654423bf16a61b949b9766ac001935d11dad55c67c4d96>
+2017-07-23 21:23:41.774	    7f4311d67700	INFO 	global	src/simplewallet/simplewallet.cpp:190	Height 4, transaction <05110d1d15068d24e4654423bf16a61b949b9766ac001935d11dad55c67c4d96>, received 0.000000000000
+2017-07-23 21:24:08.928	    7f4317a35740	INFO 	global	src/simplewallet/simplewallet.cpp:190	Balance: 0.000000000000, unlocked balance: 0.000000000000
