@@ -623,6 +623,10 @@ static uint64_t decodeRct(const rct::rctSig & rv, const crypto::public_key &pub,
       return rct::decodeRctSimple(rv, rct::sk2rct(scalar1), i, mask);
     case rct::RCTTypeFull:
       return rct::decodeRct(rv, rct::sk2rct(scalar1), i, mask);
+    case rct::RCTTypeCap:
+      cout << "this is pub tx" << endl;
+      rct::dp(rct::sk2rct(scalar1));
+      return rct::decodeRct_cap(rv, rct::sk2rct(scalar1), 0, mask, rv.Mc);
     default:
       LOG_ERROR("Unsupported rct type: " << rv.type);
       return 0;
@@ -684,6 +688,8 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
     std::deque<crypto::key_image> ki(tx.vout.size());
     std::deque<uint64_t> amount(tx.vout.size());
     std::deque<rct::key> mask(tx.vout.size());
+    //added
+    
     int threads = tools::get_max_concurrency();
     const cryptonote::account_keys& keys = m_account.get_keys();
     crypto::key_derivation derivation;
@@ -830,7 +836,7 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
 
             outs.push_back(i);
             if (money_transfered == 0)
-            {
+            { cout << "should be here" << endl;
               money_transfered = tools::decodeRct(tx.rct_signatures, pub_key_field.pub_key, keys.m_view_secret_key, i, mask[i]);
             }
             amount[i] = money_transfered;
@@ -869,6 +875,8 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
           {
 	    m_transfers.push_back(boost::value_initialized<transfer_details>());
 	    transfer_details& td = m_transfers.back();
+	    //added
+	    td.m_cap = tx.rct_signatures.Mc;
 	    td.m_block_height = height;
 	    td.m_internal_output_index = o;
 	    td.m_global_output_index = o_indices[o];
@@ -2974,6 +2982,180 @@ void wallet2::add_unconfirmed_tx(const cryptonote::transaction& tx, uint64_t amo
   utd.m_timestamp = time(NULL);
 }
 
+
+void wallet2::transfer_cap(const std::vector<cryptonote::tx_destination_entry>& dsts, const size_t fake_outs_count, size_t &unused_transfer_index,
+    uint64_t unlock_time, uint64_t fee, const std::vector<uint8_t>& extra, bool trusted_daemon)
+  {
+    pending_tx ptx;
+    cryptonote::transaction tx;
+    transfer_cap(dsts, fake_outs_count, unused_transfer_index, unlock_time, fee, extra, tx, ptx, trusted_daemon);
+  }
+
+void wallet2::transfer_cap(const std::vector<cryptonote::tx_destination_entry>& dsts, size_t fake_outputs_count, size_t &unused_transfer_index,
+    uint64_t unlock_time, uint64_t fee, const std::vector<uint8_t>& extra, cryptonote::transaction& tx, pending_tx &ptx, bool trusted_daemon)
+  {
+    using namespace cryptonote;
+    // throw if attempting a transaction with no destinations
+    THROW_WALLET_EXCEPTION_IF(dsts.empty(), error::zero_destination);
+
+    uint64_t upper_transaction_size_limit = get_upper_transaction_size_limit();
+    uint64_t needed_money = fee;
+
+    // calculate total amount being sent to all destinations
+    // throw if total amount overflows uint64_t
+    for(auto& dt: dsts)
+    {
+      THROW_WALLET_EXCEPTION_IF(0 == dt.amount, error::zero_destination);
+      needed_money += dt.amount;
+      THROW_WALLET_EXCEPTION_IF(needed_money < dt.amount, error::tx_sum_overflow, dsts, fee, m_testnet);
+    }
+
+    // randomly select inputs for transaction
+    // throw if requested send amount is greater than amount available to send
+    std::list<size_t> selected_transfers;
+    selected_transfers.push_back(unused_transfer_index);
+    //THROW_WALLET_EXCEPTION_IF(found_money < needed_money, error::not_enough_money, found_money, needed_money - fee, fee);
+
+    typedef COMMAND_RPC_GET_RANDOM_OUTPUTS_FOR_AMOUNTS::out_entry out_entry;
+    typedef cryptonote::tx_source_entry::output_entry tx_output_entry;
+
+    COMMAND_RPC_GET_RANDOM_OUTPUTS_FOR_AMOUNTS::response daemon_resp = AUTO_VAL_INIT(daemon_resp);
+    if(fake_outputs_count)
+    {
+      COMMAND_RPC_GET_RANDOM_OUTPUTS_FOR_AMOUNTS::request req = AUTO_VAL_INIT(req);
+      req.outs_count = fake_outputs_count + 1;// add one to make possible (if need) to skip real output key
+      for(size_t idx: selected_transfers)
+      {
+        const transfer_container::const_iterator it = m_transfers.begin() + idx;
+        THROW_WALLET_EXCEPTION_IF(it->m_tx.vout.size() <= it->m_internal_output_index, error::wallet_internal_error,
+          "m_internal_output_index = " + std::to_string(it->m_internal_output_index) +
+          " is greater or equal to outputs count = " + std::to_string(it->m_tx.vout.size()));
+        //req.amounts.push_back(it->amount());
+        req.amounts.push_back(0);
+      }
+
+      m_daemon_rpc_mutex.lock();
+      bool r = epee::net_utils::invoke_http_bin("/getrandom_outs.bin", req, daemon_resp, m_http_client, rpc_timeout);
+      m_daemon_rpc_mutex.unlock();
+      THROW_WALLET_EXCEPTION_IF(!r, error::no_connection_to_daemon, "getrandom_outs.bin");
+      THROW_WALLET_EXCEPTION_IF(daemon_resp.status == CORE_RPC_STATUS_BUSY, error::daemon_busy, "getrandom_outs.bin");
+      THROW_WALLET_EXCEPTION_IF(daemon_resp.status != CORE_RPC_STATUS_OK, error::get_random_outs_error, daemon_resp.status);
+      THROW_WALLET_EXCEPTION_IF(daemon_resp.outs.size() != selected_transfers.size(), error::wallet_internal_error,
+        "daemon returned wrong response for getrandom_outs.bin, wrong amounts count = " +
+        std::to_string(daemon_resp.outs.size()) + ", expected " +  std::to_string(selected_transfers.size()));
+
+      std::unordered_map<uint64_t, uint64_t> scanty_outs;
+      for(COMMAND_RPC_GET_RANDOM_OUTPUTS_FOR_AMOUNTS::outs_for_amount& amount_outs: daemon_resp.outs)
+      {
+        if (amount_outs.outs.size() < fake_outputs_count)
+        {
+          scanty_outs[amount_outs.amount] = amount_outs.outs.size();
+        }
+      }
+      THROW_WALLET_EXCEPTION_IF(!scanty_outs.empty(), error::not_enough_outs_to_mix, scanty_outs, fake_outputs_count);
+    }
+
+    //prepare inputs
+    size_t i = 0;
+    uint64_t amount = 0;
+    std::vector<cryptonote::tx_source_entry> sources;
+    for(size_t idx: selected_transfers)
+    {
+      sources.resize(sources.size()+1);
+      cryptonote::tx_source_entry& src = sources.back();
+      const transfer_details& td = m_transfers[idx];
+      src.amount = td.amount();
+      amount += src.amount;
+      src.rct = false;
+      //paste mixin transaction
+      if(daemon_resp.outs.size())
+      {
+        daemon_resp.outs[i].outs.sort([](const out_entry& a, const out_entry& b){return a.global_amount_index < b.global_amount_index;});
+        for(out_entry& daemon_oe: daemon_resp.outs[i].outs)
+        {
+          if(td.m_global_output_index == daemon_oe.global_amount_index)
+            continue;
+          tx_output_entry oe;
+          oe.first = daemon_oe.global_amount_index;
+          oe.second.dest = rct::pk2rct(daemon_oe.out_key);
+          oe.second.mask = rct::identity();
+          src.outputs.push_back(oe);
+          if(src.outputs.size() >= fake_outputs_count)
+            break;
+        }
+      }
+
+      //paste real transaction to the random index
+      auto it_to_insert = std::find_if(src.outputs.begin(), src.outputs.end(), [&](const tx_output_entry& a)
+      {
+        return a.first >= td.m_global_output_index;
+      });
+      //size_t real_index = src.outputs.size() ? (rand() % src.outputs.size() ):0;
+      tx_output_entry real_oe;
+      real_oe.first = td.m_global_output_index;
+      real_oe.second.dest = rct::pk2rct(boost::get<txout_to_key>(td.m_tx.vout[td.m_internal_output_index].target).key);
+      real_oe.second.mask = rct::identity();
+      auto interted_it = src.outputs.insert(it_to_insert, real_oe);
+      src.real_out_tx_key = get_tx_pub_key_from_extra(td.m_tx);
+      src.real_output = interted_it - src.outputs.begin();
+      src.real_output_in_tx_index = td.m_internal_output_index;
+      detail::print_source_entry(src);
+      ++i;
+    }
+
+	needed_money = 0;
+    cryptonote::tx_destination_entry change_dts = AUTO_VAL_INIT(change_dts);
+    for(auto& dt: dsts)
+    {
+      THROW_WALLET_EXCEPTION_IF(0 == dt.amount, error::zero_destination);
+      needed_money += dt.amount;
+      
+    }
+
+    if (needed_money < amount)
+    {
+    	LOG_PRINT_L2("generating dummy address for change");
+			cryptonote::account_base dummy;
+			dummy.generate();
+			change_dts.addr = dummy.get_keys().m_account_address;
+			LOG_PRINT_L2("generated dummy address for change");
+      change_dts.amount = amount - needed_money;
+    }
+    std::vector<cryptonote::tx_destination_entry> splitted_dsts;
+
+    crypto::secret_key tx_key;
+    bool r = cryptonote::construct_del_tx_and_get_tx_key(m_account.get_keys(), sources, dsts, extra, tx, unlock_time, tx_key);
+    THROW_WALLET_EXCEPTION_IF(!r, error::tx_not_constructed, sources, dsts, unlock_time, m_testnet);
+    THROW_WALLET_EXCEPTION_IF(upper_transaction_size_limit <= get_object_blobsize(tx), error::tx_too_big, tx, upper_transaction_size_limit);
+
+    std::string key_images;
+    bool all_are_txin_to_key = std::all_of(tx.vin.begin(), tx.vin.end(), [&](const txin_v& s_e) -> bool
+    {
+      CHECKED_GET_SPECIFIC_VARIANT(s_e, const txin_to_key, in, false);
+      key_images += boost::to_string(in.k_image) + " ";
+      return true;
+    });
+    THROW_WALLET_EXCEPTION_IF(!all_are_txin_to_key, error::unexpected_txin_type, tx);
+
+    ptx.key_images = key_images;
+    ptx.fee = 0;
+    ptx.dust = 0;
+    ptx.dust_added_to_fee = 0;
+    ptx.tx = tx;
+    ptx.change_dts = change_dts;
+    ptx.selected_transfers = selected_transfers;
+    ptx.tx_key = tx_key;
+    ptx.dests = dsts;
+    ptx.construction_data.sources = sources;
+    ptx.construction_data.change_dts = change_dts;
+    ptx.construction_data.splitted_dsts = splitted_dsts;
+    ptx.construction_data.selected_transfers = selected_transfers;
+    ptx.construction_data.extra = tx.extra;
+    ptx.construction_data.unlock_time = unlock_time;
+    ptx.construction_data.use_rct = true;
+    ptx.construction_data.dests = dsts;
+  }
+
 //----------------------------------------------------------------------------------------------------
 void wallet2::transfer(const std::vector<cryptonote::tx_destination_entry>& dsts, const size_t fake_outs_count, const std::vector<size_t> &unused_transfers_indices,
                        uint64_t unlock_time, uint64_t fee, const std::vector<uint8_t>& extra, cryptonote::transaction& tx, pending_tx& ptx, bool trusted_daemon)
@@ -3448,6 +3630,99 @@ int wallet2::get_fee_algorithm()
    return 1;
   return 0;
 }
+
+//----------------------------------------------------------------------------------------------------
+// ADDED
+//
+// this function will make multiple calls to wallet2::transfer if multiple
+// transactions will be required
+std::vector<wallet2::pending_tx> wallet2::create_transactions_cap(std::vector<cryptonote::tx_destination_entry> dsts, const size_t fake_outs_count, const uint64_t unlock_time, uint32_t priority, const std::vector<uint8_t> extra, bool trusted_daemon, size_t unused_transfer_index)
+{
+  
+  // failsafe split attempt counter
+  size_t attempt_count = 0;
+
+  for(attempt_count = 1; ;attempt_count++)
+  {
+    size_t num_tx = 0.5 + pow(1.7,attempt_count-1);
+
+    std::vector<pending_tx> ptx_vector;
+    try
+    {
+      // for each new destination vector (i.e. for each new tx)
+      //for (auto & dst_vector : dsts)
+      //{
+        cryptonote::transaction tx;
+        pending_tx ptx;
+
+		// loop until fee is met without increasing tx size to next KB boundary.
+		uint64_t needed_fee = 0;
+		transfer_cap(dsts, fake_outs_count, unused_transfer_index, unlock_time, needed_fee, extra, tx, ptx, trusted_daemon);
+
+        ptx_vector.push_back(ptx);
+
+        // mark transfers to be used as "spent"
+        for(size_t idx: ptx.selected_transfers)
+        {
+          set_spent(idx, 0);
+        }
+      //}
+
+      // if we made it this far, we've selected our transactions.  committing them will mark them spent,
+      // so this is a failsafe in case they don't go through
+      // unmark pending tx transfers as spent
+      for (auto & ptx : ptx_vector)
+      {
+        // mark transfers to be used as not spent
+        for(size_t idx2: ptx.selected_transfers)
+        {
+          set_unspent(idx2);
+        }
+
+      }
+
+      // if we made it this far, we're OK to actually send the transactions
+      return ptx_vector;
+
+    }
+    // only catch this here, other exceptions need to pass through to the calling function
+    catch (const tools::error::tx_too_big& e)
+    {
+
+      // unmark pending tx transfers as spent
+      for (auto & ptx : ptx_vector)
+      {
+        // mark transfers to be used as not spent
+        for(size_t idx2: ptx.selected_transfers)
+        {
+          set_unspent(idx2);
+        }
+      }
+
+      if (attempt_count >= MAX_SPLIT_ATTEMPTS)
+      {
+        throw;
+      }
+    }
+    catch (...)
+    {
+      // in case of some other exception, make sure any tx in queue are marked unspent again
+
+      // unmark pending tx transfers as spent
+      for (auto & ptx : ptx_vector)
+      {
+        // mark transfers to be used as not spent
+        for(size_t idx2: ptx.selected_transfers)
+        {
+          set_unspent(idx2);
+        }
+      }
+
+      throw;
+    }
+  }
+}
+
 //----------------------------------------------------------------------------------------------------
 // separated the call(s) to wallet2::transfer into their own function
 //
@@ -4815,6 +5090,24 @@ std::vector<size_t> wallet2::select_available_outputs(const std::function<bool(c
   }
   return outputs;
 }
+//----------------------------------------ADDED-------------------------------------------------------
+/*std::vector<size_t>  wallet2::select_output_by_cap(const rct::key cap)
+{
+  size_t n = 0;
+  std::vector<size_t> outputs;
+  for (transfer_container::const_iterator i = m_transfers.begin(); i != m_transfers.end(); ++i, ++n)
+  {
+    if (i->m_spent)
+      continue;
+    if (!is_transfer_unlocked(*i))
+      continue;
+   	if (memcmp(cap.bytes,i->mcap.bytes,sizeof(cap.bytes)))
+   	  continue;
+    if (f(*i))
+      outputs.push_back(n);
+  }
+  return outputs;
+}*/
 //----------------------------------------------------------------------------------------------------
 std::vector<uint64_t> wallet2::get_unspent_amounts_vector()
 {
@@ -4874,6 +5167,7 @@ std::vector<size_t> wallet2::select_available_outputs_from_histogram(uint64_t co
   });
 }
 //----------------------------------------------------------------------------------------------------
+
 uint64_t wallet2::get_num_rct_outputs()
 {
   epee::json_rpc::request<cryptonote::COMMAND_RPC_GET_OUTPUT_HISTOGRAM::request> req_t = AUTO_VAL_INIT(req_t);

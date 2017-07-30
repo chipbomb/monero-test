@@ -203,6 +203,7 @@ namespace rct {
           if (type != RCTTypeFull && type != RCTTypeSimple && type != RCTTypeCap)
             return false;
           VARINT_FIELD(txnFee)
+          FIELD(Mc);
           // inputs/outputs not saved, only here for serialization help
           // FIELD(message) - not serialized, it can be reconstructed
           // FIELD(mixRing) - not serialized, it can be reconstructed

@@ -43,323 +43,349 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include common/CMakeFiles/obj_common.dir/depend.make
+include src/common/CMakeFiles/obj_common.dir/depend.make
 
 # Include the progress variables for this target.
-include common/CMakeFiles/obj_common.dir/progress.make
+include src/common/CMakeFiles/obj_common.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include common/CMakeFiles/obj_common.dir/flags.make
+include src/common/CMakeFiles/obj_common.dir/flags.make
 
-common/CMakeFiles/obj_common.dir/base58.o: common/CMakeFiles/obj_common.dir/flags.make
-common/CMakeFiles/obj_common.dir/base58.o: common/base58.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object common/CMakeFiles/obj_common.dir/base58.o"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/base58.o -c /home/chip/Downloads/monero/src/common/base58.cpp
+src/common/CMakeFiles/obj_common.dir/base58.cpp.o: src/common/CMakeFiles/obj_common.dir/flags.make
+src/common/CMakeFiles/obj_common.dir/base58.cpp.o: src/common/base58.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/common/CMakeFiles/obj_common.dir/base58.cpp.o"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/base58.cpp.o -c /home/chip/Downloads/monero/src/common/base58.cpp
 
-common/CMakeFiles/obj_common.dir/base58.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/base58.i"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/base58.cpp > CMakeFiles/obj_common.dir/base58.i
+src/common/CMakeFiles/obj_common.dir/base58.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/base58.cpp.i"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/base58.cpp > CMakeFiles/obj_common.dir/base58.cpp.i
 
-common/CMakeFiles/obj_common.dir/base58.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/base58.s"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/base58.cpp -o CMakeFiles/obj_common.dir/base58.s
+src/common/CMakeFiles/obj_common.dir/base58.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/base58.cpp.s"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/base58.cpp -o CMakeFiles/obj_common.dir/base58.cpp.s
 
-common/CMakeFiles/obj_common.dir/base58.o.requires:
+src/common/CMakeFiles/obj_common.dir/base58.cpp.o.requires:
 
-.PHONY : common/CMakeFiles/obj_common.dir/base58.o.requires
+.PHONY : src/common/CMakeFiles/obj_common.dir/base58.cpp.o.requires
 
-common/CMakeFiles/obj_common.dir/base58.o.provides: common/CMakeFiles/obj_common.dir/base58.o.requires
-	$(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/base58.o.provides.build
-.PHONY : common/CMakeFiles/obj_common.dir/base58.o.provides
+src/common/CMakeFiles/obj_common.dir/base58.cpp.o.provides: src/common/CMakeFiles/obj_common.dir/base58.cpp.o.requires
+	$(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/base58.cpp.o.provides.build
+.PHONY : src/common/CMakeFiles/obj_common.dir/base58.cpp.o.provides
 
-common/CMakeFiles/obj_common.dir/base58.o.provides.build: common/CMakeFiles/obj_common.dir/base58.o
+src/common/CMakeFiles/obj_common.dir/base58.cpp.o.provides.build: src/common/CMakeFiles/obj_common.dir/base58.cpp.o
 
 
-common/CMakeFiles/obj_common.dir/command_line.o: common/CMakeFiles/obj_common.dir/flags.make
-common/CMakeFiles/obj_common.dir/command_line.o: common/command_line.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object common/CMakeFiles/obj_common.dir/command_line.o"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/command_line.o -c /home/chip/Downloads/monero/src/common/command_line.cpp
+src/common/CMakeFiles/obj_common.dir/command_line.cpp.o: src/common/CMakeFiles/obj_common.dir/flags.make
+src/common/CMakeFiles/obj_common.dir/command_line.cpp.o: src/common/command_line.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/common/CMakeFiles/obj_common.dir/command_line.cpp.o"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/command_line.cpp.o -c /home/chip/Downloads/monero/src/common/command_line.cpp
 
-common/CMakeFiles/obj_common.dir/command_line.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/command_line.i"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/command_line.cpp > CMakeFiles/obj_common.dir/command_line.i
+src/common/CMakeFiles/obj_common.dir/command_line.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/command_line.cpp.i"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/command_line.cpp > CMakeFiles/obj_common.dir/command_line.cpp.i
 
-common/CMakeFiles/obj_common.dir/command_line.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/command_line.s"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/command_line.cpp -o CMakeFiles/obj_common.dir/command_line.s
+src/common/CMakeFiles/obj_common.dir/command_line.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/command_line.cpp.s"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/command_line.cpp -o CMakeFiles/obj_common.dir/command_line.cpp.s
 
-common/CMakeFiles/obj_common.dir/command_line.o.requires:
+src/common/CMakeFiles/obj_common.dir/command_line.cpp.o.requires:
 
-.PHONY : common/CMakeFiles/obj_common.dir/command_line.o.requires
+.PHONY : src/common/CMakeFiles/obj_common.dir/command_line.cpp.o.requires
 
-common/CMakeFiles/obj_common.dir/command_line.o.provides: common/CMakeFiles/obj_common.dir/command_line.o.requires
-	$(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/command_line.o.provides.build
-.PHONY : common/CMakeFiles/obj_common.dir/command_line.o.provides
+src/common/CMakeFiles/obj_common.dir/command_line.cpp.o.provides: src/common/CMakeFiles/obj_common.dir/command_line.cpp.o.requires
+	$(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/command_line.cpp.o.provides.build
+.PHONY : src/common/CMakeFiles/obj_common.dir/command_line.cpp.o.provides
 
-common/CMakeFiles/obj_common.dir/command_line.o.provides.build: common/CMakeFiles/obj_common.dir/command_line.o
+src/common/CMakeFiles/obj_common.dir/command_line.cpp.o.provides.build: src/common/CMakeFiles/obj_common.dir/command_line.cpp.o
 
 
-common/CMakeFiles/obj_common.dir/dns_utils.o: common/CMakeFiles/obj_common.dir/flags.make
-common/CMakeFiles/obj_common.dir/dns_utils.o: common/dns_utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object common/CMakeFiles/obj_common.dir/dns_utils.o"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/dns_utils.o -c /home/chip/Downloads/monero/src/common/dns_utils.cpp
+src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.o: src/common/CMakeFiles/obj_common.dir/flags.make
+src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.o: src/common/dns_utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.o"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/dns_utils.cpp.o -c /home/chip/Downloads/monero/src/common/dns_utils.cpp
 
-common/CMakeFiles/obj_common.dir/dns_utils.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/dns_utils.i"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/dns_utils.cpp > CMakeFiles/obj_common.dir/dns_utils.i
+src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/dns_utils.cpp.i"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/dns_utils.cpp > CMakeFiles/obj_common.dir/dns_utils.cpp.i
 
-common/CMakeFiles/obj_common.dir/dns_utils.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/dns_utils.s"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/dns_utils.cpp -o CMakeFiles/obj_common.dir/dns_utils.s
+src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/dns_utils.cpp.s"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/dns_utils.cpp -o CMakeFiles/obj_common.dir/dns_utils.cpp.s
 
-common/CMakeFiles/obj_common.dir/dns_utils.o.requires:
+src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.o.requires:
 
-.PHONY : common/CMakeFiles/obj_common.dir/dns_utils.o.requires
+.PHONY : src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.o.requires
 
-common/CMakeFiles/obj_common.dir/dns_utils.o.provides: common/CMakeFiles/obj_common.dir/dns_utils.o.requires
-	$(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/dns_utils.o.provides.build
-.PHONY : common/CMakeFiles/obj_common.dir/dns_utils.o.provides
+src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.o.provides: src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.o.requires
+	$(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.o.provides.build
+.PHONY : src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.o.provides
 
-common/CMakeFiles/obj_common.dir/dns_utils.o.provides.build: common/CMakeFiles/obj_common.dir/dns_utils.o
+src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.o.provides.build: src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.o
 
 
-common/CMakeFiles/obj_common.dir/download.o: common/CMakeFiles/obj_common.dir/flags.make
-common/CMakeFiles/obj_common.dir/download.o: common/download.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object common/CMakeFiles/obj_common.dir/download.o"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/download.o -c /home/chip/Downloads/monero/src/common/download.cpp
+src/common/CMakeFiles/obj_common.dir/download.cpp.o: src/common/CMakeFiles/obj_common.dir/flags.make
+src/common/CMakeFiles/obj_common.dir/download.cpp.o: src/common/download.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/common/CMakeFiles/obj_common.dir/download.cpp.o"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/download.cpp.o -c /home/chip/Downloads/monero/src/common/download.cpp
 
-common/CMakeFiles/obj_common.dir/download.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/download.i"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/download.cpp > CMakeFiles/obj_common.dir/download.i
+src/common/CMakeFiles/obj_common.dir/download.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/download.cpp.i"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/download.cpp > CMakeFiles/obj_common.dir/download.cpp.i
 
-common/CMakeFiles/obj_common.dir/download.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/download.s"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/download.cpp -o CMakeFiles/obj_common.dir/download.s
+src/common/CMakeFiles/obj_common.dir/download.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/download.cpp.s"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/download.cpp -o CMakeFiles/obj_common.dir/download.cpp.s
 
-common/CMakeFiles/obj_common.dir/download.o.requires:
+src/common/CMakeFiles/obj_common.dir/download.cpp.o.requires:
 
-.PHONY : common/CMakeFiles/obj_common.dir/download.o.requires
+.PHONY : src/common/CMakeFiles/obj_common.dir/download.cpp.o.requires
 
-common/CMakeFiles/obj_common.dir/download.o.provides: common/CMakeFiles/obj_common.dir/download.o.requires
-	$(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/download.o.provides.build
-.PHONY : common/CMakeFiles/obj_common.dir/download.o.provides
+src/common/CMakeFiles/obj_common.dir/download.cpp.o.provides: src/common/CMakeFiles/obj_common.dir/download.cpp.o.requires
+	$(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/download.cpp.o.provides.build
+.PHONY : src/common/CMakeFiles/obj_common.dir/download.cpp.o.provides
 
-common/CMakeFiles/obj_common.dir/download.o.provides.build: common/CMakeFiles/obj_common.dir/download.o
+src/common/CMakeFiles/obj_common.dir/download.cpp.o.provides.build: src/common/CMakeFiles/obj_common.dir/download.cpp.o
 
 
-common/CMakeFiles/obj_common.dir/util.o: common/CMakeFiles/obj_common.dir/flags.make
-common/CMakeFiles/obj_common.dir/util.o: common/util.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object common/CMakeFiles/obj_common.dir/util.o"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/util.o -c /home/chip/Downloads/monero/src/common/util.cpp
+src/common/CMakeFiles/obj_common.dir/util.cpp.o: src/common/CMakeFiles/obj_common.dir/flags.make
+src/common/CMakeFiles/obj_common.dir/util.cpp.o: src/common/util.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/common/CMakeFiles/obj_common.dir/util.cpp.o"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/util.cpp.o -c /home/chip/Downloads/monero/src/common/util.cpp
 
-common/CMakeFiles/obj_common.dir/util.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/util.i"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/util.cpp > CMakeFiles/obj_common.dir/util.i
+src/common/CMakeFiles/obj_common.dir/util.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/util.cpp.i"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/util.cpp > CMakeFiles/obj_common.dir/util.cpp.i
 
-common/CMakeFiles/obj_common.dir/util.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/util.s"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/util.cpp -o CMakeFiles/obj_common.dir/util.s
+src/common/CMakeFiles/obj_common.dir/util.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/util.cpp.s"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/util.cpp -o CMakeFiles/obj_common.dir/util.cpp.s
 
-common/CMakeFiles/obj_common.dir/util.o.requires:
+src/common/CMakeFiles/obj_common.dir/util.cpp.o.requires:
 
-.PHONY : common/CMakeFiles/obj_common.dir/util.o.requires
+.PHONY : src/common/CMakeFiles/obj_common.dir/util.cpp.o.requires
 
-common/CMakeFiles/obj_common.dir/util.o.provides: common/CMakeFiles/obj_common.dir/util.o.requires
-	$(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/util.o.provides.build
-.PHONY : common/CMakeFiles/obj_common.dir/util.o.provides
+src/common/CMakeFiles/obj_common.dir/util.cpp.o.provides: src/common/CMakeFiles/obj_common.dir/util.cpp.o.requires
+	$(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/util.cpp.o.provides.build
+.PHONY : src/common/CMakeFiles/obj_common.dir/util.cpp.o.provides
 
-common/CMakeFiles/obj_common.dir/util.o.provides.build: common/CMakeFiles/obj_common.dir/util.o
+src/common/CMakeFiles/obj_common.dir/util.cpp.o.provides.build: src/common/CMakeFiles/obj_common.dir/util.cpp.o
 
 
-common/CMakeFiles/obj_common.dir/i18n.o: common/CMakeFiles/obj_common.dir/flags.make
-common/CMakeFiles/obj_common.dir/i18n.o: common/i18n.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object common/CMakeFiles/obj_common.dir/i18n.o"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/i18n.o -c /home/chip/Downloads/monero/src/common/i18n.cpp
+src/common/CMakeFiles/obj_common.dir/i18n.cpp.o: src/common/CMakeFiles/obj_common.dir/flags.make
+src/common/CMakeFiles/obj_common.dir/i18n.cpp.o: src/common/i18n.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/common/CMakeFiles/obj_common.dir/i18n.cpp.o"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/i18n.cpp.o -c /home/chip/Downloads/monero/src/common/i18n.cpp
 
-common/CMakeFiles/obj_common.dir/i18n.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/i18n.i"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/i18n.cpp > CMakeFiles/obj_common.dir/i18n.i
+src/common/CMakeFiles/obj_common.dir/i18n.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/i18n.cpp.i"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/i18n.cpp > CMakeFiles/obj_common.dir/i18n.cpp.i
 
-common/CMakeFiles/obj_common.dir/i18n.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/i18n.s"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/i18n.cpp -o CMakeFiles/obj_common.dir/i18n.s
+src/common/CMakeFiles/obj_common.dir/i18n.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/i18n.cpp.s"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/i18n.cpp -o CMakeFiles/obj_common.dir/i18n.cpp.s
 
-common/CMakeFiles/obj_common.dir/i18n.o.requires:
+src/common/CMakeFiles/obj_common.dir/i18n.cpp.o.requires:
 
-.PHONY : common/CMakeFiles/obj_common.dir/i18n.o.requires
+.PHONY : src/common/CMakeFiles/obj_common.dir/i18n.cpp.o.requires
 
-common/CMakeFiles/obj_common.dir/i18n.o.provides: common/CMakeFiles/obj_common.dir/i18n.o.requires
-	$(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/i18n.o.provides.build
-.PHONY : common/CMakeFiles/obj_common.dir/i18n.o.provides
+src/common/CMakeFiles/obj_common.dir/i18n.cpp.o.provides: src/common/CMakeFiles/obj_common.dir/i18n.cpp.o.requires
+	$(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/i18n.cpp.o.provides.build
+.PHONY : src/common/CMakeFiles/obj_common.dir/i18n.cpp.o.provides
 
-common/CMakeFiles/obj_common.dir/i18n.o.provides.build: common/CMakeFiles/obj_common.dir/i18n.o
+src/common/CMakeFiles/obj_common.dir/i18n.cpp.o.provides.build: src/common/CMakeFiles/obj_common.dir/i18n.cpp.o
 
 
-common/CMakeFiles/obj_common.dir/password.o: common/CMakeFiles/obj_common.dir/flags.make
-common/CMakeFiles/obj_common.dir/password.o: common/password.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object common/CMakeFiles/obj_common.dir/password.o"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/password.o -c /home/chip/Downloads/monero/src/common/password.cpp
+src/common/CMakeFiles/obj_common.dir/password.cpp.o: src/common/CMakeFiles/obj_common.dir/flags.make
+src/common/CMakeFiles/obj_common.dir/password.cpp.o: src/common/password.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/common/CMakeFiles/obj_common.dir/password.cpp.o"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/password.cpp.o -c /home/chip/Downloads/monero/src/common/password.cpp
 
-common/CMakeFiles/obj_common.dir/password.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/password.i"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/password.cpp > CMakeFiles/obj_common.dir/password.i
+src/common/CMakeFiles/obj_common.dir/password.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/password.cpp.i"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/password.cpp > CMakeFiles/obj_common.dir/password.cpp.i
 
-common/CMakeFiles/obj_common.dir/password.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/password.s"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/password.cpp -o CMakeFiles/obj_common.dir/password.s
+src/common/CMakeFiles/obj_common.dir/password.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/password.cpp.s"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/password.cpp -o CMakeFiles/obj_common.dir/password.cpp.s
 
-common/CMakeFiles/obj_common.dir/password.o.requires:
+src/common/CMakeFiles/obj_common.dir/password.cpp.o.requires:
 
-.PHONY : common/CMakeFiles/obj_common.dir/password.o.requires
+.PHONY : src/common/CMakeFiles/obj_common.dir/password.cpp.o.requires
 
-common/CMakeFiles/obj_common.dir/password.o.provides: common/CMakeFiles/obj_common.dir/password.o.requires
-	$(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/password.o.provides.build
-.PHONY : common/CMakeFiles/obj_common.dir/password.o.provides
+src/common/CMakeFiles/obj_common.dir/password.cpp.o.provides: src/common/CMakeFiles/obj_common.dir/password.cpp.o.requires
+	$(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/password.cpp.o.provides.build
+.PHONY : src/common/CMakeFiles/obj_common.dir/password.cpp.o.provides
 
-common/CMakeFiles/obj_common.dir/password.o.provides.build: common/CMakeFiles/obj_common.dir/password.o
+src/common/CMakeFiles/obj_common.dir/password.cpp.o.provides.build: src/common/CMakeFiles/obj_common.dir/password.cpp.o
 
 
-common/CMakeFiles/obj_common.dir/perf_timer.o: common/CMakeFiles/obj_common.dir/flags.make
-common/CMakeFiles/obj_common.dir/perf_timer.o: common/perf_timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object common/CMakeFiles/obj_common.dir/perf_timer.o"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/perf_timer.o -c /home/chip/Downloads/monero/src/common/perf_timer.cpp
+src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.o: src/common/CMakeFiles/obj_common.dir/flags.make
+src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.o: src/common/perf_timer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.o"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/perf_timer.cpp.o -c /home/chip/Downloads/monero/src/common/perf_timer.cpp
 
-common/CMakeFiles/obj_common.dir/perf_timer.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/perf_timer.i"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/perf_timer.cpp > CMakeFiles/obj_common.dir/perf_timer.i
+src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/perf_timer.cpp.i"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/perf_timer.cpp > CMakeFiles/obj_common.dir/perf_timer.cpp.i
 
-common/CMakeFiles/obj_common.dir/perf_timer.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/perf_timer.s"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/perf_timer.cpp -o CMakeFiles/obj_common.dir/perf_timer.s
+src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/perf_timer.cpp.s"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/perf_timer.cpp -o CMakeFiles/obj_common.dir/perf_timer.cpp.s
 
-common/CMakeFiles/obj_common.dir/perf_timer.o.requires:
+src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.o.requires:
 
-.PHONY : common/CMakeFiles/obj_common.dir/perf_timer.o.requires
+.PHONY : src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.o.requires
 
-common/CMakeFiles/obj_common.dir/perf_timer.o.provides: common/CMakeFiles/obj_common.dir/perf_timer.o.requires
-	$(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/perf_timer.o.provides.build
-.PHONY : common/CMakeFiles/obj_common.dir/perf_timer.o.provides
+src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.o.provides: src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.o.requires
+	$(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.o.provides.build
+.PHONY : src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.o.provides
 
-common/CMakeFiles/obj_common.dir/perf_timer.o.provides.build: common/CMakeFiles/obj_common.dir/perf_timer.o
+src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.o.provides.build: src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.o
 
 
-common/CMakeFiles/obj_common.dir/task_region.o: common/CMakeFiles/obj_common.dir/flags.make
-common/CMakeFiles/obj_common.dir/task_region.o: common/task_region.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object common/CMakeFiles/obj_common.dir/task_region.o"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/task_region.o -c /home/chip/Downloads/monero/src/common/task_region.cpp
+src/common/CMakeFiles/obj_common.dir/task_region.cpp.o: src/common/CMakeFiles/obj_common.dir/flags.make
+src/common/CMakeFiles/obj_common.dir/task_region.cpp.o: src/common/task_region.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/common/CMakeFiles/obj_common.dir/task_region.cpp.o"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/task_region.cpp.o -c /home/chip/Downloads/monero/src/common/task_region.cpp
 
-common/CMakeFiles/obj_common.dir/task_region.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/task_region.i"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/task_region.cpp > CMakeFiles/obj_common.dir/task_region.i
+src/common/CMakeFiles/obj_common.dir/task_region.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/task_region.cpp.i"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/task_region.cpp > CMakeFiles/obj_common.dir/task_region.cpp.i
 
-common/CMakeFiles/obj_common.dir/task_region.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/task_region.s"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/task_region.cpp -o CMakeFiles/obj_common.dir/task_region.s
+src/common/CMakeFiles/obj_common.dir/task_region.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/task_region.cpp.s"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/task_region.cpp -o CMakeFiles/obj_common.dir/task_region.cpp.s
 
-common/CMakeFiles/obj_common.dir/task_region.o.requires:
+src/common/CMakeFiles/obj_common.dir/task_region.cpp.o.requires:
 
-.PHONY : common/CMakeFiles/obj_common.dir/task_region.o.requires
+.PHONY : src/common/CMakeFiles/obj_common.dir/task_region.cpp.o.requires
 
-common/CMakeFiles/obj_common.dir/task_region.o.provides: common/CMakeFiles/obj_common.dir/task_region.o.requires
-	$(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/task_region.o.provides.build
-.PHONY : common/CMakeFiles/obj_common.dir/task_region.o.provides
+src/common/CMakeFiles/obj_common.dir/task_region.cpp.o.provides: src/common/CMakeFiles/obj_common.dir/task_region.cpp.o.requires
+	$(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/task_region.cpp.o.provides.build
+.PHONY : src/common/CMakeFiles/obj_common.dir/task_region.cpp.o.provides
 
-common/CMakeFiles/obj_common.dir/task_region.o.provides.build: common/CMakeFiles/obj_common.dir/task_region.o
+src/common/CMakeFiles/obj_common.dir/task_region.cpp.o.provides.build: src/common/CMakeFiles/obj_common.dir/task_region.cpp.o
 
 
-common/CMakeFiles/obj_common.dir/thread_group.o: common/CMakeFiles/obj_common.dir/flags.make
-common/CMakeFiles/obj_common.dir/thread_group.o: common/thread_group.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object common/CMakeFiles/obj_common.dir/thread_group.o"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/thread_group.o -c /home/chip/Downloads/monero/src/common/thread_group.cpp
+src/common/CMakeFiles/obj_common.dir/thread_group.cpp.o: src/common/CMakeFiles/obj_common.dir/flags.make
+src/common/CMakeFiles/obj_common.dir/thread_group.cpp.o: src/common/thread_group.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/common/CMakeFiles/obj_common.dir/thread_group.cpp.o"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/thread_group.cpp.o -c /home/chip/Downloads/monero/src/common/thread_group.cpp
 
-common/CMakeFiles/obj_common.dir/thread_group.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/thread_group.i"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/thread_group.cpp > CMakeFiles/obj_common.dir/thread_group.i
+src/common/CMakeFiles/obj_common.dir/thread_group.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/thread_group.cpp.i"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/thread_group.cpp > CMakeFiles/obj_common.dir/thread_group.cpp.i
 
-common/CMakeFiles/obj_common.dir/thread_group.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/thread_group.s"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/thread_group.cpp -o CMakeFiles/obj_common.dir/thread_group.s
+src/common/CMakeFiles/obj_common.dir/thread_group.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/thread_group.cpp.s"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/thread_group.cpp -o CMakeFiles/obj_common.dir/thread_group.cpp.s
 
-common/CMakeFiles/obj_common.dir/thread_group.o.requires:
+src/common/CMakeFiles/obj_common.dir/thread_group.cpp.o.requires:
 
-.PHONY : common/CMakeFiles/obj_common.dir/thread_group.o.requires
+.PHONY : src/common/CMakeFiles/obj_common.dir/thread_group.cpp.o.requires
 
-common/CMakeFiles/obj_common.dir/thread_group.o.provides: common/CMakeFiles/obj_common.dir/thread_group.o.requires
-	$(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/thread_group.o.provides.build
-.PHONY : common/CMakeFiles/obj_common.dir/thread_group.o.provides
+src/common/CMakeFiles/obj_common.dir/thread_group.cpp.o.provides: src/common/CMakeFiles/obj_common.dir/thread_group.cpp.o.requires
+	$(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/thread_group.cpp.o.provides.build
+.PHONY : src/common/CMakeFiles/obj_common.dir/thread_group.cpp.o.provides
 
-common/CMakeFiles/obj_common.dir/thread_group.o.provides.build: common/CMakeFiles/obj_common.dir/thread_group.o
+src/common/CMakeFiles/obj_common.dir/thread_group.cpp.o.provides.build: src/common/CMakeFiles/obj_common.dir/thread_group.cpp.o
 
 
-common/CMakeFiles/obj_common.dir/updates.o: common/CMakeFiles/obj_common.dir/flags.make
-common/CMakeFiles/obj_common.dir/updates.o: common/updates.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object common/CMakeFiles/obj_common.dir/updates.o"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/updates.o -c /home/chip/Downloads/monero/src/common/updates.cpp
+src/common/CMakeFiles/obj_common.dir/updates.cpp.o: src/common/CMakeFiles/obj_common.dir/flags.make
+src/common/CMakeFiles/obj_common.dir/updates.cpp.o: src/common/updates.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object src/common/CMakeFiles/obj_common.dir/updates.cpp.o"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/updates.cpp.o -c /home/chip/Downloads/monero/src/common/updates.cpp
 
-common/CMakeFiles/obj_common.dir/updates.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/updates.i"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/updates.cpp > CMakeFiles/obj_common.dir/updates.i
+src/common/CMakeFiles/obj_common.dir/updates.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/updates.cpp.i"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/updates.cpp > CMakeFiles/obj_common.dir/updates.cpp.i
 
-common/CMakeFiles/obj_common.dir/updates.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/updates.s"
-	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/updates.cpp -o CMakeFiles/obj_common.dir/updates.s
+src/common/CMakeFiles/obj_common.dir/updates.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/updates.cpp.s"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/updates.cpp -o CMakeFiles/obj_common.dir/updates.cpp.s
 
-common/CMakeFiles/obj_common.dir/updates.o.requires:
+src/common/CMakeFiles/obj_common.dir/updates.cpp.o.requires:
 
-.PHONY : common/CMakeFiles/obj_common.dir/updates.o.requires
+.PHONY : src/common/CMakeFiles/obj_common.dir/updates.cpp.o.requires
 
-common/CMakeFiles/obj_common.dir/updates.o.provides: common/CMakeFiles/obj_common.dir/updates.o.requires
-	$(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/updates.o.provides.build
-.PHONY : common/CMakeFiles/obj_common.dir/updates.o.provides
+src/common/CMakeFiles/obj_common.dir/updates.cpp.o.provides: src/common/CMakeFiles/obj_common.dir/updates.cpp.o.requires
+	$(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/updates.cpp.o.provides.build
+.PHONY : src/common/CMakeFiles/obj_common.dir/updates.cpp.o.provides
 
-common/CMakeFiles/obj_common.dir/updates.o.provides.build: common/CMakeFiles/obj_common.dir/updates.o
+src/common/CMakeFiles/obj_common.dir/updates.cpp.o.provides.build: src/common/CMakeFiles/obj_common.dir/updates.cpp.o
 
 
-obj_common: common/CMakeFiles/obj_common.dir/base58.o
-obj_common: common/CMakeFiles/obj_common.dir/command_line.o
-obj_common: common/CMakeFiles/obj_common.dir/dns_utils.o
-obj_common: common/CMakeFiles/obj_common.dir/download.o
-obj_common: common/CMakeFiles/obj_common.dir/util.o
-obj_common: common/CMakeFiles/obj_common.dir/i18n.o
-obj_common: common/CMakeFiles/obj_common.dir/password.o
-obj_common: common/CMakeFiles/obj_common.dir/perf_timer.o
-obj_common: common/CMakeFiles/obj_common.dir/task_region.o
-obj_common: common/CMakeFiles/obj_common.dir/thread_group.o
-obj_common: common/CMakeFiles/obj_common.dir/updates.o
-obj_common: common/CMakeFiles/obj_common.dir/build.make
+src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.o: src/common/CMakeFiles/obj_common.dir/flags.make
+src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.o: src/common/stack_trace.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.o"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_common.dir/stack_trace.cpp.o -c /home/chip/Downloads/monero/src/common/stack_trace.cpp
+
+src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_common.dir/stack_trace.cpp.i"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/common/stack_trace.cpp > CMakeFiles/obj_common.dir/stack_trace.cpp.i
+
+src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_common.dir/stack_trace.cpp.s"
+	cd /home/chip/Downloads/monero/src/common && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/common/stack_trace.cpp -o CMakeFiles/obj_common.dir/stack_trace.cpp.s
+
+src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.o.requires:
+
+.PHONY : src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.o.requires
+
+src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.o.provides: src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.o.requires
+	$(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.o.provides.build
+.PHONY : src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.o.provides
+
+src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.o.provides.build: src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.o
+
+
+obj_common: src/common/CMakeFiles/obj_common.dir/base58.cpp.o
+obj_common: src/common/CMakeFiles/obj_common.dir/command_line.cpp.o
+obj_common: src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.o
+obj_common: src/common/CMakeFiles/obj_common.dir/download.cpp.o
+obj_common: src/common/CMakeFiles/obj_common.dir/util.cpp.o
+obj_common: src/common/CMakeFiles/obj_common.dir/i18n.cpp.o
+obj_common: src/common/CMakeFiles/obj_common.dir/password.cpp.o
+obj_common: src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.o
+obj_common: src/common/CMakeFiles/obj_common.dir/task_region.cpp.o
+obj_common: src/common/CMakeFiles/obj_common.dir/thread_group.cpp.o
+obj_common: src/common/CMakeFiles/obj_common.dir/updates.cpp.o
+obj_common: src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.o
+obj_common: src/common/CMakeFiles/obj_common.dir/build.make
 
 .PHONY : obj_common
 
 # Rule to build all files generated by this target.
-common/CMakeFiles/obj_common.dir/build: obj_common
+src/common/CMakeFiles/obj_common.dir/build: obj_common
 
-.PHONY : common/CMakeFiles/obj_common.dir/build
+.PHONY : src/common/CMakeFiles/obj_common.dir/build
 
-common/CMakeFiles/obj_common.dir/requires: common/CMakeFiles/obj_common.dir/base58.o.requires
-common/CMakeFiles/obj_common.dir/requires: common/CMakeFiles/obj_common.dir/command_line.o.requires
-common/CMakeFiles/obj_common.dir/requires: common/CMakeFiles/obj_common.dir/dns_utils.o.requires
-common/CMakeFiles/obj_common.dir/requires: common/CMakeFiles/obj_common.dir/download.o.requires
-common/CMakeFiles/obj_common.dir/requires: common/CMakeFiles/obj_common.dir/util.o.requires
-common/CMakeFiles/obj_common.dir/requires: common/CMakeFiles/obj_common.dir/i18n.o.requires
-common/CMakeFiles/obj_common.dir/requires: common/CMakeFiles/obj_common.dir/password.o.requires
-common/CMakeFiles/obj_common.dir/requires: common/CMakeFiles/obj_common.dir/perf_timer.o.requires
-common/CMakeFiles/obj_common.dir/requires: common/CMakeFiles/obj_common.dir/task_region.o.requires
-common/CMakeFiles/obj_common.dir/requires: common/CMakeFiles/obj_common.dir/thread_group.o.requires
-common/CMakeFiles/obj_common.dir/requires: common/CMakeFiles/obj_common.dir/updates.o.requires
+src/common/CMakeFiles/obj_common.dir/requires: src/common/CMakeFiles/obj_common.dir/base58.cpp.o.requires
+src/common/CMakeFiles/obj_common.dir/requires: src/common/CMakeFiles/obj_common.dir/command_line.cpp.o.requires
+src/common/CMakeFiles/obj_common.dir/requires: src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.o.requires
+src/common/CMakeFiles/obj_common.dir/requires: src/common/CMakeFiles/obj_common.dir/download.cpp.o.requires
+src/common/CMakeFiles/obj_common.dir/requires: src/common/CMakeFiles/obj_common.dir/util.cpp.o.requires
+src/common/CMakeFiles/obj_common.dir/requires: src/common/CMakeFiles/obj_common.dir/i18n.cpp.o.requires
+src/common/CMakeFiles/obj_common.dir/requires: src/common/CMakeFiles/obj_common.dir/password.cpp.o.requires
+src/common/CMakeFiles/obj_common.dir/requires: src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.o.requires
+src/common/CMakeFiles/obj_common.dir/requires: src/common/CMakeFiles/obj_common.dir/task_region.cpp.o.requires
+src/common/CMakeFiles/obj_common.dir/requires: src/common/CMakeFiles/obj_common.dir/thread_group.cpp.o.requires
+src/common/CMakeFiles/obj_common.dir/requires: src/common/CMakeFiles/obj_common.dir/updates.cpp.o.requires
+src/common/CMakeFiles/obj_common.dir/requires: src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.o.requires
 
-.PHONY : common/CMakeFiles/obj_common.dir/requires
+.PHONY : src/common/CMakeFiles/obj_common.dir/requires
 
-common/CMakeFiles/obj_common.dir/clean:
+src/common/CMakeFiles/obj_common.dir/clean:
 	cd /home/chip/Downloads/monero/src/common && $(CMAKE_COMMAND) -P CMakeFiles/obj_common.dir/cmake_clean.cmake
-.PHONY : common/CMakeFiles/obj_common.dir/clean
+.PHONY : src/common/CMakeFiles/obj_common.dir/clean
 
-common/CMakeFiles/obj_common.dir/depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/common /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/common /home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : common/CMakeFiles/obj_common.dir/depend
+src/common/CMakeFiles/obj_common.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/src/common /home/chip/Downloads/monero /home/chip/Downloads/monero/src/common /home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : src/common/CMakeFiles/obj_common.dir/depend
 

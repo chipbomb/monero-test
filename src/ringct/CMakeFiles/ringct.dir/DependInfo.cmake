@@ -8,6 +8,8 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/chip/Downloads/monero/src/common/CMakeFiles/common.dir/DependInfo.cmake"
   "/home/chip/Downloads/monero/src/crypto/CMakeFiles/cncrypto.dir/DependInfo.cmake"
   "/home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/DependInfo.cmake"
+  "/home/chip/Downloads/monero/contrib/epee/src/CMakeFiles/epee.dir/DependInfo.cmake"
+  "/home/chip/Downloads/monero/external/easylogging++/CMakeFiles/easylogging.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

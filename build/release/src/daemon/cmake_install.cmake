@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "release")
+    set(CMAKE_INSTALL_CONFIG_NAME "Debug")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -42,6 +42,10 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/chip/Downloads/monero/build/release/bin/monerod")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/monerod" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/monerod")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/monerod"
+         OLD_RPATH "/home/chip/Downloads/monero/build/release/src/rpc:/home/chip/Downloads/monero/build/release/src/cryptonote_core:/home/chip/Downloads/monero/build/release/src/cryptonote_protocol:/home/chip/Downloads/monero/build/release/src/daemonizer:/home/chip/Downloads/monero/build/release/src/blockchain_db:/home/chip/Downloads/monero/build/release/external/db_drivers/liblmdb:/home/chip/Downloads/monero/build/release/src/ringct:/home/chip/Downloads/monero/build/release/src/cryptonote_basic:/home/chip/Downloads/monero/build/release/src/p2p:/home/chip/Downloads/monero/build/release/src/common:/home/chip/Downloads/monero/build/release/src/crypto:/home/chip/Downloads/monero/build/release/external/easylogging++:"
+         NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/monerod")
     endif()

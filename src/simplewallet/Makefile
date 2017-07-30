@@ -48,13 +48,23 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -67,16 +77,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -122,16 +122,27 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles /home/chip/Downloads/monero/src/simplewallet/CMakeFiles/progress.marks
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 simplewallet/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles /home/chip/Downloads/monero/src/simplewallet/CMakeFiles/progress.marks
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/simplewallet/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 simplewallet/clean
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/simplewallet/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,48 +152,60 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 simplewallet/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/simplewallet/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 simplewallet/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/simplewallet/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-simplewallet/CMakeFiles/simplewallet.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 simplewallet/CMakeFiles/simplewallet.dir/rule
-.PHONY : simplewallet/CMakeFiles/simplewallet.dir/rule
+src/simplewallet/CMakeFiles/simplewallet.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/simplewallet/CMakeFiles/simplewallet.dir/rule
+.PHONY : src/simplewallet/CMakeFiles/simplewallet.dir/rule
 
 # Convenience name for target.
-simplewallet: simplewallet/CMakeFiles/simplewallet.dir/rule
+simplewallet: src/simplewallet/CMakeFiles/simplewallet.dir/rule
 
 .PHONY : simplewallet
 
 # fast build rule for target.
 simplewallet/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f simplewallet/CMakeFiles/simplewallet.dir/build.make simplewallet/CMakeFiles/simplewallet.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/simplewallet/CMakeFiles/simplewallet.dir/build.make src/simplewallet/CMakeFiles/simplewallet.dir/build
 .PHONY : simplewallet/fast
 
-# target to build an object file
-simplewallet.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f simplewallet/CMakeFiles/simplewallet.dir/build.make simplewallet/CMakeFiles/simplewallet.dir/simplewallet.o
+simplewallet.o: simplewallet.cpp.o
+
 .PHONY : simplewallet.o
 
-# target to preprocess a source file
-simplewallet.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f simplewallet/CMakeFiles/simplewallet.dir/build.make simplewallet/CMakeFiles/simplewallet.dir/simplewallet.i
+# target to build an object file
+simplewallet.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/simplewallet/CMakeFiles/simplewallet.dir/build.make src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.o
+.PHONY : simplewallet.cpp.o
+
+simplewallet.i: simplewallet.cpp.i
+
 .PHONY : simplewallet.i
 
-# target to generate assembly for a file
-simplewallet.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f simplewallet/CMakeFiles/simplewallet.dir/build.make simplewallet/CMakeFiles/simplewallet.dir/simplewallet.s
+# target to preprocess a source file
+simplewallet.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/simplewallet/CMakeFiles/simplewallet.dir/build.make src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.i
+.PHONY : simplewallet.cpp.i
+
+simplewallet.s: simplewallet.cpp.s
+
 .PHONY : simplewallet.s
+
+# target to generate assembly for a file
+simplewallet.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/simplewallet/CMakeFiles/simplewallet.dir/build.make src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.s
+.PHONY : simplewallet.cpp.s
 
 # Help Target
 help:
@@ -190,13 +213,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... simplewallet"
 	@echo "... edit_cache"
+	@echo "... simplewallet"
 	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... test"
 	@echo "... simplewallet.o"
 	@echo "... simplewallet.i"
 	@echo "... simplewallet.s"
@@ -211,6 +235,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

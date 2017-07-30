@@ -43,63 +43,63 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include mnemonics/CMakeFiles/obj_mnemonics.dir/depend.make
+include src/mnemonics/CMakeFiles/obj_mnemonics.dir/depend.make
 
 # Include the progress variables for this target.
-include mnemonics/CMakeFiles/obj_mnemonics.dir/progress.make
+include src/mnemonics/CMakeFiles/obj_mnemonics.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include mnemonics/CMakeFiles/obj_mnemonics.dir/flags.make
+include src/mnemonics/CMakeFiles/obj_mnemonics.dir/flags.make
 
-mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.o: mnemonics/CMakeFiles/obj_mnemonics.dir/flags.make
-mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.o: mnemonics/electrum-words.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.o"
-	cd /home/chip/Downloads/monero/src/mnemonics && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_mnemonics.dir/electrum-words.o -c /home/chip/Downloads/monero/src/mnemonics/electrum-words.cpp
+src/mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.o: src/mnemonics/CMakeFiles/obj_mnemonics.dir/flags.make
+src/mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.o: src/mnemonics/electrum-words.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.o"
+	cd /home/chip/Downloads/monero/src/mnemonics && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.o -c /home/chip/Downloads/monero/src/mnemonics/electrum-words.cpp
 
-mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_mnemonics.dir/electrum-words.i"
-	cd /home/chip/Downloads/monero/src/mnemonics && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/mnemonics/electrum-words.cpp > CMakeFiles/obj_mnemonics.dir/electrum-words.i
+src/mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.i"
+	cd /home/chip/Downloads/monero/src/mnemonics && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/mnemonics/electrum-words.cpp > CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.i
 
-mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_mnemonics.dir/electrum-words.s"
-	cd /home/chip/Downloads/monero/src/mnemonics && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/mnemonics/electrum-words.cpp -o CMakeFiles/obj_mnemonics.dir/electrum-words.s
+src/mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.s"
+	cd /home/chip/Downloads/monero/src/mnemonics && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/mnemonics/electrum-words.cpp -o CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.s
 
-mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.o.requires:
+src/mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.o.requires:
 
-.PHONY : mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.o.requires
+.PHONY : src/mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.o.requires
 
-mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.o.provides: mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.o.requires
-	$(MAKE) -f mnemonics/CMakeFiles/obj_mnemonics.dir/build.make mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.o.provides.build
-.PHONY : mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.o.provides
+src/mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.o.provides: src/mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.o.requires
+	$(MAKE) -f src/mnemonics/CMakeFiles/obj_mnemonics.dir/build.make src/mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.o.provides.build
+.PHONY : src/mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.o.provides
 
-mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.o.provides.build: mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.o
+src/mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.o.provides.build: src/mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.o
 
 
-obj_mnemonics: mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.o
-obj_mnemonics: mnemonics/CMakeFiles/obj_mnemonics.dir/build.make
+obj_mnemonics: src/mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.o
+obj_mnemonics: src/mnemonics/CMakeFiles/obj_mnemonics.dir/build.make
 
 .PHONY : obj_mnemonics
 
 # Rule to build all files generated by this target.
-mnemonics/CMakeFiles/obj_mnemonics.dir/build: obj_mnemonics
+src/mnemonics/CMakeFiles/obj_mnemonics.dir/build: obj_mnemonics
 
-.PHONY : mnemonics/CMakeFiles/obj_mnemonics.dir/build
+.PHONY : src/mnemonics/CMakeFiles/obj_mnemonics.dir/build
 
-mnemonics/CMakeFiles/obj_mnemonics.dir/requires: mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.o.requires
+src/mnemonics/CMakeFiles/obj_mnemonics.dir/requires: src/mnemonics/CMakeFiles/obj_mnemonics.dir/electrum-words.cpp.o.requires
 
-.PHONY : mnemonics/CMakeFiles/obj_mnemonics.dir/requires
+.PHONY : src/mnemonics/CMakeFiles/obj_mnemonics.dir/requires
 
-mnemonics/CMakeFiles/obj_mnemonics.dir/clean:
+src/mnemonics/CMakeFiles/obj_mnemonics.dir/clean:
 	cd /home/chip/Downloads/monero/src/mnemonics && $(CMAKE_COMMAND) -P CMakeFiles/obj_mnemonics.dir/cmake_clean.cmake
-.PHONY : mnemonics/CMakeFiles/obj_mnemonics.dir/clean
+.PHONY : src/mnemonics/CMakeFiles/obj_mnemonics.dir/clean
 
-mnemonics/CMakeFiles/obj_mnemonics.dir/depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/mnemonics /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/mnemonics /home/chip/Downloads/monero/src/mnemonics/CMakeFiles/obj_mnemonics.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : mnemonics/CMakeFiles/obj_mnemonics.dir/depend
+src/mnemonics/CMakeFiles/obj_mnemonics.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/src/mnemonics /home/chip/Downloads/monero /home/chip/Downloads/monero/src/mnemonics /home/chip/Downloads/monero/src/mnemonics/CMakeFiles/obj_mnemonics.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : src/mnemonics/CMakeFiles/obj_mnemonics.dir/depend
 

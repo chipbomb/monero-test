@@ -57,13 +57,9 @@ include src/daemon/CMakeFiles/daemon.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/daemon/CMakeFiles/daemon.dir/flags.make
 
-src/daemon/blocksdat.o: ../../src/blocks/checkpoints.dat
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating blocksdat.o"
-	cd /home/chip/Downloads/monero/build/release/src/daemon && cd /home/chip/Downloads/monero/src/daemon && cp ../blocks/checkpoints.dat blocks.dat && /usr/bin/ld -r -b binary -o /home/chip/Downloads/monero/build/release/src/daemon/blocksdat.o blocks.dat && rm -f blocks.dat
-
 src/daemon/CMakeFiles/daemon.dir/command_parser_executor.cpp.o: src/daemon/CMakeFiles/daemon.dir/flags.make
 src/daemon/CMakeFiles/daemon.dir/command_parser_executor.cpp.o: ../../src/daemon/command_parser_executor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/daemon/CMakeFiles/daemon.dir/command_parser_executor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/daemon/CMakeFiles/daemon.dir/command_parser_executor.cpp.o"
 	cd /home/chip/Downloads/monero/build/release/src/daemon && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/daemon.dir/command_parser_executor.cpp.o -c /home/chip/Downloads/monero/src/daemon/command_parser_executor.cpp
 
 src/daemon/CMakeFiles/daemon.dir/command_parser_executor.cpp.i: cmake_force
@@ -87,7 +83,7 @@ src/daemon/CMakeFiles/daemon.dir/command_parser_executor.cpp.o.provides.build: s
 
 src/daemon/CMakeFiles/daemon.dir/command_server.cpp.o: src/daemon/CMakeFiles/daemon.dir/flags.make
 src/daemon/CMakeFiles/daemon.dir/command_server.cpp.o: ../../src/daemon/command_server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/daemon/CMakeFiles/daemon.dir/command_server.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/daemon/CMakeFiles/daemon.dir/command_server.cpp.o"
 	cd /home/chip/Downloads/monero/build/release/src/daemon && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/daemon.dir/command_server.cpp.o -c /home/chip/Downloads/monero/src/daemon/command_server.cpp
 
 src/daemon/CMakeFiles/daemon.dir/command_server.cpp.i: cmake_force
@@ -111,7 +107,7 @@ src/daemon/CMakeFiles/daemon.dir/command_server.cpp.o.provides.build: src/daemon
 
 src/daemon/CMakeFiles/daemon.dir/daemon.cpp.o: src/daemon/CMakeFiles/daemon.dir/flags.make
 src/daemon/CMakeFiles/daemon.dir/daemon.cpp.o: ../../src/daemon/daemon.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/daemon/CMakeFiles/daemon.dir/daemon.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/daemon/CMakeFiles/daemon.dir/daemon.cpp.o"
 	cd /home/chip/Downloads/monero/build/release/src/daemon && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/daemon.dir/daemon.cpp.o -c /home/chip/Downloads/monero/src/daemon/daemon.cpp
 
 src/daemon/CMakeFiles/daemon.dir/daemon.cpp.i: cmake_force
@@ -135,7 +131,7 @@ src/daemon/CMakeFiles/daemon.dir/daemon.cpp.o.provides.build: src/daemon/CMakeFi
 
 src/daemon/CMakeFiles/daemon.dir/executor.cpp.o: src/daemon/CMakeFiles/daemon.dir/flags.make
 src/daemon/CMakeFiles/daemon.dir/executor.cpp.o: ../../src/daemon/executor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/daemon/CMakeFiles/daemon.dir/executor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/daemon/CMakeFiles/daemon.dir/executor.cpp.o"
 	cd /home/chip/Downloads/monero/build/release/src/daemon && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/daemon.dir/executor.cpp.o -c /home/chip/Downloads/monero/src/daemon/executor.cpp
 
 src/daemon/CMakeFiles/daemon.dir/executor.cpp.i: cmake_force
@@ -159,7 +155,7 @@ src/daemon/CMakeFiles/daemon.dir/executor.cpp.o.provides.build: src/daemon/CMake
 
 src/daemon/CMakeFiles/daemon.dir/main.cpp.o: src/daemon/CMakeFiles/daemon.dir/flags.make
 src/daemon/CMakeFiles/daemon.dir/main.cpp.o: ../../src/daemon/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/daemon/CMakeFiles/daemon.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/daemon/CMakeFiles/daemon.dir/main.cpp.o"
 	cd /home/chip/Downloads/monero/build/release/src/daemon && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/daemon.dir/main.cpp.o -c /home/chip/Downloads/monero/src/daemon/main.cpp
 
 src/daemon/CMakeFiles/daemon.dir/main.cpp.i: cmake_force
@@ -183,7 +179,7 @@ src/daemon/CMakeFiles/daemon.dir/main.cpp.o.provides.build: src/daemon/CMakeFile
 
 src/daemon/CMakeFiles/daemon.dir/rpc_command_executor.cpp.o: src/daemon/CMakeFiles/daemon.dir/flags.make
 src/daemon/CMakeFiles/daemon.dir/rpc_command_executor.cpp.o: ../../src/daemon/rpc_command_executor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/daemon/CMakeFiles/daemon.dir/rpc_command_executor.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/daemon/CMakeFiles/daemon.dir/rpc_command_executor.cpp.o"
 	cd /home/chip/Downloads/monero/build/release/src/daemon && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/daemon.dir/rpc_command_executor.cpp.o -c /home/chip/Downloads/monero/src/daemon/rpc_command_executor.cpp
 
 src/daemon/CMakeFiles/daemon.dir/rpc_command_executor.cpp.i: cmake_force
@@ -216,7 +212,7 @@ daemon_OBJECTS = \
 
 # External object files for target daemon
 daemon_EXTERNAL_OBJECTS = \
-"/home/chip/Downloads/monero/build/release/src/daemon/blocksdat.o"
+"/home/chip/Downloads/monero/src/daemon/blocksdat.o"
 
 bin/monerod: src/daemon/CMakeFiles/daemon.dir/command_parser_executor.cpp.o
 bin/monerod: src/daemon/CMakeFiles/daemon.dir/command_server.cpp.o
@@ -224,48 +220,41 @@ bin/monerod: src/daemon/CMakeFiles/daemon.dir/daemon.cpp.o
 bin/monerod: src/daemon/CMakeFiles/daemon.dir/executor.cpp.o
 bin/monerod: src/daemon/CMakeFiles/daemon.dir/main.cpp.o
 bin/monerod: src/daemon/CMakeFiles/daemon.dir/rpc_command_executor.cpp.o
-bin/monerod: src/daemon/blocksdat.o
+bin/monerod: ../../src/daemon/blocksdat.o
 bin/monerod: src/daemon/CMakeFiles/daemon.dir/build.make
 bin/monerod: /usr/lib/x86_64-linux-gnu/librt.so
-bin/monerod: src/rpc/librpc.a
-bin/monerod: src/blockchain_db/libblockchain_db.a
-bin/monerod: src/cryptonote_core/libcryptonote_core.a
-bin/monerod: src/crypto/libcncrypto.a
-bin/monerod: src/common/libcommon.a
-bin/monerod: src/p2p/libp2p.a
-bin/monerod: src/cryptonote_protocol/libcryptonote_protocol.a
-bin/monerod: src/daemonizer/libdaemonizer.a
+bin/monerod: src/rpc/librpc.so
+bin/monerod: src/cryptonote_core/libcryptonote_core.so
+bin/monerod: src/cryptonote_protocol/libcryptonote_protocol.so
+bin/monerod: src/daemonizer/libdaemonizer.so
 bin/monerod: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
 bin/monerod: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 bin/monerod: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
 bin/monerod: /usr/lib/x86_64-linux-gnu/libboost_regex.so
 bin/monerod: /usr/lib/x86_64-linux-gnu/libboost_system.so
 bin/monerod: /usr/lib/x86_64-linux-gnu/librt.so
-bin/monerod: src/blockchain_db/libblockchain_db.a
-bin/monerod: external/db_drivers/liblmdb/liblmdb.a
-bin/monerod: src/ringct/libringct.a
-bin/monerod: src/cryptonote_basic/libcryptonote_basic.a
+bin/monerod: src/blockchain_db/libblockchain_db.so
+bin/monerod: external/db_drivers/liblmdb/liblmdb.so
+bin/monerod: src/ringct/libringct.so
+bin/monerod: src/cryptonote_basic/libcryptonote_basic.so
 bin/monerod: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
-bin/monerod: src/blocks/libblocks.a
-bin/monerod: src/p2p/libp2p.a
+bin/monerod: src/p2p/libp2p.so
 bin/monerod: /usr/lib/x86_64-linux-gnu/libminiupnpc.so
-bin/monerod: src/common/libcommon.a
+bin/monerod: src/common/libcommon.so
 bin/monerod: contrib/epee/src/libepee.a
-bin/monerod: src/crypto/libcncrypto.a
-bin/monerod: external/easylogging++/libeasylogging.a
+bin/monerod: /usr/lib/x86_64-linux-gnu/librt.so
+bin/monerod: src/crypto/libcncrypto.so
+bin/monerod: external/easylogging++/libeasylogging.so
 bin/monerod: /usr/lib/x86_64-linux-gnu/libunbound.so
 bin/monerod: /usr/lib/x86_64-linux-gnu/libboost_regex.so
 bin/monerod: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
 bin/monerod: /usr/lib/x86_64-linux-gnu/libboost_system.so
 bin/monerod: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-bin/monerod: /usr/lib/x86_64-linux-gnu/libssl.so
-bin/monerod: /usr/lib/x86_64-linux-gnu/libcrypto.so
 bin/monerod: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
 bin/monerod: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
 bin/monerod: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
-bin/monerod: /usr/lib/x86_64-linux-gnu/librt.so
 bin/monerod: src/daemon/CMakeFiles/daemon.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable ../../bin/monerod"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable ../../bin/monerod"
 	cd /home/chip/Downloads/monero/build/release/src/daemon && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/daemon.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -286,7 +275,7 @@ src/daemon/CMakeFiles/daemon.dir/clean:
 	cd /home/chip/Downloads/monero/build/release/src/daemon && $(CMAKE_COMMAND) -P CMakeFiles/daemon.dir/cmake_clean.cmake
 .PHONY : src/daemon/CMakeFiles/daemon.dir/clean
 
-src/daemon/CMakeFiles/daemon.dir/depend: src/daemon/blocksdat.o
+src/daemon/CMakeFiles/daemon.dir/depend:
 	cd /home/chip/Downloads/monero/build/release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/src/daemon /home/chip/Downloads/monero/build/release /home/chip/Downloads/monero/build/release/src/daemon /home/chip/Downloads/monero/build/release/src/daemon/CMakeFiles/daemon.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/daemon/CMakeFiles/daemon.dir/depend
 

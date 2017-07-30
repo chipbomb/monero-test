@@ -57,17 +57,9 @@ include src/blocks/CMakeFiles/blocks.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/blocks/CMakeFiles/blocks.dir/flags.make
 
-src/blocks/blocks.o: ../../src/blocks/blocks.dat
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating blocks.o"
-	cd /home/chip/Downloads/monero/build/release/src/blocks && cd /home/chip/Downloads/monero/src/blocks && /usr/bin/ld -r -b binary -o /home/chip/Downloads/monero/build/release/src/blocks/blocks.o blocks.dat
-
-src/blocks/testnet_blocks.o: ../../src/blocks/testnet_blocks.dat
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating testnet_blocks.o"
-	cd /home/chip/Downloads/monero/build/release/src/blocks && cd /home/chip/Downloads/monero/src/blocks && /usr/bin/ld -r -b binary -o /home/chip/Downloads/monero/build/release/src/blocks/testnet_blocks.o testnet_blocks.dat
-
 src/blocks/CMakeFiles/blocks.dir/blockexports.c.o: src/blocks/CMakeFiles/blocks.dir/flags.make
 src/blocks/CMakeFiles/blocks.dir/blockexports.c.o: ../../src/blocks/blockexports.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object src/blocks/CMakeFiles/blocks.dir/blockexports.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/blocks/CMakeFiles/blocks.dir/blockexports.c.o"
 	cd /home/chip/Downloads/monero/build/release/src/blocks && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/blocks.dir/blockexports.c.o   -c /home/chip/Downloads/monero/src/blocks/blockexports.c
 
 src/blocks/CMakeFiles/blocks.dir/blockexports.c.i: cmake_force
@@ -95,15 +87,15 @@ blocks_OBJECTS = \
 
 # External object files for target blocks
 blocks_EXTERNAL_OBJECTS = \
-"/home/chip/Downloads/monero/build/release/src/blocks/blocks.o" \
-"/home/chip/Downloads/monero/build/release/src/blocks/testnet_blocks.o"
+"/home/chip/Downloads/monero/src/blocks/blocks.o" \
+"/home/chip/Downloads/monero/src/blocks/testnet_blocks.o"
 
 src/blocks/libblocks.a: src/blocks/CMakeFiles/blocks.dir/blockexports.c.o
-src/blocks/libblocks.a: src/blocks/blocks.o
-src/blocks/libblocks.a: src/blocks/testnet_blocks.o
+src/blocks/libblocks.a: ../../src/blocks/blocks.o
+src/blocks/libblocks.a: ../../src/blocks/testnet_blocks.o
 src/blocks/libblocks.a: src/blocks/CMakeFiles/blocks.dir/build.make
 src/blocks/libblocks.a: src/blocks/CMakeFiles/blocks.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libblocks.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libblocks.a"
 	cd /home/chip/Downloads/monero/build/release/src/blocks && $(CMAKE_COMMAND) -P CMakeFiles/blocks.dir/cmake_clean_target.cmake
 	cd /home/chip/Downloads/monero/build/release/src/blocks && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/blocks.dir/link.txt --verbose=$(VERBOSE)
 
@@ -120,8 +112,7 @@ src/blocks/CMakeFiles/blocks.dir/clean:
 	cd /home/chip/Downloads/monero/build/release/src/blocks && $(CMAKE_COMMAND) -P CMakeFiles/blocks.dir/cmake_clean.cmake
 .PHONY : src/blocks/CMakeFiles/blocks.dir/clean
 
-src/blocks/CMakeFiles/blocks.dir/depend: src/blocks/blocks.o
-src/blocks/CMakeFiles/blocks.dir/depend: src/blocks/testnet_blocks.o
+src/blocks/CMakeFiles/blocks.dir/depend:
 	cd /home/chip/Downloads/monero/build/release && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/src/blocks /home/chip/Downloads/monero/build/release /home/chip/Downloads/monero/build/release/src/blocks /home/chip/Downloads/monero/build/release/src/blocks/CMakeFiles/blocks.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/blocks/CMakeFiles/blocks.dir/depend
 

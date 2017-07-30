@@ -15,6 +15,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "ARCH_WIDTH=64"
   "AUTO_INITIALIZE_EASYLOGGINGPP"
   "BLOCKCHAIN_DB=DB_LMDB"
+  "BUILD_SHARED_LIBS"
   "DEFAULT_DB_TYPE=\"lmdb\""
   "PER_BLOCK_CHECKPOINT"
   "STACK_TRACE"
@@ -42,7 +43,6 @@ set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/chip/Downloads/monero/build/release/src/ringct/CMakeFiles/ringct.dir/DependInfo.cmake"
   "/home/chip/Downloads/monero/build/release/src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/DependInfo.cmake"
   "/home/chip/Downloads/monero/build/release/src/common/CMakeFiles/common.dir/DependInfo.cmake"
-  "/home/chip/Downloads/monero/build/release/src/blocks/CMakeFiles/blocks.dir/DependInfo.cmake"
   "/home/chip/Downloads/monero/build/release/src/crypto/CMakeFiles/cncrypto.dir/DependInfo.cmake"
   "/home/chip/Downloads/monero/build/release/external/easylogging++/CMakeFiles/easylogging.dir/DependInfo.cmake"
   )

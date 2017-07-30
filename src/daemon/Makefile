@@ -48,13 +48,23 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -68,16 +78,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -88,6 +88,28 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -111,27 +133,16 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # The main all target
 all: cmake_check_build_system
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles /home/chip/Downloads/monero/src/daemon/CMakeFiles/progress.marks
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 daemon/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles /home/chip/Downloads/monero/src/daemon/CMakeFiles/progress.marks
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/daemon/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 daemon/clean
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/daemon/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,123 +152,195 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 daemon/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/daemon/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 daemon/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/daemon/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-daemon/CMakeFiles/daemon.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 daemon/CMakeFiles/daemon.dir/rule
-.PHONY : daemon/CMakeFiles/daemon.dir/rule
+src/daemon/CMakeFiles/daemon.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/daemon/CMakeFiles/daemon.dir/rule
+.PHONY : src/daemon/CMakeFiles/daemon.dir/rule
 
 # Convenience name for target.
-daemon: daemon/CMakeFiles/daemon.dir/rule
+daemon: src/daemon/CMakeFiles/daemon.dir/rule
 
 .PHONY : daemon
 
 # fast build rule for target.
 daemon/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/build
 .PHONY : daemon/fast
 
-# target to build an object file
-command_parser_executor.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/command_parser_executor.o
+command_parser_executor.o: command_parser_executor.cpp.o
+
 .PHONY : command_parser_executor.o
 
-# target to preprocess a source file
-command_parser_executor.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/command_parser_executor.i
+# target to build an object file
+command_parser_executor.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/command_parser_executor.cpp.o
+.PHONY : command_parser_executor.cpp.o
+
+command_parser_executor.i: command_parser_executor.cpp.i
+
 .PHONY : command_parser_executor.i
 
-# target to generate assembly for a file
-command_parser_executor.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/command_parser_executor.s
+# target to preprocess a source file
+command_parser_executor.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/command_parser_executor.cpp.i
+.PHONY : command_parser_executor.cpp.i
+
+command_parser_executor.s: command_parser_executor.cpp.s
+
 .PHONY : command_parser_executor.s
 
-# target to build an object file
-command_server.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/command_server.o
+# target to generate assembly for a file
+command_parser_executor.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/command_parser_executor.cpp.s
+.PHONY : command_parser_executor.cpp.s
+
+command_server.o: command_server.cpp.o
+
 .PHONY : command_server.o
 
-# target to preprocess a source file
-command_server.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/command_server.i
+# target to build an object file
+command_server.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/command_server.cpp.o
+.PHONY : command_server.cpp.o
+
+command_server.i: command_server.cpp.i
+
 .PHONY : command_server.i
 
-# target to generate assembly for a file
-command_server.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/command_server.s
+# target to preprocess a source file
+command_server.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/command_server.cpp.i
+.PHONY : command_server.cpp.i
+
+command_server.s: command_server.cpp.s
+
 .PHONY : command_server.s
 
-# target to build an object file
-daemon.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/daemon.o
+# target to generate assembly for a file
+command_server.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/command_server.cpp.s
+.PHONY : command_server.cpp.s
+
+daemon.o: daemon.cpp.o
+
 .PHONY : daemon.o
 
-# target to preprocess a source file
-daemon.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/daemon.i
+# target to build an object file
+daemon.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/daemon.cpp.o
+.PHONY : daemon.cpp.o
+
+daemon.i: daemon.cpp.i
+
 .PHONY : daemon.i
 
-# target to generate assembly for a file
-daemon.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/daemon.s
+# target to preprocess a source file
+daemon.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/daemon.cpp.i
+.PHONY : daemon.cpp.i
+
+daemon.s: daemon.cpp.s
+
 .PHONY : daemon.s
 
-# target to build an object file
-executor.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/executor.o
+# target to generate assembly for a file
+daemon.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/daemon.cpp.s
+.PHONY : daemon.cpp.s
+
+executor.o: executor.cpp.o
+
 .PHONY : executor.o
 
-# target to preprocess a source file
-executor.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/executor.i
+# target to build an object file
+executor.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/executor.cpp.o
+.PHONY : executor.cpp.o
+
+executor.i: executor.cpp.i
+
 .PHONY : executor.i
 
-# target to generate assembly for a file
-executor.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/executor.s
+# target to preprocess a source file
+executor.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/executor.cpp.i
+.PHONY : executor.cpp.i
+
+executor.s: executor.cpp.s
+
 .PHONY : executor.s
 
-# target to build an object file
-main.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/main.o
+# target to generate assembly for a file
+executor.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/executor.cpp.s
+.PHONY : executor.cpp.s
+
+main.o: main.cpp.o
+
 .PHONY : main.o
 
-# target to preprocess a source file
-main.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/main.i
+# target to build an object file
+main.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
 .PHONY : main.i
 
-# target to generate assembly for a file
-main.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/main.s
+# target to preprocess a source file
+main.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
 .PHONY : main.s
 
-# target to build an object file
-rpc_command_executor.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/rpc_command_executor.o
+# target to generate assembly for a file
+main.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+rpc_command_executor.o: rpc_command_executor.cpp.o
+
 .PHONY : rpc_command_executor.o
 
-# target to preprocess a source file
-rpc_command_executor.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/rpc_command_executor.i
+# target to build an object file
+rpc_command_executor.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/rpc_command_executor.cpp.o
+.PHONY : rpc_command_executor.cpp.o
+
+rpc_command_executor.i: rpc_command_executor.cpp.i
+
 .PHONY : rpc_command_executor.i
 
-# target to generate assembly for a file
-rpc_command_executor.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/rpc_command_executor.s
+# target to preprocess a source file
+rpc_command_executor.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/rpc_command_executor.cpp.i
+.PHONY : rpc_command_executor.cpp.i
+
+rpc_command_executor.s: rpc_command_executor.cpp.s
+
 .PHONY : rpc_command_executor.s
+
+# target to generate assembly for a file
+rpc_command_executor.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemon/CMakeFiles/daemon.dir/build.make src/daemon/CMakeFiles/daemon.dir/rpc_command_executor.cpp.s
+.PHONY : rpc_command_executor.cpp.s
 
 # Help Target
 help:
@@ -265,13 +348,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... rebuild_cache"
+	@echo "... edit_cache"
 	@echo "... daemon"
+	@echo "... test"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... edit_cache"
 	@echo "... command_parser_executor.o"
 	@echo "... command_parser_executor.i"
 	@echo "... command_parser_executor.s"
@@ -301,6 +385,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -48,13 +48,23 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -68,16 +78,6 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -88,6 +88,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -124,14 +135,14 @@ install/strip/fast: install/strip
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles /home/chip/Downloads/monero/src/ringct/CMakeFiles/progress.marks
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 ringct/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles /home/chip/Downloads/monero/src/ringct/CMakeFiles/progress.marks
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/ringct/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 ringct/clean
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/ringct/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,108 +152,156 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 ringct/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/ringct/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 ringct/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/ringct/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-ringct/CMakeFiles/obj_ringct.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 ringct/CMakeFiles/obj_ringct.dir/rule
-.PHONY : ringct/CMakeFiles/obj_ringct.dir/rule
+src/ringct/CMakeFiles/obj_ringct.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/ringct/CMakeFiles/obj_ringct.dir/rule
+.PHONY : src/ringct/CMakeFiles/obj_ringct.dir/rule
 
 # Convenience name for target.
-obj_ringct: ringct/CMakeFiles/obj_ringct.dir/rule
+obj_ringct: src/ringct/CMakeFiles/obj_ringct.dir/rule
 
 .PHONY : obj_ringct
 
 # fast build rule for target.
 obj_ringct/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/ringct/CMakeFiles/obj_ringct.dir/build.make src/ringct/CMakeFiles/obj_ringct.dir/build
 .PHONY : obj_ringct/fast
 
 # Convenience name for target.
-ringct/CMakeFiles/ringct.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 ringct/CMakeFiles/ringct.dir/rule
-.PHONY : ringct/CMakeFiles/ringct.dir/rule
+src/ringct/CMakeFiles/ringct.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/ringct/CMakeFiles/ringct.dir/rule
+.PHONY : src/ringct/CMakeFiles/ringct.dir/rule
 
 # Convenience name for target.
-ringct: ringct/CMakeFiles/ringct.dir/rule
+ringct: src/ringct/CMakeFiles/ringct.dir/rule
 
 .PHONY : ringct
 
 # fast build rule for target.
 ringct/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f ringct/CMakeFiles/ringct.dir/build.make ringct/CMakeFiles/ringct.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/ringct/CMakeFiles/ringct.dir/build.make src/ringct/CMakeFiles/ringct.dir/build
 .PHONY : ringct/fast
 
-# target to build an object file
-rctCryptoOps.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.o
+rctCryptoOps.o: rctCryptoOps.c.o
+
 .PHONY : rctCryptoOps.o
 
-# target to preprocess a source file
-rctCryptoOps.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.i
+# target to build an object file
+rctCryptoOps.c.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/ringct/CMakeFiles/obj_ringct.dir/build.make src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.o
+.PHONY : rctCryptoOps.c.o
+
+rctCryptoOps.i: rctCryptoOps.c.i
+
 .PHONY : rctCryptoOps.i
 
-# target to generate assembly for a file
-rctCryptoOps.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.s
+# target to preprocess a source file
+rctCryptoOps.c.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/ringct/CMakeFiles/obj_ringct.dir/build.make src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.i
+.PHONY : rctCryptoOps.c.i
+
+rctCryptoOps.s: rctCryptoOps.c.s
+
 .PHONY : rctCryptoOps.s
 
-# target to build an object file
-rctOps.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/rctOps.o
+# target to generate assembly for a file
+rctCryptoOps.c.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/ringct/CMakeFiles/obj_ringct.dir/build.make src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.s
+.PHONY : rctCryptoOps.c.s
+
+rctOps.o: rctOps.cpp.o
+
 .PHONY : rctOps.o
 
-# target to preprocess a source file
-rctOps.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/rctOps.i
+# target to build an object file
+rctOps.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/ringct/CMakeFiles/obj_ringct.dir/build.make src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.o
+.PHONY : rctOps.cpp.o
+
+rctOps.i: rctOps.cpp.i
+
 .PHONY : rctOps.i
 
-# target to generate assembly for a file
-rctOps.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/rctOps.s
+# target to preprocess a source file
+rctOps.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/ringct/CMakeFiles/obj_ringct.dir/build.make src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.i
+.PHONY : rctOps.cpp.i
+
+rctOps.s: rctOps.cpp.s
+
 .PHONY : rctOps.s
 
-# target to build an object file
-rctSigs.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/rctSigs.o
+# target to generate assembly for a file
+rctOps.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/ringct/CMakeFiles/obj_ringct.dir/build.make src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.s
+.PHONY : rctOps.cpp.s
+
+rctSigs.o: rctSigs.cpp.o
+
 .PHONY : rctSigs.o
 
-# target to preprocess a source file
-rctSigs.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/rctSigs.i
+# target to build an object file
+rctSigs.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/ringct/CMakeFiles/obj_ringct.dir/build.make src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.o
+.PHONY : rctSigs.cpp.o
+
+rctSigs.i: rctSigs.cpp.i
+
 .PHONY : rctSigs.i
 
-# target to generate assembly for a file
-rctSigs.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/rctSigs.s
+# target to preprocess a source file
+rctSigs.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/ringct/CMakeFiles/obj_ringct.dir/build.make src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.i
+.PHONY : rctSigs.cpp.i
+
+rctSigs.s: rctSigs.cpp.s
+
 .PHONY : rctSigs.s
 
-# target to build an object file
-rctTypes.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/rctTypes.o
+# target to generate assembly for a file
+rctSigs.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/ringct/CMakeFiles/obj_ringct.dir/build.make src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.s
+.PHONY : rctSigs.cpp.s
+
+rctTypes.o: rctTypes.cpp.o
+
 .PHONY : rctTypes.o
 
-# target to preprocess a source file
-rctTypes.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/rctTypes.i
+# target to build an object file
+rctTypes.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/ringct/CMakeFiles/obj_ringct.dir/build.make src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.o
+.PHONY : rctTypes.cpp.o
+
+rctTypes.i: rctTypes.cpp.i
+
 .PHONY : rctTypes.i
 
-# target to generate assembly for a file
-rctTypes.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/rctTypes.s
+# target to preprocess a source file
+rctTypes.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/ringct/CMakeFiles/obj_ringct.dir/build.make src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.i
+.PHONY : rctTypes.cpp.i
+
+rctTypes.s: rctTypes.cpp.s
+
 .PHONY : rctTypes.s
+
+# target to generate assembly for a file
+rctTypes.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/ringct/CMakeFiles/obj_ringct.dir/build.make src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.s
+.PHONY : rctTypes.cpp.s
 
 # Help Target
 help:
@@ -250,9 +309,10 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... obj_ringct"
 	@echo "... rebuild_cache"
 	@echo "... ringct"
@@ -281,6 +341,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -48,13 +48,23 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -67,16 +77,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -99,6 +99,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -124,14 +135,14 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles /home/chip/Downloads/monero/src/rpc/CMakeFiles/progress.marks
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 rpc/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles /home/chip/Downloads/monero/src/rpc/CMakeFiles/progress.marks
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/rpc/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 rpc/clean
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/rpc/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,78 +152,102 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 rpc/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/rpc/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 rpc/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/rpc/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-rpc/CMakeFiles/obj_rpc.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 rpc/CMakeFiles/obj_rpc.dir/rule
-.PHONY : rpc/CMakeFiles/obj_rpc.dir/rule
+src/rpc/CMakeFiles/obj_rpc.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/rpc/CMakeFiles/obj_rpc.dir/rule
+.PHONY : src/rpc/CMakeFiles/obj_rpc.dir/rule
 
 # Convenience name for target.
-obj_rpc: rpc/CMakeFiles/obj_rpc.dir/rule
+obj_rpc: src/rpc/CMakeFiles/obj_rpc.dir/rule
 
 .PHONY : obj_rpc
 
 # fast build rule for target.
 obj_rpc/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f rpc/CMakeFiles/obj_rpc.dir/build.make rpc/CMakeFiles/obj_rpc.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/rpc/CMakeFiles/obj_rpc.dir/build.make src/rpc/CMakeFiles/obj_rpc.dir/build
 .PHONY : obj_rpc/fast
 
 # Convenience name for target.
-rpc/CMakeFiles/rpc.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 rpc/CMakeFiles/rpc.dir/rule
-.PHONY : rpc/CMakeFiles/rpc.dir/rule
+src/rpc/CMakeFiles/rpc.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/rpc/CMakeFiles/rpc.dir/rule
+.PHONY : src/rpc/CMakeFiles/rpc.dir/rule
 
 # Convenience name for target.
-rpc: rpc/CMakeFiles/rpc.dir/rule
+rpc: src/rpc/CMakeFiles/rpc.dir/rule
 
 .PHONY : rpc
 
 # fast build rule for target.
 rpc/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f rpc/CMakeFiles/rpc.dir/build.make rpc/CMakeFiles/rpc.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/rpc/CMakeFiles/rpc.dir/build.make src/rpc/CMakeFiles/rpc.dir/build
 .PHONY : rpc/fast
 
-# target to build an object file
-core_rpc_server.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f rpc/CMakeFiles/obj_rpc.dir/build.make rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.o
+core_rpc_server.o: core_rpc_server.cpp.o
+
 .PHONY : core_rpc_server.o
 
-# target to preprocess a source file
-core_rpc_server.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f rpc/CMakeFiles/obj_rpc.dir/build.make rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.i
+# target to build an object file
+core_rpc_server.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/rpc/CMakeFiles/obj_rpc.dir/build.make src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.o
+.PHONY : core_rpc_server.cpp.o
+
+core_rpc_server.i: core_rpc_server.cpp.i
+
 .PHONY : core_rpc_server.i
 
-# target to generate assembly for a file
-core_rpc_server.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f rpc/CMakeFiles/obj_rpc.dir/build.make rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.s
+# target to preprocess a source file
+core_rpc_server.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/rpc/CMakeFiles/obj_rpc.dir/build.make src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.i
+.PHONY : core_rpc_server.cpp.i
+
+core_rpc_server.s: core_rpc_server.cpp.s
+
 .PHONY : core_rpc_server.s
 
-# target to build an object file
-rpc_args.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f rpc/CMakeFiles/obj_rpc.dir/build.make rpc/CMakeFiles/obj_rpc.dir/rpc_args.o
+# target to generate assembly for a file
+core_rpc_server.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/rpc/CMakeFiles/obj_rpc.dir/build.make src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.s
+.PHONY : core_rpc_server.cpp.s
+
+rpc_args.o: rpc_args.cpp.o
+
 .PHONY : rpc_args.o
 
-# target to preprocess a source file
-rpc_args.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f rpc/CMakeFiles/obj_rpc.dir/build.make rpc/CMakeFiles/obj_rpc.dir/rpc_args.i
+# target to build an object file
+rpc_args.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/rpc/CMakeFiles/obj_rpc.dir/build.make src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.o
+.PHONY : rpc_args.cpp.o
+
+rpc_args.i: rpc_args.cpp.i
+
 .PHONY : rpc_args.i
 
-# target to generate assembly for a file
-rpc_args.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f rpc/CMakeFiles/obj_rpc.dir/build.make rpc/CMakeFiles/obj_rpc.dir/rpc_args.s
+# target to preprocess a source file
+rpc_args.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/rpc/CMakeFiles/obj_rpc.dir/build.make src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.i
+.PHONY : rpc_args.cpp.i
+
+rpc_args.s: rpc_args.cpp.s
+
 .PHONY : rpc_args.s
+
+# target to generate assembly for a file
+rpc_args.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/rpc/CMakeFiles/obj_rpc.dir/build.make src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.s
+.PHONY : rpc_args.cpp.s
 
 # Help Target
 help:
@@ -220,11 +255,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... obj_rpc"
+	@echo "... test"
 	@echo "... rpc"
 	@echo "... install/strip"
 	@echo "... install/local"
@@ -245,6 +281,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -43,89 +43,89 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include rpc/CMakeFiles/obj_rpc.dir/depend.make
+include src/rpc/CMakeFiles/obj_rpc.dir/depend.make
 
 # Include the progress variables for this target.
-include rpc/CMakeFiles/obj_rpc.dir/progress.make
+include src/rpc/CMakeFiles/obj_rpc.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include rpc/CMakeFiles/obj_rpc.dir/flags.make
+include src/rpc/CMakeFiles/obj_rpc.dir/flags.make
 
-rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.o: rpc/CMakeFiles/obj_rpc.dir/flags.make
-rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.o: rpc/core_rpc_server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.o"
-	cd /home/chip/Downloads/monero/src/rpc && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_rpc.dir/core_rpc_server.o -c /home/chip/Downloads/monero/src/rpc/core_rpc_server.cpp
+src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.o: src/rpc/CMakeFiles/obj_rpc.dir/flags.make
+src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.o: src/rpc/core_rpc_server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.o"
+	cd /home/chip/Downloads/monero/src/rpc && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.o -c /home/chip/Downloads/monero/src/rpc/core_rpc_server.cpp
 
-rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_rpc.dir/core_rpc_server.i"
-	cd /home/chip/Downloads/monero/src/rpc && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/rpc/core_rpc_server.cpp > CMakeFiles/obj_rpc.dir/core_rpc_server.i
+src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.i"
+	cd /home/chip/Downloads/monero/src/rpc && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/rpc/core_rpc_server.cpp > CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.i
 
-rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_rpc.dir/core_rpc_server.s"
-	cd /home/chip/Downloads/monero/src/rpc && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/rpc/core_rpc_server.cpp -o CMakeFiles/obj_rpc.dir/core_rpc_server.s
+src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.s"
+	cd /home/chip/Downloads/monero/src/rpc && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/rpc/core_rpc_server.cpp -o CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.s
 
-rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.o.requires:
+src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.o.requires:
 
-.PHONY : rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.o.requires
+.PHONY : src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.o.requires
 
-rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.o.provides: rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.o.requires
-	$(MAKE) -f rpc/CMakeFiles/obj_rpc.dir/build.make rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.o.provides.build
-.PHONY : rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.o.provides
+src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.o.provides: src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.o.requires
+	$(MAKE) -f src/rpc/CMakeFiles/obj_rpc.dir/build.make src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.o.provides.build
+.PHONY : src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.o.provides
 
-rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.o.provides.build: rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.o
-
-
-rpc/CMakeFiles/obj_rpc.dir/rpc_args.o: rpc/CMakeFiles/obj_rpc.dir/flags.make
-rpc/CMakeFiles/obj_rpc.dir/rpc_args.o: rpc/rpc_args.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object rpc/CMakeFiles/obj_rpc.dir/rpc_args.o"
-	cd /home/chip/Downloads/monero/src/rpc && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_rpc.dir/rpc_args.o -c /home/chip/Downloads/monero/src/rpc/rpc_args.cpp
-
-rpc/CMakeFiles/obj_rpc.dir/rpc_args.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_rpc.dir/rpc_args.i"
-	cd /home/chip/Downloads/monero/src/rpc && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/rpc/rpc_args.cpp > CMakeFiles/obj_rpc.dir/rpc_args.i
-
-rpc/CMakeFiles/obj_rpc.dir/rpc_args.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_rpc.dir/rpc_args.s"
-	cd /home/chip/Downloads/monero/src/rpc && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/rpc/rpc_args.cpp -o CMakeFiles/obj_rpc.dir/rpc_args.s
-
-rpc/CMakeFiles/obj_rpc.dir/rpc_args.o.requires:
-
-.PHONY : rpc/CMakeFiles/obj_rpc.dir/rpc_args.o.requires
-
-rpc/CMakeFiles/obj_rpc.dir/rpc_args.o.provides: rpc/CMakeFiles/obj_rpc.dir/rpc_args.o.requires
-	$(MAKE) -f rpc/CMakeFiles/obj_rpc.dir/build.make rpc/CMakeFiles/obj_rpc.dir/rpc_args.o.provides.build
-.PHONY : rpc/CMakeFiles/obj_rpc.dir/rpc_args.o.provides
-
-rpc/CMakeFiles/obj_rpc.dir/rpc_args.o.provides.build: rpc/CMakeFiles/obj_rpc.dir/rpc_args.o
+src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.o.provides.build: src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.o
 
 
-obj_rpc: rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.o
-obj_rpc: rpc/CMakeFiles/obj_rpc.dir/rpc_args.o
-obj_rpc: rpc/CMakeFiles/obj_rpc.dir/build.make
+src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.o: src/rpc/CMakeFiles/obj_rpc.dir/flags.make
+src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.o: src/rpc/rpc_args.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.o"
+	cd /home/chip/Downloads/monero/src/rpc && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_rpc.dir/rpc_args.cpp.o -c /home/chip/Downloads/monero/src/rpc/rpc_args.cpp
+
+src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_rpc.dir/rpc_args.cpp.i"
+	cd /home/chip/Downloads/monero/src/rpc && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/rpc/rpc_args.cpp > CMakeFiles/obj_rpc.dir/rpc_args.cpp.i
+
+src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_rpc.dir/rpc_args.cpp.s"
+	cd /home/chip/Downloads/monero/src/rpc && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/rpc/rpc_args.cpp -o CMakeFiles/obj_rpc.dir/rpc_args.cpp.s
+
+src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.o.requires:
+
+.PHONY : src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.o.requires
+
+src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.o.provides: src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.o.requires
+	$(MAKE) -f src/rpc/CMakeFiles/obj_rpc.dir/build.make src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.o.provides.build
+.PHONY : src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.o.provides
+
+src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.o.provides.build: src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.o
+
+
+obj_rpc: src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.o
+obj_rpc: src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.o
+obj_rpc: src/rpc/CMakeFiles/obj_rpc.dir/build.make
 
 .PHONY : obj_rpc
 
 # Rule to build all files generated by this target.
-rpc/CMakeFiles/obj_rpc.dir/build: obj_rpc
+src/rpc/CMakeFiles/obj_rpc.dir/build: obj_rpc
 
-.PHONY : rpc/CMakeFiles/obj_rpc.dir/build
+.PHONY : src/rpc/CMakeFiles/obj_rpc.dir/build
 
-rpc/CMakeFiles/obj_rpc.dir/requires: rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.o.requires
-rpc/CMakeFiles/obj_rpc.dir/requires: rpc/CMakeFiles/obj_rpc.dir/rpc_args.o.requires
+src/rpc/CMakeFiles/obj_rpc.dir/requires: src/rpc/CMakeFiles/obj_rpc.dir/core_rpc_server.cpp.o.requires
+src/rpc/CMakeFiles/obj_rpc.dir/requires: src/rpc/CMakeFiles/obj_rpc.dir/rpc_args.cpp.o.requires
 
-.PHONY : rpc/CMakeFiles/obj_rpc.dir/requires
+.PHONY : src/rpc/CMakeFiles/obj_rpc.dir/requires
 
-rpc/CMakeFiles/obj_rpc.dir/clean:
+src/rpc/CMakeFiles/obj_rpc.dir/clean:
 	cd /home/chip/Downloads/monero/src/rpc && $(CMAKE_COMMAND) -P CMakeFiles/obj_rpc.dir/cmake_clean.cmake
-.PHONY : rpc/CMakeFiles/obj_rpc.dir/clean
+.PHONY : src/rpc/CMakeFiles/obj_rpc.dir/clean
 
-rpc/CMakeFiles/obj_rpc.dir/depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/rpc /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/rpc /home/chip/Downloads/monero/src/rpc/CMakeFiles/obj_rpc.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : rpc/CMakeFiles/obj_rpc.dir/depend
+src/rpc/CMakeFiles/obj_rpc.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/src/rpc /home/chip/Downloads/monero /home/chip/Downloads/monero/src/rpc /home/chip/Downloads/monero/src/rpc/CMakeFiles/obj_rpc.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : src/rpc/CMakeFiles/obj_rpc.dir/depend
 

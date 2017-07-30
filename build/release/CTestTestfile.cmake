@@ -7,4 +7,3 @@
 subdirs(external)
 subdirs(contrib)
 subdirs(src)
-subdirs(tests)

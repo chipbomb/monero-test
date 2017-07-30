@@ -89,8 +89,10 @@ namespace rct {
     //   mask is a such that C = aG + bH, and b = amount
     //verRange verifies that \sum Ci = C and that each Ci is a commitment to 0 or 2^i
     rangeSig proveRange(key & C, key & mask, const xmr_amount & amount);
+    rangeSig proveRange(key & C, key & mask, const xmr_amount & amount, key & M);
     bool verRange(const key & C, const rangeSig & as);
-
+	bool verRange(const key & C, const rangeSig & as, key  M);
+	
     //Ring-ct MG sigs
     //Prove:
     //   c.f. http://eprint.iacr.org/2015/1098 section 4. definition 10.
@@ -100,6 +102,7 @@ namespace rct {
     //Ver:
     //   verifies the above sig is created corretly
     mgSig proveRctMG(const ctkeyM & pubs, const ctkeyV & inSk, const keyV &outMasks, const ctkeyV & outPk, unsigned int index, key txnFee, const key &message);
+    mgSig proveRctMG(const key &message, const ctkeyM & pubs, const ctkeyV & inSk, const ctkeyV &outSk, const ctkeyV & outPk, unsigned int index, key txnFeeKey);
     mgSig proveRctMGSimple(const key & message, const ctkeyV & pubs, const ctkey & inSk, const key &a , const key &Cout, unsigned int index);
     bool verRctMG(const mgSig &mg, const ctkeyM & pubs, const ctkeyV & outPk, key txnFee, const key &message);
     bool verRctMGSimple(const key &message, const mgSig &mg, const ctkeyV & pubs, const key & C);
@@ -124,14 +127,25 @@ namespace rct {
     //   must know the destination private key to find the correct amount, else will return a random number
     rctSig genRct(const key &message, const ctkeyV & inSk, const keyV & destinations, const vector<xmr_amount> & amounts, const ctkeyM &mixRing, const keyV &amount_keys, unsigned int index, ctkeyV &outSk);
     rctSig genRct(const key &message, const ctkeyV & inSk, const ctkeyV  & inPk, const keyV & destinations, const vector<xmr_amount> & amounts, const keyV &amount_keys, const int mixin);
+    //added
+    rctSig genRctCap(const key &message, const ctkeyV & inSk, const keyV & destinations, const vector<xmr_amount> & amounts, const ctkeyM &mixRing, const keyV &amount_keys, unsigned int index, ctkeyV &outSk, xmr_amount d, const key & M, keyM & mixRingCap, key m, const key & depth_key);
+    rctSig genRctCap(const key &message, const ctkeyV & inSk, const ctkeyV  & inPk, const keyV & destinations, const vector<xmr_amount> & amounts, const keyV &amount_keys, const int mixin, xmr_amount d, const key & M, key m, const key & depth_key);
+    keyM populateFakeRingCap();
     rctSig genRctSimple(const key & message, const ctkeyV & inSk, const ctkeyV & inPk, const keyV & destinations, const vector<xmr_amount> & inamounts, const vector<xmr_amount> & outamounts, const keyV &amount_keys, xmr_amount txnFee, unsigned int mixin);
     rctSig genRctSimple(const key & message, const ctkeyV & inSk, const keyV & destinations, const vector<xmr_amount> & inamounts, const vector<xmr_amount> & outamounts, xmr_amount txnFee, const ctkeyM & mixRing, const keyV &amount_keys, const std::vector<unsigned int> & index, ctkeyV &outSk);
     bool verRct(const rctSig & rv, bool semantics);
+    bool verRctCap(const rctSig & rv, bool semantics);
     static inline bool verRct(const rctSig & rv) { return verRct(rv, true) && verRct(rv, false); }
+    static inline bool verRctCap(const rctSig & rv) { return verRctCap(rv, true) && verRctCap(rv, false); }
     bool verRctSimple(const rctSig & rv, bool semantics);
     static inline bool verRctSimple(const rctSig & rv) { return verRctSimple(rv, true) && verRctSimple(rv, false); }
     xmr_amount decodeRct(const rctSig & rv, const key & sk, unsigned int i, key & mask);
     xmr_amount decodeRct(const rctSig & rv, const key & sk, unsigned int i);
+    //added
+    xmr_amount decodeRct_cap(const rctSig & rv, const key & sk, unsigned int i, key & mask, const key & M);
+    xmr_amount decodeRct_cap(const rctSig & rv, const key & sk, unsigned int i, const key & M);
+    xmr_amount decodeRct_depth(const rctSig & rv, const key & sk, key & mask);
+    xmr_amount decodeRct_depth(const rctSig & rv, const key & sk);
     xmr_amount decodeRctSimple(const rctSig & rv, const key & sk, unsigned int i, key & mask);
     xmr_amount decodeRctSimple(const rctSig & rv, const key & sk, unsigned int i);
 }

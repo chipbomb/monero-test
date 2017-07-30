@@ -43,68 +43,68 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include wallet/CMakeFiles/wallet.dir/depend.make
+include src/wallet/CMakeFiles/wallet.dir/depend.make
 
 # Include the progress variables for this target.
-include wallet/CMakeFiles/wallet.dir/progress.make
+include src/wallet/CMakeFiles/wallet.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include wallet/CMakeFiles/wallet.dir/flags.make
+include src/wallet/CMakeFiles/wallet.dir/flags.make
 
 # Object files for target wallet
 wallet_OBJECTS =
 
 # External object files for target wallet
 wallet_EXTERNAL_OBJECTS = \
-"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/wallet2.o" \
-"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/wallet_args.o" \
-"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/node_rpc_proxy.o" \
-"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/api/wallet.o" \
-"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/api/wallet_manager.o" \
-"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/api/transaction_info.o" \
-"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/api/transaction_history.o" \
-"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/api/pending_transaction.o" \
-"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/api/utils.o" \
-"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/api/address_book.o" \
-"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/api/unsigned_transaction.o"
+"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/wallet2.cpp.o" \
+"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/wallet_args.cpp.o" \
+"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/node_rpc_proxy.cpp.o" \
+"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/api/wallet.cpp.o" \
+"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/api/wallet_manager.cpp.o" \
+"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/api/transaction_info.cpp.o" \
+"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/api/transaction_history.cpp.o" \
+"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/api/pending_transaction.cpp.o" \
+"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/api/utils.cpp.o" \
+"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/api/address_book.cpp.o" \
+"/home/chip/Downloads/monero/src/wallet/CMakeFiles/obj_wallet.dir/api/unsigned_transaction.cpp.o"
 
-lib/libwallet.a: wallet/CMakeFiles/obj_wallet.dir/wallet2.o
-lib/libwallet.a: wallet/CMakeFiles/obj_wallet.dir/wallet_args.o
-lib/libwallet.a: wallet/CMakeFiles/obj_wallet.dir/node_rpc_proxy.o
-lib/libwallet.a: wallet/CMakeFiles/obj_wallet.dir/api/wallet.o
-lib/libwallet.a: wallet/CMakeFiles/obj_wallet.dir/api/wallet_manager.o
-lib/libwallet.a: wallet/CMakeFiles/obj_wallet.dir/api/transaction_info.o
-lib/libwallet.a: wallet/CMakeFiles/obj_wallet.dir/api/transaction_history.o
-lib/libwallet.a: wallet/CMakeFiles/obj_wallet.dir/api/pending_transaction.o
-lib/libwallet.a: wallet/CMakeFiles/obj_wallet.dir/api/utils.o
-lib/libwallet.a: wallet/CMakeFiles/obj_wallet.dir/api/address_book.o
-lib/libwallet.a: wallet/CMakeFiles/obj_wallet.dir/api/unsigned_transaction.o
-lib/libwallet.a: wallet/CMakeFiles/wallet.dir/build.make
-lib/libwallet.a: wallet/CMakeFiles/wallet.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library ../lib/libwallet.a"
+lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/wallet2.cpp.o
+lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/wallet_args.cpp.o
+lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/node_rpc_proxy.cpp.o
+lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/api/wallet.cpp.o
+lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/api/wallet_manager.cpp.o
+lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/api/transaction_info.cpp.o
+lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/api/transaction_history.cpp.o
+lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/api/pending_transaction.cpp.o
+lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/api/utils.cpp.o
+lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/api/address_book.cpp.o
+lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/api/unsigned_transaction.cpp.o
+lib/libwallet.a: src/wallet/CMakeFiles/wallet.dir/build.make
+lib/libwallet.a: src/wallet/CMakeFiles/wallet.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library ../../lib/libwallet.a"
 	cd /home/chip/Downloads/monero/src/wallet && $(CMAKE_COMMAND) -P CMakeFiles/wallet.dir/cmake_clean_target.cmake
 	cd /home/chip/Downloads/monero/src/wallet && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wallet.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-wallet/CMakeFiles/wallet.dir/build: lib/libwallet.a
+src/wallet/CMakeFiles/wallet.dir/build: lib/libwallet.a
 
-.PHONY : wallet/CMakeFiles/wallet.dir/build
+.PHONY : src/wallet/CMakeFiles/wallet.dir/build
 
-wallet/CMakeFiles/wallet.dir/requires:
+src/wallet/CMakeFiles/wallet.dir/requires:
 
-.PHONY : wallet/CMakeFiles/wallet.dir/requires
+.PHONY : src/wallet/CMakeFiles/wallet.dir/requires
 
-wallet/CMakeFiles/wallet.dir/clean:
+src/wallet/CMakeFiles/wallet.dir/clean:
 	cd /home/chip/Downloads/monero/src/wallet && $(CMAKE_COMMAND) -P CMakeFiles/wallet.dir/cmake_clean.cmake
-.PHONY : wallet/CMakeFiles/wallet.dir/clean
+.PHONY : src/wallet/CMakeFiles/wallet.dir/clean
 
-wallet/CMakeFiles/wallet.dir/depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/wallet /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/wallet /home/chip/Downloads/monero/src/wallet/CMakeFiles/wallet.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : wallet/CMakeFiles/wallet.dir/depend
+src/wallet/CMakeFiles/wallet.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/src/wallet /home/chip/Downloads/monero /home/chip/Downloads/monero/src/wallet /home/chip/Downloads/monero/src/wallet/CMakeFiles/wallet.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : src/wallet/CMakeFiles/wallet.dir/depend
 

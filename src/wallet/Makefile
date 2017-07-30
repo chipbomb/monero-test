@@ -48,13 +48,23 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -67,16 +77,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -122,16 +122,27 @@ install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles /home/chip/Downloads/monero/src/wallet/CMakeFiles/progress.marks
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 wallet/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles /home/chip/Downloads/monero/src/wallet/CMakeFiles/progress.marks
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/wallet/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 wallet/clean
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/wallet/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,243 +152,387 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 wallet/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/wallet/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 wallet/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/wallet/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-wallet/CMakeFiles/obj_wallet.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 wallet/CMakeFiles/obj_wallet.dir/rule
-.PHONY : wallet/CMakeFiles/obj_wallet.dir/rule
+src/wallet/CMakeFiles/obj_wallet.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/wallet/CMakeFiles/obj_wallet.dir/rule
+.PHONY : src/wallet/CMakeFiles/obj_wallet.dir/rule
 
 # Convenience name for target.
-obj_wallet: wallet/CMakeFiles/obj_wallet.dir/rule
+obj_wallet: src/wallet/CMakeFiles/obj_wallet.dir/rule
 
 .PHONY : obj_wallet
 
 # fast build rule for target.
 obj_wallet/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/build
 .PHONY : obj_wallet/fast
 
 # Convenience name for target.
-wallet/CMakeFiles/wallet.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 wallet/CMakeFiles/wallet.dir/rule
-.PHONY : wallet/CMakeFiles/wallet.dir/rule
+src/wallet/CMakeFiles/wallet.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/wallet/CMakeFiles/wallet.dir/rule
+.PHONY : src/wallet/CMakeFiles/wallet.dir/rule
 
 # Convenience name for target.
-wallet: wallet/CMakeFiles/wallet.dir/rule
+wallet: src/wallet/CMakeFiles/wallet.dir/rule
 
 .PHONY : wallet
 
 # fast build rule for target.
 wallet/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/wallet.dir/build.make wallet/CMakeFiles/wallet.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/wallet.dir/build.make src/wallet/CMakeFiles/wallet.dir/build
 .PHONY : wallet/fast
 
 # Convenience name for target.
-wallet/CMakeFiles/wallet_rpc_server.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 wallet/CMakeFiles/wallet_rpc_server.dir/rule
-.PHONY : wallet/CMakeFiles/wallet_rpc_server.dir/rule
+src/wallet/CMakeFiles/wallet_rpc_server.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/wallet/CMakeFiles/wallet_rpc_server.dir/rule
+.PHONY : src/wallet/CMakeFiles/wallet_rpc_server.dir/rule
 
 # Convenience name for target.
-wallet_rpc_server: wallet/CMakeFiles/wallet_rpc_server.dir/rule
+wallet_rpc_server: src/wallet/CMakeFiles/wallet_rpc_server.dir/rule
 
 .PHONY : wallet_rpc_server
 
 # fast build rule for target.
 wallet_rpc_server/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/wallet_rpc_server.dir/build.make wallet/CMakeFiles/wallet_rpc_server.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/wallet_rpc_server.dir/build.make src/wallet/CMakeFiles/wallet_rpc_server.dir/build
 .PHONY : wallet_rpc_server/fast
 
-# target to build an object file
-api/address_book.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/address_book.o
+api/address_book.o: api/address_book.cpp.o
+
 .PHONY : api/address_book.o
 
-# target to preprocess a source file
-api/address_book.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/address_book.i
+# target to build an object file
+api/address_book.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/address_book.cpp.o
+.PHONY : api/address_book.cpp.o
+
+api/address_book.i: api/address_book.cpp.i
+
 .PHONY : api/address_book.i
 
-# target to generate assembly for a file
-api/address_book.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/address_book.s
+# target to preprocess a source file
+api/address_book.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/address_book.cpp.i
+.PHONY : api/address_book.cpp.i
+
+api/address_book.s: api/address_book.cpp.s
+
 .PHONY : api/address_book.s
 
-# target to build an object file
-api/pending_transaction.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/pending_transaction.o
+# target to generate assembly for a file
+api/address_book.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/address_book.cpp.s
+.PHONY : api/address_book.cpp.s
+
+api/pending_transaction.o: api/pending_transaction.cpp.o
+
 .PHONY : api/pending_transaction.o
 
-# target to preprocess a source file
-api/pending_transaction.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/pending_transaction.i
+# target to build an object file
+api/pending_transaction.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/pending_transaction.cpp.o
+.PHONY : api/pending_transaction.cpp.o
+
+api/pending_transaction.i: api/pending_transaction.cpp.i
+
 .PHONY : api/pending_transaction.i
 
-# target to generate assembly for a file
-api/pending_transaction.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/pending_transaction.s
+# target to preprocess a source file
+api/pending_transaction.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/pending_transaction.cpp.i
+.PHONY : api/pending_transaction.cpp.i
+
+api/pending_transaction.s: api/pending_transaction.cpp.s
+
 .PHONY : api/pending_transaction.s
 
-# target to build an object file
-api/transaction_history.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/transaction_history.o
+# target to generate assembly for a file
+api/pending_transaction.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/pending_transaction.cpp.s
+.PHONY : api/pending_transaction.cpp.s
+
+api/transaction_history.o: api/transaction_history.cpp.o
+
 .PHONY : api/transaction_history.o
 
-# target to preprocess a source file
-api/transaction_history.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/transaction_history.i
+# target to build an object file
+api/transaction_history.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/transaction_history.cpp.o
+.PHONY : api/transaction_history.cpp.o
+
+api/transaction_history.i: api/transaction_history.cpp.i
+
 .PHONY : api/transaction_history.i
 
-# target to generate assembly for a file
-api/transaction_history.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/transaction_history.s
+# target to preprocess a source file
+api/transaction_history.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/transaction_history.cpp.i
+.PHONY : api/transaction_history.cpp.i
+
+api/transaction_history.s: api/transaction_history.cpp.s
+
 .PHONY : api/transaction_history.s
 
-# target to build an object file
-api/transaction_info.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/transaction_info.o
+# target to generate assembly for a file
+api/transaction_history.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/transaction_history.cpp.s
+.PHONY : api/transaction_history.cpp.s
+
+api/transaction_info.o: api/transaction_info.cpp.o
+
 .PHONY : api/transaction_info.o
 
-# target to preprocess a source file
-api/transaction_info.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/transaction_info.i
+# target to build an object file
+api/transaction_info.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/transaction_info.cpp.o
+.PHONY : api/transaction_info.cpp.o
+
+api/transaction_info.i: api/transaction_info.cpp.i
+
 .PHONY : api/transaction_info.i
 
-# target to generate assembly for a file
-api/transaction_info.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/transaction_info.s
+# target to preprocess a source file
+api/transaction_info.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/transaction_info.cpp.i
+.PHONY : api/transaction_info.cpp.i
+
+api/transaction_info.s: api/transaction_info.cpp.s
+
 .PHONY : api/transaction_info.s
 
-# target to build an object file
-api/unsigned_transaction.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/unsigned_transaction.o
+# target to generate assembly for a file
+api/transaction_info.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/transaction_info.cpp.s
+.PHONY : api/transaction_info.cpp.s
+
+api/unsigned_transaction.o: api/unsigned_transaction.cpp.o
+
 .PHONY : api/unsigned_transaction.o
 
-# target to preprocess a source file
-api/unsigned_transaction.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/unsigned_transaction.i
+# target to build an object file
+api/unsigned_transaction.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/unsigned_transaction.cpp.o
+.PHONY : api/unsigned_transaction.cpp.o
+
+api/unsigned_transaction.i: api/unsigned_transaction.cpp.i
+
 .PHONY : api/unsigned_transaction.i
 
-# target to generate assembly for a file
-api/unsigned_transaction.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/unsigned_transaction.s
+# target to preprocess a source file
+api/unsigned_transaction.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/unsigned_transaction.cpp.i
+.PHONY : api/unsigned_transaction.cpp.i
+
+api/unsigned_transaction.s: api/unsigned_transaction.cpp.s
+
 .PHONY : api/unsigned_transaction.s
 
-# target to build an object file
-api/utils.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/utils.o
+# target to generate assembly for a file
+api/unsigned_transaction.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/unsigned_transaction.cpp.s
+.PHONY : api/unsigned_transaction.cpp.s
+
+api/utils.o: api/utils.cpp.o
+
 .PHONY : api/utils.o
 
-# target to preprocess a source file
-api/utils.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/utils.i
+# target to build an object file
+api/utils.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/utils.cpp.o
+.PHONY : api/utils.cpp.o
+
+api/utils.i: api/utils.cpp.i
+
 .PHONY : api/utils.i
 
-# target to generate assembly for a file
-api/utils.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/utils.s
+# target to preprocess a source file
+api/utils.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/utils.cpp.i
+.PHONY : api/utils.cpp.i
+
+api/utils.s: api/utils.cpp.s
+
 .PHONY : api/utils.s
 
-# target to build an object file
-api/wallet.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/wallet.o
+# target to generate assembly for a file
+api/utils.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/utils.cpp.s
+.PHONY : api/utils.cpp.s
+
+api/wallet.o: api/wallet.cpp.o
+
 .PHONY : api/wallet.o
 
-# target to preprocess a source file
-api/wallet.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/wallet.i
+# target to build an object file
+api/wallet.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/wallet.cpp.o
+.PHONY : api/wallet.cpp.o
+
+api/wallet.i: api/wallet.cpp.i
+
 .PHONY : api/wallet.i
 
-# target to generate assembly for a file
-api/wallet.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/wallet.s
+# target to preprocess a source file
+api/wallet.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/wallet.cpp.i
+.PHONY : api/wallet.cpp.i
+
+api/wallet.s: api/wallet.cpp.s
+
 .PHONY : api/wallet.s
 
-# target to build an object file
-api/wallet_manager.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/wallet_manager.o
+# target to generate assembly for a file
+api/wallet.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/wallet.cpp.s
+.PHONY : api/wallet.cpp.s
+
+api/wallet_manager.o: api/wallet_manager.cpp.o
+
 .PHONY : api/wallet_manager.o
 
-# target to preprocess a source file
-api/wallet_manager.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/wallet_manager.i
+# target to build an object file
+api/wallet_manager.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/wallet_manager.cpp.o
+.PHONY : api/wallet_manager.cpp.o
+
+api/wallet_manager.i: api/wallet_manager.cpp.i
+
 .PHONY : api/wallet_manager.i
 
-# target to generate assembly for a file
-api/wallet_manager.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/api/wallet_manager.s
+# target to preprocess a source file
+api/wallet_manager.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/wallet_manager.cpp.i
+.PHONY : api/wallet_manager.cpp.i
+
+api/wallet_manager.s: api/wallet_manager.cpp.s
+
 .PHONY : api/wallet_manager.s
 
-# target to build an object file
-node_rpc_proxy.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/node_rpc_proxy.o
+# target to generate assembly for a file
+api/wallet_manager.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/api/wallet_manager.cpp.s
+.PHONY : api/wallet_manager.cpp.s
+
+node_rpc_proxy.o: node_rpc_proxy.cpp.o
+
 .PHONY : node_rpc_proxy.o
 
-# target to preprocess a source file
-node_rpc_proxy.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/node_rpc_proxy.i
+# target to build an object file
+node_rpc_proxy.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/node_rpc_proxy.cpp.o
+.PHONY : node_rpc_proxy.cpp.o
+
+node_rpc_proxy.i: node_rpc_proxy.cpp.i
+
 .PHONY : node_rpc_proxy.i
 
-# target to generate assembly for a file
-node_rpc_proxy.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/node_rpc_proxy.s
+# target to preprocess a source file
+node_rpc_proxy.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/node_rpc_proxy.cpp.i
+.PHONY : node_rpc_proxy.cpp.i
+
+node_rpc_proxy.s: node_rpc_proxy.cpp.s
+
 .PHONY : node_rpc_proxy.s
 
-# target to build an object file
-wallet2.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/wallet2.o
+# target to generate assembly for a file
+node_rpc_proxy.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/node_rpc_proxy.cpp.s
+.PHONY : node_rpc_proxy.cpp.s
+
+wallet2.o: wallet2.cpp.o
+
 .PHONY : wallet2.o
 
-# target to preprocess a source file
-wallet2.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/wallet2.i
+# target to build an object file
+wallet2.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/wallet2.cpp.o
+.PHONY : wallet2.cpp.o
+
+wallet2.i: wallet2.cpp.i
+
 .PHONY : wallet2.i
 
-# target to generate assembly for a file
-wallet2.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/wallet2.s
+# target to preprocess a source file
+wallet2.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/wallet2.cpp.i
+.PHONY : wallet2.cpp.i
+
+wallet2.s: wallet2.cpp.s
+
 .PHONY : wallet2.s
 
-# target to build an object file
-wallet_args.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/wallet_args.o
+# target to generate assembly for a file
+wallet2.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/wallet2.cpp.s
+.PHONY : wallet2.cpp.s
+
+wallet_args.o: wallet_args.cpp.o
+
 .PHONY : wallet_args.o
 
-# target to preprocess a source file
-wallet_args.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/wallet_args.i
+# target to build an object file
+wallet_args.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/wallet_args.cpp.o
+.PHONY : wallet_args.cpp.o
+
+wallet_args.i: wallet_args.cpp.i
+
 .PHONY : wallet_args.i
 
-# target to generate assembly for a file
-wallet_args.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/wallet_args.s
+# target to preprocess a source file
+wallet_args.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/wallet_args.cpp.i
+.PHONY : wallet_args.cpp.i
+
+wallet_args.s: wallet_args.cpp.s
+
 .PHONY : wallet_args.s
 
-# target to build an object file
-wallet_rpc_server.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/wallet_rpc_server.dir/build.make wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.o
+# target to generate assembly for a file
+wallet_args.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/obj_wallet.dir/build.make src/wallet/CMakeFiles/obj_wallet.dir/wallet_args.cpp.s
+.PHONY : wallet_args.cpp.s
+
+wallet_rpc_server.o: wallet_rpc_server.cpp.o
+
 .PHONY : wallet_rpc_server.o
 
-# target to preprocess a source file
-wallet_rpc_server.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/wallet_rpc_server.dir/build.make wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.i
+# target to build an object file
+wallet_rpc_server.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/wallet_rpc_server.dir/build.make src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o
+.PHONY : wallet_rpc_server.cpp.o
+
+wallet_rpc_server.i: wallet_rpc_server.cpp.i
+
 .PHONY : wallet_rpc_server.i
 
-# target to generate assembly for a file
-wallet_rpc_server.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f wallet/CMakeFiles/wallet_rpc_server.dir/build.make wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.s
+# target to preprocess a source file
+wallet_rpc_server.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/wallet_rpc_server.dir/build.make src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.i
+.PHONY : wallet_rpc_server.cpp.i
+
+wallet_rpc_server.s: wallet_rpc_server.cpp.s
+
 .PHONY : wallet_rpc_server.s
+
+# target to generate assembly for a file
+wallet_rpc_server.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/wallet_rpc_server.dir/build.make src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.s
+.PHONY : wallet_rpc_server.cpp.s
 
 # Help Target
 help:
@@ -385,14 +540,15 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... obj_wallet"
 	@echo "... install/local"
 	@echo "... install/strip"
 	@echo "... wallet"
+	@echo "... test"
 	@echo "... wallet_rpc_server"
 	@echo "... api/address_book.o"
 	@echo "... api/address_book.i"
@@ -441,6 +597,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

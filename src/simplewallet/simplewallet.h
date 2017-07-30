@@ -159,6 +159,9 @@ namespace cryptonote
     bool check_tx_proof(const std::vector<std::string> &args);
     bool show_transfers(const std::vector<std::string> &args);
     bool unspent_outputs(const std::vector<std::string> &args);
+    //added
+    bool find_cap(const std::vector<std::string> &args);
+    bool transfer_cap(const std::vector<std::string> &args);
     bool rescan_blockchain(const std::vector<std::string> &args);
     bool refresh_main(uint64_t start_height, bool reset = false);
     bool set_tx_note(const std::vector<std::string> &args);

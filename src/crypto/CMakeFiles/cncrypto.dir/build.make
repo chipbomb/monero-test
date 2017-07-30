@@ -43,84 +43,84 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include crypto/CMakeFiles/cncrypto.dir/depend.make
+include src/crypto/CMakeFiles/cncrypto.dir/depend.make
 
 # Include the progress variables for this target.
-include crypto/CMakeFiles/cncrypto.dir/progress.make
+include src/crypto/CMakeFiles/cncrypto.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include crypto/CMakeFiles/cncrypto.dir/flags.make
+include src/crypto/CMakeFiles/cncrypto.dir/flags.make
 
 # Object files for target cncrypto
 cncrypto_OBJECTS =
 
 # External object files for target cncrypto
 cncrypto_EXTERNAL_OBJECTS = \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/hash.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/jh.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/random.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/skein.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.o" \
-"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.o"
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.c.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.c.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.c.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.c.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.cpp.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.c.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/hash.c.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/jh.c.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.c.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.c.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/random.c.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/skein.c.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.c.o" \
+"/home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.c.o"
 
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/aesb.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/blake256.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/chacha8.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/crypto.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/groestl.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/hash.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/jh.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/keccak.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/random.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/skein.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.o
-crypto/libcncrypto.a: crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.o
-crypto/libcncrypto.a: crypto/CMakeFiles/cncrypto.dir/build.make
-crypto/libcncrypto.a: crypto/CMakeFiles/cncrypto.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library libcncrypto.a"
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.cpp.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/hash.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/jh.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/random.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/skein.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.c.o
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/cncrypto.dir/build.make
+src/crypto/libcncrypto.a: src/crypto/CMakeFiles/cncrypto.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library libcncrypto.a"
 	cd /home/chip/Downloads/monero/src/crypto && $(CMAKE_COMMAND) -P CMakeFiles/cncrypto.dir/cmake_clean_target.cmake
 	cd /home/chip/Downloads/monero/src/crypto && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cncrypto.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-crypto/CMakeFiles/cncrypto.dir/build: crypto/libcncrypto.a
+src/crypto/CMakeFiles/cncrypto.dir/build: src/crypto/libcncrypto.a
 
-.PHONY : crypto/CMakeFiles/cncrypto.dir/build
+.PHONY : src/crypto/CMakeFiles/cncrypto.dir/build
 
-crypto/CMakeFiles/cncrypto.dir/requires:
+src/crypto/CMakeFiles/cncrypto.dir/requires:
 
-.PHONY : crypto/CMakeFiles/cncrypto.dir/requires
+.PHONY : src/crypto/CMakeFiles/cncrypto.dir/requires
 
-crypto/CMakeFiles/cncrypto.dir/clean:
+src/crypto/CMakeFiles/cncrypto.dir/clean:
 	cd /home/chip/Downloads/monero/src/crypto && $(CMAKE_COMMAND) -P CMakeFiles/cncrypto.dir/cmake_clean.cmake
-.PHONY : crypto/CMakeFiles/cncrypto.dir/clean
+.PHONY : src/crypto/CMakeFiles/cncrypto.dir/clean
 
-crypto/CMakeFiles/cncrypto.dir/depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/crypto /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/crypto /home/chip/Downloads/monero/src/crypto/CMakeFiles/cncrypto.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : crypto/CMakeFiles/cncrypto.dir/depend
+src/crypto/CMakeFiles/cncrypto.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/src/crypto /home/chip/Downloads/monero /home/chip/Downloads/monero/src/crypto /home/chip/Downloads/monero/src/crypto/CMakeFiles/cncrypto.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : src/crypto/CMakeFiles/cncrypto.dir/depend
 

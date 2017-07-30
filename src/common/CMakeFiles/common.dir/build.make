@@ -43,68 +43,70 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include common/CMakeFiles/common.dir/depend.make
+include src/common/CMakeFiles/common.dir/depend.make
 
 # Include the progress variables for this target.
-include common/CMakeFiles/common.dir/progress.make
+include src/common/CMakeFiles/common.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include common/CMakeFiles/common.dir/flags.make
+include src/common/CMakeFiles/common.dir/flags.make
 
 # Object files for target common
 common_OBJECTS =
 
 # External object files for target common
 common_EXTERNAL_OBJECTS = \
-"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/base58.o" \
-"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/command_line.o" \
-"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/dns_utils.o" \
-"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/download.o" \
-"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/util.o" \
-"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/i18n.o" \
-"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/password.o" \
-"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/perf_timer.o" \
-"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/task_region.o" \
-"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/thread_group.o" \
-"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/updates.o"
+"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/base58.cpp.o" \
+"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/command_line.cpp.o" \
+"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.o" \
+"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/download.cpp.o" \
+"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/util.cpp.o" \
+"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/i18n.cpp.o" \
+"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/password.cpp.o" \
+"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.o" \
+"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/task_region.cpp.o" \
+"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/thread_group.cpp.o" \
+"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/updates.cpp.o" \
+"/home/chip/Downloads/monero/src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.o"
 
-common/libcommon.a: common/CMakeFiles/obj_common.dir/base58.o
-common/libcommon.a: common/CMakeFiles/obj_common.dir/command_line.o
-common/libcommon.a: common/CMakeFiles/obj_common.dir/dns_utils.o
-common/libcommon.a: common/CMakeFiles/obj_common.dir/download.o
-common/libcommon.a: common/CMakeFiles/obj_common.dir/util.o
-common/libcommon.a: common/CMakeFiles/obj_common.dir/i18n.o
-common/libcommon.a: common/CMakeFiles/obj_common.dir/password.o
-common/libcommon.a: common/CMakeFiles/obj_common.dir/perf_timer.o
-common/libcommon.a: common/CMakeFiles/obj_common.dir/task_region.o
-common/libcommon.a: common/CMakeFiles/obj_common.dir/thread_group.o
-common/libcommon.a: common/CMakeFiles/obj_common.dir/updates.o
-common/libcommon.a: common/CMakeFiles/common.dir/build.make
-common/libcommon.a: common/CMakeFiles/common.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library libcommon.a"
+src/common/libcommon.a: src/common/CMakeFiles/obj_common.dir/base58.cpp.o
+src/common/libcommon.a: src/common/CMakeFiles/obj_common.dir/command_line.cpp.o
+src/common/libcommon.a: src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.o
+src/common/libcommon.a: src/common/CMakeFiles/obj_common.dir/download.cpp.o
+src/common/libcommon.a: src/common/CMakeFiles/obj_common.dir/util.cpp.o
+src/common/libcommon.a: src/common/CMakeFiles/obj_common.dir/i18n.cpp.o
+src/common/libcommon.a: src/common/CMakeFiles/obj_common.dir/password.cpp.o
+src/common/libcommon.a: src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.o
+src/common/libcommon.a: src/common/CMakeFiles/obj_common.dir/task_region.cpp.o
+src/common/libcommon.a: src/common/CMakeFiles/obj_common.dir/thread_group.cpp.o
+src/common/libcommon.a: src/common/CMakeFiles/obj_common.dir/updates.cpp.o
+src/common/libcommon.a: src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.o
+src/common/libcommon.a: src/common/CMakeFiles/common.dir/build.make
+src/common/libcommon.a: src/common/CMakeFiles/common.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library libcommon.a"
 	cd /home/chip/Downloads/monero/src/common && $(CMAKE_COMMAND) -P CMakeFiles/common.dir/cmake_clean_target.cmake
 	cd /home/chip/Downloads/monero/src/common && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/common.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-common/CMakeFiles/common.dir/build: common/libcommon.a
+src/common/CMakeFiles/common.dir/build: src/common/libcommon.a
 
-.PHONY : common/CMakeFiles/common.dir/build
+.PHONY : src/common/CMakeFiles/common.dir/build
 
-common/CMakeFiles/common.dir/requires:
+src/common/CMakeFiles/common.dir/requires:
 
-.PHONY : common/CMakeFiles/common.dir/requires
+.PHONY : src/common/CMakeFiles/common.dir/requires
 
-common/CMakeFiles/common.dir/clean:
+src/common/CMakeFiles/common.dir/clean:
 	cd /home/chip/Downloads/monero/src/common && $(CMAKE_COMMAND) -P CMakeFiles/common.dir/cmake_clean.cmake
-.PHONY : common/CMakeFiles/common.dir/clean
+.PHONY : src/common/CMakeFiles/common.dir/clean
 
-common/CMakeFiles/common.dir/depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/common /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/common /home/chip/Downloads/monero/src/common/CMakeFiles/common.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : common/CMakeFiles/common.dir/depend
+src/common/CMakeFiles/common.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/src/common /home/chip/Downloads/monero /home/chip/Downloads/monero/src/common /home/chip/Downloads/monero/src/common/CMakeFiles/common.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : src/common/CMakeFiles/common.dir/depend
 

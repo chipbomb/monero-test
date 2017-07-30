@@ -37,6 +37,8 @@ using namespace epee;
 #include "crypto/crypto.h"
 #include "crypto/hash.h"
 #include "ringct/rctSigs.h"
+#include <ctime>
+#include <sstream>  
 
 #undef MONERO_DEFAULT_LOG_CATEGORY
 #define MONERO_DEFAULT_LOG_CATEGORY "cn"
@@ -186,6 +188,22 @@ namespace cryptonote
       str_amount.append(default_decimal_point - fraction_size, '0');
     }
 
+    return string_tools::get_xtype_from_string(amount, str_amount);
+  }
+  //-------------------------ADDED--------------------------------------
+  bool is_number(const std::string& s) {
+  	return !s.empty() && std::find_if(s.begin(), 
+        s.end(), [](char c) { return !std::isdigit(c); }) == s.end();
+  }
+  
+  bool parse_time(uint64_t& amount, const std::string& str_amount_)
+  {
+    
+    std::string str_amount = str_amount_;
+    boost::algorithm::trim(str_amount);
+	if (!is_number(str_amount))
+		return false;
+    
     return string_tools::get_xtype_from_string(amount, str_amount);
   }
   //---------------------------------------------------------------
@@ -580,6 +598,23 @@ namespace cryptonote
     if (decimal_point > 0)
       s.insert(s.size() - decimal_point, ".");
     return s;
+  }
+  //--------------------------ADDED--------------------------------
+  //---------------------------------------------------------------
+  std::string print_time(uint64_t amount)
+  {
+  	struct tm * timeinfo;
+	time_t temp = amount;
+	timeinfo = localtime (&temp);
+    return asctime(timeinfo);
+  }
+  
+  std::string print_cap(const rct::key cap) {
+  	std::stringstream ss;
+  	for (int j = 0; j < 32; j++) {
+         ss << hex << setfill('0') << setw(2) << static_cast<unsigned>(cap.bytes[j]);
+    }
+    return ss.str();
   }
   //---------------------------------------------------------------
   crypto::hash get_blob_hash(const blobdata& blob)

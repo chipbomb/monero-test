@@ -98,7 +98,8 @@ namespace cryptonote
   bool check_inputs_types_supported(const transaction& tx);
   bool check_outs_valid(const transaction& tx);
   bool parse_amount(uint64_t& amount, const std::string& str_amount);
-
+  // added
+  bool parse_time(uint64_t& amount, const std::string& str_amount);
   bool check_money_overflow(const transaction& tx);
   bool check_outs_overflow(const transaction& tx);
   bool check_inputs_overflow(const transaction& tx);
@@ -109,6 +110,9 @@ namespace cryptonote
   unsigned int get_default_decimal_point();
   std::string get_unit(unsigned int decimal_point = -1);
   std::string print_money(uint64_t amount, unsigned int decimal_point = -1);
+  //added
+  std::string print_time(uint64_t amount);
+  std::string print_cap(const rct::key cap);
   //---------------------------------------------------------------
   template<class t_object>
   bool t_serializable_object_to_blob(const t_object& to, blobdata& b_blob)

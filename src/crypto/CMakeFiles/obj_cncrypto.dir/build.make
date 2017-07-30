@@ -43,531 +43,531 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include crypto/CMakeFiles/obj_cncrypto.dir/depend.make
+include src/crypto/CMakeFiles/obj_cncrypto.dir/depend.make
 
 # Include the progress variables for this target.
-include crypto/CMakeFiles/obj_cncrypto.dir/progress.make
+include src/crypto/CMakeFiles/obj_cncrypto.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+include src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
 
-crypto/CMakeFiles/obj_cncrypto.dir/aesb.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/aesb.o: crypto/aesb.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/aesb.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/aesb.o   -c /home/chip/Downloads/monero/src/crypto/aesb.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.c.o: src/crypto/aesb.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/aesb.c.o   -c /home/chip/Downloads/monero/src/crypto/aesb.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/aesb.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/aesb.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/aesb.c > CMakeFiles/obj_cncrypto.dir/aesb.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/aesb.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/aesb.c > CMakeFiles/obj_cncrypto.dir/aesb.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/aesb.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/aesb.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/aesb.c -o CMakeFiles/obj_cncrypto.dir/aesb.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/aesb.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/aesb.c -o CMakeFiles/obj_cncrypto.dir/aesb.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/aesb.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/aesb.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/aesb.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/aesb.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/aesb.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/aesb.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/aesb.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/aesb.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.c.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/blake256.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/blake256.o: crypto/blake256.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/blake256.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/blake256.o   -c /home/chip/Downloads/monero/src/crypto/blake256.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.c.o: src/crypto/blake256.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/blake256.c.o   -c /home/chip/Downloads/monero/src/crypto/blake256.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/blake256.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/blake256.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/blake256.c > CMakeFiles/obj_cncrypto.dir/blake256.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/blake256.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/blake256.c > CMakeFiles/obj_cncrypto.dir/blake256.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/blake256.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/blake256.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/blake256.c -o CMakeFiles/obj_cncrypto.dir/blake256.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/blake256.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/blake256.c -o CMakeFiles/obj_cncrypto.dir/blake256.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/blake256.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/blake256.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/blake256.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/blake256.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/blake256.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/blake256.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/blake256.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/blake256.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.c.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/chacha8.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/chacha8.o: crypto/chacha8.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/chacha8.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/chacha8.o   -c /home/chip/Downloads/monero/src/crypto/chacha8.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.c.o: src/crypto/chacha8.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/chacha8.c.o   -c /home/chip/Downloads/monero/src/crypto/chacha8.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/chacha8.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/chacha8.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/chacha8.c > CMakeFiles/obj_cncrypto.dir/chacha8.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/chacha8.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/chacha8.c > CMakeFiles/obj_cncrypto.dir/chacha8.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/chacha8.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/chacha8.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/chacha8.c -o CMakeFiles/obj_cncrypto.dir/chacha8.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/chacha8.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/chacha8.c -o CMakeFiles/obj_cncrypto.dir/chacha8.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/chacha8.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/chacha8.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/chacha8.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/chacha8.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/chacha8.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/chacha8.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/chacha8.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/chacha8.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.c.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.o: crypto/crypto-ops-data.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/crypto-ops-data.o   -c /home/chip/Downloads/monero/src/crypto/crypto-ops-data.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.o: src/crypto/crypto-ops-data.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.o   -c /home/chip/Downloads/monero/src/crypto/crypto-ops-data.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/crypto-ops-data.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/crypto-ops-data.c > CMakeFiles/obj_cncrypto.dir/crypto-ops-data.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/crypto-ops-data.c > CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/crypto-ops-data.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/crypto-ops-data.c -o CMakeFiles/obj_cncrypto.dir/crypto-ops-data.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/crypto-ops-data.c -o CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.o: crypto/crypto-ops.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/crypto-ops.o   -c /home/chip/Downloads/monero/src/crypto/crypto-ops.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.c.o: src/crypto/crypto-ops.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/crypto-ops.c.o   -c /home/chip/Downloads/monero/src/crypto/crypto-ops.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/crypto-ops.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/crypto-ops.c > CMakeFiles/obj_cncrypto.dir/crypto-ops.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/crypto-ops.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/crypto-ops.c > CMakeFiles/obj_cncrypto.dir/crypto-ops.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/crypto-ops.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/crypto-ops.c -o CMakeFiles/obj_cncrypto.dir/crypto-ops.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/crypto-ops.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/crypto-ops.c -o CMakeFiles/obj_cncrypto.dir/crypto-ops.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.c.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/crypto.o: crypto/crypto.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object crypto/CMakeFiles/obj_cncrypto.dir/crypto.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_cncrypto.dir/crypto.o -c /home/chip/Downloads/monero/src/crypto/crypto.cpp
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.cpp.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.cpp.o: src/crypto/crypto.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.cpp.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_cncrypto.dir/crypto.cpp.o -c /home/chip/Downloads/monero/src/crypto/crypto.cpp
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_cncrypto.dir/crypto.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/crypto/crypto.cpp > CMakeFiles/obj_cncrypto.dir/crypto.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_cncrypto.dir/crypto.cpp.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/crypto/crypto.cpp > CMakeFiles/obj_cncrypto.dir/crypto.cpp.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_cncrypto.dir/crypto.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/crypto/crypto.cpp -o CMakeFiles/obj_cncrypto.dir/crypto.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_cncrypto.dir/crypto.cpp.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/crypto/crypto.cpp -o CMakeFiles/obj_cncrypto.dir/crypto.cpp.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.cpp.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/crypto.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.cpp.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/crypto.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/crypto.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/crypto.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.cpp.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.cpp.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.cpp.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.cpp.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/crypto.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/crypto.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.cpp.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.cpp.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/groestl.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/groestl.o: crypto/groestl.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/groestl.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/groestl.o   -c /home/chip/Downloads/monero/src/crypto/groestl.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.c.o: src/crypto/groestl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/groestl.c.o   -c /home/chip/Downloads/monero/src/crypto/groestl.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/groestl.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/groestl.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/groestl.c > CMakeFiles/obj_cncrypto.dir/groestl.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/groestl.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/groestl.c > CMakeFiles/obj_cncrypto.dir/groestl.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/groestl.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/groestl.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/groestl.c -o CMakeFiles/obj_cncrypto.dir/groestl.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/groestl.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/groestl.c -o CMakeFiles/obj_cncrypto.dir/groestl.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/groestl.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/groestl.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/groestl.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/groestl.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/groestl.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/groestl.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/groestl.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/groestl.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.c.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.o: crypto/hash-extra-blake.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/hash-extra-blake.o   -c /home/chip/Downloads/monero/src/crypto/hash-extra-blake.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.o: src/crypto/hash-extra-blake.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.o   -c /home/chip/Downloads/monero/src/crypto/hash-extra-blake.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/hash-extra-blake.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/hash-extra-blake.c > CMakeFiles/obj_cncrypto.dir/hash-extra-blake.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/hash-extra-blake.c > CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/hash-extra-blake.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/hash-extra-blake.c -o CMakeFiles/obj_cncrypto.dir/hash-extra-blake.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/hash-extra-blake.c -o CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.o: crypto/hash-extra-groestl.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.o   -c /home/chip/Downloads/monero/src/crypto/hash-extra-groestl.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.o: src/crypto/hash-extra-groestl.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.o   -c /home/chip/Downloads/monero/src/crypto/hash-extra-groestl.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/hash-extra-groestl.c > CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/hash-extra-groestl.c > CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/hash-extra-groestl.c -o CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/hash-extra-groestl.c -o CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.o: crypto/hash-extra-jh.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/hash-extra-jh.o   -c /home/chip/Downloads/monero/src/crypto/hash-extra-jh.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.o: src/crypto/hash-extra-jh.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.o   -c /home/chip/Downloads/monero/src/crypto/hash-extra-jh.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/hash-extra-jh.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/hash-extra-jh.c > CMakeFiles/obj_cncrypto.dir/hash-extra-jh.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/hash-extra-jh.c > CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/hash-extra-jh.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/hash-extra-jh.c -o CMakeFiles/obj_cncrypto.dir/hash-extra-jh.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/hash-extra-jh.c -o CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.o: crypto/hash-extra-skein.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/hash-extra-skein.o   -c /home/chip/Downloads/monero/src/crypto/hash-extra-skein.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.o: src/crypto/hash-extra-skein.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.o   -c /home/chip/Downloads/monero/src/crypto/hash-extra-skein.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/hash-extra-skein.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/hash-extra-skein.c > CMakeFiles/obj_cncrypto.dir/hash-extra-skein.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/hash-extra-skein.c > CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/hash-extra-skein.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/hash-extra-skein.c -o CMakeFiles/obj_cncrypto.dir/hash-extra-skein.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/hash-extra-skein.c -o CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/hash.o: crypto/hash.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/hash.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/hash.o   -c /home/chip/Downloads/monero/src/crypto/hash.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash.c.o: src/crypto/hash.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/hash.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/hash.c.o   -c /home/chip/Downloads/monero/src/crypto/hash.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/hash.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/hash.c > CMakeFiles/obj_cncrypto.dir/hash.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/hash.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/hash.c > CMakeFiles/obj_cncrypto.dir/hash.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/hash.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/hash.c -o CMakeFiles/obj_cncrypto.dir/hash.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/hash.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/hash.c -o CMakeFiles/obj_cncrypto.dir/hash.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/hash.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/hash.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/hash.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/hash.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/hash.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/hash.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/hash.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/hash.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/hash.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/hash.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/hash.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/hash.c.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/jh.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/jh.o: crypto/jh.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/jh.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/jh.o   -c /home/chip/Downloads/monero/src/crypto/jh.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/jh.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/jh.c.o: src/crypto/jh.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/jh.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/jh.c.o   -c /home/chip/Downloads/monero/src/crypto/jh.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/jh.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/jh.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/jh.c > CMakeFiles/obj_cncrypto.dir/jh.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/jh.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/jh.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/jh.c > CMakeFiles/obj_cncrypto.dir/jh.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/jh.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/jh.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/jh.c -o CMakeFiles/obj_cncrypto.dir/jh.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/jh.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/jh.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/jh.c -o CMakeFiles/obj_cncrypto.dir/jh.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/jh.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/jh.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/jh.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/jh.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/jh.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/jh.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/jh.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/jh.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/jh.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/jh.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/jh.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/jh.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/jh.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/jh.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/jh.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/jh.c.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/keccak.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/keccak.o: crypto/keccak.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/keccak.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/keccak.o   -c /home/chip/Downloads/monero/src/crypto/keccak.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.c.o: src/crypto/keccak.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/keccak.c.o   -c /home/chip/Downloads/monero/src/crypto/keccak.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/keccak.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/keccak.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/keccak.c > CMakeFiles/obj_cncrypto.dir/keccak.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/keccak.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/keccak.c > CMakeFiles/obj_cncrypto.dir/keccak.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/keccak.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/keccak.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/keccak.c -o CMakeFiles/obj_cncrypto.dir/keccak.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/keccak.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/keccak.c -o CMakeFiles/obj_cncrypto.dir/keccak.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/keccak.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/keccak.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/keccak.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/keccak.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/keccak.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/keccak.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/keccak.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/keccak.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.c.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.o: crypto/oaes_lib.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/oaes_lib.o   -c /home/chip/Downloads/monero/src/crypto/oaes_lib.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.c.o: src/crypto/oaes_lib.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/oaes_lib.c.o   -c /home/chip/Downloads/monero/src/crypto/oaes_lib.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/oaes_lib.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/oaes_lib.c > CMakeFiles/obj_cncrypto.dir/oaes_lib.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/oaes_lib.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/oaes_lib.c > CMakeFiles/obj_cncrypto.dir/oaes_lib.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/oaes_lib.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/oaes_lib.c -o CMakeFiles/obj_cncrypto.dir/oaes_lib.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/oaes_lib.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/oaes_lib.c -o CMakeFiles/obj_cncrypto.dir/oaes_lib.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.c.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/random.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/random.o: crypto/random.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/random.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/random.o   -c /home/chip/Downloads/monero/src/crypto/random.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/random.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/random.c.o: src/crypto/random.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/random.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/random.c.o   -c /home/chip/Downloads/monero/src/crypto/random.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/random.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/random.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/random.c > CMakeFiles/obj_cncrypto.dir/random.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/random.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/random.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/random.c > CMakeFiles/obj_cncrypto.dir/random.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/random.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/random.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/random.c -o CMakeFiles/obj_cncrypto.dir/random.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/random.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/random.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/random.c -o CMakeFiles/obj_cncrypto.dir/random.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/random.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/random.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/random.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/random.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/random.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/random.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/random.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/random.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/random.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/random.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/random.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/random.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/random.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/random.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/random.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/random.c.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/skein.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/skein.o: crypto/skein.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/skein.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/skein.o   -c /home/chip/Downloads/monero/src/crypto/skein.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/skein.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/skein.c.o: src/crypto/skein.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/skein.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/skein.c.o   -c /home/chip/Downloads/monero/src/crypto/skein.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/skein.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/skein.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/skein.c > CMakeFiles/obj_cncrypto.dir/skein.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/skein.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/skein.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/skein.c > CMakeFiles/obj_cncrypto.dir/skein.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/skein.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/skein.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/skein.c -o CMakeFiles/obj_cncrypto.dir/skein.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/skein.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/skein.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/skein.c -o CMakeFiles/obj_cncrypto.dir/skein.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/skein.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/skein.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/skein.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/skein.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/skein.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/skein.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/skein.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/skein.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/skein.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/skein.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/skein.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/skein.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/skein.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/skein.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/skein.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/skein.c.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.o: crypto/slow-hash.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/slow-hash.o   -c /home/chip/Downloads/monero/src/crypto/slow-hash.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.c.o: src/crypto/slow-hash.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/slow-hash.c.o   -c /home/chip/Downloads/monero/src/crypto/slow-hash.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/slow-hash.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/slow-hash.c > CMakeFiles/obj_cncrypto.dir/slow-hash.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/slow-hash.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/slow-hash.c > CMakeFiles/obj_cncrypto.dir/slow-hash.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/slow-hash.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/slow-hash.c -o CMakeFiles/obj_cncrypto.dir/slow-hash.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/slow-hash.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/slow-hash.c -o CMakeFiles/obj_cncrypto.dir/slow-hash.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.c.o
 
 
-crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.o: crypto/CMakeFiles/obj_cncrypto.dir/flags.make
-crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.o: crypto/tree-hash.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.o"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/tree-hash.o   -c /home/chip/Downloads/monero/src/crypto/tree-hash.c
+src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.c.o: src/crypto/CMakeFiles/obj_cncrypto.dir/flags.make
+src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.c.o: src/crypto/tree-hash.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.c.o"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_cncrypto.dir/tree-hash.c.o   -c /home/chip/Downloads/monero/src/crypto/tree-hash.c
 
-crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/tree-hash.i"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/tree-hash.c > CMakeFiles/obj_cncrypto.dir/tree-hash.i
+src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_cncrypto.dir/tree-hash.c.i"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/crypto/tree-hash.c > CMakeFiles/obj_cncrypto.dir/tree-hash.c.i
 
-crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/tree-hash.s"
-	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/tree-hash.c -o CMakeFiles/obj_cncrypto.dir/tree-hash.s
+src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_cncrypto.dir/tree-hash.c.s"
+	cd /home/chip/Downloads/monero/src/crypto && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/crypto/tree-hash.c -o CMakeFiles/obj_cncrypto.dir/tree-hash.c.s
 
-crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.o.requires:
+src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.c.o.requires:
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.o.requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.c.o.requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.o.provides: crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.o.requires
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.o.provides.build
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.o.provides
+src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.c.o.provides: src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.c.o.requires
+	$(MAKE) -f src/crypto/CMakeFiles/obj_cncrypto.dir/build.make src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.c.o.provides.build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.c.o.provides
 
-crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.o.provides.build: crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.o
+src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.c.o.provides.build: src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.c.o
 
 
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/aesb.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/blake256.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/chacha8.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/crypto.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/groestl.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/hash.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/jh.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/keccak.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/random.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/skein.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.o
-obj_cncrypto: crypto/CMakeFiles/obj_cncrypto.dir/build.make
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.cpp.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/hash.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/jh.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/random.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/skein.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.c.o
+obj_cncrypto: src/crypto/CMakeFiles/obj_cncrypto.dir/build.make
 
 .PHONY : obj_cncrypto
 
 # Rule to build all files generated by this target.
-crypto/CMakeFiles/obj_cncrypto.dir/build: obj_cncrypto
+src/crypto/CMakeFiles/obj_cncrypto.dir/build: obj_cncrypto
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/build
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/build
 
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/aesb.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/blake256.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/chacha8.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/crypto.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/groestl.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/hash.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/jh.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/keccak.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/random.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/skein.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.o.requires
-crypto/CMakeFiles/obj_cncrypto.dir/requires: crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/aesb.c.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/blake256.c.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/chacha8.c.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops-data.c.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/crypto-ops.c.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/crypto.cpp.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/groestl.c.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-blake.c.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-groestl.c.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-jh.c.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/hash-extra-skein.c.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/hash.c.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/jh.c.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/keccak.c.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/oaes_lib.c.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/random.c.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/skein.c.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/slow-hash.c.o.requires
+src/crypto/CMakeFiles/obj_cncrypto.dir/requires: src/crypto/CMakeFiles/obj_cncrypto.dir/tree-hash.c.o.requires
 
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/requires
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/requires
 
-crypto/CMakeFiles/obj_cncrypto.dir/clean:
+src/crypto/CMakeFiles/obj_cncrypto.dir/clean:
 	cd /home/chip/Downloads/monero/src/crypto && $(CMAKE_COMMAND) -P CMakeFiles/obj_cncrypto.dir/cmake_clean.cmake
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/clean
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/clean
 
-crypto/CMakeFiles/obj_cncrypto.dir/depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/crypto /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/crypto /home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : crypto/CMakeFiles/obj_cncrypto.dir/depend
+src/crypto/CMakeFiles/obj_cncrypto.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/src/crypto /home/chip/Downloads/monero /home/chip/Downloads/monero/src/crypto /home/chip/Downloads/monero/src/crypto/CMakeFiles/obj_cncrypto.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : src/crypto/CMakeFiles/obj_cncrypto.dir/depend
 

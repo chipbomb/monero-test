@@ -142,6 +142,7 @@ namespace tools
       uint64_t m_spent_height;
       crypto::key_image m_key_image; //TODO: key_image stored twice :(
       rct::key m_mask;
+      rct::key m_cap;
       uint64_t m_amount;
       bool m_rct;
       bool m_key_image_known;
@@ -161,6 +162,7 @@ namespace tools
         FIELD(m_spent_height)
         FIELD(m_key_image)
         FIELD(m_mask)
+        FIELD(m_cap)
         FIELD(m_amount)
         FIELD(m_rct)
         FIELD(m_key_image_known)
@@ -394,6 +396,11 @@ namespace tools
     void transfer(const std::vector<cryptonote::tx_destination_entry>& dsts, const size_t fake_outputs_count, const std::vector<size_t> &unused_transfers_indices, uint64_t unlock_time, uint64_t fee, const std::vector<uint8_t>& extra, T destination_split_strategy, const tx_dust_policy& dust_policy, cryptonote::transaction& tx, pending_tx& ptx, bool trusted_daemon);
     void transfer(const std::vector<cryptonote::tx_destination_entry>& dsts, const size_t fake_outputs_count, const std::vector<size_t> &unused_transfers_indices, uint64_t unlock_time, uint64_t fee, const std::vector<uint8_t>& extra, bool trusted_daemon);
     void transfer(const std::vector<cryptonote::tx_destination_entry>& dsts, const size_t fake_outputs_count, const std::vector<size_t> &unused_transfers_indices, uint64_t unlock_time, uint64_t fee, const std::vector<uint8_t>& extra, cryptonote::transaction& tx, pending_tx& ptx, bool trusted_daemon);
+    //added
+    void transfer_cap(const std::vector<cryptonote::tx_destination_entry>& dsts, const size_t fake_outputs_count, size_t &unused_transfer_index,
+    uint64_t unlock_time, uint64_t fee, const std::vector<uint8_t>& extra, cryptonote::transaction& tx, pending_tx &ptx, bool trusted_daemon);
+    void transfer_cap(const std::vector<cryptonote::tx_destination_entry>& dsts, const size_t fake_outs_count, size_t &unused_transfer_index,
+    uint64_t unlock_time, uint64_t fee, const std::vector<uint8_t>& extra, bool trusted_daemon);
     template<typename T>
     void transfer_selected(const std::vector<cryptonote::tx_destination_entry>& dsts, const std::list<size_t> selected_transfers, size_t fake_outputs_count,
       std::vector<std::vector<tools::wallet2::get_outs_entry>> &outs,
@@ -416,6 +423,8 @@ namespace tools
     std::vector<wallet2::pending_tx> create_transactions_2(std::vector<cryptonote::tx_destination_entry> dsts, const size_t fake_outs_count, const uint64_t unlock_time, uint32_t priority, const std::vector<uint8_t> extra, bool trusted_daemon);
     std::vector<wallet2::pending_tx> create_transactions_all(uint64_t below, const cryptonote::account_public_address &address, const size_t fake_outs_count, const uint64_t unlock_time, uint32_t priority, const std::vector<uint8_t> extra, bool trusted_daemon);
     std::vector<wallet2::pending_tx> create_transactions_from(const cryptonote::account_public_address &address, std::vector<size_t> unused_transfers_indices, std::vector<size_t> unused_dust_indices, const size_t fake_outs_count, const uint64_t unlock_time, uint32_t priority, const std::vector<uint8_t> extra, bool trusted_daemon);
+    //added
+    std::vector<wallet2::pending_tx> create_transactions_cap(std::vector<cryptonote::tx_destination_entry> dsts, const size_t fake_outs_count, const uint64_t unlock_time, uint32_t priority, const std::vector<uint8_t> extra, bool trusted_daemon, size_t unused_transfer_index);
     std::vector<pending_tx> create_unmixable_sweep_transactions(bool trusted_daemon);
     bool check_connection(uint32_t *version = NULL, uint32_t timeout = 200000);
     void get_transfers(wallet2::transfer_container& incoming_transfers) const;
@@ -771,6 +780,7 @@ namespace boost
         return;
       }
       a & x.m_mask;
+      a & x.m_cap;
       a & x.m_amount;
       if (ver < 2)
       {

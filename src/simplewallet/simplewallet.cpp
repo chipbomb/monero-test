@@ -728,6 +728,10 @@ simple_wallet::simple_wallet()
   m_cmd_binder.set_handler("check_tx_proof", boost::bind(&simple_wallet::check_tx_proof, this, _1), tr("Check tx proof for payment going to <address> in <txid>"));
   m_cmd_binder.set_handler("show_transfers", boost::bind(&simple_wallet::show_transfers, this, _1), tr("show_transfers [in|out|pending|failed|pool] [<min_height> [<max_height>]] - Show incoming/outgoing transfers within an optional height range"));
   m_cmd_binder.set_handler("unspent_outputs", boost::bind(&simple_wallet::unspent_outputs, this, _1), tr("unspent_outputs [<min_amount> <max_amount>] - Show unspent outputs within an optional amount range"));
+  //added
+  m_cmd_binder.set_handler("find_cap", boost::bind(&simple_wallet::find_cap, this, _1), tr("find_cap [capid] - Show cap"));
+  m_cmd_binder.set_handler("transfer_cap", boost::bind(&simple_wallet::transfer_cap, this, _1), tr("transfer_cap [addr] [amount] [capid]- Show cap"));
+  
   m_cmd_binder.set_handler("rescan_bc", boost::bind(&simple_wallet::rescan_blockchain, this, _1), tr("Rescan blockchain from scratch"));
   m_cmd_binder.set_handler("set_tx_note", boost::bind(&simple_wallet::set_tx_note, this, _1), tr("Set an arbitrary string note for a txid"));
   m_cmd_binder.set_handler("get_tx_note", boost::bind(&simple_wallet::get_tx_note, this, _1), tr("Get a string note for a txid"));
@@ -1669,7 +1673,8 @@ void simple_wallet::on_money_received(uint64_t height, const crypto::hash &txid,
   message_writer(console_color_green, false) << "\r" <<
     tr("Height ") << height << ", " <<
     tr("transaction ") << txid << ", " <<
-    tr("received ") << print_money(amount);
+    tr("received capability ") << print_cap(tx.rct_signatures.Mc) << ", " <<
+    tr("expired ") << print_time(amount);
   if (m_auto_refresh_refreshing)
     m_cmd_binder.print_prompt();
   else
@@ -2109,6 +2114,222 @@ bool simple_wallet::print_ring_members(const std::vector<tools::wallet2::pending
   }
   return true;
 }
+
+
+//----------------------------------------------------------------------------------------------------
+//transfer_cap address amount capid
+bool simple_wallet::transfer_cap(const std::vector<std::string> &args_)
+{
+  if (m_wallet->ask_password() && !get_and_verify_password()) { return true; }
+  if (!try_connect_to_daemon())
+    return true;
+
+  LOCK_IDLE_SCOPE();
+  std::vector<std::string> local_args = args_;
+
+  int priority = 0;
+  size_t fake_outs_count = DEFAULT_MIX;
+
+  if(local_args.size() < 3)
+  {
+     fail_msg_writer() << tr("wrong number of arguments");
+     return true;
+  }
+
+  std::vector<uint8_t> extra;
+  bool cap_id_seen = false;
+ 
+  std::string cap_id_str = local_args.back();
+  local_args.pop_back();
+
+  cryptonote::blobdata txid_data;
+  if(!epee::string_tools::parse_hexstr_to_binbuff(cap_id_str, txid_data) || txid_data.size() != sizeof(crypto::hash))
+  {
+	fail_msg_writer() << tr("failed to parse capid");
+	return true;
+  }
+  const char* cap_id = reinterpret_cast<const char*>(txid_data.data());
+  tools::wallet2::transfer_container transfers;
+  m_wallet->get_transfers(transfers);
+  if (transfers.empty())
+  {
+    success_msg_writer() << "There is no unspent output in this wallet.";
+    return true;
+  }
+  
+	bool has_cap = false;
+	size_t unused_transfer_index = 0;
+  for (tools::wallet2::transfer_container::const_iterator i = transfers.begin(); i != transfers.end(); ++i)
+  {
+	if (i->m_spent)
+      continue;
+    if (!memcmp(cap_id,i->m_cap.bytes,sizeof(i->m_cap.bytes))) {
+    	success_msg_writer() << tr("Found output ") << print_cap(i->m_cap)
+    	<< tr(" expired at ") << print_time(i->m_amount);
+		unused_transfer_index = i - transfers.begin();
+    	has_cap = true;
+    }
+  }
+  
+  if (!has_cap) 
+	{
+		fail_msg_writer() << "Capability not found.";
+		return false;
+	}
+  
+  vector<cryptonote::tx_destination_entry> dsts;
+  //for (size_t i = 0; i < local_args.size(); i += 2)
+  //{
+	cryptonote::tx_destination_entry de;
+	bool has_payment_id = 0;
+	crypto::hash8 new_payment_id;
+	if (!cryptonote::get_account_address_from_str_or_url(de.addr, has_payment_id, new_payment_id, m_wallet->testnet(), local_args[0]))
+	{
+		fail_msg_writer() << tr("failed to parse address");
+		return true;
+	}
+
+	bool ok = cryptonote::parse_time(de.amount, local_args[1]);
+	if(!ok || 0 == de.amount)
+	{
+		fail_msg_writer() << tr("amount is wrong: ") << local_args[0] << ' ' << local_args[1] <<
+			", " << tr("expected number from 0 to ") << print_money(std::numeric_limits<uint64_t>::max());
+		return true;
+	}
+
+	dsts.push_back(de);
+  //}
+
+  try
+  {
+    // figure out what tx will be necessary
+    std::vector<tools::wallet2::pending_tx> ptx_vector;
+    uint64_t bc_height, unlock_block = 0;
+    std::string err;
+    //switch (transfer_type)
+    //{
+    ptx_vector = m_wallet->create_transactions_cap(dsts, fake_outs_count, 0 /* unlock_time */, priority, extra, m_trusted_daemon, unused_transfer_index);
+      
+    //}
+
+    if (ptx_vector.empty())
+    {
+      fail_msg_writer() << tr("No outputs found, or daemon is not ready");
+      return true;
+    }
+
+    // actually commit the transactions
+    if (m_wallet->watch_only())
+    {
+      bool r = m_wallet->save_tx(ptx_vector, "unsigned_monero_tx");
+      if (!r)
+      {
+        fail_msg_writer() << tr("Failed to write transaction(s) to file");
+      }
+      else
+      {
+        success_msg_writer(true) << tr("Unsigned transaction(s) successfully written to file: ") << "unsigned_monero_tx";
+      }
+    }
+    else while (!ptx_vector.empty())
+    {
+      auto & ptx = ptx_vector.back();
+      m_wallet->commit_tx(ptx);
+      success_msg_writer(true) << tr("Money successfully sent, transaction ") << get_transaction_hash(ptx.tx);
+
+      // if no exception, remove element from vector
+      ptx_vector.pop_back();
+    }
+  }
+  catch (const tools::error::daemon_busy&)
+  {
+    fail_msg_writer() << tr("daemon is busy. Please try again later.");
+  }
+  catch (const tools::error::no_connection_to_daemon&)
+  {
+    fail_msg_writer() << tr("no connection to daemon. Please make sure daemon is running.");
+  }
+  catch (const tools::error::wallet_rpc_error& e)
+  {
+    LOG_ERROR("RPC error: " << e.to_string());
+    fail_msg_writer() << tr("RPC error: ") << e.what();
+  }
+  catch (const tools::error::get_random_outs_error &e)
+  {
+    fail_msg_writer() << tr("failed to get random outputs to mix: ") << e.what();
+  }
+  catch (const tools::error::not_enough_money& e)
+  {
+    LOG_PRINT_L0(boost::format("not enough money to transfer, available only %s, sent amount %s") %
+      print_money(e.available()) %
+      print_money(e.tx_amount()));
+    fail_msg_writer() << tr("Not enough money in unlocked balance");
+  }
+  catch (const tools::error::tx_not_possible& e)
+  {
+    LOG_PRINT_L0(boost::format("not enough money to transfer, available only %s, transaction amount %s = %s + %s (fee)") %
+      print_money(e.available()) %
+      print_money(e.tx_amount() + e.fee())  %
+      print_money(e.tx_amount()) %
+      print_money(e.fee()));
+    fail_msg_writer() << tr("Failed to find a way to create transactions. This is usually due to dust which is so small it cannot pay for itself in fees, or trying to send more money than the unlocked balance, or not leaving enough for fees");
+  }
+  catch (const tools::error::not_enough_outs_to_mix& e)
+  {
+    auto writer = fail_msg_writer();
+    writer << tr("not enough outputs for specified mixin_count") << " = " << e.mixin_count() << ":";
+    for (std::pair<uint64_t, uint64_t> outs_for_amount : e.scanty_outs())
+    {
+      writer << "\n" << tr("output amount") << " = " << print_money(outs_for_amount.first) << ", " << tr("found outputs to mix") << " = " << outs_for_amount.second;
+    }
+  }
+  catch (const tools::error::tx_not_constructed&)
+  {
+    fail_msg_writer() << tr("transaction was not constructed");
+  }
+  catch (const tools::error::tx_rejected& e)
+  {
+    fail_msg_writer() << (boost::format(tr("transaction %s was rejected by daemon with status: ")) % get_transaction_hash(e.tx())) << e.status();
+    std::string reason = e.reason();
+    if (!reason.empty())
+      fail_msg_writer() << tr("Reason: ") << reason;
+  }
+  catch (const tools::error::tx_sum_overflow& e)
+  {
+    fail_msg_writer() << e.what();
+  }
+  catch (const tools::error::zero_destination&)
+  {
+    fail_msg_writer() << tr("one of destinations is zero");
+  }
+  catch (const tools::error::tx_too_big& e)
+  {
+    fail_msg_writer() << tr("failed to find a suitable way to split transactions");
+  }
+  catch (const tools::error::transfer_error& e)
+  {
+    LOG_ERROR("unknown transfer error: " << e.to_string());
+    fail_msg_writer() << tr("unknown transfer error: ") << e.what();
+  }
+  catch (const tools::error::wallet_internal_error& e)
+  {
+    LOG_ERROR("internal error: " << e.to_string());
+    fail_msg_writer() << tr("internal error: ") << e.what();
+  }
+  catch (const std::exception& e)
+  {
+    LOG_ERROR("unexpected error: " << e.what());
+    fail_msg_writer() << tr("unexpected error: ") << e.what();
+  }
+  catch (...)
+  {
+    LOG_ERROR("unknown error");
+    fail_msg_writer() << tr("unknown error");
+  }
+
+  return true;
+}
+
 //----------------------------------------------------------------------------------------------------
 bool simple_wallet::transfer_main(int transfer_type, const std::vector<std::string> &args_)
 {
@@ -3918,6 +4139,43 @@ bool simple_wallet::unspent_outputs(const std::vector<std::string> &args_)
     << tr("   ^") << std::string(histogram_width - 2, ' ') << tr("^\n")
     << tr("  ") << min_height << std::string(histogram_width - 8, ' ') << max_height;
   success_msg_writer() << histogram_str.str();
+  return true;
+}
+//---------------------------------------ADDED--------------------------------------------------------
+bool simple_wallet::find_cap(const std::vector<std::string> &args)
+{
+  if(args.size() != 1)
+  {
+    fail_msg_writer() << tr("usage: find_cap <capid>");
+    return true;
+  }
+  cryptonote::blobdata txid_data;
+  if(!epee::string_tools::parse_hexstr_to_binbuff(args.front(), txid_data) || txid_data.size() != sizeof(crypto::hash))
+  {
+    fail_msg_writer() << tr("failed to parse capid");
+    return true;
+  }
+  const char* capid = reinterpret_cast<const char*>(txid_data.data());
+
+  tools::wallet2::transfer_container transfers;
+  m_wallet->get_transfers(transfers);
+  if (transfers.empty())
+  {
+    success_msg_writer() << "There is no unspent output in this wallet.";
+    return true;
+  }
+  
+  for (const auto& td : transfers)
+  {
+    if (!memcmp(capid,td.m_cap.bytes,sizeof(td.m_cap.bytes))) {
+    	success_msg_writer() << tr("Found output ") << print_cap(td.m_cap)
+    	<< tr("expired at ") << print_time(td.m_amount);
+    	return true; 
+    }
+  }
+  
+  fail_msg_writer() << "Capability not found.";
+  
   return true;
 }
 //----------------------------------------------------------------------------------------------------

@@ -43,132 +43,155 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include blockchain_utilities/CMakeFiles/blockchain_export.dir/depend.make
+include src/blockchain_utilities/CMakeFiles/blockchain_export.dir/depend.make
 
 # Include the progress variables for this target.
-include blockchain_utilities/CMakeFiles/blockchain_export.dir/progress.make
+include src/blockchain_utilities/CMakeFiles/blockchain_export.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include blockchain_utilities/CMakeFiles/blockchain_export.dir/flags.make
+include src/blockchain_utilities/CMakeFiles/blockchain_export.dir/flags.make
 
-blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.o: blockchain_utilities/CMakeFiles/blockchain_export.dir/flags.make
-blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.o: blockchain_utilities/blockchain_export.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.o"
-	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/blockchain_export.dir/blockchain_export.o -c /home/chip/Downloads/monero/src/blockchain_utilities/blockchain_export.cpp
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.o: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/flags.make
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.o: src/blockchain_utilities/blockchain_export.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.o"
+	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/blockchain_export.dir/blockchain_export.cpp.o -c /home/chip/Downloads/monero/src/blockchain_utilities/blockchain_export.cpp
 
-blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/blockchain_export.dir/blockchain_export.i"
-	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/blockchain_utilities/blockchain_export.cpp > CMakeFiles/blockchain_export.dir/blockchain_export.i
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/blockchain_export.dir/blockchain_export.cpp.i"
+	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/blockchain_utilities/blockchain_export.cpp > CMakeFiles/blockchain_export.dir/blockchain_export.cpp.i
 
-blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/blockchain_export.dir/blockchain_export.s"
-	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/blockchain_utilities/blockchain_export.cpp -o CMakeFiles/blockchain_export.dir/blockchain_export.s
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/blockchain_export.dir/blockchain_export.cpp.s"
+	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/blockchain_utilities/blockchain_export.cpp -o CMakeFiles/blockchain_export.dir/blockchain_export.cpp.s
 
-blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.o.requires:
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.o.requires:
 
-.PHONY : blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.o.requires
+.PHONY : src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.o.requires
 
-blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.o.provides: blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.o.requires
-	$(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.o.provides.build
-.PHONY : blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.o.provides
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.o.provides: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.o.requires
+	$(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.o.provides.build
+.PHONY : src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.o.provides
 
-blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.o.provides.build: blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.o
-
-
-blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.o: blockchain_utilities/CMakeFiles/blockchain_export.dir/flags.make
-blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.o: blockchain_utilities/bootstrap_file.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.o"
-	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/blockchain_export.dir/bootstrap_file.o -c /home/chip/Downloads/monero/src/blockchain_utilities/bootstrap_file.cpp
-
-blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/blockchain_export.dir/bootstrap_file.i"
-	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/blockchain_utilities/bootstrap_file.cpp > CMakeFiles/blockchain_export.dir/bootstrap_file.i
-
-blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/blockchain_export.dir/bootstrap_file.s"
-	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/blockchain_utilities/bootstrap_file.cpp -o CMakeFiles/blockchain_export.dir/bootstrap_file.s
-
-blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.o.requires:
-
-.PHONY : blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.o.requires
-
-blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.o.provides: blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.o.requires
-	$(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.o.provides.build
-.PHONY : blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.o.provides
-
-blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.o.provides.build: blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.o
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.o.provides.build: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.o
 
 
-blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.o: blockchain_utilities/CMakeFiles/blockchain_export.dir/flags.make
-blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.o: blockchain_utilities/blocksdat_file.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.o"
-	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/blockchain_export.dir/blocksdat_file.o -c /home/chip/Downloads/monero/src/blockchain_utilities/blocksdat_file.cpp
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.o: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/flags.make
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.o: src/blockchain_utilities/bootstrap_file.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.o"
+	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.o -c /home/chip/Downloads/monero/src/blockchain_utilities/bootstrap_file.cpp
 
-blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/blockchain_export.dir/blocksdat_file.i"
-	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/blockchain_utilities/blocksdat_file.cpp > CMakeFiles/blockchain_export.dir/blocksdat_file.i
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.i"
+	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/blockchain_utilities/bootstrap_file.cpp > CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.i
 
-blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/blockchain_export.dir/blocksdat_file.s"
-	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/blockchain_utilities/blocksdat_file.cpp -o CMakeFiles/blockchain_export.dir/blocksdat_file.s
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.s"
+	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/blockchain_utilities/bootstrap_file.cpp -o CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.s
 
-blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.o.requires:
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.o.requires:
 
-.PHONY : blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.o.requires
+.PHONY : src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.o.requires
 
-blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.o.provides: blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.o.requires
-	$(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.o.provides.build
-.PHONY : blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.o.provides
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.o.provides: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.o.requires
+	$(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.o.provides.build
+.PHONY : src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.o.provides
 
-blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.o.provides.build: blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.o
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.o.provides.build: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.o
+
+
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.o: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/flags.make
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.o: src/blockchain_utilities/blocksdat_file.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.o"
+	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.o -c /home/chip/Downloads/monero/src/blockchain_utilities/blocksdat_file.cpp
+
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.i"
+	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/blockchain_utilities/blocksdat_file.cpp > CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.i
+
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.s"
+	cd /home/chip/Downloads/monero/src/blockchain_utilities && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/blockchain_utilities/blocksdat_file.cpp -o CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.s
+
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.o.requires:
+
+.PHONY : src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.o.requires
+
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.o.provides: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.o.requires
+	$(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.o.provides.build
+.PHONY : src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.o.provides
+
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.o.provides.build: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.o
 
 
 # Object files for target blockchain_export
 blockchain_export_OBJECTS = \
-"CMakeFiles/blockchain_export.dir/blockchain_export.o" \
-"CMakeFiles/blockchain_export.dir/bootstrap_file.o" \
-"CMakeFiles/blockchain_export.dir/blocksdat_file.o"
+"CMakeFiles/blockchain_export.dir/blockchain_export.cpp.o" \
+"CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.o" \
+"CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.o"
 
 # External object files for target blockchain_export
 blockchain_export_EXTERNAL_OBJECTS =
 
-bin/monero-blockchain-export: blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.o
-bin/monero-blockchain-export: blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.o
-bin/monero-blockchain-export: blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.o
-bin/monero-blockchain-export: blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make
-bin/monero-blockchain-export: cryptonote_core/libcryptonote_core.a
-bin/monero-blockchain-export: blockchain_db/libblockchain_db.a
-bin/monero-blockchain-export: p2p/libp2p.a
-bin/monero-blockchain-export: ringct/libringct.a
-bin/monero-blockchain-export: cryptonote_basic/libcryptonote_basic.a
-bin/monero-blockchain-export: common/libcommon.a
-bin/monero-blockchain-export: crypto/libcncrypto.a
-bin/monero-blockchain-export: blockchain_utilities/CMakeFiles/blockchain_export.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../bin/monero-blockchain-export"
+bin/monero-blockchain-export: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.o
+bin/monero-blockchain-export: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.o
+bin/monero-blockchain-export: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.o
+bin/monero-blockchain-export: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/librt.so
+bin/monero-blockchain-export: src/cryptonote_core/libcryptonote_core.a
+bin/monero-blockchain-export: src/blockchain_db/libblockchain_db.a
+bin/monero-blockchain-export: src/p2p/libp2p.a
+bin/monero-blockchain-export: contrib/epee/src/libepee.a
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/libboost_system.so
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/librt.so
+bin/monero-blockchain-export: external/db_drivers/liblmdb/liblmdb.a
+bin/monero-blockchain-export: src/ringct/libringct.a
+bin/monero-blockchain-export: src/cryptonote_basic/libcryptonote_basic.a
+bin/monero-blockchain-export: src/common/libcommon.a
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/libunbound.so
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/libssl.so
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/libcrypto.so
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+bin/monero-blockchain-export: src/blocks/libblocks.a
+bin/monero-blockchain-export: contrib/epee/src/libepee.a
+bin/monero-blockchain-export: src/crypto/libcncrypto.a
+bin/monero-blockchain-export: external/easylogging++/libeasylogging.a
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/libminiupnpc.so
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/libboost_system.so
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+bin/monero-blockchain-export: /usr/lib/x86_64-linux-gnu/librt.so
+bin/monero-blockchain-export: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../../bin/monero-blockchain-export"
 	cd /home/chip/Downloads/monero/src/blockchain_utilities && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/blockchain_export.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-blockchain_utilities/CMakeFiles/blockchain_export.dir/build: bin/monero-blockchain-export
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/build: bin/monero-blockchain-export
 
-.PHONY : blockchain_utilities/CMakeFiles/blockchain_export.dir/build
+.PHONY : src/blockchain_utilities/CMakeFiles/blockchain_export.dir/build
 
-blockchain_utilities/CMakeFiles/blockchain_export.dir/requires: blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.o.requires
-blockchain_utilities/CMakeFiles/blockchain_export.dir/requires: blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.o.requires
-blockchain_utilities/CMakeFiles/blockchain_export.dir/requires: blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.o.requires
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/requires: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.o.requires
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/requires: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.o.requires
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/requires: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.o.requires
 
-.PHONY : blockchain_utilities/CMakeFiles/blockchain_export.dir/requires
+.PHONY : src/blockchain_utilities/CMakeFiles/blockchain_export.dir/requires
 
-blockchain_utilities/CMakeFiles/blockchain_export.dir/clean:
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/clean:
 	cd /home/chip/Downloads/monero/src/blockchain_utilities && $(CMAKE_COMMAND) -P CMakeFiles/blockchain_export.dir/cmake_clean.cmake
-.PHONY : blockchain_utilities/CMakeFiles/blockchain_export.dir/clean
+.PHONY : src/blockchain_utilities/CMakeFiles/blockchain_export.dir/clean
 
-blockchain_utilities/CMakeFiles/blockchain_export.dir/depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/blockchain_utilities /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/blockchain_utilities /home/chip/Downloads/monero/src/blockchain_utilities/CMakeFiles/blockchain_export.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : blockchain_utilities/CMakeFiles/blockchain_export.dir/depend
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/src/blockchain_utilities /home/chip/Downloads/monero /home/chip/Downloads/monero/src/blockchain_utilities /home/chip/Downloads/monero/src/blockchain_utilities/CMakeFiles/blockchain_export.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : src/blockchain_utilities/CMakeFiles/blockchain_export.dir/depend
 

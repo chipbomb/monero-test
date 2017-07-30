@@ -48,13 +48,23 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -67,16 +77,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -99,6 +99,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -124,14 +135,14 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles /home/chip/Downloads/monero/src/p2p/CMakeFiles/progress.marks
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 p2p/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles /home/chip/Downloads/monero/src/p2p/CMakeFiles/progress.marks
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/p2p/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 p2p/clean
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/p2p/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,47 +152,47 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 p2p/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/p2p/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 p2p/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/p2p/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-p2p/CMakeFiles/obj_p2p.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 p2p/CMakeFiles/obj_p2p.dir/rule
-.PHONY : p2p/CMakeFiles/obj_p2p.dir/rule
+src/p2p/CMakeFiles/obj_p2p.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/p2p/CMakeFiles/obj_p2p.dir/rule
+.PHONY : src/p2p/CMakeFiles/obj_p2p.dir/rule
 
 # Convenience name for target.
-obj_p2p: p2p/CMakeFiles/obj_p2p.dir/rule
+obj_p2p: src/p2p/CMakeFiles/obj_p2p.dir/rule
 
 .PHONY : obj_p2p
 
 # fast build rule for target.
 obj_p2p/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f p2p/CMakeFiles/obj_p2p.dir/build.make p2p/CMakeFiles/obj_p2p.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/p2p/CMakeFiles/obj_p2p.dir/build.make src/p2p/CMakeFiles/obj_p2p.dir/build
 .PHONY : obj_p2p/fast
 
 # Convenience name for target.
-p2p/CMakeFiles/p2p.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 p2p/CMakeFiles/p2p.dir/rule
-.PHONY : p2p/CMakeFiles/p2p.dir/rule
+src/p2p/CMakeFiles/p2p.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/p2p/CMakeFiles/p2p.dir/rule
+.PHONY : src/p2p/CMakeFiles/p2p.dir/rule
 
 # Convenience name for target.
-p2p: p2p/CMakeFiles/p2p.dir/rule
+p2p: src/p2p/CMakeFiles/p2p.dir/rule
 
 .PHONY : p2p
 
 # fast build rule for target.
 p2p/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f p2p/CMakeFiles/p2p.dir/build.make p2p/CMakeFiles/p2p.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/p2p/CMakeFiles/p2p.dir/build.make src/p2p/CMakeFiles/p2p.dir/build
 .PHONY : p2p/fast
 
 connection_basic.o: connection_basic.cpp.o
@@ -190,7 +201,7 @@ connection_basic.o: connection_basic.cpp.o
 
 # target to build an object file
 connection_basic.cpp.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f p2p/CMakeFiles/obj_p2p.dir/build.make p2p/CMakeFiles/obj_p2p.dir/connection_basic.cpp.o
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/p2p/CMakeFiles/obj_p2p.dir/build.make src/p2p/CMakeFiles/obj_p2p.dir/connection_basic.cpp.o
 .PHONY : connection_basic.cpp.o
 
 connection_basic.i: connection_basic.cpp.i
@@ -199,7 +210,7 @@ connection_basic.i: connection_basic.cpp.i
 
 # target to preprocess a source file
 connection_basic.cpp.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f p2p/CMakeFiles/obj_p2p.dir/build.make p2p/CMakeFiles/obj_p2p.dir/connection_basic.cpp.i
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/p2p/CMakeFiles/obj_p2p.dir/build.make src/p2p/CMakeFiles/obj_p2p.dir/connection_basic.cpp.i
 .PHONY : connection_basic.cpp.i
 
 connection_basic.s: connection_basic.cpp.s
@@ -208,7 +219,7 @@ connection_basic.s: connection_basic.cpp.s
 
 # target to generate assembly for a file
 connection_basic.cpp.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f p2p/CMakeFiles/obj_p2p.dir/build.make p2p/CMakeFiles/obj_p2p.dir/connection_basic.cpp.s
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/p2p/CMakeFiles/obj_p2p.dir/build.make src/p2p/CMakeFiles/obj_p2p.dir/connection_basic.cpp.s
 .PHONY : connection_basic.cpp.s
 
 network_throttle-detail.o: network_throttle-detail.cpp.o
@@ -217,7 +228,7 @@ network_throttle-detail.o: network_throttle-detail.cpp.o
 
 # target to build an object file
 network_throttle-detail.cpp.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f p2p/CMakeFiles/obj_p2p.dir/build.make p2p/CMakeFiles/obj_p2p.dir/network_throttle-detail.cpp.o
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/p2p/CMakeFiles/obj_p2p.dir/build.make src/p2p/CMakeFiles/obj_p2p.dir/network_throttle-detail.cpp.o
 .PHONY : network_throttle-detail.cpp.o
 
 network_throttle-detail.i: network_throttle-detail.cpp.i
@@ -226,7 +237,7 @@ network_throttle-detail.i: network_throttle-detail.cpp.i
 
 # target to preprocess a source file
 network_throttle-detail.cpp.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f p2p/CMakeFiles/obj_p2p.dir/build.make p2p/CMakeFiles/obj_p2p.dir/network_throttle-detail.cpp.i
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/p2p/CMakeFiles/obj_p2p.dir/build.make src/p2p/CMakeFiles/obj_p2p.dir/network_throttle-detail.cpp.i
 .PHONY : network_throttle-detail.cpp.i
 
 network_throttle-detail.s: network_throttle-detail.cpp.s
@@ -235,7 +246,7 @@ network_throttle-detail.s: network_throttle-detail.cpp.s
 
 # target to generate assembly for a file
 network_throttle-detail.cpp.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f p2p/CMakeFiles/obj_p2p.dir/build.make p2p/CMakeFiles/obj_p2p.dir/network_throttle-detail.cpp.s
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/p2p/CMakeFiles/obj_p2p.dir/build.make src/p2p/CMakeFiles/obj_p2p.dir/network_throttle-detail.cpp.s
 .PHONY : network_throttle-detail.cpp.s
 
 network_throttle.o: network_throttle.cpp.o
@@ -244,7 +255,7 @@ network_throttle.o: network_throttle.cpp.o
 
 # target to build an object file
 network_throttle.cpp.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f p2p/CMakeFiles/obj_p2p.dir/build.make p2p/CMakeFiles/obj_p2p.dir/network_throttle.cpp.o
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/p2p/CMakeFiles/obj_p2p.dir/build.make src/p2p/CMakeFiles/obj_p2p.dir/network_throttle.cpp.o
 .PHONY : network_throttle.cpp.o
 
 network_throttle.i: network_throttle.cpp.i
@@ -253,7 +264,7 @@ network_throttle.i: network_throttle.cpp.i
 
 # target to preprocess a source file
 network_throttle.cpp.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f p2p/CMakeFiles/obj_p2p.dir/build.make p2p/CMakeFiles/obj_p2p.dir/network_throttle.cpp.i
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/p2p/CMakeFiles/obj_p2p.dir/build.make src/p2p/CMakeFiles/obj_p2p.dir/network_throttle.cpp.i
 .PHONY : network_throttle.cpp.i
 
 network_throttle.s: network_throttle.cpp.s
@@ -262,7 +273,7 @@ network_throttle.s: network_throttle.cpp.s
 
 # target to generate assembly for a file
 network_throttle.cpp.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f p2p/CMakeFiles/obj_p2p.dir/build.make p2p/CMakeFiles/obj_p2p.dir/network_throttle.cpp.s
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/p2p/CMakeFiles/obj_p2p.dir/build.make src/p2p/CMakeFiles/obj_p2p.dir/network_throttle.cpp.s
 .PHONY : network_throttle.cpp.s
 
 # Help Target
@@ -271,10 +282,11 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... obj_p2p"
 	@echo "... p2p"
 	@echo "... install/strip"
@@ -299,6 +311,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -48,13 +48,23 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -67,16 +77,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -99,6 +99,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -124,14 +135,14 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles /home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/progress.marks
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 cryptonote_basic/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles /home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/progress.marks
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/cryptonote_basic/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 cryptonote_basic/clean
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/cryptonote_basic/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,153 +152,237 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 cryptonote_basic/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/cryptonote_basic/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 cryptonote_basic/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/cryptonote_basic/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/rule
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/rule
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/rule
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/rule
 
 # Convenience name for target.
-obj_cryptonote_basic: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/rule
+obj_cryptonote_basic: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/rule
 
 .PHONY : obj_cryptonote_basic
 
 # fast build rule for target.
 obj_cryptonote_basic/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build
 .PHONY : obj_cryptonote_basic/fast
 
 # Convenience name for target.
-cryptonote_basic/CMakeFiles/cryptonote_basic.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 cryptonote_basic/CMakeFiles/cryptonote_basic.dir/rule
-.PHONY : cryptonote_basic/CMakeFiles/cryptonote_basic.dir/rule
+src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/rule
+.PHONY : src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/rule
 
 # Convenience name for target.
-cryptonote_basic: cryptonote_basic/CMakeFiles/cryptonote_basic.dir/rule
+cryptonote_basic: src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/rule
 
 .PHONY : cryptonote_basic
 
 # fast build rule for target.
 cryptonote_basic/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/cryptonote_basic.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/build
 .PHONY : cryptonote_basic/fast
 
-# target to build an object file
-account.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.o
+account.o: account.cpp.o
+
 .PHONY : account.o
 
-# target to preprocess a source file
-account.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.i
+# target to build an object file
+account.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.o
+.PHONY : account.cpp.o
+
+account.i: account.cpp.i
+
 .PHONY : account.i
 
-# target to generate assembly for a file
-account.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.s
+# target to preprocess a source file
+account.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.i
+.PHONY : account.cpp.i
+
+account.s: account.cpp.s
+
 .PHONY : account.s
 
-# target to build an object file
-checkpoints.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.o
+# target to generate assembly for a file
+account.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.s
+.PHONY : account.cpp.s
+
+checkpoints.o: checkpoints.cpp.o
+
 .PHONY : checkpoints.o
 
-# target to preprocess a source file
-checkpoints.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.i
+# target to build an object file
+checkpoints.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.o
+.PHONY : checkpoints.cpp.o
+
+checkpoints.i: checkpoints.cpp.i
+
 .PHONY : checkpoints.i
 
-# target to generate assembly for a file
-checkpoints.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.s
+# target to preprocess a source file
+checkpoints.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.i
+.PHONY : checkpoints.cpp.i
+
+checkpoints.s: checkpoints.cpp.s
+
 .PHONY : checkpoints.s
 
-# target to build an object file
-cryptonote_basic_impl.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.o
+# target to generate assembly for a file
+checkpoints.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.s
+.PHONY : checkpoints.cpp.s
+
+cryptonote_basic_impl.o: cryptonote_basic_impl.cpp.o
+
 .PHONY : cryptonote_basic_impl.o
 
-# target to preprocess a source file
-cryptonote_basic_impl.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.i
+# target to build an object file
+cryptonote_basic_impl.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.o
+.PHONY : cryptonote_basic_impl.cpp.o
+
+cryptonote_basic_impl.i: cryptonote_basic_impl.cpp.i
+
 .PHONY : cryptonote_basic_impl.i
 
-# target to generate assembly for a file
-cryptonote_basic_impl.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.s
+# target to preprocess a source file
+cryptonote_basic_impl.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.i
+.PHONY : cryptonote_basic_impl.cpp.i
+
+cryptonote_basic_impl.s: cryptonote_basic_impl.cpp.s
+
 .PHONY : cryptonote_basic_impl.s
 
-# target to build an object file
-cryptonote_format_utils.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.o
+# target to generate assembly for a file
+cryptonote_basic_impl.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.s
+.PHONY : cryptonote_basic_impl.cpp.s
+
+cryptonote_format_utils.o: cryptonote_format_utils.cpp.o
+
 .PHONY : cryptonote_format_utils.o
 
-# target to preprocess a source file
-cryptonote_format_utils.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.i
+# target to build an object file
+cryptonote_format_utils.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.o
+.PHONY : cryptonote_format_utils.cpp.o
+
+cryptonote_format_utils.i: cryptonote_format_utils.cpp.i
+
 .PHONY : cryptonote_format_utils.i
 
-# target to generate assembly for a file
-cryptonote_format_utils.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.s
+# target to preprocess a source file
+cryptonote_format_utils.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.i
+.PHONY : cryptonote_format_utils.cpp.i
+
+cryptonote_format_utils.s: cryptonote_format_utils.cpp.s
+
 .PHONY : cryptonote_format_utils.s
 
-# target to build an object file
-difficulty.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.o
+# target to generate assembly for a file
+cryptonote_format_utils.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.s
+.PHONY : cryptonote_format_utils.cpp.s
+
+difficulty.o: difficulty.cpp.o
+
 .PHONY : difficulty.o
 
-# target to preprocess a source file
-difficulty.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.i
+# target to build an object file
+difficulty.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.o
+.PHONY : difficulty.cpp.o
+
+difficulty.i: difficulty.cpp.i
+
 .PHONY : difficulty.i
 
-# target to generate assembly for a file
-difficulty.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.s
+# target to preprocess a source file
+difficulty.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.i
+.PHONY : difficulty.cpp.i
+
+difficulty.s: difficulty.cpp.s
+
 .PHONY : difficulty.s
 
-# target to build an object file
-hardfork.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.o
+# target to generate assembly for a file
+difficulty.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.s
+.PHONY : difficulty.cpp.s
+
+hardfork.o: hardfork.cpp.o
+
 .PHONY : hardfork.o
 
-# target to preprocess a source file
-hardfork.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.i
+# target to build an object file
+hardfork.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.o
+.PHONY : hardfork.cpp.o
+
+hardfork.i: hardfork.cpp.i
+
 .PHONY : hardfork.i
 
-# target to generate assembly for a file
-hardfork.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.s
+# target to preprocess a source file
+hardfork.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.i
+.PHONY : hardfork.cpp.i
+
+hardfork.s: hardfork.cpp.s
+
 .PHONY : hardfork.s
 
-# target to build an object file
-miner.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.o
+# target to generate assembly for a file
+hardfork.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.s
+.PHONY : hardfork.cpp.s
+
+miner.o: miner.cpp.o
+
 .PHONY : miner.o
 
-# target to preprocess a source file
-miner.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.i
+# target to build an object file
+miner.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.o
+.PHONY : miner.cpp.o
+
+miner.i: miner.cpp.i
+
 .PHONY : miner.i
 
-# target to generate assembly for a file
-miner.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.s
+# target to preprocess a source file
+miner.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.i
+.PHONY : miner.cpp.i
+
+miner.s: miner.cpp.s
+
 .PHONY : miner.s
+
+# target to generate assembly for a file
+miner.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.s
+.PHONY : miner.cpp.s
 
 # Help Target
 help:
@@ -295,11 +390,12 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... obj_cryptonote_basic"
+	@echo "... test"
 	@echo "... cryptonote_basic"
 	@echo "... install/strip"
 	@echo "... install/local"
@@ -335,6 +431,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

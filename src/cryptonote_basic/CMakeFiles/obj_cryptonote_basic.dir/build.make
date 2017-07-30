@@ -43,219 +43,219 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/depend.make
+include src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/depend.make
 
 # Include the progress variables for this target.
-include cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/progress.make
+include src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/flags.make
+include src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/flags.make
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.o: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/flags.make
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.o: cryptonote_basic/account.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.o"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_cryptonote_basic.dir/account.o -c /home/chip/Downloads/monero/src/cryptonote_basic/account.cpp
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.o: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/flags.make
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.o: src/cryptonote_basic/account.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.o"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_cryptonote_basic.dir/account.cpp.o -c /home/chip/Downloads/monero/src/cryptonote_basic/account.cpp
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_cryptonote_basic.dir/account.i"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/cryptonote_basic/account.cpp > CMakeFiles/obj_cryptonote_basic.dir/account.i
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_cryptonote_basic.dir/account.cpp.i"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/cryptonote_basic/account.cpp > CMakeFiles/obj_cryptonote_basic.dir/account.cpp.i
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_cryptonote_basic.dir/account.s"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/cryptonote_basic/account.cpp -o CMakeFiles/obj_cryptonote_basic.dir/account.s
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_cryptonote_basic.dir/account.cpp.s"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/cryptonote_basic/account.cpp -o CMakeFiles/obj_cryptonote_basic.dir/account.cpp.s
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.o.requires:
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.o.requires:
 
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.o.requires
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.o.requires
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.o.provides: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.o.requires
-	$(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.o.provides.build
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.o.provides
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.o.provides: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.o.requires
+	$(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.o.provides.build
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.o.provides
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.o.provides.build: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.o
-
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.o: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/flags.make
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.o: cryptonote_basic/checkpoints.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.o"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_cryptonote_basic.dir/checkpoints.o -c /home/chip/Downloads/monero/src/cryptonote_basic/checkpoints.cpp
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_cryptonote_basic.dir/checkpoints.i"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/cryptonote_basic/checkpoints.cpp > CMakeFiles/obj_cryptonote_basic.dir/checkpoints.i
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_cryptonote_basic.dir/checkpoints.s"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/cryptonote_basic/checkpoints.cpp -o CMakeFiles/obj_cryptonote_basic.dir/checkpoints.s
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.o.requires:
-
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.o.requires
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.o.provides: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.o.requires
-	$(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.o.provides.build
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.o.provides
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.o.provides.build: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.o
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.o.provides.build: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.o
 
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.o: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/flags.make
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.o: cryptonote_basic/cryptonote_basic_impl.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.o"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.o -c /home/chip/Downloads/monero/src/cryptonote_basic/cryptonote_basic_impl.cpp
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.o: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/flags.make
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.o: src/cryptonote_basic/checkpoints.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.o"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.o -c /home/chip/Downloads/monero/src/cryptonote_basic/checkpoints.cpp
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.i"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/cryptonote_basic/cryptonote_basic_impl.cpp > CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.i
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.i"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/cryptonote_basic/checkpoints.cpp > CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.i
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.s"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/cryptonote_basic/cryptonote_basic_impl.cpp -o CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.s
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.s"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/cryptonote_basic/checkpoints.cpp -o CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.s
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.o.requires:
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.o.requires:
 
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.o.requires
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.o.requires
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.o.provides: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.o.requires
-	$(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.o.provides.build
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.o.provides
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.o.provides: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.o.requires
+	$(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.o.provides.build
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.o.provides
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.o.provides.build: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.o
-
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.o: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/flags.make
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.o: cryptonote_basic/cryptonote_format_utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.o"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.o -c /home/chip/Downloads/monero/src/cryptonote_basic/cryptonote_format_utils.cpp
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.i"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/cryptonote_basic/cryptonote_format_utils.cpp > CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.i
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.s"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/cryptonote_basic/cryptonote_format_utils.cpp -o CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.s
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.o.requires:
-
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.o.requires
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.o.provides: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.o.requires
-	$(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.o.provides.build
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.o.provides
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.o.provides.build: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.o
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.o.provides.build: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.o
 
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.o: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/flags.make
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.o: cryptonote_basic/difficulty.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.o"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_cryptonote_basic.dir/difficulty.o -c /home/chip/Downloads/monero/src/cryptonote_basic/difficulty.cpp
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.o: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/flags.make
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.o: src/cryptonote_basic/cryptonote_basic_impl.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.o"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.o -c /home/chip/Downloads/monero/src/cryptonote_basic/cryptonote_basic_impl.cpp
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_cryptonote_basic.dir/difficulty.i"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/cryptonote_basic/difficulty.cpp > CMakeFiles/obj_cryptonote_basic.dir/difficulty.i
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.i"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/cryptonote_basic/cryptonote_basic_impl.cpp > CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.i
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_cryptonote_basic.dir/difficulty.s"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/cryptonote_basic/difficulty.cpp -o CMakeFiles/obj_cryptonote_basic.dir/difficulty.s
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.s"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/cryptonote_basic/cryptonote_basic_impl.cpp -o CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.s
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.o.requires:
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.o.requires:
 
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.o.requires
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.o.requires
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.o.provides: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.o.requires
-	$(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.o.provides.build
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.o.provides
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.o.provides: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.o.requires
+	$(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.o.provides.build
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.o.provides
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.o.provides.build: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.o
-
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.o: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/flags.make
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.o: cryptonote_basic/hardfork.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.o"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_cryptonote_basic.dir/hardfork.o -c /home/chip/Downloads/monero/src/cryptonote_basic/hardfork.cpp
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_cryptonote_basic.dir/hardfork.i"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/cryptonote_basic/hardfork.cpp > CMakeFiles/obj_cryptonote_basic.dir/hardfork.i
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_cryptonote_basic.dir/hardfork.s"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/cryptonote_basic/hardfork.cpp -o CMakeFiles/obj_cryptonote_basic.dir/hardfork.s
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.o.requires:
-
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.o.requires
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.o.provides: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.o.requires
-	$(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.o.provides.build
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.o.provides
-
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.o.provides.build: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.o
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.o.provides.build: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.o
 
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.o: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/flags.make
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.o: cryptonote_basic/miner.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.o"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_cryptonote_basic.dir/miner.o -c /home/chip/Downloads/monero/src/cryptonote_basic/miner.cpp
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.o: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/flags.make
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.o: src/cryptonote_basic/cryptonote_format_utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.o"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.o -c /home/chip/Downloads/monero/src/cryptonote_basic/cryptonote_format_utils.cpp
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_cryptonote_basic.dir/miner.i"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/cryptonote_basic/miner.cpp > CMakeFiles/obj_cryptonote_basic.dir/miner.i
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.i"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/cryptonote_basic/cryptonote_format_utils.cpp > CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.i
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_cryptonote_basic.dir/miner.s"
-	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/cryptonote_basic/miner.cpp -o CMakeFiles/obj_cryptonote_basic.dir/miner.s
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.s"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/cryptonote_basic/cryptonote_format_utils.cpp -o CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.s
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.o.requires:
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.o.requires:
 
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.o.requires
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.o.requires
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.o.provides: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.o.requires
-	$(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.o.provides.build
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.o.provides
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.o.provides: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.o.requires
+	$(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.o.provides.build
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.o.provides
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.o.provides.build: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.o
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.o.provides.build: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.o
 
 
-obj_cryptonote_basic: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.o
-obj_cryptonote_basic: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.o
-obj_cryptonote_basic: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.o
-obj_cryptonote_basic: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.o
-obj_cryptonote_basic: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.o
-obj_cryptonote_basic: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.o
-obj_cryptonote_basic: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.o
-obj_cryptonote_basic: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.o: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/flags.make
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.o: src/cryptonote_basic/difficulty.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.o"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.o -c /home/chip/Downloads/monero/src/cryptonote_basic/difficulty.cpp
+
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.i"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/cryptonote_basic/difficulty.cpp > CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.i
+
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.s"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/cryptonote_basic/difficulty.cpp -o CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.s
+
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.o.requires:
+
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.o.requires
+
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.o.provides: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.o.requires
+	$(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.o.provides.build
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.o.provides
+
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.o.provides.build: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.o
+
+
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.o: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/flags.make
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.o: src/cryptonote_basic/hardfork.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.o"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.o -c /home/chip/Downloads/monero/src/cryptonote_basic/hardfork.cpp
+
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.i"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/cryptonote_basic/hardfork.cpp > CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.i
+
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.s"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/cryptonote_basic/hardfork.cpp -o CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.s
+
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.o.requires:
+
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.o.requires
+
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.o.provides: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.o.requires
+	$(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.o.provides.build
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.o.provides
+
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.o.provides.build: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.o
+
+
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.o: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/flags.make
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.o: src/cryptonote_basic/miner.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.o"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.o -c /home/chip/Downloads/monero/src/cryptonote_basic/miner.cpp
+
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.i"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/cryptonote_basic/miner.cpp > CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.i
+
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.s"
+	cd /home/chip/Downloads/monero/src/cryptonote_basic && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/cryptonote_basic/miner.cpp -o CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.s
+
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.o.requires:
+
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.o.requires
+
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.o.provides: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.o.requires
+	$(MAKE) -f src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.o.provides.build
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.o.provides
+
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.o.provides.build: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.o
+
+
+obj_cryptonote_basic: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.o
+obj_cryptonote_basic: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.o
+obj_cryptonote_basic: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.o
+obj_cryptonote_basic: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.o
+obj_cryptonote_basic: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.o
+obj_cryptonote_basic: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.o
+obj_cryptonote_basic: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.o
+obj_cryptonote_basic: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make
 
 .PHONY : obj_cryptonote_basic
 
 # Rule to build all files generated by this target.
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build: obj_cryptonote_basic
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build: obj_cryptonote_basic
 
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/requires: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.o.requires
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/requires: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.o.requires
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/requires: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.o.requires
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/requires: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.o.requires
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/requires: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.o.requires
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/requires: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.o.requires
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/requires: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.o.requires
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/requires: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.o.requires
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/requires: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.o.requires
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/requires: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.o.requires
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/requires: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.o.requires
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/requires: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.o.requires
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/requires: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.o.requires
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/requires: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.o.requires
 
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/requires
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/requires
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/clean:
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/clean:
 	cd /home/chip/Downloads/monero/src/cryptonote_basic && $(CMAKE_COMMAND) -P CMakeFiles/obj_cryptonote_basic.dir/cmake_clean.cmake
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/clean
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/clean
 
-cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/cryptonote_basic /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/cryptonote_basic /home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/depend
+src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/src/cryptonote_basic /home/chip/Downloads/monero /home/chip/Downloads/monero/src/cryptonote_basic /home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/depend
 

@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,6 +78,27 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -89,16 +110,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -124,14 +135,14 @@ install/strip/fast: install/strip
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles /home/chip/Downloads/monero/src/cryptonote_protocol/CMakeFiles/progress.marks
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 cryptonote_protocol/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles /home/chip/Downloads/monero/src/cryptonote_protocol/CMakeFiles/progress.marks
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/cryptonote_protocol/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 cryptonote_protocol/clean
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/cryptonote_protocol/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,47 +152,47 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 cryptonote_protocol/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/cryptonote_protocol/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 cryptonote_protocol/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/cryptonote_protocol/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/rule
-.PHONY : cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/rule
+src/cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/rule
+.PHONY : src/cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/rule
 
 # Convenience name for target.
-obj_cryptonote_protocol: cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/rule
+obj_cryptonote_protocol: src/cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/rule
 
 .PHONY : obj_cryptonote_protocol
 
 # fast build rule for target.
 obj_cryptonote_protocol/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/build.make cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/build.make src/cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/build
 .PHONY : obj_cryptonote_protocol/fast
 
 # Convenience name for target.
-cryptonote_protocol/CMakeFiles/cryptonote_protocol.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 cryptonote_protocol/CMakeFiles/cryptonote_protocol.dir/rule
-.PHONY : cryptonote_protocol/CMakeFiles/cryptonote_protocol.dir/rule
+src/cryptonote_protocol/CMakeFiles/cryptonote_protocol.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/cryptonote_protocol/CMakeFiles/cryptonote_protocol.dir/rule
+.PHONY : src/cryptonote_protocol/CMakeFiles/cryptonote_protocol.dir/rule
 
 # Convenience name for target.
-cryptonote_protocol: cryptonote_protocol/CMakeFiles/cryptonote_protocol.dir/rule
+cryptonote_protocol: src/cryptonote_protocol/CMakeFiles/cryptonote_protocol.dir/rule
 
 .PHONY : cryptonote_protocol
 
 # fast build rule for target.
 cryptonote_protocol/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_protocol/CMakeFiles/cryptonote_protocol.dir/build.make cryptonote_protocol/CMakeFiles/cryptonote_protocol.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_protocol/CMakeFiles/cryptonote_protocol.dir/build.make src/cryptonote_protocol/CMakeFiles/cryptonote_protocol.dir/build
 .PHONY : cryptonote_protocol/fast
 
 cryptonote_protocol_handler-base.o: cryptonote_protocol_handler-base.cpp.o
@@ -190,7 +201,7 @@ cryptonote_protocol_handler-base.o: cryptonote_protocol_handler-base.cpp.o
 
 # target to build an object file
 cryptonote_protocol_handler-base.cpp.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/build.make cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/cryptonote_protocol_handler-base.cpp.o
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/build.make src/cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/cryptonote_protocol_handler-base.cpp.o
 .PHONY : cryptonote_protocol_handler-base.cpp.o
 
 cryptonote_protocol_handler-base.i: cryptonote_protocol_handler-base.cpp.i
@@ -199,7 +210,7 @@ cryptonote_protocol_handler-base.i: cryptonote_protocol_handler-base.cpp.i
 
 # target to preprocess a source file
 cryptonote_protocol_handler-base.cpp.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/build.make cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/cryptonote_protocol_handler-base.cpp.i
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/build.make src/cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/cryptonote_protocol_handler-base.cpp.i
 .PHONY : cryptonote_protocol_handler-base.cpp.i
 
 cryptonote_protocol_handler-base.s: cryptonote_protocol_handler-base.cpp.s
@@ -208,7 +219,7 @@ cryptonote_protocol_handler-base.s: cryptonote_protocol_handler-base.cpp.s
 
 # target to generate assembly for a file
 cryptonote_protocol_handler-base.cpp.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/build.make cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/cryptonote_protocol_handler-base.cpp.s
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/build.make src/cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/cryptonote_protocol_handler-base.cpp.s
 .PHONY : cryptonote_protocol_handler-base.cpp.s
 
 # Help Target
@@ -219,8 +230,9 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... install"
+	@echo "... test"
 	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... obj_cryptonote_protocol"
 	@echo "... cryptonote_protocol"
 	@echo "... install/local"
@@ -239,6 +251,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

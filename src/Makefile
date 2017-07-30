@@ -48,13 +48,23 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -68,15 +78,16 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : list_install_components/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -100,16 +111,16 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target test
+test/fast: test
 
-.PHONY : rebuild_cache/fast
+.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -124,14 +135,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles /home/chip/Downloads/monero/src/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles /home/chip/Downloads/monero/src/CMakeFiles/progress.marks
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,408 +152,18 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-#=============================================================================
-# Target rules for targets named obj_common
-
-# Build rule for target.
-obj_common: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 obj_common
-.PHONY : obj_common
-
-# fast build rule for target.
-obj_common/fast:
-	$(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/build
-.PHONY : obj_common/fast
-
-#=============================================================================
-# Target rules for targets named common
-
-# Build rule for target.
-common: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 common
-.PHONY : common
-
-# fast build rule for target.
-common/fast:
-	$(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/build
-.PHONY : common/fast
-
-#=============================================================================
-# Target rules for targets named obj_cncrypto
-
-# Build rule for target.
-obj_cncrypto: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 obj_cncrypto
-.PHONY : obj_cncrypto
-
-# fast build rule for target.
-obj_cncrypto/fast:
-	$(MAKE) -f crypto/CMakeFiles/obj_cncrypto.dir/build.make crypto/CMakeFiles/obj_cncrypto.dir/build
-.PHONY : obj_cncrypto/fast
-
-#=============================================================================
-# Target rules for targets named cncrypto
-
-# Build rule for target.
-cncrypto: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cncrypto
-.PHONY : cncrypto
-
-# fast build rule for target.
-cncrypto/fast:
-	$(MAKE) -f crypto/CMakeFiles/cncrypto.dir/build.make crypto/CMakeFiles/cncrypto.dir/build
-.PHONY : cncrypto/fast
-
-#=============================================================================
-# Target rules for targets named obj_ringct
-
-# Build rule for target.
-obj_ringct: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 obj_ringct
-.PHONY : obj_ringct
-
-# fast build rule for target.
-obj_ringct/fast:
-	$(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/build
-.PHONY : obj_ringct/fast
-
-#=============================================================================
-# Target rules for targets named ringct
-
-# Build rule for target.
-ringct: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ringct
-.PHONY : ringct
-
-# fast build rule for target.
-ringct/fast:
-	$(MAKE) -f ringct/CMakeFiles/ringct.dir/build.make ringct/CMakeFiles/ringct.dir/build
-.PHONY : ringct/fast
-
-#=============================================================================
-# Target rules for targets named obj_cryptonote_basic
-
-# Build rule for target.
-obj_cryptonote_basic: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 obj_cryptonote_basic
-.PHONY : obj_cryptonote_basic
-
-# fast build rule for target.
-obj_cryptonote_basic/fast:
-	$(MAKE) -f cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/build
-.PHONY : obj_cryptonote_basic/fast
-
-#=============================================================================
-# Target rules for targets named cryptonote_basic
-
-# Build rule for target.
-cryptonote_basic: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cryptonote_basic
-.PHONY : cryptonote_basic
-
-# fast build rule for target.
-cryptonote_basic/fast:
-	$(MAKE) -f cryptonote_basic/CMakeFiles/cryptonote_basic.dir/build.make cryptonote_basic/CMakeFiles/cryptonote_basic.dir/build
-.PHONY : cryptonote_basic/fast
-
-#=============================================================================
-# Target rules for targets named obj_cryptonote_core
-
-# Build rule for target.
-obj_cryptonote_core: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 obj_cryptonote_core
-.PHONY : obj_cryptonote_core
-
-# fast build rule for target.
-obj_cryptonote_core/fast:
-	$(MAKE) -f cryptonote_core/CMakeFiles/obj_cryptonote_core.dir/build.make cryptonote_core/CMakeFiles/obj_cryptonote_core.dir/build
-.PHONY : obj_cryptonote_core/fast
-
-#=============================================================================
-# Target rules for targets named cryptonote_core
-
-# Build rule for target.
-cryptonote_core: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cryptonote_core
-.PHONY : cryptonote_core
-
-# fast build rule for target.
-cryptonote_core/fast:
-	$(MAKE) -f cryptonote_core/CMakeFiles/cryptonote_core.dir/build.make cryptonote_core/CMakeFiles/cryptonote_core.dir/build
-.PHONY : cryptonote_core/fast
-
-#=============================================================================
-# Target rules for targets named blockchain_db
-
-# Build rule for target.
-blockchain_db: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 blockchain_db
-.PHONY : blockchain_db
-
-# fast build rule for target.
-blockchain_db/fast:
-	$(MAKE) -f blockchain_db/CMakeFiles/blockchain_db.dir/build.make blockchain_db/CMakeFiles/blockchain_db.dir/build
-.PHONY : blockchain_db/fast
-
-#=============================================================================
-# Target rules for targets named obj_blockchain_db
-
-# Build rule for target.
-obj_blockchain_db: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 obj_blockchain_db
-.PHONY : obj_blockchain_db
-
-# fast build rule for target.
-obj_blockchain_db/fast:
-	$(MAKE) -f blockchain_db/CMakeFiles/obj_blockchain_db.dir/build.make blockchain_db/CMakeFiles/obj_blockchain_db.dir/build
-.PHONY : obj_blockchain_db/fast
-
-#=============================================================================
-# Target rules for targets named obj_mnemonics
-
-# Build rule for target.
-obj_mnemonics: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 obj_mnemonics
-.PHONY : obj_mnemonics
-
-# fast build rule for target.
-obj_mnemonics/fast:
-	$(MAKE) -f mnemonics/CMakeFiles/obj_mnemonics.dir/build.make mnemonics/CMakeFiles/obj_mnemonics.dir/build
-.PHONY : obj_mnemonics/fast
-
-#=============================================================================
-# Target rules for targets named mnemonics
-
-# Build rule for target.
-mnemonics: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 mnemonics
-.PHONY : mnemonics
-
-# fast build rule for target.
-mnemonics/fast:
-	$(MAKE) -f mnemonics/CMakeFiles/mnemonics.dir/build.make mnemonics/CMakeFiles/mnemonics.dir/build
-.PHONY : mnemonics/fast
-
-#=============================================================================
-# Target rules for targets named obj_rpc
-
-# Build rule for target.
-obj_rpc: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 obj_rpc
-.PHONY : obj_rpc
-
-# fast build rule for target.
-obj_rpc/fast:
-	$(MAKE) -f rpc/CMakeFiles/obj_rpc.dir/build.make rpc/CMakeFiles/obj_rpc.dir/build
-.PHONY : obj_rpc/fast
-
-#=============================================================================
-# Target rules for targets named rpc
-
-# Build rule for target.
-rpc: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rpc
-.PHONY : rpc
-
-# fast build rule for target.
-rpc/fast:
-	$(MAKE) -f rpc/CMakeFiles/rpc.dir/build.make rpc/CMakeFiles/rpc.dir/build
-.PHONY : rpc/fast
-
-#=============================================================================
-# Target rules for targets named obj_wallet
-
-# Build rule for target.
-obj_wallet: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 obj_wallet
-.PHONY : obj_wallet
-
-# fast build rule for target.
-obj_wallet/fast:
-	$(MAKE) -f wallet/CMakeFiles/obj_wallet.dir/build.make wallet/CMakeFiles/obj_wallet.dir/build
-.PHONY : obj_wallet/fast
-
-#=============================================================================
-# Target rules for targets named wallet
-
-# Build rule for target.
-wallet: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 wallet
-.PHONY : wallet
-
-# fast build rule for target.
-wallet/fast:
-	$(MAKE) -f wallet/CMakeFiles/wallet.dir/build.make wallet/CMakeFiles/wallet.dir/build
-.PHONY : wallet/fast
-
-#=============================================================================
-# Target rules for targets named wallet_rpc_server
-
-# Build rule for target.
-wallet_rpc_server: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 wallet_rpc_server
-.PHONY : wallet_rpc_server
-
-# fast build rule for target.
-wallet_rpc_server/fast:
-	$(MAKE) -f wallet/CMakeFiles/wallet_rpc_server.dir/build.make wallet/CMakeFiles/wallet_rpc_server.dir/build
-.PHONY : wallet_rpc_server/fast
-
-#=============================================================================
-# Target rules for targets named obj_p2p
-
-# Build rule for target.
-obj_p2p: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 obj_p2p
-.PHONY : obj_p2p
-
-# fast build rule for target.
-obj_p2p/fast:
-	$(MAKE) -f p2p/CMakeFiles/obj_p2p.dir/build.make p2p/CMakeFiles/obj_p2p.dir/build
-.PHONY : obj_p2p/fast
-
-#=============================================================================
-# Target rules for targets named p2p
-
-# Build rule for target.
-p2p: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 p2p
-.PHONY : p2p
-
-# fast build rule for target.
-p2p/fast:
-	$(MAKE) -f p2p/CMakeFiles/p2p.dir/build.make p2p/CMakeFiles/p2p.dir/build
-.PHONY : p2p/fast
-
-#=============================================================================
-# Target rules for targets named obj_cryptonote_protocol
-
-# Build rule for target.
-obj_cryptonote_protocol: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 obj_cryptonote_protocol
-.PHONY : obj_cryptonote_protocol
-
-# fast build rule for target.
-obj_cryptonote_protocol/fast:
-	$(MAKE) -f cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/build.make cryptonote_protocol/CMakeFiles/obj_cryptonote_protocol.dir/build
-.PHONY : obj_cryptonote_protocol/fast
-
-#=============================================================================
-# Target rules for targets named cryptonote_protocol
-
-# Build rule for target.
-cryptonote_protocol: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cryptonote_protocol
-.PHONY : cryptonote_protocol
-
-# fast build rule for target.
-cryptonote_protocol/fast:
-	$(MAKE) -f cryptonote_protocol/CMakeFiles/cryptonote_protocol.dir/build.make cryptonote_protocol/CMakeFiles/cryptonote_protocol.dir/build
-.PHONY : cryptonote_protocol/fast
-
-#=============================================================================
-# Target rules for targets named simplewallet
-
-# Build rule for target.
-simplewallet: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 simplewallet
-.PHONY : simplewallet
-
-# fast build rule for target.
-simplewallet/fast:
-	$(MAKE) -f simplewallet/CMakeFiles/simplewallet.dir/build.make simplewallet/CMakeFiles/simplewallet.dir/build
-.PHONY : simplewallet/fast
-
-#=============================================================================
-# Target rules for targets named obj_daemonizer
-
-# Build rule for target.
-obj_daemonizer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 obj_daemonizer
-.PHONY : obj_daemonizer
-
-# fast build rule for target.
-obj_daemonizer/fast:
-	$(MAKE) -f daemonizer/CMakeFiles/obj_daemonizer.dir/build.make daemonizer/CMakeFiles/obj_daemonizer.dir/build
-.PHONY : obj_daemonizer/fast
-
-#=============================================================================
-# Target rules for targets named daemonizer
-
-# Build rule for target.
-daemonizer: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 daemonizer
-.PHONY : daemonizer
-
-# fast build rule for target.
-daemonizer/fast:
-	$(MAKE) -f daemonizer/CMakeFiles/daemonizer.dir/build.make daemonizer/CMakeFiles/daemonizer.dir/build
-.PHONY : daemonizer/fast
-
-#=============================================================================
-# Target rules for targets named daemon
-
-# Build rule for target.
-daemon: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 daemon
-.PHONY : daemon
-
-# fast build rule for target.
-daemon/fast:
-	$(MAKE) -f daemon/CMakeFiles/daemon.dir/build.make daemon/CMakeFiles/daemon.dir/build
-.PHONY : daemon/fast
-
-#=============================================================================
-# Target rules for targets named blockchain_import
-
-# Build rule for target.
-blockchain_import: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 blockchain_import
-.PHONY : blockchain_import
-
-# fast build rule for target.
-blockchain_import/fast:
-	$(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make blockchain_utilities/CMakeFiles/blockchain_import.dir/build
-.PHONY : blockchain_import/fast
-
-#=============================================================================
-# Target rules for targets named cn_deserialize
-
-# Build rule for target.
-cn_deserialize: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cn_deserialize
-.PHONY : cn_deserialize
-
-# fast build rule for target.
-cn_deserialize/fast:
-	$(MAKE) -f blockchain_utilities/CMakeFiles/cn_deserialize.dir/build.make blockchain_utilities/CMakeFiles/cn_deserialize.dir/build
-.PHONY : cn_deserialize/fast
-
-#=============================================================================
-# Target rules for targets named blockchain_export
-
-# Build rule for target.
-blockchain_export: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 blockchain_export
-.PHONY : blockchain_export
-
-# fast build rule for target.
-blockchain_export/fast:
-	$(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make blockchain_utilities/CMakeFiles/blockchain_export.dir/build
-.PHONY : blockchain_export/fast
 
 # Help Target
 help:
@@ -550,42 +171,13 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... install"
+	@echo "... rebuild_cache"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... edit_cache"
-	@echo "... obj_common"
-	@echo "... common"
-	@echo "... obj_cncrypto"
-	@echo "... cncrypto"
-	@echo "... obj_ringct"
-	@echo "... ringct"
-	@echo "... obj_cryptonote_basic"
-	@echo "... cryptonote_basic"
-	@echo "... obj_cryptonote_core"
-	@echo "... cryptonote_core"
-	@echo "... blockchain_db"
-	@echo "... obj_blockchain_db"
-	@echo "... obj_mnemonics"
-	@echo "... mnemonics"
-	@echo "... obj_rpc"
-	@echo "... rpc"
-	@echo "... obj_wallet"
-	@echo "... wallet"
-	@echo "... wallet_rpc_server"
-	@echo "... obj_p2p"
-	@echo "... p2p"
-	@echo "... obj_cryptonote_protocol"
-	@echo "... cryptonote_protocol"
-	@echo "... simplewallet"
-	@echo "... obj_daemonizer"
-	@echo "... daemonizer"
-	@echo "... daemon"
-	@echo "... blockchain_import"
-	@echo "... cn_deserialize"
-	@echo "... blockchain_export"
 .PHONY : help
 
 
@@ -597,6 +189,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

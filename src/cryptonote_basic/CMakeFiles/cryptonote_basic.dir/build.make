@@ -43,60 +43,60 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include cryptonote_basic/CMakeFiles/cryptonote_basic.dir/depend.make
+include src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/depend.make
 
 # Include the progress variables for this target.
-include cryptonote_basic/CMakeFiles/cryptonote_basic.dir/progress.make
+include src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include cryptonote_basic/CMakeFiles/cryptonote_basic.dir/flags.make
+include src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/flags.make
 
 # Object files for target cryptonote_basic
 cryptonote_basic_OBJECTS =
 
 # External object files for target cryptonote_basic
 cryptonote_basic_EXTERNAL_OBJECTS = \
-"/home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.o" \
-"/home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.o" \
-"/home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.o" \
-"/home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.o" \
-"/home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.o" \
-"/home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.o" \
-"/home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.o"
+"/home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.o" \
+"/home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.o" \
+"/home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.o" \
+"/home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.o" \
+"/home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.o" \
+"/home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.o" \
+"/home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.o"
 
-cryptonote_basic/libcryptonote_basic.a: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.o
-cryptonote_basic/libcryptonote_basic.a: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.o
-cryptonote_basic/libcryptonote_basic.a: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.o
-cryptonote_basic/libcryptonote_basic.a: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.o
-cryptonote_basic/libcryptonote_basic.a: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.o
-cryptonote_basic/libcryptonote_basic.a: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.o
-cryptonote_basic/libcryptonote_basic.a: cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.o
-cryptonote_basic/libcryptonote_basic.a: cryptonote_basic/CMakeFiles/cryptonote_basic.dir/build.make
-cryptonote_basic/libcryptonote_basic.a: cryptonote_basic/CMakeFiles/cryptonote_basic.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library libcryptonote_basic.a"
+src/cryptonote_basic/libcryptonote_basic.a: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/account.cpp.o
+src/cryptonote_basic/libcryptonote_basic.a: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/checkpoints.cpp.o
+src/cryptonote_basic/libcryptonote_basic.a: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_basic_impl.cpp.o
+src/cryptonote_basic/libcryptonote_basic.a: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/cryptonote_format_utils.cpp.o
+src/cryptonote_basic/libcryptonote_basic.a: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/difficulty.cpp.o
+src/cryptonote_basic/libcryptonote_basic.a: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/hardfork.cpp.o
+src/cryptonote_basic/libcryptonote_basic.a: src/cryptonote_basic/CMakeFiles/obj_cryptonote_basic.dir/miner.cpp.o
+src/cryptonote_basic/libcryptonote_basic.a: src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/build.make
+src/cryptonote_basic/libcryptonote_basic.a: src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library libcryptonote_basic.a"
 	cd /home/chip/Downloads/monero/src/cryptonote_basic && $(CMAKE_COMMAND) -P CMakeFiles/cryptonote_basic.dir/cmake_clean_target.cmake
 	cd /home/chip/Downloads/monero/src/cryptonote_basic && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cryptonote_basic.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-cryptonote_basic/CMakeFiles/cryptonote_basic.dir/build: cryptonote_basic/libcryptonote_basic.a
+src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/build: src/cryptonote_basic/libcryptonote_basic.a
 
-.PHONY : cryptonote_basic/CMakeFiles/cryptonote_basic.dir/build
+.PHONY : src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/build
 
-cryptonote_basic/CMakeFiles/cryptonote_basic.dir/requires:
+src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/requires:
 
-.PHONY : cryptonote_basic/CMakeFiles/cryptonote_basic.dir/requires
+.PHONY : src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/requires
 
-cryptonote_basic/CMakeFiles/cryptonote_basic.dir/clean:
+src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/clean:
 	cd /home/chip/Downloads/monero/src/cryptonote_basic && $(CMAKE_COMMAND) -P CMakeFiles/cryptonote_basic.dir/cmake_clean.cmake
-.PHONY : cryptonote_basic/CMakeFiles/cryptonote_basic.dir/clean
+.PHONY : src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/clean
 
-cryptonote_basic/CMakeFiles/cryptonote_basic.dir/depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/cryptonote_basic /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/cryptonote_basic /home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : cryptonote_basic/CMakeFiles/cryptonote_basic.dir/depend
+src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/src/cryptonote_basic /home/chip/Downloads/monero /home/chip/Downloads/monero/src/cryptonote_basic /home/chip/Downloads/monero/src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : src/cryptonote_basic/CMakeFiles/cryptonote_basic.dir/depend
 

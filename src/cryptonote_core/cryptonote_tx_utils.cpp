@@ -207,21 +207,18 @@ namespace cryptonote
 		  sig.txnFee = 0;
         
 		  rct::key M = rct::pkGen();
-		  rct::ctkey sk, pk; 
-		rct::skpkGen(sk.dest, pk.dest);
-		rct::skpkGen(sk.mask, pk.mask);
-		rct::key am = rct::d2h(block_reward);
-		cout << "here!" << endl;
-		rct::key bM = scalarmultKey(M, am);
-		cout << "here2!" << endl;
-		rct::addKeys(pk.mask, pk.mask, bM);
+		  rct::ctkey pk; 
+		  rct::key mask = rct::skGen();
+		  addKeys2(pk.mask, mask, rct::d2h(block_reward), M);
+		
 
 		sig.Mc = M;
+		
+		pk.dest = rct::pk2rct(boost::get<txout_to_key>(out.target).key);
 		sig.outPk.push_back(pk);
-		sig.outPk[0].dest = rct::pk2rct(boost::get<txout_to_key>(out.target).key);
 		
 		sig.ecdhInfo.resize(sig.outPk.size());
-		sig.ecdhInfo[0].mask = copy(sk.mask);
+		sig.ecdhInfo[0].mask = mask;
         sig.ecdhInfo[0].amount = rct::d2h(block_reward);
         rct::ecdhEncode(sig.ecdhInfo[0], amount_keys[0]);
 
@@ -244,9 +241,266 @@ namespace cryptonote
     return true;
   } 
   
-  
-  
   //---------------------------------------------------------------
+  // only a single source because we only transfer 1 capability
+  bool construct_del_tx_and_get_tx_key(const account_keys& sender_account_keys, const std::vector<tx_source_entry>& sources, const std::vector<tx_destination_entry>& destinations, std::vector<uint8_t> extra, transaction& tx, uint64_t unlock_time, crypto::secret_key &tx_key, bool rct)
+  {
+    std::vector<rct::key> amount_keys;
+    tx.set_null();
+    amount_keys.clear();
+
+    tx.version = rct ? 2 : 1;
+    tx.unlock_time = unlock_time;
+
+    tx.extra = extra;
+    keypair txkey = keypair::generate();
+    remove_field_from_tx_extra(tx.extra, typeid(tx_extra_pub_key));
+    add_tx_pub_key_to_extra(tx, txkey.pub);
+    tx_key = txkey.sec;
+
+    // if we have a stealth payment id, find it and encrypt it with the tx key now
+    std::vector<tx_extra_field> tx_extra_fields;
+    if (parse_tx_extra(tx.extra, tx_extra_fields))
+    {
+      tx_extra_nonce extra_nonce;
+      if (find_tx_extra_field_by_type(tx_extra_fields, extra_nonce))
+      {
+        crypto::hash8 payment_id = null_hash8;
+        if (get_encrypted_payment_id_from_tx_extra_nonce(extra_nonce.nonce, payment_id))
+        {
+          LOG_PRINT_L2("Encrypting payment id " << payment_id);
+          crypto::public_key view_key_pub = get_destination_view_key_pub(destinations, sender_account_keys);
+          if (view_key_pub == null_pkey)
+          {
+            LOG_ERROR("Destinations have to have exactly one output to support encrypted payment ids");
+            return false;
+          }
+
+          if (!encrypt_payment_id(payment_id, view_key_pub, txkey.sec))
+          {
+            LOG_ERROR("Failed to encrypt payment id");
+            return false;
+          }
+
+          std::string extra_nonce;
+          set_encrypted_payment_id_to_tx_extra_nonce(extra_nonce, payment_id);
+          remove_field_from_tx_extra(tx.extra, typeid(tx_extra_nonce));
+          if (!add_extra_nonce_to_tx_extra(tx.extra, extra_nonce))
+          {
+            LOG_ERROR("Failed to add encrypted payment id to tx extra");
+            return false;
+          }
+          LOG_PRINT_L1("Encrypted payment ID: " << payment_id);
+        }
+      }
+    }
+    else
+    {
+      LOG_ERROR("Failed to parse tx extra");
+      return false;
+    }
+
+    struct input_generation_context_data
+    {
+      keypair in_ephemeral;
+    };
+    std::vector<input_generation_context_data> in_contexts;
+
+    uint64_t summary_inputs_money = 0;
+    //fill inputs
+    int idx = -1;
+    for(const tx_source_entry& src_entr:  sources)
+    {
+      ++idx;
+      if(src_entr.real_output >= src_entr.outputs.size())
+      {
+        LOG_ERROR("real_output index (" << src_entr.real_output << ")bigger than output_keys.size()=" << src_entr.outputs.size());
+        return false;
+      }
+      summary_inputs_money += src_entr.amount;
+
+      //key_derivation recv_derivation;
+      in_contexts.push_back(input_generation_context_data());
+      keypair& in_ephemeral = in_contexts.back().in_ephemeral;
+      crypto::key_image img;
+      if(!generate_key_image_helper(sender_account_keys, src_entr.real_out_tx_key, src_entr.real_output_in_tx_index, in_ephemeral, img))
+        return false;
+
+      //check that derivated key is equal with real output key
+      if( !(in_ephemeral.pub == src_entr.outputs[src_entr.real_output].second.dest) )
+      {
+        LOG_ERROR("derived public key mismatch with output public key at index " << idx << ", real out " << src_entr.real_output << "! "<< ENDL << "derived_key:"
+          << string_tools::pod_to_hex(in_ephemeral.pub) << ENDL << "real output_public_key:"
+          << string_tools::pod_to_hex(src_entr.outputs[src_entr.real_output].second) );
+        LOG_ERROR("amount " << src_entr.amount << ", rct " << src_entr.rct);
+        LOG_ERROR("tx pubkey " << src_entr.real_out_tx_key << ", real_output_in_tx_index " << src_entr.real_output_in_tx_index);
+        return false;
+      }
+
+      //put key image into tx input
+      txin_to_key input_to_key;
+      input_to_key.amount = src_entr.amount;
+      input_to_key.k_image = img;
+
+      //fill outputs array and use relative offsets
+      for(const tx_source_entry::output_entry& out_entry: src_entr.outputs)
+        input_to_key.key_offsets.push_back(out_entry.first);
+
+      input_to_key.key_offsets = absolute_output_offsets_to_relative(input_to_key.key_offsets);
+      tx.vin.push_back(input_to_key);
+    }
+
+    // "Shuffle" outs
+    std::vector<tx_destination_entry> shuffled_dsts(destinations);
+    std::sort(shuffled_dsts.begin(), shuffled_dsts.end(), [](const tx_destination_entry& de1, const tx_destination_entry& de2) { return de1.amount < de2.amount; } );
+
+    uint64_t summary_outs_money = 0;
+    //fill outputs
+    size_t output_index = 0;
+    for(const tx_destination_entry& dst_entr:  shuffled_dsts)
+    {
+      CHECK_AND_ASSERT_MES(dst_entr.amount > 0 || tx.version > 1, false, "Destination with wrong amount: " << dst_entr.amount);
+      crypto::key_derivation derivation;
+      crypto::public_key out_eph_public_key;
+      bool r = crypto::generate_key_derivation(dst_entr.addr.m_view_public_key, txkey.sec, derivation);
+      CHECK_AND_ASSERT_MES(r, false, "at creation outs: failed to generate_key_derivation(" << dst_entr.addr.m_view_public_key << ", " << txkey.sec << ")");
+
+      if (tx.version > 1)
+      {
+        crypto::secret_key scalar1;
+        crypto::derivation_to_scalar(derivation, output_index, scalar1);
+        amount_keys.push_back(rct::sk2rct(scalar1));
+      }
+      r = crypto::derive_public_key(derivation, output_index, dst_entr.addr.m_spend_public_key, out_eph_public_key);
+      CHECK_AND_ASSERT_MES(r, false, "at creation outs: failed to derive_public_key(" << derivation << ", " << output_index << ", "<< dst_entr.addr.m_spend_public_key << ")");
+
+      tx_out out;
+      out.amount = dst_entr.amount;
+      txout_to_key tk;
+      tk.key = out_eph_public_key;
+      out.target = tk;
+      tx.vout.push_back(out);
+      output_index++;
+      summary_outs_money += dst_entr.amount;
+    }
+
+    //check money
+    if(summary_outs_money > summary_inputs_money )
+    {
+      LOG_ERROR("Transaction inputs money ("<< summary_inputs_money << ") less than outputs money (" << summary_outs_money << ")");
+      return false;
+    }
+
+    // check for watch only wallet
+    bool zero_secret_key = true;
+    for (size_t i = 0; i < sizeof(sender_account_keys.m_spend_secret_key); ++i)
+      zero_secret_key &= (sender_account_keys.m_spend_secret_key.data[i] == 0);
+    if (zero_secret_key)
+    {
+      MDEBUG("Null secret key, skipping signatures");
+    }
+
+    if (tx.version == 2)
+    {
+      size_t n_total_outs = sources[0].outputs.size(); // only for non-simple rct
+
+      // the non-simple version is slightly smaller, but assumes all real inputs
+      // are on the same index, so can only be used if there just one ring.
+      bool use_simple_rct = sources.size() > 1;
+
+      if (!use_simple_rct)
+      {
+        // non simple ringct requires all real inputs to be at the same index for all inputs
+        for(const tx_source_entry& src_entr:  sources)
+        {
+          if(src_entr.real_output != sources.begin()->real_output)
+          {
+            LOG_ERROR("All inputs must have the same index for non-simple ringct");
+            return false;
+          }
+        }
+
+        // enforce same mixin for all outputs
+        for (size_t i = 1; i < sources.size(); ++i) {
+          if (n_total_outs != sources[i].outputs.size()) {
+            LOG_ERROR("Non-simple ringct transaction has varying mixin");
+            return false;
+          }
+        }
+      }
+
+      uint64_t amount_in = 0, amount_out = 0;
+      rct::ctkeyV inSk;
+      // mixRing indexing is done the other way round for simple
+      rct::ctkeyM mixRing(use_simple_rct ? sources.size() : n_total_outs);
+      rct::keyV destinations;
+      std::vector<uint64_t> inamounts, outamounts;
+      std::vector<unsigned int> index;
+      for (size_t i = 0; i < sources.size(); ++i)
+      {
+        rct::ctkey ctkey;
+        amount_in += sources[i].amount;
+        inamounts.push_back(sources[i].amount);
+        index.push_back(sources[i].real_output);
+        // inSk: (secret key, mask)
+        ctkey.dest = rct::sk2rct(in_contexts[i].in_ephemeral.sec);
+        ctkey.mask = sources[i].mask;
+        inSk.push_back(ctkey);
+        // inPk: (public key, commitment)
+        // will be done when filling in mixRing
+      }
+      for (size_t i = 0; i < tx.vout.size(); ++i)
+      {
+        destinations.push_back(rct::pk2rct(boost::get<txout_to_key>(tx.vout[i].target).key));
+        outamounts.push_back(tx.vout[i].amount);
+        amount_out += tx.vout[i].amount;
+      }
+
+		for (size_t i = 0; i < n_total_outs; ++i) // same index assumption
+		{
+		  mixRing[i].resize(sources.size());
+		  for (size_t n = 0; n < sources.size(); ++n)
+		  {
+			mixRing[i][n] = sources[n].outputs[i].second;
+		  }
+		}
+
+      // zero out all amounts to mask rct outputs, real amounts are now encrypted
+      for (size_t i = 0; i < tx.vin.size(); ++i)
+      {
+        if (sources[i].rct)
+          boost::get<txin_to_key>(tx.vin[i]).amount = 0;
+      }
+      for (size_t i = 0; i < tx.vout.size(); ++i)
+        tx.vout[i].amount = 0;
+
+      crypto::hash tx_prefix_hash;
+      get_transaction_prefix_hash(tx, tx_prefix_hash);
+      rct::ctkeyV outSk;
+	  // create mask for cap
+	  rct::key m = rct::skGen();
+	  rct::keyM mixRingCap = rct::populateFakeRingCap(); // temporary, not implement cap selection yet
+	  rct::key depth_key = rct::zero();
+      tx.rct_signatures = rct::genRctCap(rct::hash2rct(tx_prefix_hash), inSk, destinations, outamounts, mixRing, amount_keys, sources[0].real_output, outSk, 0, sources[0].cap, mixRingCap, m, depth_key); // same index assumption
+
+      CHECK_AND_ASSERT_MES(tx.vout.size() == outSk.size(), false, "outSk size does not match vout");
+
+      MCINFO("construct_tx", "transaction_created: " << get_transaction_hash(tx) << ENDL << obj_to_json_str(tx) << ENDL);
+    }
+
+    tx.invalidate_hashes();
+
+    return true;
+  }  
+  
+ //---------------------------------------------------------------  
+  bool construct_del_tx(const account_keys& sender_account_keys, const std::vector<tx_source_entry>& sources, const std::vector<tx_destination_entry>& destinations, std::vector<uint8_t> extra, transaction& tx, uint64_t unlock_time)
+  {
+     crypto::secret_key tx_key;
+     return construct_del_tx_and_get_tx_key(sender_account_keys, sources, destinations, extra, tx, unlock_time, tx_key);
+  }
+  
+ //--------------------------------------------------------------- 
   crypto::public_key get_destination_view_key_pub(const std::vector<tx_destination_entry> &destinations, const account_keys &sender_keys)
   {
     if (destinations.empty())

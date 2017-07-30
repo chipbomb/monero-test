@@ -48,13 +48,23 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -67,16 +77,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -99,6 +99,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -124,14 +135,14 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles /home/chip/Downloads/monero/src/common/CMakeFiles/progress.marks
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 common/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles /home/chip/Downloads/monero/src/common/CMakeFiles/progress.marks
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/common/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 common/clean
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/common/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,213 +152,372 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 common/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/common/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 common/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/common/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-common/CMakeFiles/obj_common.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 common/CMakeFiles/obj_common.dir/rule
-.PHONY : common/CMakeFiles/obj_common.dir/rule
+src/common/CMakeFiles/obj_common.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/common/CMakeFiles/obj_common.dir/rule
+.PHONY : src/common/CMakeFiles/obj_common.dir/rule
 
 # Convenience name for target.
-obj_common: common/CMakeFiles/obj_common.dir/rule
+obj_common: src/common/CMakeFiles/obj_common.dir/rule
 
 .PHONY : obj_common
 
 # fast build rule for target.
 obj_common/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/build
 .PHONY : obj_common/fast
 
 # Convenience name for target.
-common/CMakeFiles/common.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 common/CMakeFiles/common.dir/rule
-.PHONY : common/CMakeFiles/common.dir/rule
+src/common/CMakeFiles/common.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/common/CMakeFiles/common.dir/rule
+.PHONY : src/common/CMakeFiles/common.dir/rule
 
 # Convenience name for target.
-common: common/CMakeFiles/common.dir/rule
+common: src/common/CMakeFiles/common.dir/rule
 
 .PHONY : common
 
 # fast build rule for target.
 common/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/common.dir/build.make common/CMakeFiles/common.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/common.dir/build.make src/common/CMakeFiles/common.dir/build
 .PHONY : common/fast
 
-# target to build an object file
-base58.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/base58.o
+base58.o: base58.cpp.o
+
 .PHONY : base58.o
 
-# target to preprocess a source file
-base58.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/base58.i
+# target to build an object file
+base58.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/base58.cpp.o
+.PHONY : base58.cpp.o
+
+base58.i: base58.cpp.i
+
 .PHONY : base58.i
 
-# target to generate assembly for a file
-base58.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/base58.s
+# target to preprocess a source file
+base58.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/base58.cpp.i
+.PHONY : base58.cpp.i
+
+base58.s: base58.cpp.s
+
 .PHONY : base58.s
 
-# target to build an object file
-command_line.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/command_line.o
+# target to generate assembly for a file
+base58.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/base58.cpp.s
+.PHONY : base58.cpp.s
+
+command_line.o: command_line.cpp.o
+
 .PHONY : command_line.o
 
-# target to preprocess a source file
-command_line.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/command_line.i
+# target to build an object file
+command_line.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/command_line.cpp.o
+.PHONY : command_line.cpp.o
+
+command_line.i: command_line.cpp.i
+
 .PHONY : command_line.i
 
-# target to generate assembly for a file
-command_line.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/command_line.s
+# target to preprocess a source file
+command_line.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/command_line.cpp.i
+.PHONY : command_line.cpp.i
+
+command_line.s: command_line.cpp.s
+
 .PHONY : command_line.s
 
-# target to build an object file
-dns_utils.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/dns_utils.o
+# target to generate assembly for a file
+command_line.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/command_line.cpp.s
+.PHONY : command_line.cpp.s
+
+dns_utils.o: dns_utils.cpp.o
+
 .PHONY : dns_utils.o
 
-# target to preprocess a source file
-dns_utils.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/dns_utils.i
+# target to build an object file
+dns_utils.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.o
+.PHONY : dns_utils.cpp.o
+
+dns_utils.i: dns_utils.cpp.i
+
 .PHONY : dns_utils.i
 
-# target to generate assembly for a file
-dns_utils.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/dns_utils.s
+# target to preprocess a source file
+dns_utils.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.i
+.PHONY : dns_utils.cpp.i
+
+dns_utils.s: dns_utils.cpp.s
+
 .PHONY : dns_utils.s
 
-# target to build an object file
-download.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/download.o
+# target to generate assembly for a file
+dns_utils.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/dns_utils.cpp.s
+.PHONY : dns_utils.cpp.s
+
+download.o: download.cpp.o
+
 .PHONY : download.o
 
-# target to preprocess a source file
-download.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/download.i
+# target to build an object file
+download.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/download.cpp.o
+.PHONY : download.cpp.o
+
+download.i: download.cpp.i
+
 .PHONY : download.i
 
-# target to generate assembly for a file
-download.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/download.s
+# target to preprocess a source file
+download.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/download.cpp.i
+.PHONY : download.cpp.i
+
+download.s: download.cpp.s
+
 .PHONY : download.s
 
-# target to build an object file
-i18n.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/i18n.o
+# target to generate assembly for a file
+download.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/download.cpp.s
+.PHONY : download.cpp.s
+
+i18n.o: i18n.cpp.o
+
 .PHONY : i18n.o
 
-# target to preprocess a source file
-i18n.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/i18n.i
+# target to build an object file
+i18n.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/i18n.cpp.o
+.PHONY : i18n.cpp.o
+
+i18n.i: i18n.cpp.i
+
 .PHONY : i18n.i
 
-# target to generate assembly for a file
-i18n.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/i18n.s
+# target to preprocess a source file
+i18n.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/i18n.cpp.i
+.PHONY : i18n.cpp.i
+
+i18n.s: i18n.cpp.s
+
 .PHONY : i18n.s
 
-# target to build an object file
-password.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/password.o
+# target to generate assembly for a file
+i18n.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/i18n.cpp.s
+.PHONY : i18n.cpp.s
+
+password.o: password.cpp.o
+
 .PHONY : password.o
 
-# target to preprocess a source file
-password.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/password.i
+# target to build an object file
+password.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/password.cpp.o
+.PHONY : password.cpp.o
+
+password.i: password.cpp.i
+
 .PHONY : password.i
 
-# target to generate assembly for a file
-password.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/password.s
+# target to preprocess a source file
+password.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/password.cpp.i
+.PHONY : password.cpp.i
+
+password.s: password.cpp.s
+
 .PHONY : password.s
 
-# target to build an object file
-perf_timer.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/perf_timer.o
+# target to generate assembly for a file
+password.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/password.cpp.s
+.PHONY : password.cpp.s
+
+perf_timer.o: perf_timer.cpp.o
+
 .PHONY : perf_timer.o
 
-# target to preprocess a source file
-perf_timer.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/perf_timer.i
+# target to build an object file
+perf_timer.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.o
+.PHONY : perf_timer.cpp.o
+
+perf_timer.i: perf_timer.cpp.i
+
 .PHONY : perf_timer.i
 
-# target to generate assembly for a file
-perf_timer.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/perf_timer.s
+# target to preprocess a source file
+perf_timer.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.i
+.PHONY : perf_timer.cpp.i
+
+perf_timer.s: perf_timer.cpp.s
+
 .PHONY : perf_timer.s
 
+# target to generate assembly for a file
+perf_timer.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/perf_timer.cpp.s
+.PHONY : perf_timer.cpp.s
+
+stack_trace.o: stack_trace.cpp.o
+
+.PHONY : stack_trace.o
+
 # target to build an object file
-task_region.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/task_region.o
+stack_trace.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.o
+.PHONY : stack_trace.cpp.o
+
+stack_trace.i: stack_trace.cpp.i
+
+.PHONY : stack_trace.i
+
+# target to preprocess a source file
+stack_trace.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.i
+.PHONY : stack_trace.cpp.i
+
+stack_trace.s: stack_trace.cpp.s
+
+.PHONY : stack_trace.s
+
+# target to generate assembly for a file
+stack_trace.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/stack_trace.cpp.s
+.PHONY : stack_trace.cpp.s
+
+task_region.o: task_region.cpp.o
+
 .PHONY : task_region.o
 
-# target to preprocess a source file
-task_region.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/task_region.i
+# target to build an object file
+task_region.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/task_region.cpp.o
+.PHONY : task_region.cpp.o
+
+task_region.i: task_region.cpp.i
+
 .PHONY : task_region.i
 
-# target to generate assembly for a file
-task_region.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/task_region.s
+# target to preprocess a source file
+task_region.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/task_region.cpp.i
+.PHONY : task_region.cpp.i
+
+task_region.s: task_region.cpp.s
+
 .PHONY : task_region.s
 
-# target to build an object file
-thread_group.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/thread_group.o
+# target to generate assembly for a file
+task_region.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/task_region.cpp.s
+.PHONY : task_region.cpp.s
+
+thread_group.o: thread_group.cpp.o
+
 .PHONY : thread_group.o
 
-# target to preprocess a source file
-thread_group.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/thread_group.i
+# target to build an object file
+thread_group.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/thread_group.cpp.o
+.PHONY : thread_group.cpp.o
+
+thread_group.i: thread_group.cpp.i
+
 .PHONY : thread_group.i
 
-# target to generate assembly for a file
-thread_group.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/thread_group.s
+# target to preprocess a source file
+thread_group.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/thread_group.cpp.i
+.PHONY : thread_group.cpp.i
+
+thread_group.s: thread_group.cpp.s
+
 .PHONY : thread_group.s
 
-# target to build an object file
-updates.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/updates.o
+# target to generate assembly for a file
+thread_group.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/thread_group.cpp.s
+.PHONY : thread_group.cpp.s
+
+updates.o: updates.cpp.o
+
 .PHONY : updates.o
 
-# target to preprocess a source file
-updates.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/updates.i
+# target to build an object file
+updates.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/updates.cpp.o
+.PHONY : updates.cpp.o
+
+updates.i: updates.cpp.i
+
 .PHONY : updates.i
 
-# target to generate assembly for a file
-updates.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/updates.s
+# target to preprocess a source file
+updates.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/updates.cpp.i
+.PHONY : updates.cpp.i
+
+updates.s: updates.cpp.s
+
 .PHONY : updates.s
 
-# target to build an object file
-util.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/util.o
+# target to generate assembly for a file
+updates.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/updates.cpp.s
+.PHONY : updates.cpp.s
+
+util.o: util.cpp.o
+
 .PHONY : util.o
 
-# target to preprocess a source file
-util.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/util.i
+# target to build an object file
+util.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/util.cpp.o
+.PHONY : util.cpp.o
+
+util.i: util.cpp.i
+
 .PHONY : util.i
 
-# target to generate assembly for a file
-util.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f common/CMakeFiles/obj_common.dir/build.make common/CMakeFiles/obj_common.dir/util.s
+# target to preprocess a source file
+util.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/util.cpp.i
+.PHONY : util.cpp.i
+
+util.s: util.cpp.s
+
 .PHONY : util.s
+
+# target to generate assembly for a file
+util.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/common/CMakeFiles/obj_common.dir/build.make src/common/CMakeFiles/obj_common.dir/util.cpp.s
+.PHONY : util.cpp.s
 
 # Help Target
 help:
@@ -355,10 +525,11 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... obj_common"
 	@echo "... common"
 	@echo "... install/strip"
@@ -384,6 +555,9 @@ help:
 	@echo "... perf_timer.o"
 	@echo "... perf_timer.i"
 	@echo "... perf_timer.s"
+	@echo "... stack_trace.o"
+	@echo "... stack_trace.i"
+	@echo "... stack_trace.s"
 	@echo "... task_region.o"
 	@echo "... task_region.i"
 	@echo "... task_region.s"
@@ -407,6 +581,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

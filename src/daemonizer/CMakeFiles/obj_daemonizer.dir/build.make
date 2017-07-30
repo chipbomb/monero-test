@@ -43,63 +43,63 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include daemonizer/CMakeFiles/obj_daemonizer.dir/depend.make
+include src/daemonizer/CMakeFiles/obj_daemonizer.dir/depend.make
 
 # Include the progress variables for this target.
-include daemonizer/CMakeFiles/obj_daemonizer.dir/progress.make
+include src/daemonizer/CMakeFiles/obj_daemonizer.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include daemonizer/CMakeFiles/obj_daemonizer.dir/flags.make
+include src/daemonizer/CMakeFiles/obj_daemonizer.dir/flags.make
 
-daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.o: daemonizer/CMakeFiles/obj_daemonizer.dir/flags.make
-daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.o: daemonizer/posix_fork.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.o"
-	cd /home/chip/Downloads/monero/src/daemonizer && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_daemonizer.dir/posix_fork.o -c /home/chip/Downloads/monero/src/daemonizer/posix_fork.cpp
+src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.o: src/daemonizer/CMakeFiles/obj_daemonizer.dir/flags.make
+src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.o: src/daemonizer/posix_fork.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.o"
+	cd /home/chip/Downloads/monero/src/daemonizer && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.o -c /home/chip/Downloads/monero/src/daemonizer/posix_fork.cpp
 
-daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_daemonizer.dir/posix_fork.i"
-	cd /home/chip/Downloads/monero/src/daemonizer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/daemonizer/posix_fork.cpp > CMakeFiles/obj_daemonizer.dir/posix_fork.i
+src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.i"
+	cd /home/chip/Downloads/monero/src/daemonizer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/daemonizer/posix_fork.cpp > CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.i
 
-daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_daemonizer.dir/posix_fork.s"
-	cd /home/chip/Downloads/monero/src/daemonizer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/daemonizer/posix_fork.cpp -o CMakeFiles/obj_daemonizer.dir/posix_fork.s
+src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.s"
+	cd /home/chip/Downloads/monero/src/daemonizer && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/daemonizer/posix_fork.cpp -o CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.s
 
-daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.o.requires:
+src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.o.requires:
 
-.PHONY : daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.o.requires
+.PHONY : src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.o.requires
 
-daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.o.provides: daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.o.requires
-	$(MAKE) -f daemonizer/CMakeFiles/obj_daemonizer.dir/build.make daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.o.provides.build
-.PHONY : daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.o.provides
+src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.o.provides: src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.o.requires
+	$(MAKE) -f src/daemonizer/CMakeFiles/obj_daemonizer.dir/build.make src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.o.provides.build
+.PHONY : src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.o.provides
 
-daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.o.provides.build: daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.o
+src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.o.provides.build: src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.o
 
 
-obj_daemonizer: daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.o
-obj_daemonizer: daemonizer/CMakeFiles/obj_daemonizer.dir/build.make
+obj_daemonizer: src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.o
+obj_daemonizer: src/daemonizer/CMakeFiles/obj_daemonizer.dir/build.make
 
 .PHONY : obj_daemonizer
 
 # Rule to build all files generated by this target.
-daemonizer/CMakeFiles/obj_daemonizer.dir/build: obj_daemonizer
+src/daemonizer/CMakeFiles/obj_daemonizer.dir/build: obj_daemonizer
 
-.PHONY : daemonizer/CMakeFiles/obj_daemonizer.dir/build
+.PHONY : src/daemonizer/CMakeFiles/obj_daemonizer.dir/build
 
-daemonizer/CMakeFiles/obj_daemonizer.dir/requires: daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.o.requires
+src/daemonizer/CMakeFiles/obj_daemonizer.dir/requires: src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.o.requires
 
-.PHONY : daemonizer/CMakeFiles/obj_daemonizer.dir/requires
+.PHONY : src/daemonizer/CMakeFiles/obj_daemonizer.dir/requires
 
-daemonizer/CMakeFiles/obj_daemonizer.dir/clean:
+src/daemonizer/CMakeFiles/obj_daemonizer.dir/clean:
 	cd /home/chip/Downloads/monero/src/daemonizer && $(CMAKE_COMMAND) -P CMakeFiles/obj_daemonizer.dir/cmake_clean.cmake
-.PHONY : daemonizer/CMakeFiles/obj_daemonizer.dir/clean
+.PHONY : src/daemonizer/CMakeFiles/obj_daemonizer.dir/clean
 
-daemonizer/CMakeFiles/obj_daemonizer.dir/depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/daemonizer /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/daemonizer /home/chip/Downloads/monero/src/daemonizer/CMakeFiles/obj_daemonizer.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : daemonizer/CMakeFiles/obj_daemonizer.dir/depend
+src/daemonizer/CMakeFiles/obj_daemonizer.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/src/daemonizer /home/chip/Downloads/monero /home/chip/Downloads/monero/src/daemonizer /home/chip/Downloads/monero/src/daemonizer/CMakeFiles/obj_daemonizer.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : src/daemonizer/CMakeFiles/obj_daemonizer.dir/depend
 

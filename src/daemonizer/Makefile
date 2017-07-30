@@ -48,13 +48,23 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target install
 install: preinstall
@@ -67,16 +77,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -99,6 +99,17 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target install/strip
 install/strip: preinstall
@@ -124,14 +135,14 @@ install/local/fast: install/local
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles /home/chip/Downloads/monero/src/daemonizer/CMakeFiles/progress.marks
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 daemonizer/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles /home/chip/Downloads/monero/src/daemonizer/CMakeFiles/progress.marks
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/daemonizer/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 daemonizer/clean
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/daemonizer/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,63 +152,75 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 daemonizer/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/daemonizer/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 daemonizer/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/daemonizer/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-daemonizer/CMakeFiles/obj_daemonizer.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 daemonizer/CMakeFiles/obj_daemonizer.dir/rule
-.PHONY : daemonizer/CMakeFiles/obj_daemonizer.dir/rule
+src/daemonizer/CMakeFiles/obj_daemonizer.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/daemonizer/CMakeFiles/obj_daemonizer.dir/rule
+.PHONY : src/daemonizer/CMakeFiles/obj_daemonizer.dir/rule
 
 # Convenience name for target.
-obj_daemonizer: daemonizer/CMakeFiles/obj_daemonizer.dir/rule
+obj_daemonizer: src/daemonizer/CMakeFiles/obj_daemonizer.dir/rule
 
 .PHONY : obj_daemonizer
 
 # fast build rule for target.
 obj_daemonizer/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemonizer/CMakeFiles/obj_daemonizer.dir/build.make daemonizer/CMakeFiles/obj_daemonizer.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemonizer/CMakeFiles/obj_daemonizer.dir/build.make src/daemonizer/CMakeFiles/obj_daemonizer.dir/build
 .PHONY : obj_daemonizer/fast
 
 # Convenience name for target.
-daemonizer/CMakeFiles/daemonizer.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 daemonizer/CMakeFiles/daemonizer.dir/rule
-.PHONY : daemonizer/CMakeFiles/daemonizer.dir/rule
+src/daemonizer/CMakeFiles/daemonizer.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/daemonizer/CMakeFiles/daemonizer.dir/rule
+.PHONY : src/daemonizer/CMakeFiles/daemonizer.dir/rule
 
 # Convenience name for target.
-daemonizer: daemonizer/CMakeFiles/daemonizer.dir/rule
+daemonizer: src/daemonizer/CMakeFiles/daemonizer.dir/rule
 
 .PHONY : daemonizer
 
 # fast build rule for target.
 daemonizer/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemonizer/CMakeFiles/daemonizer.dir/build.make daemonizer/CMakeFiles/daemonizer.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemonizer/CMakeFiles/daemonizer.dir/build.make src/daemonizer/CMakeFiles/daemonizer.dir/build
 .PHONY : daemonizer/fast
 
-# target to build an object file
-posix_fork.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemonizer/CMakeFiles/obj_daemonizer.dir/build.make daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.o
+posix_fork.o: posix_fork.cpp.o
+
 .PHONY : posix_fork.o
 
-# target to preprocess a source file
-posix_fork.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemonizer/CMakeFiles/obj_daemonizer.dir/build.make daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.i
+# target to build an object file
+posix_fork.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemonizer/CMakeFiles/obj_daemonizer.dir/build.make src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.o
+.PHONY : posix_fork.cpp.o
+
+posix_fork.i: posix_fork.cpp.i
+
 .PHONY : posix_fork.i
 
-# target to generate assembly for a file
-posix_fork.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f daemonizer/CMakeFiles/obj_daemonizer.dir/build.make daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.s
+# target to preprocess a source file
+posix_fork.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemonizer/CMakeFiles/obj_daemonizer.dir/build.make src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.i
+.PHONY : posix_fork.cpp.i
+
+posix_fork.s: posix_fork.cpp.s
+
 .PHONY : posix_fork.s
+
+# target to generate assembly for a file
+posix_fork.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/daemonizer/CMakeFiles/obj_daemonizer.dir/build.make src/daemonizer/CMakeFiles/obj_daemonizer.dir/posix_fork.cpp.s
+.PHONY : posix_fork.cpp.s
 
 # Help Target
 help:
@@ -205,10 +228,11 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... obj_daemonizer"
 	@echo "... install/strip"
 	@echo "... daemonizer"
@@ -227,6 +251,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -74,25 +74,53 @@ wallet_EXTERNAL_OBJECTS = \
 "/home/chip/Downloads/monero/build/release/src/wallet/CMakeFiles/obj_wallet.dir/api/address_book.cpp.o" \
 "/home/chip/Downloads/monero/build/release/src/wallet/CMakeFiles/obj_wallet.dir/api/unsigned_transaction.cpp.o"
 
-lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/wallet2.cpp.o
-lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/wallet_args.cpp.o
-lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/node_rpc_proxy.cpp.o
-lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/api/wallet.cpp.o
-lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/api/wallet_manager.cpp.o
-lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/api/transaction_info.cpp.o
-lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/api/transaction_history.cpp.o
-lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/api/pending_transaction.cpp.o
-lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/api/utils.cpp.o
-lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/api/address_book.cpp.o
-lib/libwallet.a: src/wallet/CMakeFiles/obj_wallet.dir/api/unsigned_transaction.cpp.o
-lib/libwallet.a: src/wallet/CMakeFiles/wallet.dir/build.make
-lib/libwallet.a: src/wallet/CMakeFiles/wallet.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX static library ../../lib/libwallet.a"
-	cd /home/chip/Downloads/monero/build/release/src/wallet && $(CMAKE_COMMAND) -P CMakeFiles/wallet.dir/cmake_clean_target.cmake
+src/wallet/libwallet.so: src/wallet/CMakeFiles/obj_wallet.dir/wallet2.cpp.o
+src/wallet/libwallet.so: src/wallet/CMakeFiles/obj_wallet.dir/wallet_args.cpp.o
+src/wallet/libwallet.so: src/wallet/CMakeFiles/obj_wallet.dir/node_rpc_proxy.cpp.o
+src/wallet/libwallet.so: src/wallet/CMakeFiles/obj_wallet.dir/api/wallet.cpp.o
+src/wallet/libwallet.so: src/wallet/CMakeFiles/obj_wallet.dir/api/wallet_manager.cpp.o
+src/wallet/libwallet.so: src/wallet/CMakeFiles/obj_wallet.dir/api/transaction_info.cpp.o
+src/wallet/libwallet.so: src/wallet/CMakeFiles/obj_wallet.dir/api/transaction_history.cpp.o
+src/wallet/libwallet.so: src/wallet/CMakeFiles/obj_wallet.dir/api/pending_transaction.cpp.o
+src/wallet/libwallet.so: src/wallet/CMakeFiles/obj_wallet.dir/api/utils.cpp.o
+src/wallet/libwallet.so: src/wallet/CMakeFiles/obj_wallet.dir/api/address_book.cpp.o
+src/wallet/libwallet.so: src/wallet/CMakeFiles/obj_wallet.dir/api/unsigned_transaction.cpp.o
+src/wallet/libwallet.so: src/wallet/CMakeFiles/wallet.dir/build.make
+src/wallet/libwallet.so: src/cryptonote_core/libcryptonote_core.so
+src/wallet/libwallet.so: src/mnemonics/libmnemonics.so
+src/wallet/libwallet.so: src/p2p/libp2p.so
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/librt.so
+src/wallet/libwallet.so: src/blockchain_db/libblockchain_db.so
+src/wallet/libwallet.so: external/db_drivers/liblmdb/liblmdb.so
+src/wallet/libwallet.so: src/ringct/libringct.so
+src/wallet/libwallet.so: src/cryptonote_basic/libcryptonote_basic.so
+src/wallet/libwallet.so: src/common/libcommon.so
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/libunbound.so
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+src/wallet/libwallet.so: contrib/epee/src/libepee.a
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/librt.so
+src/wallet/libwallet.so: src/crypto/libcncrypto.so
+src/wallet/libwallet.so: external/easylogging++/libeasylogging.so
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/libminiupnpc.so
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
+src/wallet/libwallet.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+src/wallet/libwallet.so: src/wallet/CMakeFiles/wallet.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/build/release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Linking CXX shared library libwallet.so"
 	cd /home/chip/Downloads/monero/build/release/src/wallet && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wallet.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-src/wallet/CMakeFiles/wallet.dir/build: lib/libwallet.a
+src/wallet/CMakeFiles/wallet.dir/build: src/wallet/libwallet.so
 
 .PHONY : src/wallet/CMakeFiles/wallet.dir/build
 

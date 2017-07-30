@@ -43,85 +43,108 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include simplewallet/CMakeFiles/simplewallet.dir/depend.make
+include src/simplewallet/CMakeFiles/simplewallet.dir/depend.make
 
 # Include the progress variables for this target.
-include simplewallet/CMakeFiles/simplewallet.dir/progress.make
+include src/simplewallet/CMakeFiles/simplewallet.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include simplewallet/CMakeFiles/simplewallet.dir/flags.make
+include src/simplewallet/CMakeFiles/simplewallet.dir/flags.make
 
-simplewallet/CMakeFiles/simplewallet.dir/simplewallet.o: simplewallet/CMakeFiles/simplewallet.dir/flags.make
-simplewallet/CMakeFiles/simplewallet.dir/simplewallet.o: simplewallet/simplewallet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object simplewallet/CMakeFiles/simplewallet.dir/simplewallet.o"
-	cd /home/chip/Downloads/monero/src/simplewallet && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/simplewallet.dir/simplewallet.o -c /home/chip/Downloads/monero/src/simplewallet/simplewallet.cpp
+src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.o: src/simplewallet/CMakeFiles/simplewallet.dir/flags.make
+src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.o: src/simplewallet/simplewallet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.o"
+	cd /home/chip/Downloads/monero/src/simplewallet && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/simplewallet.dir/simplewallet.cpp.o -c /home/chip/Downloads/monero/src/simplewallet/simplewallet.cpp
 
-simplewallet/CMakeFiles/simplewallet.dir/simplewallet.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simplewallet.dir/simplewallet.i"
-	cd /home/chip/Downloads/monero/src/simplewallet && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/simplewallet/simplewallet.cpp > CMakeFiles/simplewallet.dir/simplewallet.i
+src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simplewallet.dir/simplewallet.cpp.i"
+	cd /home/chip/Downloads/monero/src/simplewallet && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/simplewallet/simplewallet.cpp > CMakeFiles/simplewallet.dir/simplewallet.cpp.i
 
-simplewallet/CMakeFiles/simplewallet.dir/simplewallet.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simplewallet.dir/simplewallet.s"
-	cd /home/chip/Downloads/monero/src/simplewallet && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/simplewallet/simplewallet.cpp -o CMakeFiles/simplewallet.dir/simplewallet.s
+src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simplewallet.dir/simplewallet.cpp.s"
+	cd /home/chip/Downloads/monero/src/simplewallet && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/simplewallet/simplewallet.cpp -o CMakeFiles/simplewallet.dir/simplewallet.cpp.s
 
-simplewallet/CMakeFiles/simplewallet.dir/simplewallet.o.requires:
+src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.o.requires:
 
-.PHONY : simplewallet/CMakeFiles/simplewallet.dir/simplewallet.o.requires
+.PHONY : src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.o.requires
 
-simplewallet/CMakeFiles/simplewallet.dir/simplewallet.o.provides: simplewallet/CMakeFiles/simplewallet.dir/simplewallet.o.requires
-	$(MAKE) -f simplewallet/CMakeFiles/simplewallet.dir/build.make simplewallet/CMakeFiles/simplewallet.dir/simplewallet.o.provides.build
-.PHONY : simplewallet/CMakeFiles/simplewallet.dir/simplewallet.o.provides
+src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.o.provides: src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.o.requires
+	$(MAKE) -f src/simplewallet/CMakeFiles/simplewallet.dir/build.make src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.o.provides.build
+.PHONY : src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.o.provides
 
-simplewallet/CMakeFiles/simplewallet.dir/simplewallet.o.provides.build: simplewallet/CMakeFiles/simplewallet.dir/simplewallet.o
+src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.o.provides.build: src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.o
 
 
 # Object files for target simplewallet
 simplewallet_OBJECTS = \
-"CMakeFiles/simplewallet.dir/simplewallet.o"
+"CMakeFiles/simplewallet.dir/simplewallet.cpp.o"
 
 # External object files for target simplewallet
 simplewallet_EXTERNAL_OBJECTS =
 
-bin/monero-wallet-cli: simplewallet/CMakeFiles/simplewallet.dir/simplewallet.o
-bin/monero-wallet-cli: simplewallet/CMakeFiles/simplewallet.dir/build.make
+bin/monero-wallet-cli: src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.o
+bin/monero-wallet-cli: src/simplewallet/CMakeFiles/simplewallet.dir/build.make
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/librt.so
 bin/monero-wallet-cli: lib/libwallet.a
-bin/monero-wallet-cli: rpc/librpc.a
-bin/monero-wallet-cli: cryptonote_core/libcryptonote_core.a
-bin/monero-wallet-cli: crypto/libcncrypto.a
-bin/monero-wallet-cli: common/libcommon.a
-bin/monero-wallet-cli: mnemonics/libmnemonics.a
-bin/monero-wallet-cli: p2p/libp2p.a
-bin/monero-wallet-cli: blockchain_db/libblockchain_db.a
-bin/monero-wallet-cli: ringct/libringct.a
-bin/monero-wallet-cli: cryptonote_basic/libcryptonote_basic.a
-bin/monero-wallet-cli: common/libcommon.a
-bin/monero-wallet-cli: crypto/libcncrypto.a
-bin/monero-wallet-cli: cryptonote_protocol/libcryptonote_protocol.a
-bin/monero-wallet-cli: p2p/libp2p.a
-bin/monero-wallet-cli: simplewallet/CMakeFiles/simplewallet.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../bin/monero-wallet-cli"
+bin/monero-wallet-cli: src/rpc/librpc.a
+bin/monero-wallet-cli: src/cryptonote_core/libcryptonote_core.a
+bin/monero-wallet-cli: src/crypto/libcncrypto.a
+bin/monero-wallet-cli: src/common/libcommon.a
+bin/monero-wallet-cli: src/mnemonics/libmnemonics.a
+bin/monero-wallet-cli: src/p2p/libp2p.a
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/librt.so
+bin/monero-wallet-cli: src/blockchain_db/libblockchain_db.a
+bin/monero-wallet-cli: external/db_drivers/liblmdb/liblmdb.a
+bin/monero-wallet-cli: src/ringct/libringct.a
+bin/monero-wallet-cli: src/cryptonote_basic/libcryptonote_basic.a
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+bin/monero-wallet-cli: src/blocks/libblocks.a
+bin/monero-wallet-cli: src/common/libcommon.a
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libunbound.so
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libssl.so
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libcrypto.so
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+bin/monero-wallet-cli: src/cryptonote_protocol/libcryptonote_protocol.a
+bin/monero-wallet-cli: src/p2p/libp2p.a
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libminiupnpc.so
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+bin/monero-wallet-cli: contrib/epee/src/libepee.a
+bin/monero-wallet-cli: src/crypto/libcncrypto.a
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_system.so
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+bin/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/librt.so
+bin/monero-wallet-cli: external/easylogging++/libeasylogging.a
+bin/monero-wallet-cli: src/simplewallet/CMakeFiles/simplewallet.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/monero-wallet-cli"
 	cd /home/chip/Downloads/monero/src/simplewallet && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/simplewallet.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-simplewallet/CMakeFiles/simplewallet.dir/build: bin/monero-wallet-cli
+src/simplewallet/CMakeFiles/simplewallet.dir/build: bin/monero-wallet-cli
 
-.PHONY : simplewallet/CMakeFiles/simplewallet.dir/build
+.PHONY : src/simplewallet/CMakeFiles/simplewallet.dir/build
 
-simplewallet/CMakeFiles/simplewallet.dir/requires: simplewallet/CMakeFiles/simplewallet.dir/simplewallet.o.requires
+src/simplewallet/CMakeFiles/simplewallet.dir/requires: src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.o.requires
 
-.PHONY : simplewallet/CMakeFiles/simplewallet.dir/requires
+.PHONY : src/simplewallet/CMakeFiles/simplewallet.dir/requires
 
-simplewallet/CMakeFiles/simplewallet.dir/clean:
+src/simplewallet/CMakeFiles/simplewallet.dir/clean:
 	cd /home/chip/Downloads/monero/src/simplewallet && $(CMAKE_COMMAND) -P CMakeFiles/simplewallet.dir/cmake_clean.cmake
-.PHONY : simplewallet/CMakeFiles/simplewallet.dir/clean
+.PHONY : src/simplewallet/CMakeFiles/simplewallet.dir/clean
 
-simplewallet/CMakeFiles/simplewallet.dir/depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/simplewallet /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/simplewallet /home/chip/Downloads/monero/src/simplewallet/CMakeFiles/simplewallet.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : simplewallet/CMakeFiles/simplewallet.dir/depend
+src/simplewallet/CMakeFiles/simplewallet.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/src/simplewallet /home/chip/Downloads/monero /home/chip/Downloads/monero/src/simplewallet /home/chip/Downloads/monero/src/simplewallet/CMakeFiles/simplewallet.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : src/simplewallet/CMakeFiles/simplewallet.dir/depend
 

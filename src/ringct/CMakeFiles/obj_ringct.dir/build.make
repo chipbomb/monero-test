@@ -43,141 +43,141 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include ringct/CMakeFiles/obj_ringct.dir/depend.make
+include src/ringct/CMakeFiles/obj_ringct.dir/depend.make
 
 # Include the progress variables for this target.
-include ringct/CMakeFiles/obj_ringct.dir/progress.make
+include src/ringct/CMakeFiles/obj_ringct.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include ringct/CMakeFiles/obj_ringct.dir/flags.make
+include src/ringct/CMakeFiles/obj_ringct.dir/flags.make
 
-ringct/CMakeFiles/obj_ringct.dir/rctOps.o: ringct/CMakeFiles/obj_ringct.dir/flags.make
-ringct/CMakeFiles/obj_ringct.dir/rctOps.o: ringct/rctOps.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object ringct/CMakeFiles/obj_ringct.dir/rctOps.o"
-	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_ringct.dir/rctOps.o -c /home/chip/Downloads/monero/src/ringct/rctOps.cpp
+src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.o: src/ringct/CMakeFiles/obj_ringct.dir/flags.make
+src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.o: src/ringct/rctOps.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.o"
+	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_ringct.dir/rctOps.cpp.o -c /home/chip/Downloads/monero/src/ringct/rctOps.cpp
 
-ringct/CMakeFiles/obj_ringct.dir/rctOps.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_ringct.dir/rctOps.i"
-	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/ringct/rctOps.cpp > CMakeFiles/obj_ringct.dir/rctOps.i
+src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_ringct.dir/rctOps.cpp.i"
+	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/ringct/rctOps.cpp > CMakeFiles/obj_ringct.dir/rctOps.cpp.i
 
-ringct/CMakeFiles/obj_ringct.dir/rctOps.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_ringct.dir/rctOps.s"
-	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/ringct/rctOps.cpp -o CMakeFiles/obj_ringct.dir/rctOps.s
+src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_ringct.dir/rctOps.cpp.s"
+	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/ringct/rctOps.cpp -o CMakeFiles/obj_ringct.dir/rctOps.cpp.s
 
-ringct/CMakeFiles/obj_ringct.dir/rctOps.o.requires:
+src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.o.requires:
 
-.PHONY : ringct/CMakeFiles/obj_ringct.dir/rctOps.o.requires
+.PHONY : src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.o.requires
 
-ringct/CMakeFiles/obj_ringct.dir/rctOps.o.provides: ringct/CMakeFiles/obj_ringct.dir/rctOps.o.requires
-	$(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/rctOps.o.provides.build
-.PHONY : ringct/CMakeFiles/obj_ringct.dir/rctOps.o.provides
+src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.o.provides: src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.o.requires
+	$(MAKE) -f src/ringct/CMakeFiles/obj_ringct.dir/build.make src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.o.provides.build
+.PHONY : src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.o.provides
 
-ringct/CMakeFiles/obj_ringct.dir/rctOps.o.provides.build: ringct/CMakeFiles/obj_ringct.dir/rctOps.o
-
-
-ringct/CMakeFiles/obj_ringct.dir/rctSigs.o: ringct/CMakeFiles/obj_ringct.dir/flags.make
-ringct/CMakeFiles/obj_ringct.dir/rctSigs.o: ringct/rctSigs.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object ringct/CMakeFiles/obj_ringct.dir/rctSigs.o"
-	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_ringct.dir/rctSigs.o -c /home/chip/Downloads/monero/src/ringct/rctSigs.cpp
-
-ringct/CMakeFiles/obj_ringct.dir/rctSigs.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_ringct.dir/rctSigs.i"
-	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/ringct/rctSigs.cpp > CMakeFiles/obj_ringct.dir/rctSigs.i
-
-ringct/CMakeFiles/obj_ringct.dir/rctSigs.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_ringct.dir/rctSigs.s"
-	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/ringct/rctSigs.cpp -o CMakeFiles/obj_ringct.dir/rctSigs.s
-
-ringct/CMakeFiles/obj_ringct.dir/rctSigs.o.requires:
-
-.PHONY : ringct/CMakeFiles/obj_ringct.dir/rctSigs.o.requires
-
-ringct/CMakeFiles/obj_ringct.dir/rctSigs.o.provides: ringct/CMakeFiles/obj_ringct.dir/rctSigs.o.requires
-	$(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/rctSigs.o.provides.build
-.PHONY : ringct/CMakeFiles/obj_ringct.dir/rctSigs.o.provides
-
-ringct/CMakeFiles/obj_ringct.dir/rctSigs.o.provides.build: ringct/CMakeFiles/obj_ringct.dir/rctSigs.o
+src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.o.provides.build: src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.o
 
 
-ringct/CMakeFiles/obj_ringct.dir/rctTypes.o: ringct/CMakeFiles/obj_ringct.dir/flags.make
-ringct/CMakeFiles/obj_ringct.dir/rctTypes.o: ringct/rctTypes.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object ringct/CMakeFiles/obj_ringct.dir/rctTypes.o"
-	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_ringct.dir/rctTypes.o -c /home/chip/Downloads/monero/src/ringct/rctTypes.cpp
+src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.o: src/ringct/CMakeFiles/obj_ringct.dir/flags.make
+src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.o: src/ringct/rctSigs.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.o"
+	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_ringct.dir/rctSigs.cpp.o -c /home/chip/Downloads/monero/src/ringct/rctSigs.cpp
 
-ringct/CMakeFiles/obj_ringct.dir/rctTypes.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_ringct.dir/rctTypes.i"
-	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/ringct/rctTypes.cpp > CMakeFiles/obj_ringct.dir/rctTypes.i
+src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_ringct.dir/rctSigs.cpp.i"
+	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/ringct/rctSigs.cpp > CMakeFiles/obj_ringct.dir/rctSigs.cpp.i
 
-ringct/CMakeFiles/obj_ringct.dir/rctTypes.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_ringct.dir/rctTypes.s"
-	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/ringct/rctTypes.cpp -o CMakeFiles/obj_ringct.dir/rctTypes.s
+src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_ringct.dir/rctSigs.cpp.s"
+	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/ringct/rctSigs.cpp -o CMakeFiles/obj_ringct.dir/rctSigs.cpp.s
 
-ringct/CMakeFiles/obj_ringct.dir/rctTypes.o.requires:
+src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.o.requires:
 
-.PHONY : ringct/CMakeFiles/obj_ringct.dir/rctTypes.o.requires
+.PHONY : src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.o.requires
 
-ringct/CMakeFiles/obj_ringct.dir/rctTypes.o.provides: ringct/CMakeFiles/obj_ringct.dir/rctTypes.o.requires
-	$(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/rctTypes.o.provides.build
-.PHONY : ringct/CMakeFiles/obj_ringct.dir/rctTypes.o.provides
+src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.o.provides: src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.o.requires
+	$(MAKE) -f src/ringct/CMakeFiles/obj_ringct.dir/build.make src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.o.provides.build
+.PHONY : src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.o.provides
 
-ringct/CMakeFiles/obj_ringct.dir/rctTypes.o.provides.build: ringct/CMakeFiles/obj_ringct.dir/rctTypes.o
-
-
-ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.o: ringct/CMakeFiles/obj_ringct.dir/flags.make
-ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.o: ringct/rctCryptoOps.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.o"
-	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_ringct.dir/rctCryptoOps.o   -c /home/chip/Downloads/monero/src/ringct/rctCryptoOps.c
-
-ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_ringct.dir/rctCryptoOps.i"
-	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/ringct/rctCryptoOps.c > CMakeFiles/obj_ringct.dir/rctCryptoOps.i
-
-ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_ringct.dir/rctCryptoOps.s"
-	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/ringct/rctCryptoOps.c -o CMakeFiles/obj_ringct.dir/rctCryptoOps.s
-
-ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.o.requires:
-
-.PHONY : ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.o.requires
-
-ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.o.provides: ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.o.requires
-	$(MAKE) -f ringct/CMakeFiles/obj_ringct.dir/build.make ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.o.provides.build
-.PHONY : ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.o.provides
-
-ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.o.provides.build: ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.o
+src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.o.provides.build: src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.o
 
 
-obj_ringct: ringct/CMakeFiles/obj_ringct.dir/rctOps.o
-obj_ringct: ringct/CMakeFiles/obj_ringct.dir/rctSigs.o
-obj_ringct: ringct/CMakeFiles/obj_ringct.dir/rctTypes.o
-obj_ringct: ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.o
-obj_ringct: ringct/CMakeFiles/obj_ringct.dir/build.make
+src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.o: src/ringct/CMakeFiles/obj_ringct.dir/flags.make
+src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.o: src/ringct/rctTypes.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.o"
+	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_ringct.dir/rctTypes.cpp.o -c /home/chip/Downloads/monero/src/ringct/rctTypes.cpp
+
+src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_ringct.dir/rctTypes.cpp.i"
+	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/ringct/rctTypes.cpp > CMakeFiles/obj_ringct.dir/rctTypes.cpp.i
+
+src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_ringct.dir/rctTypes.cpp.s"
+	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/ringct/rctTypes.cpp -o CMakeFiles/obj_ringct.dir/rctTypes.cpp.s
+
+src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.o.requires:
+
+.PHONY : src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.o.requires
+
+src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.o.provides: src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.o.requires
+	$(MAKE) -f src/ringct/CMakeFiles/obj_ringct.dir/build.make src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.o.provides.build
+.PHONY : src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.o.provides
+
+src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.o.provides.build: src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.o
+
+
+src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.o: src/ringct/CMakeFiles/obj_ringct.dir/flags.make
+src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.o: src/ringct/rctCryptoOps.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.o"
+	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/obj_ringct.dir/rctCryptoOps.c.o   -c /home/chip/Downloads/monero/src/ringct/rctCryptoOps.c
+
+src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/obj_ringct.dir/rctCryptoOps.c.i"
+	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/chip/Downloads/monero/src/ringct/rctCryptoOps.c > CMakeFiles/obj_ringct.dir/rctCryptoOps.c.i
+
+src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/obj_ringct.dir/rctCryptoOps.c.s"
+	cd /home/chip/Downloads/monero/src/ringct && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/chip/Downloads/monero/src/ringct/rctCryptoOps.c -o CMakeFiles/obj_ringct.dir/rctCryptoOps.c.s
+
+src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.o.requires:
+
+.PHONY : src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.o.requires
+
+src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.o.provides: src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.o.requires
+	$(MAKE) -f src/ringct/CMakeFiles/obj_ringct.dir/build.make src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.o.provides.build
+.PHONY : src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.o.provides
+
+src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.o.provides.build: src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.o
+
+
+obj_ringct: src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.o
+obj_ringct: src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.o
+obj_ringct: src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.o
+obj_ringct: src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.o
+obj_ringct: src/ringct/CMakeFiles/obj_ringct.dir/build.make
 
 .PHONY : obj_ringct
 
 # Rule to build all files generated by this target.
-ringct/CMakeFiles/obj_ringct.dir/build: obj_ringct
+src/ringct/CMakeFiles/obj_ringct.dir/build: obj_ringct
 
-.PHONY : ringct/CMakeFiles/obj_ringct.dir/build
+.PHONY : src/ringct/CMakeFiles/obj_ringct.dir/build
 
-ringct/CMakeFiles/obj_ringct.dir/requires: ringct/CMakeFiles/obj_ringct.dir/rctOps.o.requires
-ringct/CMakeFiles/obj_ringct.dir/requires: ringct/CMakeFiles/obj_ringct.dir/rctSigs.o.requires
-ringct/CMakeFiles/obj_ringct.dir/requires: ringct/CMakeFiles/obj_ringct.dir/rctTypes.o.requires
-ringct/CMakeFiles/obj_ringct.dir/requires: ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.o.requires
+src/ringct/CMakeFiles/obj_ringct.dir/requires: src/ringct/CMakeFiles/obj_ringct.dir/rctOps.cpp.o.requires
+src/ringct/CMakeFiles/obj_ringct.dir/requires: src/ringct/CMakeFiles/obj_ringct.dir/rctSigs.cpp.o.requires
+src/ringct/CMakeFiles/obj_ringct.dir/requires: src/ringct/CMakeFiles/obj_ringct.dir/rctTypes.cpp.o.requires
+src/ringct/CMakeFiles/obj_ringct.dir/requires: src/ringct/CMakeFiles/obj_ringct.dir/rctCryptoOps.c.o.requires
 
-.PHONY : ringct/CMakeFiles/obj_ringct.dir/requires
+.PHONY : src/ringct/CMakeFiles/obj_ringct.dir/requires
 
-ringct/CMakeFiles/obj_ringct.dir/clean:
+src/ringct/CMakeFiles/obj_ringct.dir/clean:
 	cd /home/chip/Downloads/monero/src/ringct && $(CMAKE_COMMAND) -P CMakeFiles/obj_ringct.dir/cmake_clean.cmake
-.PHONY : ringct/CMakeFiles/obj_ringct.dir/clean
+.PHONY : src/ringct/CMakeFiles/obj_ringct.dir/clean
 
-ringct/CMakeFiles/obj_ringct.dir/depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/ringct /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/ringct /home/chip/Downloads/monero/src/ringct/CMakeFiles/obj_ringct.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : ringct/CMakeFiles/obj_ringct.dir/depend
+src/ringct/CMakeFiles/obj_ringct.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/src/ringct /home/chip/Downloads/monero /home/chip/Downloads/monero/src/ringct /home/chip/Downloads/monero/src/ringct/CMakeFiles/obj_ringct.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : src/ringct/CMakeFiles/obj_ringct.dir/depend
 

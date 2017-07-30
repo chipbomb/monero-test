@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -78,6 +78,27 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -89,16 +110,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target install/local
 install/local: preinstall
@@ -124,14 +135,14 @@ install/strip/fast: install/strip
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles /home/chip/Downloads/monero/src/blockchain_utilities/CMakeFiles/progress.marks
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 blockchain_utilities/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/src/CMakeFiles 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles /home/chip/Downloads/monero/src/blockchain_utilities/CMakeFiles/progress.marks
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/blockchain_utilities/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 blockchain_utilities/clean
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/blockchain_utilities/clean
 .PHONY : clean
 
 # The main clean target
@@ -141,144 +152,204 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 blockchain_utilities/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/blockchain_utilities/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 blockchain_utilities/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/blockchain_utilities/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-blockchain_utilities/CMakeFiles/blockchain_import.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 blockchain_utilities/CMakeFiles/blockchain_import.dir/rule
-.PHONY : blockchain_utilities/CMakeFiles/blockchain_import.dir/rule
+src/blockchain_utilities/CMakeFiles/blockchain_import.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/blockchain_utilities/CMakeFiles/blockchain_import.dir/rule
+.PHONY : src/blockchain_utilities/CMakeFiles/blockchain_import.dir/rule
 
 # Convenience name for target.
-blockchain_import: blockchain_utilities/CMakeFiles/blockchain_import.dir/rule
+blockchain_import: src/blockchain_utilities/CMakeFiles/blockchain_import.dir/rule
 
 .PHONY : blockchain_import
 
 # fast build rule for target.
 blockchain_import/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make blockchain_utilities/CMakeFiles/blockchain_import.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_import.dir/build
 .PHONY : blockchain_import/fast
 
 # Convenience name for target.
-blockchain_utilities/CMakeFiles/cn_deserialize.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 blockchain_utilities/CMakeFiles/cn_deserialize.dir/rule
-.PHONY : blockchain_utilities/CMakeFiles/cn_deserialize.dir/rule
+src/blockchain_utilities/CMakeFiles/cn_deserialize.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/blockchain_utilities/CMakeFiles/cn_deserialize.dir/rule
+.PHONY : src/blockchain_utilities/CMakeFiles/cn_deserialize.dir/rule
 
 # Convenience name for target.
-cn_deserialize: blockchain_utilities/CMakeFiles/cn_deserialize.dir/rule
+cn_deserialize: src/blockchain_utilities/CMakeFiles/cn_deserialize.dir/rule
 
 .PHONY : cn_deserialize
 
 # fast build rule for target.
 cn_deserialize/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/cn_deserialize.dir/build.make blockchain_utilities/CMakeFiles/cn_deserialize.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/cn_deserialize.dir/build.make src/blockchain_utilities/CMakeFiles/cn_deserialize.dir/build
 .PHONY : cn_deserialize/fast
 
 # Convenience name for target.
-blockchain_utilities/CMakeFiles/blockchain_export.dir/rule:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f CMakeFiles/Makefile2 blockchain_utilities/CMakeFiles/blockchain_export.dir/rule
-.PHONY : blockchain_utilities/CMakeFiles/blockchain_export.dir/rule
+src/blockchain_utilities/CMakeFiles/blockchain_export.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/blockchain_utilities/CMakeFiles/blockchain_export.dir/rule
+.PHONY : src/blockchain_utilities/CMakeFiles/blockchain_export.dir/rule
 
 # Convenience name for target.
-blockchain_export: blockchain_utilities/CMakeFiles/blockchain_export.dir/rule
+blockchain_export: src/blockchain_utilities/CMakeFiles/blockchain_export.dir/rule
 
 .PHONY : blockchain_export
 
 # fast build rule for target.
 blockchain_export/fast:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make blockchain_utilities/CMakeFiles/blockchain_export.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_export.dir/build
 .PHONY : blockchain_export/fast
 
-# target to build an object file
-blockchain_export.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.o
+blockchain_export.o: blockchain_export.cpp.o
+
 .PHONY : blockchain_export.o
 
-# target to preprocess a source file
-blockchain_export.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.i
+# target to build an object file
+blockchain_export.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.o
+.PHONY : blockchain_export.cpp.o
+
+blockchain_export.i: blockchain_export.cpp.i
+
 .PHONY : blockchain_export.i
 
-# target to generate assembly for a file
-blockchain_export.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.s
+# target to preprocess a source file
+blockchain_export.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.i
+.PHONY : blockchain_export.cpp.i
+
+blockchain_export.s: blockchain_export.cpp.s
+
 .PHONY : blockchain_export.s
 
-# target to build an object file
-blockchain_import.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make blockchain_utilities/CMakeFiles/blockchain_import.dir/blockchain_import.o
+# target to generate assembly for a file
+blockchain_export.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blockchain_export.cpp.s
+.PHONY : blockchain_export.cpp.s
+
+blockchain_import.o: blockchain_import.cpp.o
+
 .PHONY : blockchain_import.o
 
-# target to preprocess a source file
-blockchain_import.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make blockchain_utilities/CMakeFiles/blockchain_import.dir/blockchain_import.i
+# target to build an object file
+blockchain_import.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_import.dir/blockchain_import.cpp.o
+.PHONY : blockchain_import.cpp.o
+
+blockchain_import.i: blockchain_import.cpp.i
+
 .PHONY : blockchain_import.i
 
-# target to generate assembly for a file
-blockchain_import.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make blockchain_utilities/CMakeFiles/blockchain_import.dir/blockchain_import.s
+# target to preprocess a source file
+blockchain_import.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_import.dir/blockchain_import.cpp.i
+.PHONY : blockchain_import.cpp.i
+
+blockchain_import.s: blockchain_import.cpp.s
+
 .PHONY : blockchain_import.s
 
-# target to build an object file
-blocksdat_file.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make blockchain_utilities/CMakeFiles/blockchain_import.dir/blocksdat_file.o
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.o
+# target to generate assembly for a file
+blockchain_import.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_import.dir/blockchain_import.cpp.s
+.PHONY : blockchain_import.cpp.s
+
+blocksdat_file.o: blocksdat_file.cpp.o
+
 .PHONY : blocksdat_file.o
 
-# target to preprocess a source file
-blocksdat_file.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make blockchain_utilities/CMakeFiles/blockchain_import.dir/blocksdat_file.i
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.i
+# target to build an object file
+blocksdat_file.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_import.dir/blocksdat_file.cpp.o
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.o
+.PHONY : blocksdat_file.cpp.o
+
+blocksdat_file.i: blocksdat_file.cpp.i
+
 .PHONY : blocksdat_file.i
 
-# target to generate assembly for a file
-blocksdat_file.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make blockchain_utilities/CMakeFiles/blockchain_import.dir/blocksdat_file.s
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.s
+# target to preprocess a source file
+blocksdat_file.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_import.dir/blocksdat_file.cpp.i
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.i
+.PHONY : blocksdat_file.cpp.i
+
+blocksdat_file.s: blocksdat_file.cpp.s
+
 .PHONY : blocksdat_file.s
 
-# target to build an object file
-bootstrap_file.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make blockchain_utilities/CMakeFiles/blockchain_import.dir/bootstrap_file.o
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.o
+# target to generate assembly for a file
+blocksdat_file.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_import.dir/blocksdat_file.cpp.s
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_export.dir/blocksdat_file.cpp.s
+.PHONY : blocksdat_file.cpp.s
+
+bootstrap_file.o: bootstrap_file.cpp.o
+
 .PHONY : bootstrap_file.o
 
-# target to preprocess a source file
-bootstrap_file.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make blockchain_utilities/CMakeFiles/blockchain_import.dir/bootstrap_file.i
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.i
+# target to build an object file
+bootstrap_file.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_import.dir/bootstrap_file.cpp.o
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.o
+.PHONY : bootstrap_file.cpp.o
+
+bootstrap_file.i: bootstrap_file.cpp.i
+
 .PHONY : bootstrap_file.i
 
-# target to generate assembly for a file
-bootstrap_file.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make blockchain_utilities/CMakeFiles/blockchain_import.dir/bootstrap_file.s
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.s
+# target to preprocess a source file
+bootstrap_file.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_import.dir/bootstrap_file.cpp.i
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.i
+.PHONY : bootstrap_file.cpp.i
+
+bootstrap_file.s: bootstrap_file.cpp.s
+
 .PHONY : bootstrap_file.s
 
-# target to build an object file
-cn_deserialize.o:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/cn_deserialize.dir/build.make blockchain_utilities/CMakeFiles/cn_deserialize.dir/cn_deserialize.o
+# target to generate assembly for a file
+bootstrap_file.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_import.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_import.dir/bootstrap_file.cpp.s
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/blockchain_export.dir/build.make src/blockchain_utilities/CMakeFiles/blockchain_export.dir/bootstrap_file.cpp.s
+.PHONY : bootstrap_file.cpp.s
+
+cn_deserialize.o: cn_deserialize.cpp.o
+
 .PHONY : cn_deserialize.o
 
-# target to preprocess a source file
-cn_deserialize.i:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/cn_deserialize.dir/build.make blockchain_utilities/CMakeFiles/cn_deserialize.dir/cn_deserialize.i
+# target to build an object file
+cn_deserialize.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/cn_deserialize.dir/build.make src/blockchain_utilities/CMakeFiles/cn_deserialize.dir/cn_deserialize.cpp.o
+.PHONY : cn_deserialize.cpp.o
+
+cn_deserialize.i: cn_deserialize.cpp.i
+
 .PHONY : cn_deserialize.i
 
-# target to generate assembly for a file
-cn_deserialize.s:
-	cd /home/chip/Downloads/monero/src && $(MAKE) -f blockchain_utilities/CMakeFiles/cn_deserialize.dir/build.make blockchain_utilities/CMakeFiles/cn_deserialize.dir/cn_deserialize.s
+# target to preprocess a source file
+cn_deserialize.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/cn_deserialize.dir/build.make src/blockchain_utilities/CMakeFiles/cn_deserialize.dir/cn_deserialize.cpp.i
+.PHONY : cn_deserialize.cpp.i
+
+cn_deserialize.s: cn_deserialize.cpp.s
+
 .PHONY : cn_deserialize.s
+
+# target to generate assembly for a file
+cn_deserialize.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/blockchain_utilities/CMakeFiles/cn_deserialize.dir/build.make src/blockchain_utilities/CMakeFiles/cn_deserialize.dir/cn_deserialize.cpp.s
+.PHONY : cn_deserialize.cpp.s
 
 # Help Target
 help:
@@ -288,9 +359,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... blockchain_import"
-	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... cn_deserialize"
 	@echo "... blockchain_export"
 	@echo "... install/local"
@@ -321,6 +393,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -42,7 +42,6 @@ using namespace std;
 #undef MONERO_DEFAULT_LOG_CATEGORY
 #define MONERO_DEFAULT_LOG_CATEGORY "ringct"
 
-#define DBG 1
 namespace rct {
     //Borromean (c.f. gmax/andytoshi's paper)
     boroSig genBorromean(const key64 x, const key64 P1, const key64 P2, const bits indices) {
@@ -302,7 +301,7 @@ namespace rct {
     bool verRange(const key & C, const rangeSig & as) {
       try
       {
-        PERF_TIMER(verRange);
+        //PERF_TIMER(verRange);
         key64 CiH;
         int i = 0;
         key Ctmp = identity();
@@ -444,7 +443,7 @@ namespace rct {
     //Ver:    
     //   verifies the above sig is created corretly
     bool verRctMG(const mgSig &mg, const ctkeyM & pubs, const ctkeyV & outPk, key txnFeeKey, const key &message) {
-        PERF_TIMER(verRctMG);
+        //PERF_TIMER(verRctMG);
         //setup vars
         size_t cols = pubs.size();
         CHECK_AND_ASSERT_MES(cols >= 1, false, "Empty pubs");
@@ -523,7 +522,7 @@ namespace rct {
     tuple<ctkeyM, xmr_amount> populateFromBlockchain(ctkeyV inPk, int mixin) {
         int rows = inPk.size();
         ctkeyM rv(mixin + 1, inPk);
-        int index = randXmrAmount(mixin);
+        int index = mixin==0 ? 0 : randXmrAmount(mixin);
         int i = 0, j = 0;
         for (i = 0; i <= mixin; i++) {
             if (i != index) {
@@ -588,8 +587,6 @@ namespace rct {
             rv.outPk[i].dest = copy(destinations[i]);
             //compute range proof
             rv.p.rangeSigs[i] = proveRange(rv.outPk[i].mask, outSk[i].mask, amounts[i]);
-            cout << "amount = " << amounts[i] << endl;
-            cout << "verify: " << verRange(rv.outPk[i].mask, rv.p.rangeSigs[i]) << endl;
             #ifdef DBG
                 CHECK_AND_ASSERT_THROW_MES(verRange(rv.outPk[i].mask, rv.p.rangeSigs[i]), "verRange failed on newly created proof");
             #endif
@@ -741,8 +738,67 @@ namespace rct {
               DP("range proofs verified?");
               for (size_t i = 0; i < rv.outPk.size(); i++) {
                 region.run([&, i] {
-                	cout << "verifying... " ;
                   results[i] = verRange(rv.outPk[i].mask, rv.p.rangeSigs[i]);
+                });
+              }
+            });
+
+            for (size_t i = 0; i < rv.outPk.size(); ++i) {
+              if (!results[i]) {
+                LOG_PRINT_L1("Range proof verified failed for output " << i);
+                return false;
+              }
+            }
+          }
+
+          if (!semantics) {
+            //compute txn fee
+            key txnFeeKey = scalarmultH(d2h(rv.txnFee));
+            bool mgVerd = verRctMG(rv.p.MGs[0], rv.mixRing, rv.outPk, txnFeeKey, get_pre_mlsag_hash(rv));
+            DP("mg sig verified?");
+            DP(mgVerd);
+            if (!mgVerd) {
+              LOG_PRINT_L1("MG signature verification failed");
+              return false;
+            }
+          }
+
+          return true;
+        }
+        catch(...)
+        {
+          return false;
+        }
+    }
+    
+ /****************************************************************************************************************/   
+    bool verRctCap(const rctSig & rv, bool semantics) {
+        //PERF_TIMER(verRct);
+        CHECK_AND_ASSERT_MES(rv.type == RCTTypeFull, false, "verRct called on non-full rctSig");
+        if (semantics)
+        {
+          CHECK_AND_ASSERT_MES(rv.outPk.size() == rv.p.rangeSigs.size(), false, "Mismatched sizes of outPk and rv.p.rangeSigs");
+          CHECK_AND_ASSERT_MES(rv.outPk.size() == rv.ecdhInfo.size(), false, "Mismatched sizes of outPk and rv.ecdhInfo");
+          CHECK_AND_ASSERT_MES(rv.p.MGs.size() == 1, false, "full rctSig has not one MG");
+        }
+        else
+        {
+          // semantics check is early, we don't have the MGs resolved yet
+        }
+
+        // some rct ops can throw
+        try
+        {
+          if (semantics) {
+            std::deque<bool> results(rv.outPk.size(), false);
+            tools::thread_group threadpool(tools::thread_group::optimal_with_max(rv.outPk.size()));
+
+            tools::task_region(threadpool, [&] (tools::task_region_handle& region) {
+              DP("range proofs verified?");
+              for (size_t i = 0; i < rv.outPk.size(); i++) {
+                region.run([&, i] {
+                	cout << "verifying... " ;
+                  results[i] = verRange(rv.outPk[i].mask, rv.p.rangeSigs[i], rv.Mc);
                   cout << results[i] << endl;
                 });
               }
@@ -768,6 +824,12 @@ namespace rct {
               LOG_PRINT_L1("MG signature verification failed");
               return false;
             }
+            bool verMGcap = MLSAG_Ver(rv.message, rv.mixRingCap, rv.p.MG_cap, 2);
+            if (!verMGcap) {
+            cout << "MG signature on depth verification failed" << endl;
+              LOG_PRINT_L1("MG signature on depth verification failed");
+              return false;
+            }
           }
 
           return true;
@@ -777,6 +839,289 @@ namespace rct {
           return false;
         }
     }
+
+//proveRange and verRange
+//proveRange gives C, and mask such that \sumCi = C
+//   c.f. http://eprint.iacr.org/2015/1098 section 5.1
+//   and Ci is a commitment to either 0 or 2^i, i=0,...,63
+//   thus this proves that "amount" is in [0, 2^64]
+//   mask is a such that C = aG + bH, and b = amount
+//verRange verifies that \sum Ci = C and that each Ci is a commitment to 0 or 2^i
+rangeSig proveRange(key & C, key & mask, const xmr_amount & amount, key & M) {
+    sc_0(mask.bytes);
+    identity(C);
+    bits b;
+    d2b(b, amount);
+    rangeSig sig;
+    key64 ai;
+    key64 CiH;
+    key64 M2;
+    int i = 0;
+    for (i = 0; i < 64; i++) {
+        skGen(ai[i]);
+        if (i>0) {
+        	addKeys(M2[i],M2[i-1],M2[i-1]);
+
+        }
+        else
+        	M2[i] = M;
+    	//dp(M2[i]);
+        if (b[i] == 0) {
+            scalarmultBase(sig.Ci[i], ai[i]);
+        }
+        if (b[i] == 1) {
+            addKeys1(sig.Ci[i], ai[i], M2[i]);
+        }
+        subKeys(CiH[i], sig.Ci[i], M2[i]);
+        sc_add(mask.bytes, mask.bytes, ai[i].bytes);
+        addKeys(C, C, sig.Ci[i]);
+    }
+    sig.asig = genBorromean(ai, sig.Ci, CiH, b);
+    return sig;
+}
+
+    //proveRange and verRange
+    //proveRange gives C, and mask such that \sumCi = C
+    //   c.f. http://eprint.iacr.org/2015/1098 section 5.1
+    //   and Ci is a commitment to either 0 or 2^i, i=0,...,63
+    //   thus this proves that "amount" is in [0, 2^64]
+    //   mask is a such that C = aG + bH, and b = amount
+    //verRange verifies that \sum Ci = C and that each Ci is a commitment to 0 or 2^i
+    bool verRange(const key & C, const rangeSig & as, key  M) {
+      try
+      {
+        //PERF_TIMER(verRange);
+        key64 CiH;
+        int i = 0;
+        key Ctmp = identity();
+        key64 M2;
+        for (i = 0; i < 64; i++) {
+		    if (i>0) {
+		    	addKeys(M2[i],M2[i-1],M2[i-1]);
+		    }
+		    else
+		    	M2[i] = M;
+            subKeys(CiH[i], as.Ci[i], M2[i]);
+            addKeys(Ctmp, Ctmp, as.Ci[i]);
+        }
+        if (!equalKeys(C, Ctmp))
+          return false;
+        if (!verifyBorromean(as.asig, as.Ci, CiH))
+          return false;
+        return true;
+      }
+      // we can get deep throws from ge_frombytes_vartime if input isn't valid
+      catch (...) { return false; }
+    }
+    
+    
+	//generates a <secret , public> / Pedersen commitment to the amount C = bM + aG
+	tuple<ctkey, ctkey> cap_commit(xmr_amount amount, key Mc) {
+		ctkey sk, pk;
+		skpkGen(sk.dest, pk.dest);
+		skpkGen(sk.mask, pk.mask);
+		key am = d2h(amount);
+		key bM = scalarmultKey(Mc, am);
+		addKeys(pk.mask, pk.mask, bM);
+		return make_tuple(sk, pk);
+	}
+
+	mgSig gen_MGcap(const key & message, xmr_amount d, key M, keyM & mixRingM, key sk, key m, const key & depth_key) {
+		//obfuscate cap point M: Mc = M + mG
+		//key m = skGen();
+		key Mc;
+		addKeys1(Mc, m, M);
+		
+		//create depth commitment input, output: Min = dMc + xG
+		tuple<ctkey,ctkey> Min = cap_commit(d, Mc); // Min = dMc + xG
+		//output commit
+		tuple<ctkey,ctkey> Mout = cap_commit(d+1, Mc); // Mout = (d+1)Mc + yG
+		key Mp;
+		subKeys(Mp, get<1>(Mout).mask, get<1>(Min).mask); // Mp = Mout - Min - M
+		subKeys(Mp, Mp, M);
+		//subKeys(Mp, Mp, Mc);
+		
+		keyV skV(2);
+		key z; //this is sk for ring sig: z = m+y-x
+		sc_sub(z.bytes, get<0>(Mout).mask.bytes, get<0>(Min).mask.bytes);
+		sc_add(z.bytes, z.bytes, m.bytes);
+		skV[0] = sk;
+		skV[1] = z;
+		int ind = 2;
+		key PK = scalarmultBase(sk);
+		mixRingM[ind][0] = PK;
+		mixRingM[ind][1] = Mp;
+        //subKeys(mixRingM[ind][1],Mp,M); // Mout-Min-M
+		cout << "mixringM " << mixRingM.size() << endl;
+		mgSig IIccss = MLSAG_Gen(message, mixRingM, skV, ind, 2); // shortcut, R=2, ind = 2
+		IIccss.ecdhInfo.mask = copy(get<0>(Mout).mask);
+		IIccss.ecdhInfo.amount = d2h(d+1);
+		IIccss.Mout = copy(get<1>(Mout).mask);
+		ecdhEncode(IIccss.ecdhInfo, depth_key);
+		return IIccss;
+	}
+	
+	keyM populateFakeRingCap() {
+		//create ring sig for cap point
+		//fake public inputs
+		int N = 5;// #cols - number of members
+		int   R = 2;// #rows - number of keys
+		keyV xtmp = skvGen(R);
+		keyM xm = keyMInit(R, N);// = [[None]*N] #just used to generate test public keys
+		
+		keyM P  = keyMInit(R, N);// = keyM[[None]*N] #stores the public keys;
+		
+		int i = 0;
+		for (int j = 0 ; j < R ; j++) {
+		    for (i = 0 ; i < N ; i++)
+		    {
+		    	    xm[i][j] = skGen();
+				    P[i][j] = scalarmultBase(xm[i][j]);
+		    }
+		}
+		return P;
+	}
+    
+//RingCT protocol
+    //genRct: 
+    //   creates an rctSig with all data necessary to verify the rangeProofs and that the signer owns one of the
+    //   columns that are claimed as inputs, and that the sum of inputs  = sum of outputs.
+    //   Also contains masked "amount" and "mask" so the receiver can see how much they received
+    //verRct:
+    //   verifies that all signatures (rangeProogs, MG sig, sum inputs = outputs) are correct
+    //decodeRct: (c.f. http://eprint.iacr.org/2015/1098 section 5.1.1)
+    //   uses the attached ecdh info to find the amounts represented by each output commitment 
+    //   must know the destination private key to find the correct amount, else will return a random number
+    //   Note: For txn fees, the last index in the amounts vector should contain that
+    //   Thus the amounts vector will be "one" longer than the destinations vectort
+    rctSig genRctCap(const key &message, const ctkeyV & inSk, const keyV & destinations, const vector<xmr_amount> & amounts, const ctkeyM &mixRing, const keyV &amount_keys, unsigned int index, ctkeyV &outSk, xmr_amount d, const key & M, keyM & mixRingCap, key m, const key & depth_key) {
+        CHECK_AND_ASSERT_THROW_MES(amounts.size() == destinations.size() || amounts.size() == destinations.size() + 1, "Different number of amounts/destinations");
+        CHECK_AND_ASSERT_THROW_MES(amount_keys.size() == destinations.size(), "Different number of amount_keys/destinations");
+        CHECK_AND_ASSERT_THROW_MES(index < mixRing.size(), "Bad index into mixRing");
+        for (size_t n = 0; n < mixRing.size(); ++n) {
+          CHECK_AND_ASSERT_THROW_MES(mixRing[n].size() == inSk.size(), "Bad mixRing size");
+        }
+
+        rctSig rv;
+        rv.type = RCTTypeFull;
+        rv.message = message;
+        rv.outPk.resize(destinations.size());
+        rv.p.rangeSigs.resize(destinations.size());
+        rv.ecdhInfo.resize(destinations.size());
+        
+        // compute cap range proof
+        //key Mc;
+        rv.p.MG_cap = gen_MGcap(message, d, M, mixRingCap, inSk[0].dest, m, depth_key);
+        rv.mixRingCap = mixRingCap;
+        addKeys1(rv.Mc, m, M);
+
+        size_t i = 0;
+        keyV masks(destinations.size()); //sk mask..
+        outSk.resize(destinations.size());
+        for (i = 0; i < destinations.size(); i++) {
+            //add destination to sig
+            rv.outPk[i].dest = copy(destinations[i]);
+            //compute range proof
+            rv.p.rangeSigs[i] = proveRange(rv.outPk[i].mask, outSk[i].mask, amounts[i], rv.Mc);
+            cout << "amount = " << amounts[i] << endl;
+            cout << "verify: " << verRange(rv.outPk[i].mask, rv.p.rangeSigs[i], rv.Mc) << endl;
+            #ifdef DBG
+                CHECK_AND_ASSERT_THROW_MES(verRange(rv.outPk[i].mask, rv.p.rangeSigs[i], rv.Mc), "verRange failed on newly created proof");
+            #endif
+
+            //mask amount and mask
+            rv.ecdhInfo[i].mask = copy(outSk[i].mask);
+            rv.ecdhInfo[i].amount = d2h(amounts[i]);
+            ecdhEncode(rv.ecdhInfo[i], amount_keys[i]);
+
+        }
+
+        //set txn fee
+        if (amounts.size() > destinations.size())
+        {
+          rv.txnFee = amounts[destinations.size()];
+        }
+        else
+        {
+          rv.txnFee = 0;
+        }
+        key txnFeeKey = scalarmultH(d2h(rv.txnFee));
+
+        rv.mixRing = mixRing;
+        rv.p.MGs.push_back(proveRctMG(get_pre_mlsag_hash(rv), rv.mixRing, inSk, outSk, rv.outPk, index, txnFeeKey));
+        
+                
+        return rv;
+    }
+
+    rctSig genRctCap(const key &message, const ctkeyV & inSk, const ctkeyV  & inPk, const keyV & destinations, const vector<xmr_amount> & amounts, const keyV &amount_keys, const int mixin, xmr_amount d, const key & M, key m, const key & depth_key) {
+        unsigned int index;
+        ctkeyM mixRing;
+        ctkeyV outSk;
+        keyM mixRingCap = populateFakeRingCap();
+        tie(mixRing, index) = populateFromBlockchain(inPk, mixin);
+        
+        return genRctCap(message, inSk, destinations, amounts, mixRing, amount_keys, index, outSk, d, M, mixRingCap, m, depth_key);
+    }
+
+	xmr_amount decodeRct_cap(const rctSig & rv, const key & sk, unsigned int i, key & mask, const key & M) {
+        CHECK_AND_ASSERT_MES(rv.type == RCTTypeFull || rv.type == RCTTypeCap, false, "decodeRct called on non-full rctSig");
+        CHECK_AND_ASSERT_THROW_MES(rv.outPk.size() == rv.ecdhInfo.size(), "Mismatched sizes of rv.outPk and rv.ecdhInfo");
+        CHECK_AND_ASSERT_THROW_MES(i < rv.ecdhInfo.size(), "Bad index");
+        //mask amount and mask
+        ecdhTuple ecdh_info = rv.ecdhInfo[i];
+        ecdhDecode(ecdh_info, sk);
+        mask = ecdh_info.mask;
+        key amount = ecdh_info.amount;
+        
+        key C = rv.outPk[i].mask;
+        DP("C");
+        DP(C);
+        key Ctmp;
+        addKeys2(Ctmp, mask, amount, M);
+        DP("Ctmp");
+        DP(Ctmp);
+        if (equalKeys(C, Ctmp) == false) {
+            CHECK_AND_ASSERT_THROW_MES(false, "warning, amount decoded incorrectly, will be unable to spend");
+        }
+        //cout << "decode amount " << h2d(amount) << endl;
+        return h2d(amount);
+    }
+
+    xmr_amount decodeRct_cap(const rctSig & rv, const key & sk, unsigned int i, const key & M) {
+      key mask;
+      return decodeRct_cap(rv, sk, i, mask, M);
+    }
+    
+    xmr_amount decodeRct_depth(const rctSig & rv, const key & sk, key & mask) {
+    	//mask amount and mask
+    	//cout <<"ASDFASD" << endl;
+        ecdhTuple ecdh_info = rv.p.MG_cap.ecdhInfo;
+        ecdhDecode(ecdh_info, sk);
+        mask = ecdh_info.mask;
+        //cout << "ASDfasdfadf" << endl;
+        key amount = ecdh_info.amount;
+        key C = rv.p.MG_cap.Mout;
+        DP("C");
+        DP(C);
+        key Ctmp;
+        addKeys2(Ctmp, mask, amount, rv.Mc);
+        DP("Ctmp");
+        DP(Ctmp);
+        if (equalKeys(C, Ctmp) == false) {
+            CHECK_AND_ASSERT_THROW_MES(false, "warning, depth decoded incorrectly, will be unable to spend");
+        }
+        return h2d(amount);
+    }
+    
+    xmr_amount decodeRct_depth(const rctSig & rv, const key & sk) {
+      key mask;
+      //cout << "adfadffd" << endl;
+      return decodeRct_depth(rv, sk, mask);
+    }
+
+
+/********************************************************************************************************************/
 
     //ver RingCT simple
     //assumes only post-rct style inputs (at least for max anonymity)

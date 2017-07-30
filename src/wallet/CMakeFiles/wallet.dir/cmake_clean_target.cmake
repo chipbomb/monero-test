@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "../lib/libwallet.a"
+  "../../lib/libwallet.a"
 )

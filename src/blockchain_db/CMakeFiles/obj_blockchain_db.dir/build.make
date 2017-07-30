@@ -43,89 +43,89 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include blockchain_db/CMakeFiles/obj_blockchain_db.dir/depend.make
+include src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/depend.make
 
 # Include the progress variables for this target.
-include blockchain_db/CMakeFiles/obj_blockchain_db.dir/progress.make
+include src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include blockchain_db/CMakeFiles/obj_blockchain_db.dir/flags.make
+include src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/flags.make
 
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.o: blockchain_db/CMakeFiles/obj_blockchain_db.dir/flags.make
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.o: blockchain_db/blockchain_db.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.o"
-	cd /home/chip/Downloads/monero/src/blockchain_db && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_blockchain_db.dir/blockchain_db.o -c /home/chip/Downloads/monero/src/blockchain_db/blockchain_db.cpp
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.o: src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/flags.make
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.o: src/blockchain_db/blockchain_db.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.o"
+	cd /home/chip/Downloads/monero/src/blockchain_db && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.o -c /home/chip/Downloads/monero/src/blockchain_db/blockchain_db.cpp
 
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_blockchain_db.dir/blockchain_db.i"
-	cd /home/chip/Downloads/monero/src/blockchain_db && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/blockchain_db/blockchain_db.cpp > CMakeFiles/obj_blockchain_db.dir/blockchain_db.i
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.i"
+	cd /home/chip/Downloads/monero/src/blockchain_db && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/blockchain_db/blockchain_db.cpp > CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.i
 
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_blockchain_db.dir/blockchain_db.s"
-	cd /home/chip/Downloads/monero/src/blockchain_db && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/blockchain_db/blockchain_db.cpp -o CMakeFiles/obj_blockchain_db.dir/blockchain_db.s
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.s"
+	cd /home/chip/Downloads/monero/src/blockchain_db && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/blockchain_db/blockchain_db.cpp -o CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.s
 
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.o.requires:
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.o.requires:
 
-.PHONY : blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.o.requires
+.PHONY : src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.o.requires
 
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.o.provides: blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.o.requires
-	$(MAKE) -f blockchain_db/CMakeFiles/obj_blockchain_db.dir/build.make blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.o.provides.build
-.PHONY : blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.o.provides
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.o.provides: src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.o.requires
+	$(MAKE) -f src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/build.make src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.o.provides.build
+.PHONY : src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.o.provides
 
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.o.provides.build: blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.o
-
-
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.o: blockchain_db/CMakeFiles/obj_blockchain_db.dir/flags.make
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.o: blockchain_db/lmdb/db_lmdb.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.o"
-	cd /home/chip/Downloads/monero/src/blockchain_db && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.o -c /home/chip/Downloads/monero/src/blockchain_db/lmdb/db_lmdb.cpp
-
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.i"
-	cd /home/chip/Downloads/monero/src/blockchain_db && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/blockchain_db/lmdb/db_lmdb.cpp > CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.i
-
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.s"
-	cd /home/chip/Downloads/monero/src/blockchain_db && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/blockchain_db/lmdb/db_lmdb.cpp -o CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.s
-
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.o.requires:
-
-.PHONY : blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.o.requires
-
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.o.provides: blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.o.requires
-	$(MAKE) -f blockchain_db/CMakeFiles/obj_blockchain_db.dir/build.make blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.o.provides.build
-.PHONY : blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.o.provides
-
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.o.provides.build: blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.o
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.o.provides.build: src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.o
 
 
-obj_blockchain_db: blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.o
-obj_blockchain_db: blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.o
-obj_blockchain_db: blockchain_db/CMakeFiles/obj_blockchain_db.dir/build.make
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.o: src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/flags.make
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.o: src/blockchain_db/lmdb/db_lmdb.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.o"
+	cd /home/chip/Downloads/monero/src/blockchain_db && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.o -c /home/chip/Downloads/monero/src/blockchain_db/lmdb/db_lmdb.cpp
+
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.i"
+	cd /home/chip/Downloads/monero/src/blockchain_db && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/blockchain_db/lmdb/db_lmdb.cpp > CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.i
+
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.s"
+	cd /home/chip/Downloads/monero/src/blockchain_db && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/blockchain_db/lmdb/db_lmdb.cpp -o CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.s
+
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.o.requires:
+
+.PHONY : src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.o.requires
+
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.o.provides: src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.o.requires
+	$(MAKE) -f src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/build.make src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.o.provides.build
+.PHONY : src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.o.provides
+
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.o.provides.build: src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.o
+
+
+obj_blockchain_db: src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.o
+obj_blockchain_db: src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.o
+obj_blockchain_db: src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/build.make
 
 .PHONY : obj_blockchain_db
 
 # Rule to build all files generated by this target.
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/build: obj_blockchain_db
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/build: obj_blockchain_db
 
-.PHONY : blockchain_db/CMakeFiles/obj_blockchain_db.dir/build
+.PHONY : src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/build
 
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/requires: blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.o.requires
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/requires: blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.o.requires
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/requires: src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/blockchain_db.cpp.o.requires
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/requires: src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/lmdb/db_lmdb.cpp.o.requires
 
-.PHONY : blockchain_db/CMakeFiles/obj_blockchain_db.dir/requires
+.PHONY : src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/requires
 
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/clean:
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/clean:
 	cd /home/chip/Downloads/monero/src/blockchain_db && $(CMAKE_COMMAND) -P CMakeFiles/obj_blockchain_db.dir/cmake_clean.cmake
-.PHONY : blockchain_db/CMakeFiles/obj_blockchain_db.dir/clean
+.PHONY : src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/clean
 
-blockchain_db/CMakeFiles/obj_blockchain_db.dir/depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/blockchain_db /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/blockchain_db /home/chip/Downloads/monero/src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : blockchain_db/CMakeFiles/obj_blockchain_db.dir/depend
+src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/src/blockchain_db /home/chip/Downloads/monero /home/chip/Downloads/monero/src/blockchain_db /home/chip/Downloads/monero/src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : src/blockchain_db/CMakeFiles/obj_blockchain_db.dir/depend
 

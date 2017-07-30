@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "../lib/libwallet.pdb"
-  "../lib/libwallet.a"
+  "../../lib/libwallet.pdb"
+  "../../lib/libwallet.a"
 )
 
 # Per-language clean rules from dependency scanning.

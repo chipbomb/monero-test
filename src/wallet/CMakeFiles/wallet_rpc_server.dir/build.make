@@ -43,84 +43,108 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/src
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/src
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include wallet/CMakeFiles/wallet_rpc_server.dir/depend.make
+include src/wallet/CMakeFiles/wallet_rpc_server.dir/depend.make
 
 # Include the progress variables for this target.
-include wallet/CMakeFiles/wallet_rpc_server.dir/progress.make
+include src/wallet/CMakeFiles/wallet_rpc_server.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include wallet/CMakeFiles/wallet_rpc_server.dir/flags.make
+include src/wallet/CMakeFiles/wallet_rpc_server.dir/flags.make
 
-wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.o: wallet/CMakeFiles/wallet_rpc_server.dir/flags.make
-wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.o: wallet/wallet_rpc_server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.o"
-	cd /home/chip/Downloads/monero/src/wallet && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.o -c /home/chip/Downloads/monero/src/wallet/wallet_rpc_server.cpp
+src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o: src/wallet/CMakeFiles/wallet_rpc_server.dir/flags.make
+src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o: src/wallet/wallet_rpc_server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o"
+	cd /home/chip/Downloads/monero/src/wallet && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o -c /home/chip/Downloads/monero/src/wallet/wallet_rpc_server.cpp
 
-wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.i"
-	cd /home/chip/Downloads/monero/src/wallet && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/wallet/wallet_rpc_server.cpp > CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.i
+src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.i"
+	cd /home/chip/Downloads/monero/src/wallet && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/src/wallet/wallet_rpc_server.cpp > CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.i
 
-wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.s"
-	cd /home/chip/Downloads/monero/src/wallet && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/wallet/wallet_rpc_server.cpp -o CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.s
+src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.s"
+	cd /home/chip/Downloads/monero/src/wallet && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/src/wallet/wallet_rpc_server.cpp -o CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.s
 
-wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.o.requires:
+src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o.requires:
 
-.PHONY : wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.o.requires
+.PHONY : src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o.requires
 
-wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.o.provides: wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.o.requires
-	$(MAKE) -f wallet/CMakeFiles/wallet_rpc_server.dir/build.make wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.o.provides.build
-.PHONY : wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.o.provides
+src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o.provides: src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o.requires
+	$(MAKE) -f src/wallet/CMakeFiles/wallet_rpc_server.dir/build.make src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o.provides.build
+.PHONY : src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o.provides
 
-wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.o.provides.build: wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.o
+src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o.provides.build: src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o
 
 
 # Object files for target wallet_rpc_server
 wallet_rpc_server_OBJECTS = \
-"CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.o"
+"CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o"
 
 # External object files for target wallet_rpc_server
 wallet_rpc_server_EXTERNAL_OBJECTS =
 
-bin/monero-wallet-rpc: wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.o
-bin/monero-wallet-rpc: wallet/CMakeFiles/wallet_rpc_server.dir/build.make
+bin/monero-wallet-rpc: src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o
+bin/monero-wallet-rpc: src/wallet/CMakeFiles/wallet_rpc_server.dir/build.make
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/librt.so
 bin/monero-wallet-rpc: lib/libwallet.a
-bin/monero-wallet-rpc: rpc/librpc.a
-bin/monero-wallet-rpc: cryptonote_core/libcryptonote_core.a
-bin/monero-wallet-rpc: crypto/libcncrypto.a
-bin/monero-wallet-rpc: common/libcommon.a
-bin/monero-wallet-rpc: mnemonics/libmnemonics.a
-bin/monero-wallet-rpc: blockchain_db/libblockchain_db.a
-bin/monero-wallet-rpc: ringct/libringct.a
-bin/monero-wallet-rpc: cryptonote_basic/libcryptonote_basic.a
-bin/monero-wallet-rpc: common/libcommon.a
-bin/monero-wallet-rpc: crypto/libcncrypto.a
-bin/monero-wallet-rpc: cryptonote_protocol/libcryptonote_protocol.a
-bin/monero-wallet-rpc: p2p/libp2p.a
-bin/monero-wallet-rpc: wallet/CMakeFiles/wallet_rpc_server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/src/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../bin/monero-wallet-rpc"
+bin/monero-wallet-rpc: contrib/epee/src/libepee.a
+bin/monero-wallet-rpc: src/rpc/librpc.a
+bin/monero-wallet-rpc: src/cryptonote_core/libcryptonote_core.a
+bin/monero-wallet-rpc: src/crypto/libcncrypto.a
+bin/monero-wallet-rpc: src/common/libcommon.a
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/librt.so
+bin/monero-wallet-rpc: src/mnemonics/libmnemonics.a
+bin/monero-wallet-rpc: src/blockchain_db/libblockchain_db.a
+bin/monero-wallet-rpc: external/db_drivers/liblmdb/liblmdb.a
+bin/monero-wallet-rpc: src/ringct/libringct.a
+bin/monero-wallet-rpc: src/cryptonote_basic/libcryptonote_basic.a
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+bin/monero-wallet-rpc: src/blocks/libblocks.a
+bin/monero-wallet-rpc: src/common/libcommon.a
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libunbound.so
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libssl.so
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libcrypto.so
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+bin/monero-wallet-rpc: src/cryptonote_protocol/libcryptonote_protocol.a
+bin/monero-wallet-rpc: src/p2p/libp2p.a
+bin/monero-wallet-rpc: contrib/epee/src/libepee.a
+bin/monero-wallet-rpc: src/crypto/libcncrypto.a
+bin/monero-wallet-rpc: external/easylogging++/libeasylogging.a
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libminiupnpc.so
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_system.so
+bin/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/librt.so
+bin/monero-wallet-rpc: src/wallet/CMakeFiles/wallet_rpc_server.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../../bin/monero-wallet-rpc"
 	cd /home/chip/Downloads/monero/src/wallet && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wallet_rpc_server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-wallet/CMakeFiles/wallet_rpc_server.dir/build: bin/monero-wallet-rpc
+src/wallet/CMakeFiles/wallet_rpc_server.dir/build: bin/monero-wallet-rpc
 
-.PHONY : wallet/CMakeFiles/wallet_rpc_server.dir/build
+.PHONY : src/wallet/CMakeFiles/wallet_rpc_server.dir/build
 
-wallet/CMakeFiles/wallet_rpc_server.dir/requires: wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.o.requires
+src/wallet/CMakeFiles/wallet_rpc_server.dir/requires: src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o.requires
 
-.PHONY : wallet/CMakeFiles/wallet_rpc_server.dir/requires
+.PHONY : src/wallet/CMakeFiles/wallet_rpc_server.dir/requires
 
-wallet/CMakeFiles/wallet_rpc_server.dir/clean:
+src/wallet/CMakeFiles/wallet_rpc_server.dir/clean:
 	cd /home/chip/Downloads/monero/src/wallet && $(CMAKE_COMMAND) -P CMakeFiles/wallet_rpc_server.dir/cmake_clean.cmake
-.PHONY : wallet/CMakeFiles/wallet_rpc_server.dir/clean
+.PHONY : src/wallet/CMakeFiles/wallet_rpc_server.dir/clean
 
-wallet/CMakeFiles/wallet_rpc_server.dir/depend:
-	cd /home/chip/Downloads/monero/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/wallet /home/chip/Downloads/monero/src /home/chip/Downloads/monero/src/wallet /home/chip/Downloads/monero/src/wallet/CMakeFiles/wallet_rpc_server.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : wallet/CMakeFiles/wallet_rpc_server.dir/depend
+src/wallet/CMakeFiles/wallet_rpc_server.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/src/wallet /home/chip/Downloads/monero /home/chip/Downloads/monero/src/wallet /home/chip/Downloads/monero/src/wallet/CMakeFiles/wallet_rpc_server.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : src/wallet/CMakeFiles/wallet_rpc_server.dir/depend
 
