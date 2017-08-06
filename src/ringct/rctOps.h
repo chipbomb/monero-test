@@ -142,6 +142,9 @@ namespace rct {
     void subKeys(key &AB, const key &A, const  key &B);
     //checks if A, B are equal as curve points
     bool equalKeys(const key & A, const key & B);
+    
+    // added
+    void multKeys(key &ab, const key &a, const key &b);
 
     //Hashing - cn_fast_hash
     //be careful these are also in crypto namespace

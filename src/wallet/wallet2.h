@@ -401,6 +401,10 @@ namespace tools
     uint64_t unlock_time, uint64_t fee, const std::vector<uint8_t>& extra, cryptonote::transaction& tx, pending_tx &ptx, bool trusted_daemon);
     void transfer_cap(const std::vector<cryptonote::tx_destination_entry>& dsts, const size_t fake_outs_count, size_t &unused_transfer_index,
     uint64_t unlock_time, uint64_t fee, const std::vector<uint8_t>& extra, bool trusted_daemon);
+    void transfer_cap(std::vector<cryptonote::tx_destination_entry> dsts, const std::list<size_t> selected_transfers, size_t fake_outputs_count,
+  std::vector<std::vector<tools::wallet2::get_outs_entry>> &outs,
+  uint64_t unlock_time, uint64_t fee, const std::vector<uint8_t>& extra, cryptonote::transaction& tx, pending_tx &ptx);
+    
     template<typename T>
     void transfer_selected(const std::vector<cryptonote::tx_destination_entry>& dsts, const std::list<size_t> selected_transfers, size_t fake_outputs_count,
       std::vector<std::vector<tools::wallet2::get_outs_entry>> &outs,

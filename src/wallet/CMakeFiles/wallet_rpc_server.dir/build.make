@@ -136,6 +136,61 @@ src/wallet/CMakeFiles/wallet_rpc_server.dir/build: bin/monero-wallet-rpc
 
 .PHONY : src/wallet/CMakeFiles/wallet_rpc_server.dir/build
 
+# Object files for target wallet_rpc_server
+wallet_rpc_server_OBJECTS = \
+"CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o"
+
+# External object files for target wallet_rpc_server
+wallet_rpc_server_EXTERNAL_OBJECTS =
+
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: src/wallet/CMakeFiles/wallet_rpc_server.dir/build.make
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/librt.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: lib/libwallet.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: contrib/epee/src/libepee.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: src/rpc/librpc.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: src/cryptonote_core/libcryptonote_core.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: src/crypto/libcncrypto.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: src/common/libcommon.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/librt.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: src/mnemonics/libmnemonics.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: src/blockchain_db/libblockchain_db.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: external/db_drivers/liblmdb/liblmdb.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: src/ringct/libringct.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: src/cryptonote_basic/libcryptonote_basic.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: src/blocks/libblocks.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: src/common/libcommon.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libunbound.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libssl.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libcrypto.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: src/cryptonote_protocol/libcryptonote_protocol.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: src/p2p/libp2p.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: contrib/epee/src/libepee.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: src/crypto/libcncrypto.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: external/easylogging++/libeasylogging.a
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libminiupnpc.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/libboost_system.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: /usr/lib/x86_64-linux-gnu/librt.so
+src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc: src/wallet/CMakeFiles/wallet_rpc_server.dir/relink.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable CMakeFiles/CMakeRelink.dir/monero-wallet-rpc"
+	cd /home/chip/Downloads/monero/src/wallet && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wallet_rpc_server.dir/relink.txt --verbose=$(VERBOSE)
+
+# Rule to relink during preinstall.
+src/wallet/CMakeFiles/wallet_rpc_server.dir/preinstall: src/wallet/CMakeFiles/CMakeRelink.dir/monero-wallet-rpc
+
+.PHONY : src/wallet/CMakeFiles/wallet_rpc_server.dir/preinstall
+
 src/wallet/CMakeFiles/wallet_rpc_server.dir/requires: src/wallet/CMakeFiles/wallet_rpc_server.dir/wallet_rpc_server.cpp.o.requires
 
 .PHONY : src/wallet/CMakeFiles/wallet_rpc_server.dir/requires

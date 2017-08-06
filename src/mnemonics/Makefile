@@ -100,17 +100,6 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -122,16 +111,16 @@ install/local/fast: install/local
 
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target install/strip
-install/strip/fast: install/strip
+# Special rule for the target test
+test/fast: test
 
-.PHONY : install/strip/fast
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -232,11 +221,10 @@ help:
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
 	@echo "... obj_mnemonics"
 	@echo "... mnemonics"
 	@echo "... install/local"
-	@echo "... install/strip"
+	@echo "... test"
 	@echo "... electrum-words.o"
 	@echo "... electrum-words.i"
 	@echo "... electrum-words.s"

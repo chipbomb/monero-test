@@ -495,7 +495,7 @@ namespace cryptonote
       tvc.m_too_big = true;
       return false;
     }
-
+		//cout << "here" << endl;
     crypto::hash tx_hash = null_hash;
     crypto::hash tx_prefixt_hash = null_hash;
     transaction tx;
@@ -507,7 +507,7 @@ namespace cryptonote
       return false;
     }
     //std::cout << "!"<< tx.vin.size() << std::endl;
-
+		//cout << "here2" << endl;
     for (int idx = 0; idx < 2; ++idx)
     {
       if (bad_semantics_txes[idx].find(tx_hash) != bad_semantics_txes[idx].end())
@@ -517,16 +517,18 @@ namespace cryptonote
         return false;
       }
     }
-
+		//cout << "here3" << endl;
     uint8_t version = m_blockchain_storage.get_current_hard_fork_version();
-    const size_t max_tx_version = version == 1 ? 1 : 2;
+    //const size_t max_tx_version = version == 1 ? 1 : 2;
+    const size_t max_tx_version = 2;
     if (tx.version == 0 || tx.version > max_tx_version)
     {
+      cout << tx.version << " " << version << endl;
       // v2 is the latest one we know
       tvc.m_verifivation_failed = true;
       return false;
     }
-
+		//cout << "here4" << endl;
     if(m_mempool.have_tx(tx_hash))
     {
       LOG_PRINT_L2("tx " << tx_hash << "already have transaction in tx_pool");
@@ -545,7 +547,7 @@ namespace cryptonote
       tvc.m_verifivation_failed = true;
       return false;
     }
-
+		//cout << "here5" << endl;
     // resolve outPk references in rct txes
     // outPk aren't the only thing that need resolving for a fully resolved tx,
     // but outPk (1) are needed now to check range proof semantics, and
@@ -562,7 +564,7 @@ namespace cryptonote
       for (size_t n = 0; n < tx.rct_signatures.outPk.size(); ++n)
         rv.outPk[n].dest = rct::pk2rct(boost::get<txout_to_key>(tx.vout[n].target).key);
     }
-
+		//cout << "here6" << endl;
     if(!check_tx_semantic(tx, keeped_by_block))
     {
       LOG_PRINT_L1("WRONG TRANSACTION BLOB, Failed to check tx " << tx_hash << " semantic, rejected");
@@ -575,7 +577,7 @@ namespace cryptonote
       }
       return false;
     }
-
+    //cout << "here7" << endl;
     bool r = add_new_tx(tx, tx_hash, tx_prefixt_hash, tx_blob.size(), tvc, keeped_by_block, relayed, do_not_relay);
     if(tvc.m_verifivation_failed)
     {MERROR_VER("Transaction verification failed: " << tx_hash);}
@@ -681,7 +683,7 @@ namespace cryptonote
           }
           break;
         case rct::RCTTypeFull:
-          if (!rct::verRct(rv, true))
+          if (!rct::verRctCap(rv, true))
           {
             MERROR_VER("rct signature semantics check failed");
             return false;

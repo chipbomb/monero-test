@@ -100,28 +100,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
-
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
@@ -132,6 +110,17 @@ test:
 test/fast: test
 
 .PHONY : test/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -209,6 +198,11 @@ wallet_rpc_server: src/wallet/CMakeFiles/wallet_rpc_server.dir/rule
 wallet_rpc_server/fast:
 	cd /home/chip/Downloads/monero && $(MAKE) -f src/wallet/CMakeFiles/wallet_rpc_server.dir/build.make src/wallet/CMakeFiles/wallet_rpc_server.dir/build
 .PHONY : wallet_rpc_server/fast
+
+# Manual pre-install relink rule for target.
+wallet_rpc_server/preinstall:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/wallet/CMakeFiles/wallet_rpc_server.dir/preinstall
+.PHONY : wallet_rpc_server/preinstall
 
 api/address_book.o: api/address_book.cpp.o
 
@@ -545,11 +539,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... obj_wallet"
-	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... wallet"
 	@echo "... test"
 	@echo "... wallet_rpc_server"
+	@echo "... install/local"
 	@echo "... api/address_book.o"
 	@echo "... api/address_book.i"
 	@echo "... api/address_book.s"

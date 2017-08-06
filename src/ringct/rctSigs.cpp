@@ -824,12 +824,13 @@ namespace rct {
               LOG_PRINT_L1("MG signature verification failed");
               return false;
             }
-            bool verMGcap = MLSAG_Ver(rv.message, rv.mixRingCap, rv.p.MG_cap, 2);
+            // by pass depth check
+            /*bool verMGcap = MLSAG_Ver(rv.message, rv.mixRingCap, rv.p.MG_cap, 2);
             if (!verMGcap) {
             cout << "MG signature on depth verification failed" << endl;
               LOG_PRINT_L1("MG signature on depth verification failed");
               return false;
-            }
+            }*/
           }
 
           return true;
@@ -847,7 +848,7 @@ namespace rct {
 //   thus this proves that "amount" is in [0, 2^64]
 //   mask is a such that C = aG + bH, and b = amount
 //verRange verifies that \sum Ci = C and that each Ci is a commitment to 0 or 2^i
-rangeSig proveRange(key & C, key & mask, const xmr_amount & amount, key & M) {
+rangeSig proveRange(key & C, key & mask, const xmr_amount & amount, const key & M) {
     sc_0(mask.bytes);
     identity(C);
     bits b;
@@ -1018,11 +1019,13 @@ rangeSig proveRange(key & C, key & mask, const xmr_amount & amount, key & M) {
         size_t i = 0;
         keyV masks(destinations.size()); //sk mask..
         outSk.resize(destinations.size());
+        ctkeyV outSk_new = outSk;
         for (i = 0; i < destinations.size(); i++) {
             //add destination to sig
             rv.outPk[i].dest = copy(destinations[i]);
             //compute range proof
-            rv.p.rangeSigs[i] = proveRange(rv.outPk[i].mask, outSk[i].mask, amounts[i], rv.Mc);
+            rv.p.rangeSigs[i] = proveRange(rv.outPk[i].mask, outSk[i].mask, amounts[i], (const rct::key)rv.Mc);
+            //rv.p.rangeSigs[i] = proveRange(rv.outPk[i].mask, outSk[i].mask, amounts[i], M);
             cout << "amount = " << amounts[i] << endl;
             cout << "verify: " << verRange(rv.outPk[i].mask, rv.p.rangeSigs[i], rv.Mc) << endl;
             #ifdef DBG
@@ -1030,7 +1033,52 @@ rangeSig proveRange(key & C, key & mask, const xmr_amount & amount, key & M) {
             #endif
 
             //mask amount and mask
+            
+            //some test
+            /*cout << "test" << endl;
+            key T = pkGen();
+            key t = skGen();
+            for (int i=16;i<32;i++) {
+							t.bytes[i] = t.bytes[i] & 0;
+						}
+            //key t = d2h(2);
+            xmr_amount a = 1000;
+            cout << "t" << endl;
+            dp(t);
+            key Tp;
+            addKeys1(Tp, t, T); // Tp = tG + T
+            key x = skGen();
+            key c1;
+            addKeys2(c1, x, d2h(a), Tp); // c = xG + aTp
+            dp(c1);
+            // c = xG + a(tG+T) = (x+at)G + aT
+            key c2;
+            key xat;
+            multKeys(xat, d2h(a), t);
+            dp(d2h(a));
+            cout << "at" << endl;           
+            dp(xat);
+            sc_add(xat.bytes, xat.bytes, x.bytes);
+            sc_reduce32(xat.bytes);
+            dp(xat);
+            addKeys2(c2, xat, d2h(a), T);
+            dp(c2);*/
+             
+            //uint64_t d = amounts[i]*h2d(m);
+            key maskM;// = d2h(d);
+            multKeys(maskM, d2h(amounts[i]), m);
+            sc_add(maskM.bytes,outSk[i].mask.bytes,maskM.bytes);
+            sc_reduce32(maskM.bytes);
+            key temp;
+            addKeys2(temp, maskM, d2h(amounts[i]), M);
+            cout << "check" << endl;
+            dp(temp);
+            addKeys2(temp, outSk[i].mask, d2h(amounts[i]), rv.Mc);
+            dp(temp);
+            dp(rv.outPk[i].mask);
             rv.ecdhInfo[i].mask = copy(outSk[i].mask);
+            outSk_new[i].mask = copy(maskM);
+            //rv.ecdhInfo[i].mask = copy(maskM);
             rv.ecdhInfo[i].amount = d2h(amounts[i]);
             ecdhEncode(rv.ecdhInfo[i], amount_keys[i]);
 
@@ -1048,7 +1096,7 @@ rangeSig proveRange(key & C, key & mask, const xmr_amount & amount, key & M) {
         key txnFeeKey = scalarmultH(d2h(rv.txnFee));
 
         rv.mixRing = mixRing;
-        rv.p.MGs.push_back(proveRctMG(get_pre_mlsag_hash(rv), rv.mixRing, inSk, outSk, rv.outPk, index, txnFeeKey));
+        rv.p.MGs.push_back(proveRctMG(get_pre_mlsag_hash(rv), rv.mixRing, inSk, outSk_new, rv.outPk, index, txnFeeKey));
         
                 
         return rv;

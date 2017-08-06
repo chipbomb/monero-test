@@ -1674,7 +1674,7 @@ void simple_wallet::on_money_received(uint64_t height, const crypto::hash &txid,
     tr("Height ") << height << ", " <<
     tr("transaction ") << txid << ", " <<
     tr("received capability ") << print_cap(tx.rct_signatures.Mc) << ", " <<
-    tr("expired ") << print_time(amount);
+    tr("expired ") << print_time(amount) << tr(" amount ") << amount;
   if (m_auto_refresh_refreshing)
     m_cmd_binder.print_prompt();
   else
@@ -4169,7 +4169,7 @@ bool simple_wallet::find_cap(const std::vector<std::string> &args)
   {
     if (!memcmp(capid,td.m_cap.bytes,sizeof(td.m_cap.bytes))) {
     	success_msg_writer() << tr("Found output ") << print_cap(td.m_cap)
-    	<< tr("expired at ") << print_time(td.m_amount);
+    	<< tr("expired at ") << print_time(td.m_amount) << tr(" value ") << td.m_amount;
     	return true; 
     }
   }

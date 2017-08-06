@@ -102,11 +102,14 @@ void BlockchainDB::add_transaction(const crypto::hash& blk_hash, const transacti
       cryptonote::tx_out vout = tx.vout[i];
       rct::key commitment = rct::zeroCommit(vout.amount);
       vout.amount = 0;
+      //amount_output_indices.push_back(add_output(tx_hash, vout, i, tx.unlock_time, &commitment)); /// edited
       amount_output_indices.push_back(add_output(tx_hash, vout, i, tx.unlock_time,
-        &commitment));
+        tx.version > 1 ? &tx.rct_signatures.outPk[i].mask : NULL));
+        //cout << "enter here" << endl;
     }
     else
     {
+    //cout << "or here" << endl;
       amount_output_indices.push_back(add_output(tx_hash, tx.vout[i], i, tx.unlock_time,
         tx.version > 1 ? &tx.rct_signatures.outPk[i].mask : NULL));
     }

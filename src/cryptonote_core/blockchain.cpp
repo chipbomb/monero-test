@@ -2835,7 +2835,7 @@ bool Blockchain::check_tx_inputs(transaction& tx, tx_verification_context &tvc, 
         }
       }
 
-      if (!rct::verRct(rv, false))
+      if (!rct::verRctCap(rv, false)) // edited
       {
         MERROR_VER("Failed to check ringct signatures!");
         return false;
@@ -2936,8 +2936,8 @@ bool Blockchain::check_fee(size_t blob_size, uint64_t fee) const
 
   if (fee < needed_fee * 0.98) // keep a little buffer on acceptance
   {
-    MERROR_VER("transaction fee is not enough: " << print_money(fee) << ", minimum fee: " << print_money(needed_fee));
-    return false;
+    //MERROR_VER("transaction fee is not enough: " << print_money(fee) << ", minimum fee: " << print_money(needed_fee));
+    //return false;
   }
   return true;
 }

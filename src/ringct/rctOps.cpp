@@ -30,6 +30,9 @@
 
 #include "misc_log_ex.h"
 #include "rctOps.h"
+#include <boost/multiprecision/cpp_int.hpp>
+
+using namespace boost::multiprecision;
 using namespace crypto;
 using namespace std;
 
@@ -151,6 +154,15 @@ namespace rct {
     //generates a random uint long long (for testing)
     xmr_amount randXmrAmount(xmr_amount upperlimit) {
         return h2d(skGen()) % (upperlimit);
+    }
+    
+    void multKeys(key &ab, const key &a, const key &b) {
+    		fe x, y, xy;
+    		fe_frombytes(x, a.bytes);
+    		fe_frombytes(y, b.bytes);
+    		fe_mul(xy, x, y);
+    		fe_tobytes(ab.bytes, xy);
+    		sc_reduce32(ab.bytes);
     }
 
     //Scalar multiplications of curve points

@@ -150,4 +150,6 @@ uint64_t load_4(const unsigned char *in);
 void ge_sub(ge_p1p1 *r, const ge_p3 *p, const ge_cached *q);
 void fe_add(fe h, const fe f, const fe g);
 void fe_tobytes(unsigned char *, const fe);
+void fe_frombytes(fe h,const unsigned char *s);
 void fe_invert(fe out, const fe z);
+void fe_mul(fe, const fe, const fe);

@@ -8,6 +8,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/daemon.dir/rpc_command_executor.cpp.o"
   "../../bin/monerod.pdb"
   "../../bin/monerod"
+  "../../bin/monerod.pdb"
+  "CMakeFiles/CMakeRelink.dir/monerod"
 )
 
 # Per-language clean rules from dependency scanning.

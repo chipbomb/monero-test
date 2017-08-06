@@ -111,17 +111,6 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-
-.PHONY : install/strip/fast
-
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -166,21 +155,6 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-src/cryptonote_core/CMakeFiles/obj_cryptonote_core.dir/rule:
-	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/cryptonote_core/CMakeFiles/obj_cryptonote_core.dir/rule
-.PHONY : src/cryptonote_core/CMakeFiles/obj_cryptonote_core.dir/rule
-
-# Convenience name for target.
-obj_cryptonote_core: src/cryptonote_core/CMakeFiles/obj_cryptonote_core.dir/rule
-
-.PHONY : obj_cryptonote_core
-
-# fast build rule for target.
-obj_cryptonote_core/fast:
-	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_core/CMakeFiles/obj_cryptonote_core.dir/build.make src/cryptonote_core/CMakeFiles/obj_cryptonote_core.dir/build
-.PHONY : obj_cryptonote_core/fast
-
-# Convenience name for target.
 src/cryptonote_core/CMakeFiles/cryptonote_core.dir/rule:
 	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/cryptonote_core/CMakeFiles/cryptonote_core.dir/rule
 .PHONY : src/cryptonote_core/CMakeFiles/cryptonote_core.dir/rule
@@ -194,6 +168,21 @@ cryptonote_core: src/cryptonote_core/CMakeFiles/cryptonote_core.dir/rule
 cryptonote_core/fast:
 	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_core/CMakeFiles/cryptonote_core.dir/build.make src/cryptonote_core/CMakeFiles/cryptonote_core.dir/build
 .PHONY : cryptonote_core/fast
+
+# Convenience name for target.
+src/cryptonote_core/CMakeFiles/obj_cryptonote_core.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 src/cryptonote_core/CMakeFiles/obj_cryptonote_core.dir/rule
+.PHONY : src/cryptonote_core/CMakeFiles/obj_cryptonote_core.dir/rule
+
+# Convenience name for target.
+obj_cryptonote_core: src/cryptonote_core/CMakeFiles/obj_cryptonote_core.dir/rule
+
+.PHONY : obj_cryptonote_core
+
+# fast build rule for target.
+obj_cryptonote_core/fast:
+	cd /home/chip/Downloads/monero && $(MAKE) -f src/cryptonote_core/CMakeFiles/obj_cryptonote_core.dir/build.make src/cryptonote_core/CMakeFiles/obj_cryptonote_core.dir/build
+.PHONY : obj_cryptonote_core/fast
 
 blockchain.o: blockchain.cpp.o
 
@@ -313,10 +302,9 @@ help:
 	@echo "... install"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
-	@echo "... obj_cryptonote_core"
 	@echo "... cryptonote_core"
-	@echo "... install/strip"
+	@echo "... obj_cryptonote_core"
+	@echo "... test"
 	@echo "... install/local"
 	@echo "... blockchain.o"
 	@echo "... blockchain.i"

@@ -216,6 +216,12 @@ namespace cryptonote
 		
 		pk.dest = rct::pk2rct(boost::get<txout_to_key>(out.target).key);
 		sig.outPk.push_back(pk);
+		/*cout << "outpk " ;
+		dp(pk.mask);
+		cout << "mask ";
+		dp(mask);
+		cout <<"M ";
+		dp(M);*/
 		
 		sig.ecdhInfo.resize(sig.outPk.size());
 		sig.ecdhInfo[0].mask = mask;
@@ -385,11 +391,11 @@ namespace cryptonote
     }
 
     //check money
-    if(summary_outs_money > summary_inputs_money )
+    /*if(summary_outs_money > summary_inputs_money )
     {
       LOG_ERROR("Transaction inputs money ("<< summary_inputs_money << ") less than outputs money (" << summary_outs_money << ")");
       return false;
-    }
+    }*/
 
     // check for watch only wallet
     bool zero_secret_key = true;
@@ -453,6 +459,7 @@ namespace cryptonote
       {
         destinations.push_back(rct::pk2rct(boost::get<txout_to_key>(tx.vout[i].target).key));
         outamounts.push_back(tx.vout[i].amount);
+        cout << "out amount: " << tx.vout[i].amount << endl;
         amount_out += tx.vout[i].amount;
       }
 
@@ -477,11 +484,18 @@ namespace cryptonote
       crypto::hash tx_prefix_hash;
       get_transaction_prefix_hash(tx, tx_prefix_hash);
       rct::ctkeyV outSk;
-	  // create mask for cap
-	  rct::key m = rct::skGen();
-	  rct::keyM mixRingCap = rct::populateFakeRingCap(); // temporary, not implement cap selection yet
-	  rct::key depth_key = rct::zero();
+			// create mask for cap
+			rct::key m = rct::skGen();
+			// reduce m to 128 bits
+			for (int i=16;i<32;i++) {
+				m.bytes[i] = m.bytes[i] & 0;
+			}
+			
+			rct::keyM mixRingCap = rct::populateFakeRingCap(); // temporary, not implement cap selection yet
+			rct::key depth_key = rct::zero();
       tx.rct_signatures = rct::genRctCap(rct::hash2rct(tx_prefix_hash), inSk, destinations, outamounts, mixRing, amount_keys, sources[0].real_output, outSk, 0, sources[0].cap, mixRingCap, m, depth_key); // same index assumption
+      cout << "source cap: " << endl;
+      rct::dp(sources[0].cap);
 
       CHECK_AND_ASSERT_MES(tx.vout.size() == outSk.size(), false, "outSk size does not match vout");
 

@@ -136,6 +136,61 @@ src/simplewallet/CMakeFiles/simplewallet.dir/build: bin/monero-wallet-cli
 
 .PHONY : src/simplewallet/CMakeFiles/simplewallet.dir/build
 
+# Object files for target simplewallet
+simplewallet_OBJECTS = \
+"CMakeFiles/simplewallet.dir/simplewallet.cpp.o"
+
+# External object files for target simplewallet
+simplewallet_EXTERNAL_OBJECTS =
+
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.o
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: src/simplewallet/CMakeFiles/simplewallet.dir/build.make
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/librt.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: lib/libwallet.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: src/rpc/librpc.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: src/cryptonote_core/libcryptonote_core.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: src/crypto/libcncrypto.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: src/common/libcommon.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: src/mnemonics/libmnemonics.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: src/p2p/libp2p.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/librt.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: src/blockchain_db/libblockchain_db.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: external/db_drivers/liblmdb/liblmdb.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: src/ringct/libringct.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: src/cryptonote_basic/libcryptonote_basic.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: src/blocks/libblocks.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: src/common/libcommon.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libunbound.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libssl.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libcrypto.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: src/cryptonote_protocol/libcryptonote_protocol.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: src/p2p/libp2p.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libminiupnpc.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: contrib/epee/src/libepee.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: src/crypto/libcncrypto.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_system.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: /usr/lib/x86_64-linux-gnu/librt.so
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: external/easylogging++/libeasylogging.a
+src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli: src/simplewallet/CMakeFiles/simplewallet.dir/relink.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable CMakeFiles/CMakeRelink.dir/monero-wallet-cli"
+	cd /home/chip/Downloads/monero/src/simplewallet && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/simplewallet.dir/relink.txt --verbose=$(VERBOSE)
+
+# Rule to relink during preinstall.
+src/simplewallet/CMakeFiles/simplewallet.dir/preinstall: src/simplewallet/CMakeFiles/CMakeRelink.dir/monero-wallet-cli
+
+.PHONY : src/simplewallet/CMakeFiles/simplewallet.dir/preinstall
+
 src/simplewallet/CMakeFiles/simplewallet.dir/requires: src/simplewallet/CMakeFiles/simplewallet.dir/simplewallet.cpp.o.requires
 
 .PHONY : src/simplewallet/CMakeFiles/simplewallet.dir/requires

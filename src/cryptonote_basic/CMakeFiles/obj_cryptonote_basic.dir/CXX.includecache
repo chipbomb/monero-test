@@ -157,6 +157,8 @@ ringct/rctSigs.h
 /home/chip/Downloads/monero/src/cryptonote_basic/ringct/rctSigs.h
 ctime
 -
+sstream
+-
 
 /home/chip/Downloads/monero/src/cryptonote_basic/cryptonote_format_utils.h
 cryptonote_protocol/cryptonote_protocol_defs.h
