@@ -595,3 +595,50 @@ Source file was:
 
 	return 0;
 	}
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/chip/Downloads/monero/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0f85a/fast"
+make[1]: Entering directory '/home/chip/Downloads/monero/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_0f85a.dir/build.make CMakeFiles/cmTC_0f85a.dir/build
+make[2]: Entering directory '/home/chip/Downloads/monero/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0f85a.dir/CheckIncludeFile.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_0f85a.dir/CheckIncludeFile.c.o   -c /home/chip/Downloads/monero/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_0f85a
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0f85a.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_0f85a.dir/CheckIncludeFile.c.o  -o cmTC_0f85a -rdynamic 
+make[2]: Leaving directory '/home/chip/Downloads/monero/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/chip/Downloads/monero/CMakeFiles/CMakeTmp'
+
+
+Performing C++ SOURCE FILE Test MINIUPNPC_VERSION_1_7_OR_HIGHER succeeded with the following output:
+Change Dir: /home/chip/Downloads/monero/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_1a699/fast"
+make[1]: Entering directory '/home/chip/Downloads/monero/CMakeFiles/CMakeTmp'
+/usr/bin/make -f CMakeFiles/cmTC_1a699.dir/build.make CMakeFiles/cmTC_1a699.dir/build
+make[2]: Entering directory '/home/chip/Downloads/monero/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_1a699.dir/src.cxx.o
+/usr/bin/c++    -I/usr/include/miniupnpc  -DMINIUPNPC_VERSION_1_7_OR_HIGHER   -o CMakeFiles/cmTC_1a699.dir/src.cxx.o -c /home/chip/Downloads/monero/CMakeFiles/CMakeTmp/src.cxx
+Linking CXX executable cmTC_1a699
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1a699.dir/link.txt --verbose=1
+/usr/bin/c++    -DMINIUPNPC_VERSION_1_7_OR_HIGHER    CMakeFiles/cmTC_1a699.dir/src.cxx.o  -o cmTC_1a699 -rdynamic /usr/lib/x86_64-linux-gnu/libminiupnpc.so 
+make[2]: Leaving directory '/home/chip/Downloads/monero/CMakeFiles/CMakeTmp'
+make[1]: Leaving directory '/home/chip/Downloads/monero/CMakeFiles/CMakeTmp'
+
+Return value: 1
+Source file was:
+
+	#include <miniwget.h>
+	#include <miniupnpc.h>
+	#include <upnpcommands.h>
+	#include <stdio.h>
+	int main()
+	{
+	static struct UPNPUrls urls;
+	static struct IGDdatas data;
+
+	GetUPNPUrls (&urls, &data, "myurl",0);
+
+	return 0;
+	}

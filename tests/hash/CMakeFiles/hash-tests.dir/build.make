@@ -43,71 +43,75 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/tests
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/tests
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include hash/CMakeFiles/hash-tests.dir/depend.make
+include tests/hash/CMakeFiles/hash-tests.dir/depend.make
 
 # Include the progress variables for this target.
-include hash/CMakeFiles/hash-tests.dir/progress.make
+include tests/hash/CMakeFiles/hash-tests.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include hash/CMakeFiles/hash-tests.dir/flags.make
+include tests/hash/CMakeFiles/hash-tests.dir/flags.make
 
-hash/CMakeFiles/hash-tests.dir/main.o: hash/CMakeFiles/hash-tests.dir/flags.make
-hash/CMakeFiles/hash-tests.dir/main.o: hash/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object hash/CMakeFiles/hash-tests.dir/main.o"
-	cd /home/chip/Downloads/monero/tests/hash && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hash-tests.dir/main.o -c /home/chip/Downloads/monero/tests/hash/main.cpp
+tests/hash/CMakeFiles/hash-tests.dir/main.cpp.o: tests/hash/CMakeFiles/hash-tests.dir/flags.make
+tests/hash/CMakeFiles/hash-tests.dir/main.cpp.o: tests/hash/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/hash/CMakeFiles/hash-tests.dir/main.cpp.o"
+	cd /home/chip/Downloads/monero/tests/hash && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/hash-tests.dir/main.cpp.o -c /home/chip/Downloads/monero/tests/hash/main.cpp
 
-hash/CMakeFiles/hash-tests.dir/main.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hash-tests.dir/main.i"
-	cd /home/chip/Downloads/monero/tests/hash && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/hash/main.cpp > CMakeFiles/hash-tests.dir/main.i
+tests/hash/CMakeFiles/hash-tests.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/hash-tests.dir/main.cpp.i"
+	cd /home/chip/Downloads/monero/tests/hash && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/hash/main.cpp > CMakeFiles/hash-tests.dir/main.cpp.i
 
-hash/CMakeFiles/hash-tests.dir/main.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hash-tests.dir/main.s"
-	cd /home/chip/Downloads/monero/tests/hash && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/hash/main.cpp -o CMakeFiles/hash-tests.dir/main.s
+tests/hash/CMakeFiles/hash-tests.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/hash-tests.dir/main.cpp.s"
+	cd /home/chip/Downloads/monero/tests/hash && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/hash/main.cpp -o CMakeFiles/hash-tests.dir/main.cpp.s
 
-hash/CMakeFiles/hash-tests.dir/main.o.requires:
+tests/hash/CMakeFiles/hash-tests.dir/main.cpp.o.requires:
 
-.PHONY : hash/CMakeFiles/hash-tests.dir/main.o.requires
+.PHONY : tests/hash/CMakeFiles/hash-tests.dir/main.cpp.o.requires
 
-hash/CMakeFiles/hash-tests.dir/main.o.provides: hash/CMakeFiles/hash-tests.dir/main.o.requires
-	$(MAKE) -f hash/CMakeFiles/hash-tests.dir/build.make hash/CMakeFiles/hash-tests.dir/main.o.provides.build
-.PHONY : hash/CMakeFiles/hash-tests.dir/main.o.provides
+tests/hash/CMakeFiles/hash-tests.dir/main.cpp.o.provides: tests/hash/CMakeFiles/hash-tests.dir/main.cpp.o.requires
+	$(MAKE) -f tests/hash/CMakeFiles/hash-tests.dir/build.make tests/hash/CMakeFiles/hash-tests.dir/main.cpp.o.provides.build
+.PHONY : tests/hash/CMakeFiles/hash-tests.dir/main.cpp.o.provides
 
-hash/CMakeFiles/hash-tests.dir/main.o.provides.build: hash/CMakeFiles/hash-tests.dir/main.o
+tests/hash/CMakeFiles/hash-tests.dir/main.cpp.o.provides.build: tests/hash/CMakeFiles/hash-tests.dir/main.cpp.o
 
 
 # Object files for target hash-tests
 hash__tests_OBJECTS = \
-"CMakeFiles/hash-tests.dir/main.o"
+"CMakeFiles/hash-tests.dir/main.cpp.o"
 
 # External object files for target hash-tests
 hash__tests_EXTERNAL_OBJECTS =
 
-hash/hash-tests: hash/CMakeFiles/hash-tests.dir/main.o
-hash/hash-tests: hash/CMakeFiles/hash-tests.dir/build.make
-hash/hash-tests: hash/CMakeFiles/hash-tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable hash-tests"
+tests/hash/hash-tests: tests/hash/CMakeFiles/hash-tests.dir/main.cpp.o
+tests/hash/hash-tests: tests/hash/CMakeFiles/hash-tests.dir/build.make
+tests/hash/hash-tests: src/crypto/libcncrypto.a
+tests/hash/hash-tests: /usr/lib/x86_64-linux-gnu/librt.so
+tests/hash/hash-tests: /usr/lib/x86_64-linux-gnu/libboost_system.so
+tests/hash/hash-tests: /usr/lib/x86_64-linux-gnu/librt.so
+tests/hash/hash-tests: tests/hash/CMakeFiles/hash-tests.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable hash-tests"
 	cd /home/chip/Downloads/monero/tests/hash && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/hash-tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-hash/CMakeFiles/hash-tests.dir/build: hash/hash-tests
+tests/hash/CMakeFiles/hash-tests.dir/build: tests/hash/hash-tests
 
-.PHONY : hash/CMakeFiles/hash-tests.dir/build
+.PHONY : tests/hash/CMakeFiles/hash-tests.dir/build
 
-hash/CMakeFiles/hash-tests.dir/requires: hash/CMakeFiles/hash-tests.dir/main.o.requires
+tests/hash/CMakeFiles/hash-tests.dir/requires: tests/hash/CMakeFiles/hash-tests.dir/main.cpp.o.requires
 
-.PHONY : hash/CMakeFiles/hash-tests.dir/requires
+.PHONY : tests/hash/CMakeFiles/hash-tests.dir/requires
 
-hash/CMakeFiles/hash-tests.dir/clean:
+tests/hash/CMakeFiles/hash-tests.dir/clean:
 	cd /home/chip/Downloads/monero/tests/hash && $(CMAKE_COMMAND) -P CMakeFiles/hash-tests.dir/cmake_clean.cmake
-.PHONY : hash/CMakeFiles/hash-tests.dir/clean
+.PHONY : tests/hash/CMakeFiles/hash-tests.dir/clean
 
-hash/CMakeFiles/hash-tests.dir/depend:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/hash /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/hash /home/chip/Downloads/monero/tests/hash/CMakeFiles/hash-tests.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : hash/CMakeFiles/hash-tests.dir/depend
+tests/hash/CMakeFiles/hash-tests.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/hash /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/hash /home/chip/Downloads/monero/tests/hash/CMakeFiles/hash-tests.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : tests/hash/CMakeFiles/hash-tests.dir/depend
 

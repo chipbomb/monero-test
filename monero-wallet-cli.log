@@ -1,0 +1,4 @@
+2017-07-31 06:18:23.306	    7fe041a80740	INFO 	logging	contrib/epee/src/mlog.cpp:148	New log categories: *:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO,logging:INFO
+2017-07-31 06:18:27.318	    7fe041a80740	INFO 	global	src/simplewallet/simplewallet.cpp:190	No wallet found with that name. Confirm creation of new wallet named: wallet_02.bin
+2017-08-01 03:51:16.810	    7f3ad152e740	INFO 	logging	contrib/epee/src/mlog.cpp:148	New log categories: *:WARNING,net:FATAL,net.p2p:FATAL,net.cn:FATAL,global:INFO,verify:FATAL,stacktrace:INFO,logging:INFO
+2017-08-01 03:51:27.108	    7f3ad152e740	INFO 	global	src/simplewallet/simplewallet.cpp:190	No wallet found with that name. Confirm creation of new wallet named: wallet_02.bin

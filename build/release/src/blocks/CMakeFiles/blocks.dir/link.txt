@@ -1,2 +1,0 @@
-/usr/bin/ar qc libblocks.a  CMakeFiles/blocks.dir/blockexports.c.o ../../../../src/blocks/blocks.o ../../../../src/blocks/testnet_blocks.o
-/usr/bin/ranlib libblocks.a

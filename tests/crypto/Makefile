@@ -48,24 +48,13 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/tests
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/tests
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 #=============================================================================
 # Targets provided globally by CMake.
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,16 +67,71 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/tests/CMakeFiles /home/chip/Downloads/monero/tests/crypto/CMakeFiles/progress.marks
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 crypto/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/tests/CMakeFiles 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles /home/chip/Downloads/monero/tests/crypto/CMakeFiles/progress.marks
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/crypto/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 crypto/clean
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/crypto/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,123 +141,195 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 crypto/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/crypto/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 crypto/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/crypto/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-crypto/CMakeFiles/cncrypto-tests.dir/rule:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 crypto/CMakeFiles/cncrypto-tests.dir/rule
-.PHONY : crypto/CMakeFiles/cncrypto-tests.dir/rule
+tests/crypto/CMakeFiles/cncrypto-tests.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/crypto/CMakeFiles/cncrypto-tests.dir/rule
+.PHONY : tests/crypto/CMakeFiles/cncrypto-tests.dir/rule
 
 # Convenience name for target.
-cncrypto-tests: crypto/CMakeFiles/cncrypto-tests.dir/rule
+cncrypto-tests: tests/crypto/CMakeFiles/cncrypto-tests.dir/rule
 
 .PHONY : cncrypto-tests
 
 # fast build rule for target.
 cncrypto-tests/fast:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/build
 .PHONY : cncrypto-tests/fast
 
-# target to build an object file
-crypto-ops-data.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/crypto-ops-data.o
+crypto-ops-data.o: crypto-ops-data.c.o
+
 .PHONY : crypto-ops-data.o
 
-# target to preprocess a source file
-crypto-ops-data.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/crypto-ops-data.i
+# target to build an object file
+crypto-ops-data.c.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/crypto-ops-data.c.o
+.PHONY : crypto-ops-data.c.o
+
+crypto-ops-data.i: crypto-ops-data.c.i
+
 .PHONY : crypto-ops-data.i
 
-# target to generate assembly for a file
-crypto-ops-data.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/crypto-ops-data.s
+# target to preprocess a source file
+crypto-ops-data.c.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/crypto-ops-data.c.i
+.PHONY : crypto-ops-data.c.i
+
+crypto-ops-data.s: crypto-ops-data.c.s
+
 .PHONY : crypto-ops-data.s
 
-# target to build an object file
-crypto-ops.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/crypto-ops.o
+# target to generate assembly for a file
+crypto-ops-data.c.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/crypto-ops-data.c.s
+.PHONY : crypto-ops-data.c.s
+
+crypto-ops.o: crypto-ops.c.o
+
 .PHONY : crypto-ops.o
 
-# target to preprocess a source file
-crypto-ops.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/crypto-ops.i
+# target to build an object file
+crypto-ops.c.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/crypto-ops.c.o
+.PHONY : crypto-ops.c.o
+
+crypto-ops.i: crypto-ops.c.i
+
 .PHONY : crypto-ops.i
 
-# target to generate assembly for a file
-crypto-ops.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/crypto-ops.s
+# target to preprocess a source file
+crypto-ops.c.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/crypto-ops.c.i
+.PHONY : crypto-ops.c.i
+
+crypto-ops.s: crypto-ops.c.s
+
 .PHONY : crypto-ops.s
 
-# target to build an object file
-crypto.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/crypto.o
+# target to generate assembly for a file
+crypto-ops.c.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/crypto-ops.c.s
+.PHONY : crypto-ops.c.s
+
+crypto.o: crypto.cpp.o
+
 .PHONY : crypto.o
 
-# target to preprocess a source file
-crypto.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/crypto.i
+# target to build an object file
+crypto.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/crypto.cpp.o
+.PHONY : crypto.cpp.o
+
+crypto.i: crypto.cpp.i
+
 .PHONY : crypto.i
 
-# target to generate assembly for a file
-crypto.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/crypto.s
+# target to preprocess a source file
+crypto.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/crypto.cpp.i
+.PHONY : crypto.cpp.i
+
+crypto.s: crypto.cpp.s
+
 .PHONY : crypto.s
 
-# target to build an object file
-hash.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/hash.o
+# target to generate assembly for a file
+crypto.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/crypto.cpp.s
+.PHONY : crypto.cpp.s
+
+hash.o: hash.c.o
+
 .PHONY : hash.o
 
-# target to preprocess a source file
-hash.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/hash.i
+# target to build an object file
+hash.c.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/hash.c.o
+.PHONY : hash.c.o
+
+hash.i: hash.c.i
+
 .PHONY : hash.i
 
-# target to generate assembly for a file
-hash.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/hash.s
+# target to preprocess a source file
+hash.c.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/hash.c.i
+.PHONY : hash.c.i
+
+hash.s: hash.c.s
+
 .PHONY : hash.s
 
-# target to build an object file
-main.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/main.o
+# target to generate assembly for a file
+hash.c.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/hash.c.s
+.PHONY : hash.c.s
+
+main.o: main.cpp.o
+
 .PHONY : main.o
 
-# target to preprocess a source file
-main.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/main.i
+# target to build an object file
+main.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
 .PHONY : main.i
 
-# target to generate assembly for a file
-main.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/main.s
+# target to preprocess a source file
+main.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
 .PHONY : main.s
 
-# target to build an object file
-random.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/random.o
+# target to generate assembly for a file
+main.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+random.o: random.c.o
+
 .PHONY : random.o
 
-# target to preprocess a source file
-random.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/random.i
+# target to build an object file
+random.c.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/random.c.o
+.PHONY : random.c.o
+
+random.i: random.c.i
+
 .PHONY : random.i
 
-# target to generate assembly for a file
-random.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/random.s
+# target to preprocess a source file
+random.c.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/random.c.i
+.PHONY : random.c.i
+
+random.s: random.c.s
+
 .PHONY : random.s
+
+# target to generate assembly for a file
+random.c.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/crypto/CMakeFiles/cncrypto-tests.dir/build.make tests/crypto/CMakeFiles/cncrypto-tests.dir/random.c.s
+.PHONY : random.c.s
 
 # Help Target
 help:
@@ -221,9 +337,13 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... cncrypto-tests"
+	@echo "... install/local"
+	@echo "... test"
+	@echo "... edit_cache"
 	@echo "... crypto-ops-data.o"
 	@echo "... crypto-ops-data.i"
 	@echo "... crypto-ops-data.s"
@@ -253,6 +373,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

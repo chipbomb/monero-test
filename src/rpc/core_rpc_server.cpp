@@ -119,6 +119,7 @@ namespace cryptonote
   bool core_rpc_server::on_get_height(const COMMAND_RPC_GET_HEIGHT::request& req, COMMAND_RPC_GET_HEIGHT::response& res)
   {
     CHECK_CORE_BUSY();
+    cout << "on get height" << endl;
     res.height = m_core.get_current_blockchain_height();
     res.status = CORE_RPC_STATUS_OK;
     return true;
@@ -419,9 +420,11 @@ namespace cryptonote
   {
     CHECK_CORE_BUSY();
     std::vector<crypto::hash> vh;
+    cout << "on get transactions" << endl;
     for(const auto& tx_hex_str: req.txs_hashes)
     {
       blobdata b;
+      cout << tx_hex_str << endl;
       if(!string_tools::parse_hexstr_to_binbuff(tx_hex_str, b))
       {
         res.status = "Failed to parse hex representation of transaction hash";

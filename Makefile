@@ -56,7 +56,7 @@ release-test:
 
 release-all:
 	mkdir -p build/release
-	cd build/release && cmake -D BUILD_TESTS=OFF -D CMAKE_BUILD_TYPE=Debug ../.. && $(MAKE)
+	cd build/release && cmake -D BUILD_TESTS=OFF -D CMAKE_BUILD_TYPE=release ../.. && $(MAKE)
 
 release-static:
 	mkdir -p build/release
@@ -122,3 +122,4 @@ tags:
 	ctags -R --sort=1 --c++-kinds=+p --fields=+iaS --extra=+q --language-force=C++ src contrib tests/gtest
 
 .PHONY: all cmake-debug debug debug-test debug-all cmake-release release release-test release-all clean tags
+

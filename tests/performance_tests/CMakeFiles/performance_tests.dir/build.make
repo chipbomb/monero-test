@@ -43,71 +43,97 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/tests
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/tests
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include performance_tests/CMakeFiles/performance_tests.dir/depend.make
+include tests/performance_tests/CMakeFiles/performance_tests.dir/depend.make
 
 # Include the progress variables for this target.
-include performance_tests/CMakeFiles/performance_tests.dir/progress.make
+include tests/performance_tests/CMakeFiles/performance_tests.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include performance_tests/CMakeFiles/performance_tests.dir/flags.make
+include tests/performance_tests/CMakeFiles/performance_tests.dir/flags.make
 
-performance_tests/CMakeFiles/performance_tests.dir/main.o: performance_tests/CMakeFiles/performance_tests.dir/flags.make
-performance_tests/CMakeFiles/performance_tests.dir/main.o: performance_tests/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object performance_tests/CMakeFiles/performance_tests.dir/main.o"
-	cd /home/chip/Downloads/monero/tests/performance_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/performance_tests.dir/main.o -c /home/chip/Downloads/monero/tests/performance_tests/main.cpp
+tests/performance_tests/CMakeFiles/performance_tests.dir/main.cpp.o: tests/performance_tests/CMakeFiles/performance_tests.dir/flags.make
+tests/performance_tests/CMakeFiles/performance_tests.dir/main.cpp.o: tests/performance_tests/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/performance_tests/CMakeFiles/performance_tests.dir/main.cpp.o"
+	cd /home/chip/Downloads/monero/tests/performance_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/performance_tests.dir/main.cpp.o -c /home/chip/Downloads/monero/tests/performance_tests/main.cpp
 
-performance_tests/CMakeFiles/performance_tests.dir/main.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/performance_tests.dir/main.i"
-	cd /home/chip/Downloads/monero/tests/performance_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/performance_tests/main.cpp > CMakeFiles/performance_tests.dir/main.i
+tests/performance_tests/CMakeFiles/performance_tests.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/performance_tests.dir/main.cpp.i"
+	cd /home/chip/Downloads/monero/tests/performance_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/performance_tests/main.cpp > CMakeFiles/performance_tests.dir/main.cpp.i
 
-performance_tests/CMakeFiles/performance_tests.dir/main.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/performance_tests.dir/main.s"
-	cd /home/chip/Downloads/monero/tests/performance_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/performance_tests/main.cpp -o CMakeFiles/performance_tests.dir/main.s
+tests/performance_tests/CMakeFiles/performance_tests.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/performance_tests.dir/main.cpp.s"
+	cd /home/chip/Downloads/monero/tests/performance_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/performance_tests/main.cpp -o CMakeFiles/performance_tests.dir/main.cpp.s
 
-performance_tests/CMakeFiles/performance_tests.dir/main.o.requires:
+tests/performance_tests/CMakeFiles/performance_tests.dir/main.cpp.o.requires:
 
-.PHONY : performance_tests/CMakeFiles/performance_tests.dir/main.o.requires
+.PHONY : tests/performance_tests/CMakeFiles/performance_tests.dir/main.cpp.o.requires
 
-performance_tests/CMakeFiles/performance_tests.dir/main.o.provides: performance_tests/CMakeFiles/performance_tests.dir/main.o.requires
-	$(MAKE) -f performance_tests/CMakeFiles/performance_tests.dir/build.make performance_tests/CMakeFiles/performance_tests.dir/main.o.provides.build
-.PHONY : performance_tests/CMakeFiles/performance_tests.dir/main.o.provides
+tests/performance_tests/CMakeFiles/performance_tests.dir/main.cpp.o.provides: tests/performance_tests/CMakeFiles/performance_tests.dir/main.cpp.o.requires
+	$(MAKE) -f tests/performance_tests/CMakeFiles/performance_tests.dir/build.make tests/performance_tests/CMakeFiles/performance_tests.dir/main.cpp.o.provides.build
+.PHONY : tests/performance_tests/CMakeFiles/performance_tests.dir/main.cpp.o.provides
 
-performance_tests/CMakeFiles/performance_tests.dir/main.o.provides.build: performance_tests/CMakeFiles/performance_tests.dir/main.o
+tests/performance_tests/CMakeFiles/performance_tests.dir/main.cpp.o.provides.build: tests/performance_tests/CMakeFiles/performance_tests.dir/main.cpp.o
 
 
 # Object files for target performance_tests
 performance_tests_OBJECTS = \
-"CMakeFiles/performance_tests.dir/main.o"
+"CMakeFiles/performance_tests.dir/main.cpp.o"
 
 # External object files for target performance_tests
 performance_tests_EXTERNAL_OBJECTS =
 
-performance_tests/performance_tests: performance_tests/CMakeFiles/performance_tests.dir/main.o
-performance_tests/performance_tests: performance_tests/CMakeFiles/performance_tests.dir/build.make
-performance_tests/performance_tests: performance_tests/CMakeFiles/performance_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable performance_tests"
+tests/performance_tests/performance_tests: tests/performance_tests/CMakeFiles/performance_tests.dir/main.cpp.o
+tests/performance_tests/performance_tests: tests/performance_tests/CMakeFiles/performance_tests.dir/build.make
+tests/performance_tests/performance_tests: src/cryptonote_core/libcryptonote_core.a
+tests/performance_tests/performance_tests: src/common/libcommon.a
+tests/performance_tests/performance_tests: src/crypto/libcncrypto.a
+tests/performance_tests/performance_tests: contrib/epee/src/libepee.a
+tests/performance_tests/performance_tests: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+tests/performance_tests/performance_tests: /usr/lib/x86_64-linux-gnu/librt.so
+tests/performance_tests/performance_tests: src/blockchain_db/libblockchain_db.a
+tests/performance_tests/performance_tests: external/db_drivers/liblmdb/liblmdb.a
+tests/performance_tests/performance_tests: src/ringct/libringct.a
+tests/performance_tests/performance_tests: src/cryptonote_basic/libcryptonote_basic.a
+tests/performance_tests/performance_tests: src/common/libcommon.a
+tests/performance_tests/performance_tests: contrib/epee/src/libepee.a
+tests/performance_tests/performance_tests: external/easylogging++/libeasylogging.a
+tests/performance_tests/performance_tests: /usr/lib/x86_64-linux-gnu/libunbound.so
+tests/performance_tests/performance_tests: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+tests/performance_tests/performance_tests: /usr/lib/x86_64-linux-gnu/libssl.so
+tests/performance_tests/performance_tests: /usr/lib/x86_64-linux-gnu/libcrypto.so
+tests/performance_tests/performance_tests: src/crypto/libcncrypto.a
+tests/performance_tests/performance_tests: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+tests/performance_tests/performance_tests: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+tests/performance_tests/performance_tests: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+tests/performance_tests/performance_tests: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+tests/performance_tests/performance_tests: /usr/lib/x86_64-linux-gnu/libboost_system.so
+tests/performance_tests/performance_tests: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+tests/performance_tests/performance_tests: src/blocks/libblocks.a
+tests/performance_tests/performance_tests: /usr/lib/x86_64-linux-gnu/librt.so
+tests/performance_tests/performance_tests: tests/performance_tests/CMakeFiles/performance_tests.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable performance_tests"
 	cd /home/chip/Downloads/monero/tests/performance_tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/performance_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-performance_tests/CMakeFiles/performance_tests.dir/build: performance_tests/performance_tests
+tests/performance_tests/CMakeFiles/performance_tests.dir/build: tests/performance_tests/performance_tests
 
-.PHONY : performance_tests/CMakeFiles/performance_tests.dir/build
+.PHONY : tests/performance_tests/CMakeFiles/performance_tests.dir/build
 
-performance_tests/CMakeFiles/performance_tests.dir/requires: performance_tests/CMakeFiles/performance_tests.dir/main.o.requires
+tests/performance_tests/CMakeFiles/performance_tests.dir/requires: tests/performance_tests/CMakeFiles/performance_tests.dir/main.cpp.o.requires
 
-.PHONY : performance_tests/CMakeFiles/performance_tests.dir/requires
+.PHONY : tests/performance_tests/CMakeFiles/performance_tests.dir/requires
 
-performance_tests/CMakeFiles/performance_tests.dir/clean:
+tests/performance_tests/CMakeFiles/performance_tests.dir/clean:
 	cd /home/chip/Downloads/monero/tests/performance_tests && $(CMAKE_COMMAND) -P CMakeFiles/performance_tests.dir/cmake_clean.cmake
-.PHONY : performance_tests/CMakeFiles/performance_tests.dir/clean
+.PHONY : tests/performance_tests/CMakeFiles/performance_tests.dir/clean
 
-performance_tests/CMakeFiles/performance_tests.dir/depend:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/performance_tests /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/performance_tests /home/chip/Downloads/monero/tests/performance_tests/CMakeFiles/performance_tests.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : performance_tests/CMakeFiles/performance_tests.dir/depend
+tests/performance_tests/CMakeFiles/performance_tests.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/performance_tests /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/performance_tests /home/chip/Downloads/monero/tests/performance_tests/CMakeFiles/performance_tests.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : tests/performance_tests/CMakeFiles/performance_tests.dir/depend
 

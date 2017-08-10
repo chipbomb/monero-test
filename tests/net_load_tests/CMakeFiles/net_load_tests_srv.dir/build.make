@@ -43,72 +43,101 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/tests
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/tests
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include net_load_tests/CMakeFiles/net_load_tests_srv.dir/depend.make
+include tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/depend.make
 
 # Include the progress variables for this target.
-include net_load_tests/CMakeFiles/net_load_tests_srv.dir/progress.make
+include tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include net_load_tests/CMakeFiles/net_load_tests_srv.dir/flags.make
+include tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/flags.make
 
-net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.o: net_load_tests/CMakeFiles/net_load_tests_srv.dir/flags.make
-net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.o: net_load_tests/srv.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.o"
-	cd /home/chip/Downloads/monero/tests/net_load_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/net_load_tests_srv.dir/srv.o -c /home/chip/Downloads/monero/tests/net_load_tests/srv.cpp
+tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.cpp.o: tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/flags.make
+tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.cpp.o: tests/net_load_tests/srv.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.cpp.o"
+	cd /home/chip/Downloads/monero/tests/net_load_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/net_load_tests_srv.dir/srv.cpp.o -c /home/chip/Downloads/monero/tests/net_load_tests/srv.cpp
 
-net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/net_load_tests_srv.dir/srv.i"
-	cd /home/chip/Downloads/monero/tests/net_load_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/net_load_tests/srv.cpp > CMakeFiles/net_load_tests_srv.dir/srv.i
+tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/net_load_tests_srv.dir/srv.cpp.i"
+	cd /home/chip/Downloads/monero/tests/net_load_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/net_load_tests/srv.cpp > CMakeFiles/net_load_tests_srv.dir/srv.cpp.i
 
-net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/net_load_tests_srv.dir/srv.s"
-	cd /home/chip/Downloads/monero/tests/net_load_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/net_load_tests/srv.cpp -o CMakeFiles/net_load_tests_srv.dir/srv.s
+tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/net_load_tests_srv.dir/srv.cpp.s"
+	cd /home/chip/Downloads/monero/tests/net_load_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/net_load_tests/srv.cpp -o CMakeFiles/net_load_tests_srv.dir/srv.cpp.s
 
-net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.o.requires:
+tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.cpp.o.requires:
 
-.PHONY : net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.o.requires
+.PHONY : tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.cpp.o.requires
 
-net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.o.provides: net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.o.requires
-	$(MAKE) -f net_load_tests/CMakeFiles/net_load_tests_srv.dir/build.make net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.o.provides.build
-.PHONY : net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.o.provides
+tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.cpp.o.provides: tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.cpp.o.requires
+	$(MAKE) -f tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/build.make tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.cpp.o.provides.build
+.PHONY : tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.cpp.o.provides
 
-net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.o.provides.build: net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.o
+tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.cpp.o.provides.build: tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.cpp.o
 
 
 # Object files for target net_load_tests_srv
 net_load_tests_srv_OBJECTS = \
-"CMakeFiles/net_load_tests_srv.dir/srv.o"
+"CMakeFiles/net_load_tests_srv.dir/srv.cpp.o"
 
 # External object files for target net_load_tests_srv
 net_load_tests_srv_EXTERNAL_OBJECTS =
 
-net_load_tests/net_load_tests_srv: net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.o
-net_load_tests/net_load_tests_srv: net_load_tests/CMakeFiles/net_load_tests_srv.dir/build.make
-net_load_tests/net_load_tests_srv: /usr/lib/libgtest.a
-net_load_tests/net_load_tests_srv: net_load_tests/CMakeFiles/net_load_tests_srv.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable net_load_tests_srv"
+tests/net_load_tests/net_load_tests_srv: tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.cpp.o
+tests/net_load_tests/net_load_tests_srv: tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/build.make
+tests/net_load_tests/net_load_tests_srv: src/p2p/libp2p.a
+tests/net_load_tests/net_load_tests_srv: src/cryptonote_core/libcryptonote_core.a
+tests/net_load_tests/net_load_tests_srv: contrib/epee/src/libepee.a
+tests/net_load_tests/net_load_tests_srv: /usr/lib/libgtest.a
+tests/net_load_tests/net_load_tests_srv: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+tests/net_load_tests/net_load_tests_srv: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+tests/net_load_tests/net_load_tests_srv: /usr/lib/x86_64-linux-gnu/libboost_system.so
+tests/net_load_tests/net_load_tests_srv: /usr/lib/x86_64-linux-gnu/librt.so
+tests/net_load_tests/net_load_tests_srv: /usr/lib/x86_64-linux-gnu/libminiupnpc.so
+tests/net_load_tests/net_load_tests_srv: src/blockchain_db/libblockchain_db.a
+tests/net_load_tests/net_load_tests_srv: external/db_drivers/liblmdb/liblmdb.a
+tests/net_load_tests/net_load_tests_srv: src/ringct/libringct.a
+tests/net_load_tests/net_load_tests_srv: src/cryptonote_basic/libcryptonote_basic.a
+tests/net_load_tests/net_load_tests_srv: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+tests/net_load_tests/net_load_tests_srv: src/common/libcommon.a
+tests/net_load_tests/net_load_tests_srv: contrib/epee/src/libepee.a
+tests/net_load_tests/net_load_tests_srv: external/easylogging++/libeasylogging.a
+tests/net_load_tests/net_load_tests_srv: /usr/lib/x86_64-linux-gnu/libunbound.so
+tests/net_load_tests/net_load_tests_srv: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+tests/net_load_tests/net_load_tests_srv: /usr/lib/x86_64-linux-gnu/libssl.so
+tests/net_load_tests/net_load_tests_srv: /usr/lib/x86_64-linux-gnu/libcrypto.so
+tests/net_load_tests/net_load_tests_srv: src/crypto/libcncrypto.a
+tests/net_load_tests/net_load_tests_srv: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+tests/net_load_tests/net_load_tests_srv: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+tests/net_load_tests/net_load_tests_srv: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+tests/net_load_tests/net_load_tests_srv: src/blocks/libblocks.a
+tests/net_load_tests/net_load_tests_srv: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+tests/net_load_tests/net_load_tests_srv: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+tests/net_load_tests/net_load_tests_srv: /usr/lib/x86_64-linux-gnu/libboost_system.so
+tests/net_load_tests/net_load_tests_srv: /usr/lib/x86_64-linux-gnu/librt.so
+tests/net_load_tests/net_load_tests_srv: tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable net_load_tests_srv"
 	cd /home/chip/Downloads/monero/tests/net_load_tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/net_load_tests_srv.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-net_load_tests/CMakeFiles/net_load_tests_srv.dir/build: net_load_tests/net_load_tests_srv
+tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/build: tests/net_load_tests/net_load_tests_srv
 
-.PHONY : net_load_tests/CMakeFiles/net_load_tests_srv.dir/build
+.PHONY : tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/build
 
-net_load_tests/CMakeFiles/net_load_tests_srv.dir/requires: net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.o.requires
+tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/requires: tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/srv.cpp.o.requires
 
-.PHONY : net_load_tests/CMakeFiles/net_load_tests_srv.dir/requires
+.PHONY : tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/requires
 
-net_load_tests/CMakeFiles/net_load_tests_srv.dir/clean:
+tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/clean:
 	cd /home/chip/Downloads/monero/tests/net_load_tests && $(CMAKE_COMMAND) -P CMakeFiles/net_load_tests_srv.dir/cmake_clean.cmake
-.PHONY : net_load_tests/CMakeFiles/net_load_tests_srv.dir/clean
+.PHONY : tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/clean
 
-net_load_tests/CMakeFiles/net_load_tests_srv.dir/depend:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/net_load_tests /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/net_load_tests /home/chip/Downloads/monero/tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : net_load_tests/CMakeFiles/net_load_tests_srv.dir/depend
+tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/net_load_tests /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/net_load_tests /home/chip/Downloads/monero/tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : tests/net_load_tests/CMakeFiles/net_load_tests_srv.dir/depend
 

@@ -43,98 +43,124 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/tests
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/tests
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include fuzz/CMakeFiles/block_fuzz_tests.dir/depend.make
+include tests/fuzz/CMakeFiles/block_fuzz_tests.dir/depend.make
 
 # Include the progress variables for this target.
-include fuzz/CMakeFiles/block_fuzz_tests.dir/progress.make
+include tests/fuzz/CMakeFiles/block_fuzz_tests.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include fuzz/CMakeFiles/block_fuzz_tests.dir/flags.make
+include tests/fuzz/CMakeFiles/block_fuzz_tests.dir/flags.make
 
-fuzz/CMakeFiles/block_fuzz_tests.dir/block.o: fuzz/CMakeFiles/block_fuzz_tests.dir/flags.make
-fuzz/CMakeFiles/block_fuzz_tests.dir/block.o: fuzz/block.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object fuzz/CMakeFiles/block_fuzz_tests.dir/block.o"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/block_fuzz_tests.dir/block.o -c /home/chip/Downloads/monero/tests/fuzz/block.cpp
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.o: tests/fuzz/CMakeFiles/block_fuzz_tests.dir/flags.make
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.o: tests/fuzz/block.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.o"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/block_fuzz_tests.dir/block.cpp.o -c /home/chip/Downloads/monero/tests/fuzz/block.cpp
 
-fuzz/CMakeFiles/block_fuzz_tests.dir/block.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/block_fuzz_tests.dir/block.i"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/fuzz/block.cpp > CMakeFiles/block_fuzz_tests.dir/block.i
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/block_fuzz_tests.dir/block.cpp.i"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/fuzz/block.cpp > CMakeFiles/block_fuzz_tests.dir/block.cpp.i
 
-fuzz/CMakeFiles/block_fuzz_tests.dir/block.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/block_fuzz_tests.dir/block.s"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/fuzz/block.cpp -o CMakeFiles/block_fuzz_tests.dir/block.s
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/block_fuzz_tests.dir/block.cpp.s"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/fuzz/block.cpp -o CMakeFiles/block_fuzz_tests.dir/block.cpp.s
 
-fuzz/CMakeFiles/block_fuzz_tests.dir/block.o.requires:
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.o.requires:
 
-.PHONY : fuzz/CMakeFiles/block_fuzz_tests.dir/block.o.requires
+.PHONY : tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.o.requires
 
-fuzz/CMakeFiles/block_fuzz_tests.dir/block.o.provides: fuzz/CMakeFiles/block_fuzz_tests.dir/block.o.requires
-	$(MAKE) -f fuzz/CMakeFiles/block_fuzz_tests.dir/build.make fuzz/CMakeFiles/block_fuzz_tests.dir/block.o.provides.build
-.PHONY : fuzz/CMakeFiles/block_fuzz_tests.dir/block.o.provides
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.o.provides: tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.o.requires
+	$(MAKE) -f tests/fuzz/CMakeFiles/block_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.o.provides.build
+.PHONY : tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.o.provides
 
-fuzz/CMakeFiles/block_fuzz_tests.dir/block.o.provides.build: fuzz/CMakeFiles/block_fuzz_tests.dir/block.o
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.o.provides.build: tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.o
 
 
-fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.o: fuzz/CMakeFiles/block_fuzz_tests.dir/flags.make
-fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.o: fuzz/fuzzer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.o"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/block_fuzz_tests.dir/fuzzer.o -c /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.o: tests/fuzz/CMakeFiles/block_fuzz_tests.dir/flags.make
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.o: tests/fuzz/fuzzer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.o"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.o -c /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp
 
-fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/block_fuzz_tests.dir/fuzzer.i"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp > CMakeFiles/block_fuzz_tests.dir/fuzzer.i
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.i"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp > CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.i
 
-fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/block_fuzz_tests.dir/fuzzer.s"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp -o CMakeFiles/block_fuzz_tests.dir/fuzzer.s
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.s"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp -o CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.s
 
-fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.o.requires:
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.o.requires:
 
-.PHONY : fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.o.requires
+.PHONY : tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.o.requires
 
-fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.o.provides: fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.o.requires
-	$(MAKE) -f fuzz/CMakeFiles/block_fuzz_tests.dir/build.make fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.o.provides.build
-.PHONY : fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.o.provides
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.o.provides: tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.o.requires
+	$(MAKE) -f tests/fuzz/CMakeFiles/block_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.o.provides.build
+.PHONY : tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.o.provides
 
-fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.o.provides.build: fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.o
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.o.provides.build: tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.o
 
 
 # Object files for target block_fuzz_tests
 block_fuzz_tests_OBJECTS = \
-"CMakeFiles/block_fuzz_tests.dir/block.o" \
-"CMakeFiles/block_fuzz_tests.dir/fuzzer.o"
+"CMakeFiles/block_fuzz_tests.dir/block.cpp.o" \
+"CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.o"
 
 # External object files for target block_fuzz_tests
 block_fuzz_tests_EXTERNAL_OBJECTS =
 
-fuzz/block_fuzz_tests: fuzz/CMakeFiles/block_fuzz_tests.dir/block.o
-fuzz/block_fuzz_tests: fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.o
-fuzz/block_fuzz_tests: fuzz/CMakeFiles/block_fuzz_tests.dir/build.make
-fuzz/block_fuzz_tests: fuzz/CMakeFiles/block_fuzz_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable block_fuzz_tests"
+tests/fuzz/block_fuzz_tests: tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.o
+tests/fuzz/block_fuzz_tests: tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.o
+tests/fuzz/block_fuzz_tests: tests/fuzz/CMakeFiles/block_fuzz_tests.dir/build.make
+tests/fuzz/block_fuzz_tests: src/cryptonote_core/libcryptonote_core.a
+tests/fuzz/block_fuzz_tests: src/p2p/libp2p.a
+tests/fuzz/block_fuzz_tests: contrib/epee/src/libepee.a
+tests/fuzz/block_fuzz_tests: /usr/lib/x86_64-linux-gnu/librt.so
+tests/fuzz/block_fuzz_tests: src/blockchain_db/libblockchain_db.a
+tests/fuzz/block_fuzz_tests: external/db_drivers/liblmdb/liblmdb.a
+tests/fuzz/block_fuzz_tests: src/ringct/libringct.a
+tests/fuzz/block_fuzz_tests: src/cryptonote_basic/libcryptonote_basic.a
+tests/fuzz/block_fuzz_tests: src/common/libcommon.a
+tests/fuzz/block_fuzz_tests: /usr/lib/x86_64-linux-gnu/libunbound.so
+tests/fuzz/block_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+tests/fuzz/block_fuzz_tests: /usr/lib/x86_64-linux-gnu/libssl.so
+tests/fuzz/block_fuzz_tests: /usr/lib/x86_64-linux-gnu/libcrypto.so
+tests/fuzz/block_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+tests/fuzz/block_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+tests/fuzz/block_fuzz_tests: src/blocks/libblocks.a
+tests/fuzz/block_fuzz_tests: contrib/epee/src/libepee.a
+tests/fuzz/block_fuzz_tests: src/crypto/libcncrypto.a
+tests/fuzz/block_fuzz_tests: external/easylogging++/libeasylogging.a
+tests/fuzz/block_fuzz_tests: /usr/lib/x86_64-linux-gnu/libminiupnpc.so
+tests/fuzz/block_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+tests/fuzz/block_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+tests/fuzz/block_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+tests/fuzz/block_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_system.so
+tests/fuzz/block_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+tests/fuzz/block_fuzz_tests: /usr/lib/x86_64-linux-gnu/librt.so
+tests/fuzz/block_fuzz_tests: tests/fuzz/CMakeFiles/block_fuzz_tests.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable block_fuzz_tests"
 	cd /home/chip/Downloads/monero/tests/fuzz && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/block_fuzz_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-fuzz/CMakeFiles/block_fuzz_tests.dir/build: fuzz/block_fuzz_tests
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/build: tests/fuzz/block_fuzz_tests
 
-.PHONY : fuzz/CMakeFiles/block_fuzz_tests.dir/build
+.PHONY : tests/fuzz/CMakeFiles/block_fuzz_tests.dir/build
 
-fuzz/CMakeFiles/block_fuzz_tests.dir/requires: fuzz/CMakeFiles/block_fuzz_tests.dir/block.o.requires
-fuzz/CMakeFiles/block_fuzz_tests.dir/requires: fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.o.requires
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/requires: tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.o.requires
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/requires: tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.o.requires
 
-.PHONY : fuzz/CMakeFiles/block_fuzz_tests.dir/requires
+.PHONY : tests/fuzz/CMakeFiles/block_fuzz_tests.dir/requires
 
-fuzz/CMakeFiles/block_fuzz_tests.dir/clean:
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/clean:
 	cd /home/chip/Downloads/monero/tests/fuzz && $(CMAKE_COMMAND) -P CMakeFiles/block_fuzz_tests.dir/cmake_clean.cmake
-.PHONY : fuzz/CMakeFiles/block_fuzz_tests.dir/clean
+.PHONY : tests/fuzz/CMakeFiles/block_fuzz_tests.dir/clean
 
-fuzz/CMakeFiles/block_fuzz_tests.dir/depend:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/fuzz /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/fuzz /home/chip/Downloads/monero/tests/fuzz/CMakeFiles/block_fuzz_tests.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : fuzz/CMakeFiles/block_fuzz_tests.dir/depend
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/fuzz /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/fuzz /home/chip/Downloads/monero/tests/fuzz/CMakeFiles/block_fuzz_tests.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : tests/fuzz/CMakeFiles/block_fuzz_tests.dir/depend
 

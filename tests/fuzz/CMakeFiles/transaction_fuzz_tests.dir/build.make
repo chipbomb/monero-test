@@ -43,98 +43,124 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/tests
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/tests
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include fuzz/CMakeFiles/transaction_fuzz_tests.dir/depend.make
+include tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/depend.make
 
 # Include the progress variables for this target.
-include fuzz/CMakeFiles/transaction_fuzz_tests.dir/progress.make
+include tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include fuzz/CMakeFiles/transaction_fuzz_tests.dir/flags.make
+include tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/flags.make
 
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.o: fuzz/CMakeFiles/transaction_fuzz_tests.dir/flags.make
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.o: fuzz/transaction.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.o"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/transaction_fuzz_tests.dir/transaction.o -c /home/chip/Downloads/monero/tests/fuzz/transaction.cpp
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.o: tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/flags.make
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.o: tests/fuzz/transaction.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.o"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.o -c /home/chip/Downloads/monero/tests/fuzz/transaction.cpp
 
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transaction_fuzz_tests.dir/transaction.i"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/fuzz/transaction.cpp > CMakeFiles/transaction_fuzz_tests.dir/transaction.i
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.i"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/fuzz/transaction.cpp > CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.i
 
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transaction_fuzz_tests.dir/transaction.s"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/fuzz/transaction.cpp -o CMakeFiles/transaction_fuzz_tests.dir/transaction.s
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.s"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/fuzz/transaction.cpp -o CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.s
 
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.o.requires:
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.o.requires:
 
-.PHONY : fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.o.requires
+.PHONY : tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.o.requires
 
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.o.provides: fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.o.requires
-	$(MAKE) -f fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.o.provides.build
-.PHONY : fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.o.provides
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.o.provides: tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.o.requires
+	$(MAKE) -f tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.o.provides.build
+.PHONY : tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.o.provides
 
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.o.provides.build: fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.o
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.o.provides.build: tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.o
 
 
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.o: fuzz/CMakeFiles/transaction_fuzz_tests.dir/flags.make
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.o: fuzz/fuzzer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.o"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/transaction_fuzz_tests.dir/fuzzer.o -c /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.o: tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/flags.make
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.o: tests/fuzz/fuzzer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.o"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.o -c /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp
 
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transaction_fuzz_tests.dir/fuzzer.i"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp > CMakeFiles/transaction_fuzz_tests.dir/fuzzer.i
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.i"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp > CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.i
 
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transaction_fuzz_tests.dir/fuzzer.s"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp -o CMakeFiles/transaction_fuzz_tests.dir/fuzzer.s
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.s"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp -o CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.s
 
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.o.requires:
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.o.requires:
 
-.PHONY : fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.o.requires
+.PHONY : tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.o.requires
 
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.o.provides: fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.o.requires
-	$(MAKE) -f fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.o.provides.build
-.PHONY : fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.o.provides
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.o.provides: tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.o.requires
+	$(MAKE) -f tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.o.provides.build
+.PHONY : tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.o.provides
 
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.o.provides.build: fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.o
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.o.provides.build: tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.o
 
 
 # Object files for target transaction_fuzz_tests
 transaction_fuzz_tests_OBJECTS = \
-"CMakeFiles/transaction_fuzz_tests.dir/transaction.o" \
-"CMakeFiles/transaction_fuzz_tests.dir/fuzzer.o"
+"CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.o" \
+"CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.o"
 
 # External object files for target transaction_fuzz_tests
 transaction_fuzz_tests_EXTERNAL_OBJECTS =
 
-fuzz/transaction_fuzz_tests: fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.o
-fuzz/transaction_fuzz_tests: fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.o
-fuzz/transaction_fuzz_tests: fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make
-fuzz/transaction_fuzz_tests: fuzz/CMakeFiles/transaction_fuzz_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable transaction_fuzz_tests"
+tests/fuzz/transaction_fuzz_tests: tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.o
+tests/fuzz/transaction_fuzz_tests: tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.o
+tests/fuzz/transaction_fuzz_tests: tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make
+tests/fuzz/transaction_fuzz_tests: src/cryptonote_core/libcryptonote_core.a
+tests/fuzz/transaction_fuzz_tests: src/p2p/libp2p.a
+tests/fuzz/transaction_fuzz_tests: contrib/epee/src/libepee.a
+tests/fuzz/transaction_fuzz_tests: /usr/lib/x86_64-linux-gnu/librt.so
+tests/fuzz/transaction_fuzz_tests: src/blockchain_db/libblockchain_db.a
+tests/fuzz/transaction_fuzz_tests: external/db_drivers/liblmdb/liblmdb.a
+tests/fuzz/transaction_fuzz_tests: src/ringct/libringct.a
+tests/fuzz/transaction_fuzz_tests: src/cryptonote_basic/libcryptonote_basic.a
+tests/fuzz/transaction_fuzz_tests: src/common/libcommon.a
+tests/fuzz/transaction_fuzz_tests: /usr/lib/x86_64-linux-gnu/libunbound.so
+tests/fuzz/transaction_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+tests/fuzz/transaction_fuzz_tests: /usr/lib/x86_64-linux-gnu/libssl.so
+tests/fuzz/transaction_fuzz_tests: /usr/lib/x86_64-linux-gnu/libcrypto.so
+tests/fuzz/transaction_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+tests/fuzz/transaction_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+tests/fuzz/transaction_fuzz_tests: src/blocks/libblocks.a
+tests/fuzz/transaction_fuzz_tests: contrib/epee/src/libepee.a
+tests/fuzz/transaction_fuzz_tests: src/crypto/libcncrypto.a
+tests/fuzz/transaction_fuzz_tests: external/easylogging++/libeasylogging.a
+tests/fuzz/transaction_fuzz_tests: /usr/lib/x86_64-linux-gnu/libminiupnpc.so
+tests/fuzz/transaction_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+tests/fuzz/transaction_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+tests/fuzz/transaction_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+tests/fuzz/transaction_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_system.so
+tests/fuzz/transaction_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+tests/fuzz/transaction_fuzz_tests: /usr/lib/x86_64-linux-gnu/librt.so
+tests/fuzz/transaction_fuzz_tests: tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable transaction_fuzz_tests"
 	cd /home/chip/Downloads/monero/tests/fuzz && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/transaction_fuzz_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/build: fuzz/transaction_fuzz_tests
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/build: tests/fuzz/transaction_fuzz_tests
 
-.PHONY : fuzz/CMakeFiles/transaction_fuzz_tests.dir/build
+.PHONY : tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/build
 
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/requires: fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.o.requires
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/requires: fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.o.requires
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/requires: tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.o.requires
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/requires: tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.o.requires
 
-.PHONY : fuzz/CMakeFiles/transaction_fuzz_tests.dir/requires
+.PHONY : tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/requires
 
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/clean:
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/clean:
 	cd /home/chip/Downloads/monero/tests/fuzz && $(CMAKE_COMMAND) -P CMakeFiles/transaction_fuzz_tests.dir/cmake_clean.cmake
-.PHONY : fuzz/CMakeFiles/transaction_fuzz_tests.dir/clean
+.PHONY : tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/clean
 
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/depend:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/fuzz /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/fuzz /home/chip/Downloads/monero/tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : fuzz/CMakeFiles/transaction_fuzz_tests.dir/depend
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/fuzz /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/fuzz /home/chip/Downloads/monero/tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/depend
 

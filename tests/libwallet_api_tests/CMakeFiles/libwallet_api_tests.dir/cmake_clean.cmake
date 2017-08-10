@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/libwallet_api_tests.dir/main.o"
+  "CMakeFiles/libwallet_api_tests.dir/main.cpp.o"
   "libwallet_api_tests.pdb"
   "libwallet_api_tests"
 )

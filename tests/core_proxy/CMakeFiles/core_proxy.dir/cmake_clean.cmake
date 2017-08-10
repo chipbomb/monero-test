@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/core_proxy.dir/core_proxy.o"
+  "CMakeFiles/core_proxy.dir/core_proxy.cpp.o"
   "core_proxy.pdb"
   "core_proxy"
 )

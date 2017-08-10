@@ -134,6 +134,7 @@ namespace net_utils
 				boost::asio::ip::tcp::resolver::query query(boost::asio::ip::tcp::v4(), addr, port, boost::asio::ip::tcp::resolver::query::canonical_name);
 				boost::asio::ip::tcp::resolver::iterator iterator = resolver.resolve(query);
 				boost::asio::ip::tcp::resolver::iterator end;
+				LOG_ERROR("net helper " << addr << " " << port);
 				if(iterator == end)
 				{
 					LOG_ERROR("Failed to resolve " << addr);

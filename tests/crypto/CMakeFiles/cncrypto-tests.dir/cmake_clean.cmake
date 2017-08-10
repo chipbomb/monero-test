@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/cncrypto-tests.dir/crypto-ops-data.o"
-  "CMakeFiles/cncrypto-tests.dir/crypto-ops.o"
-  "CMakeFiles/cncrypto-tests.dir/crypto.o"
-  "CMakeFiles/cncrypto-tests.dir/hash.o"
-  "CMakeFiles/cncrypto-tests.dir/main.o"
-  "CMakeFiles/cncrypto-tests.dir/random.o"
+  "CMakeFiles/cncrypto-tests.dir/crypto-ops-data.c.o"
+  "CMakeFiles/cncrypto-tests.dir/crypto-ops.c.o"
+  "CMakeFiles/cncrypto-tests.dir/crypto.cpp.o"
+  "CMakeFiles/cncrypto-tests.dir/hash.c.o"
+  "CMakeFiles/cncrypto-tests.dir/main.cpp.o"
+  "CMakeFiles/cncrypto-tests.dir/random.c.o"
   "cncrypto-tests.pdb"
   "cncrypto-tests"
 )

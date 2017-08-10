@@ -43,72 +43,101 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/tests
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/tests
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include net_load_tests/CMakeFiles/net_load_tests_clt.dir/depend.make
+include tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/depend.make
 
 # Include the progress variables for this target.
-include net_load_tests/CMakeFiles/net_load_tests_clt.dir/progress.make
+include tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include net_load_tests/CMakeFiles/net_load_tests_clt.dir/flags.make
+include tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/flags.make
 
-net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.o: net_load_tests/CMakeFiles/net_load_tests_clt.dir/flags.make
-net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.o: net_load_tests/clt.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.o"
-	cd /home/chip/Downloads/monero/tests/net_load_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/net_load_tests_clt.dir/clt.o -c /home/chip/Downloads/monero/tests/net_load_tests/clt.cpp
+tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.cpp.o: tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/flags.make
+tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.cpp.o: tests/net_load_tests/clt.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.cpp.o"
+	cd /home/chip/Downloads/monero/tests/net_load_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/net_load_tests_clt.dir/clt.cpp.o -c /home/chip/Downloads/monero/tests/net_load_tests/clt.cpp
 
-net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/net_load_tests_clt.dir/clt.i"
-	cd /home/chip/Downloads/monero/tests/net_load_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/net_load_tests/clt.cpp > CMakeFiles/net_load_tests_clt.dir/clt.i
+tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/net_load_tests_clt.dir/clt.cpp.i"
+	cd /home/chip/Downloads/monero/tests/net_load_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/net_load_tests/clt.cpp > CMakeFiles/net_load_tests_clt.dir/clt.cpp.i
 
-net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/net_load_tests_clt.dir/clt.s"
-	cd /home/chip/Downloads/monero/tests/net_load_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/net_load_tests/clt.cpp -o CMakeFiles/net_load_tests_clt.dir/clt.s
+tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/net_load_tests_clt.dir/clt.cpp.s"
+	cd /home/chip/Downloads/monero/tests/net_load_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/net_load_tests/clt.cpp -o CMakeFiles/net_load_tests_clt.dir/clt.cpp.s
 
-net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.o.requires:
+tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.cpp.o.requires:
 
-.PHONY : net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.o.requires
+.PHONY : tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.cpp.o.requires
 
-net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.o.provides: net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.o.requires
-	$(MAKE) -f net_load_tests/CMakeFiles/net_load_tests_clt.dir/build.make net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.o.provides.build
-.PHONY : net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.o.provides
+tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.cpp.o.provides: tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.cpp.o.requires
+	$(MAKE) -f tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/build.make tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.cpp.o.provides.build
+.PHONY : tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.cpp.o.provides
 
-net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.o.provides.build: net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.o
+tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.cpp.o.provides.build: tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.cpp.o
 
 
 # Object files for target net_load_tests_clt
 net_load_tests_clt_OBJECTS = \
-"CMakeFiles/net_load_tests_clt.dir/clt.o"
+"CMakeFiles/net_load_tests_clt.dir/clt.cpp.o"
 
 # External object files for target net_load_tests_clt
 net_load_tests_clt_EXTERNAL_OBJECTS =
 
-net_load_tests/net_load_tests_clt: net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.o
-net_load_tests/net_load_tests_clt: net_load_tests/CMakeFiles/net_load_tests_clt.dir/build.make
-net_load_tests/net_load_tests_clt: /usr/lib/libgtest.a
-net_load_tests/net_load_tests_clt: net_load_tests/CMakeFiles/net_load_tests_clt.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable net_load_tests_clt"
+tests/net_load_tests/net_load_tests_clt: tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.cpp.o
+tests/net_load_tests/net_load_tests_clt: tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/build.make
+tests/net_load_tests/net_load_tests_clt: src/p2p/libp2p.a
+tests/net_load_tests/net_load_tests_clt: src/cryptonote_core/libcryptonote_core.a
+tests/net_load_tests/net_load_tests_clt: contrib/epee/src/libepee.a
+tests/net_load_tests/net_load_tests_clt: /usr/lib/libgtest.a
+tests/net_load_tests/net_load_tests_clt: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+tests/net_load_tests/net_load_tests_clt: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+tests/net_load_tests/net_load_tests_clt: /usr/lib/x86_64-linux-gnu/libboost_system.so
+tests/net_load_tests/net_load_tests_clt: /usr/lib/x86_64-linux-gnu/librt.so
+tests/net_load_tests/net_load_tests_clt: /usr/lib/x86_64-linux-gnu/libminiupnpc.so
+tests/net_load_tests/net_load_tests_clt: src/blockchain_db/libblockchain_db.a
+tests/net_load_tests/net_load_tests_clt: external/db_drivers/liblmdb/liblmdb.a
+tests/net_load_tests/net_load_tests_clt: src/ringct/libringct.a
+tests/net_load_tests/net_load_tests_clt: src/cryptonote_basic/libcryptonote_basic.a
+tests/net_load_tests/net_load_tests_clt: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+tests/net_load_tests/net_load_tests_clt: src/common/libcommon.a
+tests/net_load_tests/net_load_tests_clt: contrib/epee/src/libepee.a
+tests/net_load_tests/net_load_tests_clt: external/easylogging++/libeasylogging.a
+tests/net_load_tests/net_load_tests_clt: /usr/lib/x86_64-linux-gnu/libunbound.so
+tests/net_load_tests/net_load_tests_clt: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+tests/net_load_tests/net_load_tests_clt: /usr/lib/x86_64-linux-gnu/libssl.so
+tests/net_load_tests/net_load_tests_clt: /usr/lib/x86_64-linux-gnu/libcrypto.so
+tests/net_load_tests/net_load_tests_clt: src/crypto/libcncrypto.a
+tests/net_load_tests/net_load_tests_clt: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+tests/net_load_tests/net_load_tests_clt: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+tests/net_load_tests/net_load_tests_clt: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+tests/net_load_tests/net_load_tests_clt: src/blocks/libblocks.a
+tests/net_load_tests/net_load_tests_clt: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+tests/net_load_tests/net_load_tests_clt: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+tests/net_load_tests/net_load_tests_clt: /usr/lib/x86_64-linux-gnu/libboost_system.so
+tests/net_load_tests/net_load_tests_clt: /usr/lib/x86_64-linux-gnu/librt.so
+tests/net_load_tests/net_load_tests_clt: tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable net_load_tests_clt"
 	cd /home/chip/Downloads/monero/tests/net_load_tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/net_load_tests_clt.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-net_load_tests/CMakeFiles/net_load_tests_clt.dir/build: net_load_tests/net_load_tests_clt
+tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/build: tests/net_load_tests/net_load_tests_clt
 
-.PHONY : net_load_tests/CMakeFiles/net_load_tests_clt.dir/build
+.PHONY : tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/build
 
-net_load_tests/CMakeFiles/net_load_tests_clt.dir/requires: net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.o.requires
+tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/requires: tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/clt.cpp.o.requires
 
-.PHONY : net_load_tests/CMakeFiles/net_load_tests_clt.dir/requires
+.PHONY : tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/requires
 
-net_load_tests/CMakeFiles/net_load_tests_clt.dir/clean:
+tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/clean:
 	cd /home/chip/Downloads/monero/tests/net_load_tests && $(CMAKE_COMMAND) -P CMakeFiles/net_load_tests_clt.dir/cmake_clean.cmake
-.PHONY : net_load_tests/CMakeFiles/net_load_tests_clt.dir/clean
+.PHONY : tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/clean
 
-net_load_tests/CMakeFiles/net_load_tests_clt.dir/depend:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/net_load_tests /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/net_load_tests /home/chip/Downloads/monero/tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : net_load_tests/CMakeFiles/net_load_tests_clt.dir/depend
+tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/net_load_tests /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/net_load_tests /home/chip/Downloads/monero/tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : tests/net_load_tests/CMakeFiles/net_load_tests_clt.dir/depend
 

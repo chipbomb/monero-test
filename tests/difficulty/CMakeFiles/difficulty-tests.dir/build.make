@@ -43,71 +43,93 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/tests
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/tests
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include difficulty/CMakeFiles/difficulty-tests.dir/depend.make
+include tests/difficulty/CMakeFiles/difficulty-tests.dir/depend.make
 
 # Include the progress variables for this target.
-include difficulty/CMakeFiles/difficulty-tests.dir/progress.make
+include tests/difficulty/CMakeFiles/difficulty-tests.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include difficulty/CMakeFiles/difficulty-tests.dir/flags.make
+include tests/difficulty/CMakeFiles/difficulty-tests.dir/flags.make
 
-difficulty/CMakeFiles/difficulty-tests.dir/difficulty.o: difficulty/CMakeFiles/difficulty-tests.dir/flags.make
-difficulty/CMakeFiles/difficulty-tests.dir/difficulty.o: difficulty/difficulty.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object difficulty/CMakeFiles/difficulty-tests.dir/difficulty.o"
-	cd /home/chip/Downloads/monero/tests/difficulty && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/difficulty-tests.dir/difficulty.o -c /home/chip/Downloads/monero/tests/difficulty/difficulty.cpp
+tests/difficulty/CMakeFiles/difficulty-tests.dir/difficulty.cpp.o: tests/difficulty/CMakeFiles/difficulty-tests.dir/flags.make
+tests/difficulty/CMakeFiles/difficulty-tests.dir/difficulty.cpp.o: tests/difficulty/difficulty.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/difficulty/CMakeFiles/difficulty-tests.dir/difficulty.cpp.o"
+	cd /home/chip/Downloads/monero/tests/difficulty && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/difficulty-tests.dir/difficulty.cpp.o -c /home/chip/Downloads/monero/tests/difficulty/difficulty.cpp
 
-difficulty/CMakeFiles/difficulty-tests.dir/difficulty.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/difficulty-tests.dir/difficulty.i"
-	cd /home/chip/Downloads/monero/tests/difficulty && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/difficulty/difficulty.cpp > CMakeFiles/difficulty-tests.dir/difficulty.i
+tests/difficulty/CMakeFiles/difficulty-tests.dir/difficulty.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/difficulty-tests.dir/difficulty.cpp.i"
+	cd /home/chip/Downloads/monero/tests/difficulty && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/difficulty/difficulty.cpp > CMakeFiles/difficulty-tests.dir/difficulty.cpp.i
 
-difficulty/CMakeFiles/difficulty-tests.dir/difficulty.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/difficulty-tests.dir/difficulty.s"
-	cd /home/chip/Downloads/monero/tests/difficulty && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/difficulty/difficulty.cpp -o CMakeFiles/difficulty-tests.dir/difficulty.s
+tests/difficulty/CMakeFiles/difficulty-tests.dir/difficulty.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/difficulty-tests.dir/difficulty.cpp.s"
+	cd /home/chip/Downloads/monero/tests/difficulty && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/difficulty/difficulty.cpp -o CMakeFiles/difficulty-tests.dir/difficulty.cpp.s
 
-difficulty/CMakeFiles/difficulty-tests.dir/difficulty.o.requires:
+tests/difficulty/CMakeFiles/difficulty-tests.dir/difficulty.cpp.o.requires:
 
-.PHONY : difficulty/CMakeFiles/difficulty-tests.dir/difficulty.o.requires
+.PHONY : tests/difficulty/CMakeFiles/difficulty-tests.dir/difficulty.cpp.o.requires
 
-difficulty/CMakeFiles/difficulty-tests.dir/difficulty.o.provides: difficulty/CMakeFiles/difficulty-tests.dir/difficulty.o.requires
-	$(MAKE) -f difficulty/CMakeFiles/difficulty-tests.dir/build.make difficulty/CMakeFiles/difficulty-tests.dir/difficulty.o.provides.build
-.PHONY : difficulty/CMakeFiles/difficulty-tests.dir/difficulty.o.provides
+tests/difficulty/CMakeFiles/difficulty-tests.dir/difficulty.cpp.o.provides: tests/difficulty/CMakeFiles/difficulty-tests.dir/difficulty.cpp.o.requires
+	$(MAKE) -f tests/difficulty/CMakeFiles/difficulty-tests.dir/build.make tests/difficulty/CMakeFiles/difficulty-tests.dir/difficulty.cpp.o.provides.build
+.PHONY : tests/difficulty/CMakeFiles/difficulty-tests.dir/difficulty.cpp.o.provides
 
-difficulty/CMakeFiles/difficulty-tests.dir/difficulty.o.provides.build: difficulty/CMakeFiles/difficulty-tests.dir/difficulty.o
+tests/difficulty/CMakeFiles/difficulty-tests.dir/difficulty.cpp.o.provides.build: tests/difficulty/CMakeFiles/difficulty-tests.dir/difficulty.cpp.o
 
 
 # Object files for target difficulty-tests
 difficulty__tests_OBJECTS = \
-"CMakeFiles/difficulty-tests.dir/difficulty.o"
+"CMakeFiles/difficulty-tests.dir/difficulty.cpp.o"
 
 # External object files for target difficulty-tests
 difficulty__tests_EXTERNAL_OBJECTS =
 
-difficulty/difficulty-tests: difficulty/CMakeFiles/difficulty-tests.dir/difficulty.o
-difficulty/difficulty-tests: difficulty/CMakeFiles/difficulty-tests.dir/build.make
-difficulty/difficulty-tests: difficulty/CMakeFiles/difficulty-tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable difficulty-tests"
+tests/difficulty/difficulty-tests: tests/difficulty/CMakeFiles/difficulty-tests.dir/difficulty.cpp.o
+tests/difficulty/difficulty-tests: tests/difficulty/CMakeFiles/difficulty-tests.dir/build.make
+tests/difficulty/difficulty-tests: src/cryptonote_core/libcryptonote_core.a
+tests/difficulty/difficulty-tests: /usr/lib/x86_64-linux-gnu/librt.so
+tests/difficulty/difficulty-tests: src/blockchain_db/libblockchain_db.a
+tests/difficulty/difficulty-tests: external/db_drivers/liblmdb/liblmdb.a
+tests/difficulty/difficulty-tests: src/ringct/libringct.a
+tests/difficulty/difficulty-tests: src/cryptonote_basic/libcryptonote_basic.a
+tests/difficulty/difficulty-tests: src/common/libcommon.a
+tests/difficulty/difficulty-tests: contrib/epee/src/libepee.a
+tests/difficulty/difficulty-tests: external/easylogging++/libeasylogging.a
+tests/difficulty/difficulty-tests: /usr/lib/x86_64-linux-gnu/libunbound.so
+tests/difficulty/difficulty-tests: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+tests/difficulty/difficulty-tests: /usr/lib/x86_64-linux-gnu/libssl.so
+tests/difficulty/difficulty-tests: /usr/lib/x86_64-linux-gnu/libcrypto.so
+tests/difficulty/difficulty-tests: src/crypto/libcncrypto.a
+tests/difficulty/difficulty-tests: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+tests/difficulty/difficulty-tests: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+tests/difficulty/difficulty-tests: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+tests/difficulty/difficulty-tests: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+tests/difficulty/difficulty-tests: /usr/lib/x86_64-linux-gnu/libboost_system.so
+tests/difficulty/difficulty-tests: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+tests/difficulty/difficulty-tests: /usr/lib/x86_64-linux-gnu/librt.so
+tests/difficulty/difficulty-tests: src/blocks/libblocks.a
+tests/difficulty/difficulty-tests: tests/difficulty/CMakeFiles/difficulty-tests.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable difficulty-tests"
 	cd /home/chip/Downloads/monero/tests/difficulty && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/difficulty-tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-difficulty/CMakeFiles/difficulty-tests.dir/build: difficulty/difficulty-tests
+tests/difficulty/CMakeFiles/difficulty-tests.dir/build: tests/difficulty/difficulty-tests
 
-.PHONY : difficulty/CMakeFiles/difficulty-tests.dir/build
+.PHONY : tests/difficulty/CMakeFiles/difficulty-tests.dir/build
 
-difficulty/CMakeFiles/difficulty-tests.dir/requires: difficulty/CMakeFiles/difficulty-tests.dir/difficulty.o.requires
+tests/difficulty/CMakeFiles/difficulty-tests.dir/requires: tests/difficulty/CMakeFiles/difficulty-tests.dir/difficulty.cpp.o.requires
 
-.PHONY : difficulty/CMakeFiles/difficulty-tests.dir/requires
+.PHONY : tests/difficulty/CMakeFiles/difficulty-tests.dir/requires
 
-difficulty/CMakeFiles/difficulty-tests.dir/clean:
+tests/difficulty/CMakeFiles/difficulty-tests.dir/clean:
 	cd /home/chip/Downloads/monero/tests/difficulty && $(CMAKE_COMMAND) -P CMakeFiles/difficulty-tests.dir/cmake_clean.cmake
-.PHONY : difficulty/CMakeFiles/difficulty-tests.dir/clean
+.PHONY : tests/difficulty/CMakeFiles/difficulty-tests.dir/clean
 
-difficulty/CMakeFiles/difficulty-tests.dir/depend:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/difficulty /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/difficulty /home/chip/Downloads/monero/tests/difficulty/CMakeFiles/difficulty-tests.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : difficulty/CMakeFiles/difficulty-tests.dir/depend
+tests/difficulty/CMakeFiles/difficulty-tests.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/difficulty /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/difficulty /home/chip/Downloads/monero/tests/difficulty/CMakeFiles/difficulty-tests.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : tests/difficulty/CMakeFiles/difficulty-tests.dir/depend
 

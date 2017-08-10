@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/functional_tests.dir/main.o"
-  "CMakeFiles/functional_tests.dir/transactions_flow_test.o"
-  "CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.o"
+  "CMakeFiles/functional_tests.dir/main.cpp.o"
+  "CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.o"
+  "CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.o"
   "functional_tests.pdb"
   "functional_tests"
 )

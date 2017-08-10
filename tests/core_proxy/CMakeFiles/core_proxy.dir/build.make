@@ -43,71 +43,98 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/tests
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/tests
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include core_proxy/CMakeFiles/core_proxy.dir/depend.make
+include tests/core_proxy/CMakeFiles/core_proxy.dir/depend.make
 
 # Include the progress variables for this target.
-include core_proxy/CMakeFiles/core_proxy.dir/progress.make
+include tests/core_proxy/CMakeFiles/core_proxy.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include core_proxy/CMakeFiles/core_proxy.dir/flags.make
+include tests/core_proxy/CMakeFiles/core_proxy.dir/flags.make
 
-core_proxy/CMakeFiles/core_proxy.dir/core_proxy.o: core_proxy/CMakeFiles/core_proxy.dir/flags.make
-core_proxy/CMakeFiles/core_proxy.dir/core_proxy.o: core_proxy/core_proxy.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object core_proxy/CMakeFiles/core_proxy.dir/core_proxy.o"
-	cd /home/chip/Downloads/monero/tests/core_proxy && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core_proxy.dir/core_proxy.o -c /home/chip/Downloads/monero/tests/core_proxy/core_proxy.cpp
+tests/core_proxy/CMakeFiles/core_proxy.dir/core_proxy.cpp.o: tests/core_proxy/CMakeFiles/core_proxy.dir/flags.make
+tests/core_proxy/CMakeFiles/core_proxy.dir/core_proxy.cpp.o: tests/core_proxy/core_proxy.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/core_proxy/CMakeFiles/core_proxy.dir/core_proxy.cpp.o"
+	cd /home/chip/Downloads/monero/tests/core_proxy && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/core_proxy.dir/core_proxy.cpp.o -c /home/chip/Downloads/monero/tests/core_proxy/core_proxy.cpp
 
-core_proxy/CMakeFiles/core_proxy.dir/core_proxy.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core_proxy.dir/core_proxy.i"
-	cd /home/chip/Downloads/monero/tests/core_proxy && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/core_proxy/core_proxy.cpp > CMakeFiles/core_proxy.dir/core_proxy.i
+tests/core_proxy/CMakeFiles/core_proxy.dir/core_proxy.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/core_proxy.dir/core_proxy.cpp.i"
+	cd /home/chip/Downloads/monero/tests/core_proxy && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/core_proxy/core_proxy.cpp > CMakeFiles/core_proxy.dir/core_proxy.cpp.i
 
-core_proxy/CMakeFiles/core_proxy.dir/core_proxy.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core_proxy.dir/core_proxy.s"
-	cd /home/chip/Downloads/monero/tests/core_proxy && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/core_proxy/core_proxy.cpp -o CMakeFiles/core_proxy.dir/core_proxy.s
+tests/core_proxy/CMakeFiles/core_proxy.dir/core_proxy.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/core_proxy.dir/core_proxy.cpp.s"
+	cd /home/chip/Downloads/monero/tests/core_proxy && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/core_proxy/core_proxy.cpp -o CMakeFiles/core_proxy.dir/core_proxy.cpp.s
 
-core_proxy/CMakeFiles/core_proxy.dir/core_proxy.o.requires:
+tests/core_proxy/CMakeFiles/core_proxy.dir/core_proxy.cpp.o.requires:
 
-.PHONY : core_proxy/CMakeFiles/core_proxy.dir/core_proxy.o.requires
+.PHONY : tests/core_proxy/CMakeFiles/core_proxy.dir/core_proxy.cpp.o.requires
 
-core_proxy/CMakeFiles/core_proxy.dir/core_proxy.o.provides: core_proxy/CMakeFiles/core_proxy.dir/core_proxy.o.requires
-	$(MAKE) -f core_proxy/CMakeFiles/core_proxy.dir/build.make core_proxy/CMakeFiles/core_proxy.dir/core_proxy.o.provides.build
-.PHONY : core_proxy/CMakeFiles/core_proxy.dir/core_proxy.o.provides
+tests/core_proxy/CMakeFiles/core_proxy.dir/core_proxy.cpp.o.provides: tests/core_proxy/CMakeFiles/core_proxy.dir/core_proxy.cpp.o.requires
+	$(MAKE) -f tests/core_proxy/CMakeFiles/core_proxy.dir/build.make tests/core_proxy/CMakeFiles/core_proxy.dir/core_proxy.cpp.o.provides.build
+.PHONY : tests/core_proxy/CMakeFiles/core_proxy.dir/core_proxy.cpp.o.provides
 
-core_proxy/CMakeFiles/core_proxy.dir/core_proxy.o.provides.build: core_proxy/CMakeFiles/core_proxy.dir/core_proxy.o
+tests/core_proxy/CMakeFiles/core_proxy.dir/core_proxy.cpp.o.provides.build: tests/core_proxy/CMakeFiles/core_proxy.dir/core_proxy.cpp.o
 
 
 # Object files for target core_proxy
 core_proxy_OBJECTS = \
-"CMakeFiles/core_proxy.dir/core_proxy.o"
+"CMakeFiles/core_proxy.dir/core_proxy.cpp.o"
 
 # External object files for target core_proxy
 core_proxy_EXTERNAL_OBJECTS =
 
-core_proxy/core_proxy: core_proxy/CMakeFiles/core_proxy.dir/core_proxy.o
-core_proxy/core_proxy: core_proxy/CMakeFiles/core_proxy.dir/build.make
-core_proxy/core_proxy: core_proxy/CMakeFiles/core_proxy.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable core_proxy"
+tests/core_proxy/core_proxy: tests/core_proxy/CMakeFiles/core_proxy.dir/core_proxy.cpp.o
+tests/core_proxy/core_proxy: tests/core_proxy/CMakeFiles/core_proxy.dir/build.make
+tests/core_proxy/core_proxy: src/cryptonote_core/libcryptonote_core.a
+tests/core_proxy/core_proxy: src/cryptonote_protocol/libcryptonote_protocol.a
+tests/core_proxy/core_proxy: src/p2p/libp2p.a
+tests/core_proxy/core_proxy: contrib/epee/src/libepee.a
+tests/core_proxy/core_proxy: /usr/lib/x86_64-linux-gnu/librt.so
+tests/core_proxy/core_proxy: src/blockchain_db/libblockchain_db.a
+tests/core_proxy/core_proxy: external/db_drivers/liblmdb/liblmdb.a
+tests/core_proxy/core_proxy: src/ringct/libringct.a
+tests/core_proxy/core_proxy: src/cryptonote_basic/libcryptonote_basic.a
+tests/core_proxy/core_proxy: src/common/libcommon.a
+tests/core_proxy/core_proxy: /usr/lib/x86_64-linux-gnu/libunbound.so
+tests/core_proxy/core_proxy: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+tests/core_proxy/core_proxy: /usr/lib/x86_64-linux-gnu/libssl.so
+tests/core_proxy/core_proxy: /usr/lib/x86_64-linux-gnu/libcrypto.so
+tests/core_proxy/core_proxy: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+tests/core_proxy/core_proxy: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+tests/core_proxy/core_proxy: src/blocks/libblocks.a
+tests/core_proxy/core_proxy: contrib/epee/src/libepee.a
+tests/core_proxy/core_proxy: src/crypto/libcncrypto.a
+tests/core_proxy/core_proxy: external/easylogging++/libeasylogging.a
+tests/core_proxy/core_proxy: /usr/lib/x86_64-linux-gnu/libminiupnpc.so
+tests/core_proxy/core_proxy: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+tests/core_proxy/core_proxy: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+tests/core_proxy/core_proxy: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+tests/core_proxy/core_proxy: /usr/lib/x86_64-linux-gnu/libboost_system.so
+tests/core_proxy/core_proxy: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+tests/core_proxy/core_proxy: /usr/lib/x86_64-linux-gnu/librt.so
+tests/core_proxy/core_proxy: tests/core_proxy/CMakeFiles/core_proxy.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable core_proxy"
 	cd /home/chip/Downloads/monero/tests/core_proxy && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/core_proxy.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-core_proxy/CMakeFiles/core_proxy.dir/build: core_proxy/core_proxy
+tests/core_proxy/CMakeFiles/core_proxy.dir/build: tests/core_proxy/core_proxy
 
-.PHONY : core_proxy/CMakeFiles/core_proxy.dir/build
+.PHONY : tests/core_proxy/CMakeFiles/core_proxy.dir/build
 
-core_proxy/CMakeFiles/core_proxy.dir/requires: core_proxy/CMakeFiles/core_proxy.dir/core_proxy.o.requires
+tests/core_proxy/CMakeFiles/core_proxy.dir/requires: tests/core_proxy/CMakeFiles/core_proxy.dir/core_proxy.cpp.o.requires
 
-.PHONY : core_proxy/CMakeFiles/core_proxy.dir/requires
+.PHONY : tests/core_proxy/CMakeFiles/core_proxy.dir/requires
 
-core_proxy/CMakeFiles/core_proxy.dir/clean:
+tests/core_proxy/CMakeFiles/core_proxy.dir/clean:
 	cd /home/chip/Downloads/monero/tests/core_proxy && $(CMAKE_COMMAND) -P CMakeFiles/core_proxy.dir/cmake_clean.cmake
-.PHONY : core_proxy/CMakeFiles/core_proxy.dir/clean
+.PHONY : tests/core_proxy/CMakeFiles/core_proxy.dir/clean
 
-core_proxy/CMakeFiles/core_proxy.dir/depend:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/core_proxy /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/core_proxy /home/chip/Downloads/monero/tests/core_proxy/CMakeFiles/core_proxy.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : core_proxy/CMakeFiles/core_proxy.dir/depend
+tests/core_proxy/CMakeFiles/core_proxy.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/core_proxy /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/core_proxy /home/chip/Downloads/monero/tests/core_proxy/CMakeFiles/core_proxy.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : tests/core_proxy/CMakeFiles/core_proxy.dir/depend
 

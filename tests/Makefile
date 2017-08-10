@@ -48,24 +48,35 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/tests
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/tests
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-.PHONY : edit_cache/fast
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,16 +89,49 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/tests/CMakeFiles /home/chip/Downloads/monero/tests/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/tests/CMakeFiles 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles /home/chip/Downloads/monero/tests/CMakeFiles/progress.marks
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) -f CMakeFiles/Makefile2 clean
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,267 +141,75 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) -f CMakeFiles/Makefile2 preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-#=============================================================================
-# Target rules for targets named tests
+# Convenience name for target.
+tests/CMakeFiles/hash-target-tests.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/hash-target-tests.dir/rule
+.PHONY : tests/CMakeFiles/hash-target-tests.dir/rule
 
-# Build rule for target.
-tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tests
-.PHONY : tests
+# Convenience name for target.
+hash-target-tests: tests/CMakeFiles/hash-target-tests.dir/rule
 
-# fast build rule for target.
-tests/fast:
-	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
-.PHONY : tests/fast
-
-#=============================================================================
-# Target rules for targets named hash-target-tests
-
-# Build rule for target.
-hash-target-tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hash-target-tests
 .PHONY : hash-target-tests
 
 # fast build rule for target.
 hash-target-tests/fast:
-	$(MAKE) -f CMakeFiles/hash-target-tests.dir/build.make CMakeFiles/hash-target-tests.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/CMakeFiles/hash-target-tests.dir/build.make tests/CMakeFiles/hash-target-tests.dir/build
 .PHONY : hash-target-tests/fast
 
-#=============================================================================
-# Target rules for targets named coretests
+# Convenience name for target.
+tests/CMakeFiles/tests.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/CMakeFiles/tests.dir/rule
+.PHONY : tests/CMakeFiles/tests.dir/rule
 
-# Build rule for target.
-coretests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 coretests
-.PHONY : coretests
+# Convenience name for target.
+tests: tests/CMakeFiles/tests.dir/rule
 
-# fast build rule for target.
-coretests/fast:
-	$(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/build
-.PHONY : coretests/fast
-
-#=============================================================================
-# Target rules for targets named cold-transaction_fuzz_tests
-
-# Build rule for target.
-cold-transaction_fuzz_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cold-transaction_fuzz_tests
-.PHONY : cold-transaction_fuzz_tests
+.PHONY : tests
 
 # fast build rule for target.
-cold-transaction_fuzz_tests/fast:
-	$(MAKE) -f fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build
-.PHONY : cold-transaction_fuzz_tests/fast
+tests/fast:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/CMakeFiles/tests.dir/build.make tests/CMakeFiles/tests.dir/build
+.PHONY : tests/fast
 
-#=============================================================================
-# Target rules for targets named block_fuzz_tests
+hash-target.o: hash-target.cpp.o
 
-# Build rule for target.
-block_fuzz_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 block_fuzz_tests
-.PHONY : block_fuzz_tests
-
-# fast build rule for target.
-block_fuzz_tests/fast:
-	$(MAKE) -f fuzz/CMakeFiles/block_fuzz_tests.dir/build.make fuzz/CMakeFiles/block_fuzz_tests.dir/build
-.PHONY : block_fuzz_tests/fast
-
-#=============================================================================
-# Target rules for targets named transaction_fuzz_tests
-
-# Build rule for target.
-transaction_fuzz_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 transaction_fuzz_tests
-.PHONY : transaction_fuzz_tests
-
-# fast build rule for target.
-transaction_fuzz_tests/fast:
-	$(MAKE) -f fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/transaction_fuzz_tests.dir/build
-.PHONY : transaction_fuzz_tests/fast
-
-#=============================================================================
-# Target rules for targets named signature_fuzz_tests
-
-# Build rule for target.
-signature_fuzz_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 signature_fuzz_tests
-.PHONY : signature_fuzz_tests
-
-# fast build rule for target.
-signature_fuzz_tests/fast:
-	$(MAKE) -f fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make fuzz/CMakeFiles/signature_fuzz_tests.dir/build
-.PHONY : signature_fuzz_tests/fast
-
-#=============================================================================
-# Target rules for targets named cold-outputs_fuzz_tests
-
-# Build rule for target.
-cold-outputs_fuzz_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cold-outputs_fuzz_tests
-.PHONY : cold-outputs_fuzz_tests
-
-# fast build rule for target.
-cold-outputs_fuzz_tests/fast:
-	$(MAKE) -f fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build.make fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build
-.PHONY : cold-outputs_fuzz_tests/fast
-
-#=============================================================================
-# Target rules for targets named cncrypto-tests
-
-# Build rule for target.
-cncrypto-tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 cncrypto-tests
-.PHONY : cncrypto-tests
-
-# fast build rule for target.
-cncrypto-tests/fast:
-	$(MAKE) -f crypto/CMakeFiles/cncrypto-tests.dir/build.make crypto/CMakeFiles/cncrypto-tests.dir/build
-.PHONY : cncrypto-tests/fast
-
-#=============================================================================
-# Target rules for targets named functional_tests
-
-# Build rule for target.
-functional_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 functional_tests
-.PHONY : functional_tests
-
-# fast build rule for target.
-functional_tests/fast:
-	$(MAKE) -f functional_tests/CMakeFiles/functional_tests.dir/build.make functional_tests/CMakeFiles/functional_tests.dir/build
-.PHONY : functional_tests/fast
-
-#=============================================================================
-# Target rules for targets named performance_tests
-
-# Build rule for target.
-performance_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 performance_tests
-.PHONY : performance_tests
-
-# fast build rule for target.
-performance_tests/fast:
-	$(MAKE) -f performance_tests/CMakeFiles/performance_tests.dir/build.make performance_tests/CMakeFiles/performance_tests.dir/build
-.PHONY : performance_tests/fast
-
-#=============================================================================
-# Target rules for targets named core_proxy
-
-# Build rule for target.
-core_proxy: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 core_proxy
-.PHONY : core_proxy
-
-# fast build rule for target.
-core_proxy/fast:
-	$(MAKE) -f core_proxy/CMakeFiles/core_proxy.dir/build.make core_proxy/CMakeFiles/core_proxy.dir/build
-.PHONY : core_proxy/fast
-
-#=============================================================================
-# Target rules for targets named unit_tests
-
-# Build rule for target.
-unit_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 unit_tests
-.PHONY : unit_tests
-
-# fast build rule for target.
-unit_tests/fast:
-	$(MAKE) -f unit_tests/CMakeFiles/unit_tests.dir/build.make unit_tests/CMakeFiles/unit_tests.dir/build
-.PHONY : unit_tests/fast
-
-#=============================================================================
-# Target rules for targets named difficulty-tests
-
-# Build rule for target.
-difficulty-tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 difficulty-tests
-.PHONY : difficulty-tests
-
-# fast build rule for target.
-difficulty-tests/fast:
-	$(MAKE) -f difficulty/CMakeFiles/difficulty-tests.dir/build.make difficulty/CMakeFiles/difficulty-tests.dir/build
-.PHONY : difficulty-tests/fast
-
-#=============================================================================
-# Target rules for targets named hash-tests
-
-# Build rule for target.
-hash-tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 hash-tests
-.PHONY : hash-tests
-
-# fast build rule for target.
-hash-tests/fast:
-	$(MAKE) -f hash/CMakeFiles/hash-tests.dir/build.make hash/CMakeFiles/hash-tests.dir/build
-.PHONY : hash-tests/fast
-
-#=============================================================================
-# Target rules for targets named net_load_tests_srv
-
-# Build rule for target.
-net_load_tests_srv: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 net_load_tests_srv
-.PHONY : net_load_tests_srv
-
-# fast build rule for target.
-net_load_tests_srv/fast:
-	$(MAKE) -f net_load_tests/CMakeFiles/net_load_tests_srv.dir/build.make net_load_tests/CMakeFiles/net_load_tests_srv.dir/build
-.PHONY : net_load_tests_srv/fast
-
-#=============================================================================
-# Target rules for targets named net_load_tests_clt
-
-# Build rule for target.
-net_load_tests_clt: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 net_load_tests_clt
-.PHONY : net_load_tests_clt
-
-# fast build rule for target.
-net_load_tests_clt/fast:
-	$(MAKE) -f net_load_tests/CMakeFiles/net_load_tests_clt.dir/build.make net_load_tests/CMakeFiles/net_load_tests_clt.dir/build
-.PHONY : net_load_tests_clt/fast
-
-#=============================================================================
-# Target rules for targets named libwallet_api_tests
-
-# Build rule for target.
-libwallet_api_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 libwallet_api_tests
-.PHONY : libwallet_api_tests
-
-# fast build rule for target.
-libwallet_api_tests/fast:
-	$(MAKE) -f libwallet_api_tests/CMakeFiles/libwallet_api_tests.dir/build.make libwallet_api_tests/CMakeFiles/libwallet_api_tests.dir/build
-.PHONY : libwallet_api_tests/fast
-
-# target to build an object file
-hash-target.o:
-	$(MAKE) -f CMakeFiles/hash-target-tests.dir/build.make CMakeFiles/hash-target-tests.dir/hash-target.o
 .PHONY : hash-target.o
 
-# target to preprocess a source file
-hash-target.i:
-	$(MAKE) -f CMakeFiles/hash-target-tests.dir/build.make CMakeFiles/hash-target-tests.dir/hash-target.i
+# target to build an object file
+hash-target.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/CMakeFiles/hash-target-tests.dir/build.make tests/CMakeFiles/hash-target-tests.dir/hash-target.cpp.o
+.PHONY : hash-target.cpp.o
+
+hash-target.i: hash-target.cpp.i
+
 .PHONY : hash-target.i
 
-# target to generate assembly for a file
-hash-target.s:
-	$(MAKE) -f CMakeFiles/hash-target-tests.dir/build.make CMakeFiles/hash-target-tests.dir/hash-target.s
+# target to preprocess a source file
+hash-target.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/CMakeFiles/hash-target-tests.dir/build.make tests/CMakeFiles/hash-target-tests.dir/hash-target.cpp.i
+.PHONY : hash-target.cpp.i
+
+hash-target.s: hash-target.cpp.s
+
 .PHONY : hash-target.s
+
+# target to generate assembly for a file
+hash-target.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/CMakeFiles/hash-target-tests.dir/build.make tests/CMakeFiles/hash-target-tests.dir/hash-target.cpp.s
+.PHONY : hash-target.cpp.s
 
 # Help Target
 help:
@@ -365,26 +217,14 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
+	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... tests"
 	@echo "... hash-target-tests"
-	@echo "... coretests"
-	@echo "... cold-transaction_fuzz_tests"
-	@echo "... block_fuzz_tests"
-	@echo "... transaction_fuzz_tests"
-	@echo "... signature_fuzz_tests"
-	@echo "... cold-outputs_fuzz_tests"
-	@echo "... cncrypto-tests"
-	@echo "... functional_tests"
-	@echo "... performance_tests"
-	@echo "... core_proxy"
-	@echo "... unit_tests"
-	@echo "... difficulty-tests"
-	@echo "... hash-tests"
-	@echo "... net_load_tests_srv"
-	@echo "... net_load_tests_clt"
-	@echo "... libwallet_api_tests"
+	@echo "... edit_cache"
+	@echo "... tests"
+	@echo "... install/local"
+	@echo "... test"
 	@echo "... hash-target.o"
 	@echo "... hash-target.i"
 	@echo "... hash-target.s"
@@ -399,6 +239,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

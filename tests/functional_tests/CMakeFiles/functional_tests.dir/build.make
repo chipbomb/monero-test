@@ -43,125 +43,158 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/tests
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/tests
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include functional_tests/CMakeFiles/functional_tests.dir/depend.make
+include tests/functional_tests/CMakeFiles/functional_tests.dir/depend.make
 
 # Include the progress variables for this target.
-include functional_tests/CMakeFiles/functional_tests.dir/progress.make
+include tests/functional_tests/CMakeFiles/functional_tests.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include functional_tests/CMakeFiles/functional_tests.dir/flags.make
+include tests/functional_tests/CMakeFiles/functional_tests.dir/flags.make
 
-functional_tests/CMakeFiles/functional_tests.dir/main.o: functional_tests/CMakeFiles/functional_tests.dir/flags.make
-functional_tests/CMakeFiles/functional_tests.dir/main.o: functional_tests/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object functional_tests/CMakeFiles/functional_tests.dir/main.o"
-	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/functional_tests.dir/main.o -c /home/chip/Downloads/monero/tests/functional_tests/main.cpp
+tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.o: tests/functional_tests/CMakeFiles/functional_tests.dir/flags.make
+tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.o: tests/functional_tests/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.o"
+	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/functional_tests.dir/main.cpp.o -c /home/chip/Downloads/monero/tests/functional_tests/main.cpp
 
-functional_tests/CMakeFiles/functional_tests.dir/main.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/functional_tests.dir/main.i"
-	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/functional_tests/main.cpp > CMakeFiles/functional_tests.dir/main.i
+tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/functional_tests.dir/main.cpp.i"
+	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/functional_tests/main.cpp > CMakeFiles/functional_tests.dir/main.cpp.i
 
-functional_tests/CMakeFiles/functional_tests.dir/main.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/functional_tests.dir/main.s"
-	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/functional_tests/main.cpp -o CMakeFiles/functional_tests.dir/main.s
+tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/functional_tests.dir/main.cpp.s"
+	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/functional_tests/main.cpp -o CMakeFiles/functional_tests.dir/main.cpp.s
 
-functional_tests/CMakeFiles/functional_tests.dir/main.o.requires:
+tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.o.requires:
 
-.PHONY : functional_tests/CMakeFiles/functional_tests.dir/main.o.requires
+.PHONY : tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.o.requires
 
-functional_tests/CMakeFiles/functional_tests.dir/main.o.provides: functional_tests/CMakeFiles/functional_tests.dir/main.o.requires
-	$(MAKE) -f functional_tests/CMakeFiles/functional_tests.dir/build.make functional_tests/CMakeFiles/functional_tests.dir/main.o.provides.build
-.PHONY : functional_tests/CMakeFiles/functional_tests.dir/main.o.provides
+tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.o.provides: tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.o.requires
+	$(MAKE) -f tests/functional_tests/CMakeFiles/functional_tests.dir/build.make tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.o.provides.build
+.PHONY : tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.o.provides
 
-functional_tests/CMakeFiles/functional_tests.dir/main.o.provides.build: functional_tests/CMakeFiles/functional_tests.dir/main.o
-
-
-functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.o: functional_tests/CMakeFiles/functional_tests.dir/flags.make
-functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.o: functional_tests/transactions_flow_test.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.o"
-	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/functional_tests.dir/transactions_flow_test.o -c /home/chip/Downloads/monero/tests/functional_tests/transactions_flow_test.cpp
-
-functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/functional_tests.dir/transactions_flow_test.i"
-	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/functional_tests/transactions_flow_test.cpp > CMakeFiles/functional_tests.dir/transactions_flow_test.i
-
-functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/functional_tests.dir/transactions_flow_test.s"
-	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/functional_tests/transactions_flow_test.cpp -o CMakeFiles/functional_tests.dir/transactions_flow_test.s
-
-functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.o.requires:
-
-.PHONY : functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.o.requires
-
-functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.o.provides: functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.o.requires
-	$(MAKE) -f functional_tests/CMakeFiles/functional_tests.dir/build.make functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.o.provides.build
-.PHONY : functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.o.provides
-
-functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.o.provides.build: functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.o
+tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.o.provides.build: tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.o
 
 
-functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.o: functional_tests/CMakeFiles/functional_tests.dir/flags.make
-functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.o: functional_tests/transactions_generation_from_blockchain.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.o"
-	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.o -c /home/chip/Downloads/monero/tests/functional_tests/transactions_generation_from_blockchain.cpp
+tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.o: tests/functional_tests/CMakeFiles/functional_tests.dir/flags.make
+tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.o: tests/functional_tests/transactions_flow_test.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.o"
+	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.o -c /home/chip/Downloads/monero/tests/functional_tests/transactions_flow_test.cpp
 
-functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.i"
-	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/functional_tests/transactions_generation_from_blockchain.cpp > CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.i
+tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.i"
+	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/functional_tests/transactions_flow_test.cpp > CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.i
 
-functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.s"
-	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/functional_tests/transactions_generation_from_blockchain.cpp -o CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.s
+tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.s"
+	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/functional_tests/transactions_flow_test.cpp -o CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.s
 
-functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.o.requires:
+tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.o.requires:
 
-.PHONY : functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.o.requires
+.PHONY : tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.o.requires
 
-functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.o.provides: functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.o.requires
-	$(MAKE) -f functional_tests/CMakeFiles/functional_tests.dir/build.make functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.o.provides.build
-.PHONY : functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.o.provides
+tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.o.provides: tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.o.requires
+	$(MAKE) -f tests/functional_tests/CMakeFiles/functional_tests.dir/build.make tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.o.provides.build
+.PHONY : tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.o.provides
 
-functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.o.provides.build: functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.o
+tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.o.provides.build: tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.o
+
+
+tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.o: tests/functional_tests/CMakeFiles/functional_tests.dir/flags.make
+tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.o: tests/functional_tests/transactions_generation_from_blockchain.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.o"
+	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.o -c /home/chip/Downloads/monero/tests/functional_tests/transactions_generation_from_blockchain.cpp
+
+tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.i"
+	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/functional_tests/transactions_generation_from_blockchain.cpp > CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.i
+
+tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.s"
+	cd /home/chip/Downloads/monero/tests/functional_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/functional_tests/transactions_generation_from_blockchain.cpp -o CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.s
+
+tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.o.requires:
+
+.PHONY : tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.o.requires
+
+tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.o.provides: tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.o.requires
+	$(MAKE) -f tests/functional_tests/CMakeFiles/functional_tests.dir/build.make tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.o.provides.build
+.PHONY : tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.o.provides
+
+tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.o.provides.build: tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.o
 
 
 # Object files for target functional_tests
 functional_tests_OBJECTS = \
-"CMakeFiles/functional_tests.dir/main.o" \
-"CMakeFiles/functional_tests.dir/transactions_flow_test.o" \
-"CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.o"
+"CMakeFiles/functional_tests.dir/main.cpp.o" \
+"CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.o" \
+"CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.o"
 
 # External object files for target functional_tests
 functional_tests_EXTERNAL_OBJECTS =
 
-functional_tests/functional_tests: functional_tests/CMakeFiles/functional_tests.dir/main.o
-functional_tests/functional_tests: functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.o
-functional_tests/functional_tests: functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.o
-functional_tests/functional_tests: functional_tests/CMakeFiles/functional_tests.dir/build.make
-functional_tests/functional_tests: functional_tests/CMakeFiles/functional_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable functional_tests"
+tests/functional_tests/functional_tests: tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.o
+tests/functional_tests/functional_tests: tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.o
+tests/functional_tests/functional_tests: tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.o
+tests/functional_tests/functional_tests: tests/functional_tests/CMakeFiles/functional_tests.dir/build.make
+tests/functional_tests/functional_tests: src/cryptonote_core/libcryptonote_core.a
+tests/functional_tests/functional_tests: lib/libwallet.a
+tests/functional_tests/functional_tests: src/common/libcommon.a
+tests/functional_tests/functional_tests: src/crypto/libcncrypto.a
+tests/functional_tests/functional_tests: contrib/epee/src/libepee.a
+tests/functional_tests/functional_tests: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+tests/functional_tests/functional_tests: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+tests/functional_tests/functional_tests: /usr/lib/x86_64-linux-gnu/librt.so
+tests/functional_tests/functional_tests: src/cryptonote_core/libcryptonote_core.a
+tests/functional_tests/functional_tests: src/blockchain_db/libblockchain_db.a
+tests/functional_tests/functional_tests: external/db_drivers/liblmdb/liblmdb.a
+tests/functional_tests/functional_tests: src/ringct/libringct.a
+tests/functional_tests/functional_tests: src/cryptonote_basic/libcryptonote_basic.a
+tests/functional_tests/functional_tests: src/blocks/libblocks.a
+tests/functional_tests/functional_tests: src/common/libcommon.a
+tests/functional_tests/functional_tests: /usr/lib/x86_64-linux-gnu/libunbound.so
+tests/functional_tests/functional_tests: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+tests/functional_tests/functional_tests: /usr/lib/x86_64-linux-gnu/libssl.so
+tests/functional_tests/functional_tests: /usr/lib/x86_64-linux-gnu/libcrypto.so
+tests/functional_tests/functional_tests: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+tests/functional_tests/functional_tests: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+tests/functional_tests/functional_tests: src/mnemonics/libmnemonics.a
+tests/functional_tests/functional_tests: src/p2p/libp2p.a
+tests/functional_tests/functional_tests: contrib/epee/src/libepee.a
+tests/functional_tests/functional_tests: src/crypto/libcncrypto.a
+tests/functional_tests/functional_tests: external/easylogging++/libeasylogging.a
+tests/functional_tests/functional_tests: /usr/lib/x86_64-linux-gnu/libminiupnpc.so
+tests/functional_tests/functional_tests: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+tests/functional_tests/functional_tests: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+tests/functional_tests/functional_tests: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+tests/functional_tests/functional_tests: /usr/lib/x86_64-linux-gnu/libboost_system.so
+tests/functional_tests/functional_tests: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+tests/functional_tests/functional_tests: /usr/lib/x86_64-linux-gnu/librt.so
+tests/functional_tests/functional_tests: tests/functional_tests/CMakeFiles/functional_tests.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable functional_tests"
 	cd /home/chip/Downloads/monero/tests/functional_tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/functional_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-functional_tests/CMakeFiles/functional_tests.dir/build: functional_tests/functional_tests
+tests/functional_tests/CMakeFiles/functional_tests.dir/build: tests/functional_tests/functional_tests
 
-.PHONY : functional_tests/CMakeFiles/functional_tests.dir/build
+.PHONY : tests/functional_tests/CMakeFiles/functional_tests.dir/build
 
-functional_tests/CMakeFiles/functional_tests.dir/requires: functional_tests/CMakeFiles/functional_tests.dir/main.o.requires
-functional_tests/CMakeFiles/functional_tests.dir/requires: functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.o.requires
-functional_tests/CMakeFiles/functional_tests.dir/requires: functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.o.requires
+tests/functional_tests/CMakeFiles/functional_tests.dir/requires: tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.o.requires
+tests/functional_tests/CMakeFiles/functional_tests.dir/requires: tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.o.requires
+tests/functional_tests/CMakeFiles/functional_tests.dir/requires: tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.o.requires
 
-.PHONY : functional_tests/CMakeFiles/functional_tests.dir/requires
+.PHONY : tests/functional_tests/CMakeFiles/functional_tests.dir/requires
 
-functional_tests/CMakeFiles/functional_tests.dir/clean:
+tests/functional_tests/CMakeFiles/functional_tests.dir/clean:
 	cd /home/chip/Downloads/monero/tests/functional_tests && $(CMAKE_COMMAND) -P CMakeFiles/functional_tests.dir/cmake_clean.cmake
-.PHONY : functional_tests/CMakeFiles/functional_tests.dir/clean
+.PHONY : tests/functional_tests/CMakeFiles/functional_tests.dir/clean
 
-functional_tests/CMakeFiles/functional_tests.dir/depend:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/functional_tests /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/functional_tests /home/chip/Downloads/monero/tests/functional_tests/CMakeFiles/functional_tests.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : functional_tests/CMakeFiles/functional_tests.dir/depend
+tests/functional_tests/CMakeFiles/functional_tests.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/functional_tests /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/functional_tests /home/chip/Downloads/monero/tests/functional_tests/CMakeFiles/functional_tests.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : tests/functional_tests/CMakeFiles/functional_tests.dir/depend
 

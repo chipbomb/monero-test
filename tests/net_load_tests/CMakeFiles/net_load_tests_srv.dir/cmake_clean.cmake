@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/net_load_tests_srv.dir/srv.o"
+  "CMakeFiles/net_load_tests_srv.dir/srv.cpp.o"
   "net_load_tests_srv.pdb"
   "net_load_tests_srv"
 )

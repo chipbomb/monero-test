@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/net_load_tests_clt.dir/clt.o"
+  "CMakeFiles/net_load_tests_clt.dir/clt.cpp.o"
   "net_load_tests_clt.pdb"
   "net_load_tests_clt"
 )

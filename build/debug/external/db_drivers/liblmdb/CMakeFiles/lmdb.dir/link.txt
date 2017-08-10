@@ -1,1 +1,0 @@
-/usr/bin/cc  -fPIC -g  -shared -Wl,-soname,liblmdb.so -o liblmdb.so CMakeFiles/lmdb.dir/mdb.c.o CMakeFiles/lmdb.dir/midl.c.o -pthread 

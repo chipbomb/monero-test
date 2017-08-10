@@ -80,6 +80,7 @@ namespace epee
     bool run(size_t threads_count, bool wait = true)
     {
       //go to loop
+      cout << "http server impl base " << endl;
       MINFO("Run net_service loop( " << threads_count << " threads)...");
       if(!m_net_server.run_server(threads_count, wait))
       {

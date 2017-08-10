@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/hash-target-tests.dir/hash-target.o"
+  "CMakeFiles/hash-target-tests.dir/hash-target.cpp.o"
   "hash-target-tests.pdb"
   "hash-target-tests"
 )

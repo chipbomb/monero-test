@@ -43,989 +43,1026 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/tests/unit_tests
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/tests/unit_tests
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include CMakeFiles/unit_tests.dir/depend.make
+include tests/unit_tests/CMakeFiles/unit_tests.dir/depend.make
 
 # Include the progress variables for this target.
-include CMakeFiles/unit_tests.dir/progress.make
+include tests/unit_tests/CMakeFiles/unit_tests.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include CMakeFiles/unit_tests.dir/flags.make
+include tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
 
-CMakeFiles/unit_tests.dir/address_from_url.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/address_from_url.o: address_from_url.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/unit_tests.dir/address_from_url.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/address_from_url.o -c /home/chip/Downloads/monero/tests/unit_tests/address_from_url.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/address_from_url.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/address_from_url.cpp.o: tests/unit_tests/address_from_url.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/address_from_url.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/address_from_url.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/address_from_url.cpp
 
-CMakeFiles/unit_tests.dir/address_from_url.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/address_from_url.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/address_from_url.cpp > CMakeFiles/unit_tests.dir/address_from_url.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/address_from_url.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/address_from_url.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/address_from_url.cpp > CMakeFiles/unit_tests.dir/address_from_url.cpp.i
 
-CMakeFiles/unit_tests.dir/address_from_url.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/address_from_url.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/address_from_url.cpp -o CMakeFiles/unit_tests.dir/address_from_url.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/address_from_url.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/address_from_url.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/address_from_url.cpp -o CMakeFiles/unit_tests.dir/address_from_url.cpp.s
 
-CMakeFiles/unit_tests.dir/address_from_url.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/address_from_url.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/address_from_url.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/address_from_url.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/address_from_url.o.provides: CMakeFiles/unit_tests.dir/address_from_url.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/address_from_url.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/address_from_url.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/address_from_url.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/address_from_url.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/address_from_url.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/address_from_url.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/address_from_url.o.provides.build: CMakeFiles/unit_tests.dir/address_from_url.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/address_from_url.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/address_from_url.cpp.o
 
 
-CMakeFiles/unit_tests.dir/ban.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/ban.o: ban.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/unit_tests.dir/ban.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/ban.o -c /home/chip/Downloads/monero/tests/unit_tests/ban.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/ban.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/ban.cpp.o: tests/unit_tests/ban.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/ban.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/ban.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/ban.cpp
 
-CMakeFiles/unit_tests.dir/ban.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/ban.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/ban.cpp > CMakeFiles/unit_tests.dir/ban.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/ban.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/ban.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/ban.cpp > CMakeFiles/unit_tests.dir/ban.cpp.i
 
-CMakeFiles/unit_tests.dir/ban.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/ban.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/ban.cpp -o CMakeFiles/unit_tests.dir/ban.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/ban.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/ban.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/ban.cpp -o CMakeFiles/unit_tests.dir/ban.cpp.s
 
-CMakeFiles/unit_tests.dir/ban.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/ban.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/ban.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/ban.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/ban.o.provides: CMakeFiles/unit_tests.dir/ban.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/ban.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/ban.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/ban.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/ban.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/ban.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/ban.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/ban.o.provides.build: CMakeFiles/unit_tests.dir/ban.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/ban.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/ban.cpp.o
 
 
-CMakeFiles/unit_tests.dir/base58.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/base58.o: base58.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/unit_tests.dir/base58.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/base58.o -c /home/chip/Downloads/monero/tests/unit_tests/base58.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/base58.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/base58.cpp.o: tests/unit_tests/base58.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/base58.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/base58.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/base58.cpp
 
-CMakeFiles/unit_tests.dir/base58.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/base58.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/base58.cpp > CMakeFiles/unit_tests.dir/base58.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/base58.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/base58.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/base58.cpp > CMakeFiles/unit_tests.dir/base58.cpp.i
 
-CMakeFiles/unit_tests.dir/base58.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/base58.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/base58.cpp -o CMakeFiles/unit_tests.dir/base58.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/base58.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/base58.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/base58.cpp -o CMakeFiles/unit_tests.dir/base58.cpp.s
 
-CMakeFiles/unit_tests.dir/base58.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/base58.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/base58.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/base58.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/base58.o.provides: CMakeFiles/unit_tests.dir/base58.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/base58.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/base58.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/base58.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/base58.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/base58.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/base58.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/base58.o.provides.build: CMakeFiles/unit_tests.dir/base58.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/base58.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/base58.cpp.o
 
 
-CMakeFiles/unit_tests.dir/blockchain_db.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/blockchain_db.o: blockchain_db.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/unit_tests.dir/blockchain_db.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/blockchain_db.o -c /home/chip/Downloads/monero/tests/unit_tests/blockchain_db.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/blockchain_db.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/blockchain_db.cpp.o: tests/unit_tests/blockchain_db.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/blockchain_db.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/blockchain_db.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/blockchain_db.cpp
 
-CMakeFiles/unit_tests.dir/blockchain_db.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/blockchain_db.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/blockchain_db.cpp > CMakeFiles/unit_tests.dir/blockchain_db.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/blockchain_db.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/blockchain_db.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/blockchain_db.cpp > CMakeFiles/unit_tests.dir/blockchain_db.cpp.i
 
-CMakeFiles/unit_tests.dir/blockchain_db.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/blockchain_db.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/blockchain_db.cpp -o CMakeFiles/unit_tests.dir/blockchain_db.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/blockchain_db.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/blockchain_db.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/blockchain_db.cpp -o CMakeFiles/unit_tests.dir/blockchain_db.cpp.s
 
-CMakeFiles/unit_tests.dir/blockchain_db.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/blockchain_db.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/blockchain_db.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/blockchain_db.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/blockchain_db.o.provides: CMakeFiles/unit_tests.dir/blockchain_db.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/blockchain_db.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/blockchain_db.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/blockchain_db.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/blockchain_db.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/blockchain_db.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/blockchain_db.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/blockchain_db.o.provides.build: CMakeFiles/unit_tests.dir/blockchain_db.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/blockchain_db.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/blockchain_db.cpp.o
 
 
-CMakeFiles/unit_tests.dir/block_reward.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/block_reward.o: block_reward.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/unit_tests.dir/block_reward.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/block_reward.o -c /home/chip/Downloads/monero/tests/unit_tests/block_reward.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/block_reward.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/block_reward.cpp.o: tests/unit_tests/block_reward.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/block_reward.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/block_reward.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/block_reward.cpp
 
-CMakeFiles/unit_tests.dir/block_reward.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/block_reward.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/block_reward.cpp > CMakeFiles/unit_tests.dir/block_reward.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/block_reward.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/block_reward.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/block_reward.cpp > CMakeFiles/unit_tests.dir/block_reward.cpp.i
 
-CMakeFiles/unit_tests.dir/block_reward.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/block_reward.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/block_reward.cpp -o CMakeFiles/unit_tests.dir/block_reward.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/block_reward.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/block_reward.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/block_reward.cpp -o CMakeFiles/unit_tests.dir/block_reward.cpp.s
 
-CMakeFiles/unit_tests.dir/block_reward.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/block_reward.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/block_reward.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/block_reward.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/block_reward.o.provides: CMakeFiles/unit_tests.dir/block_reward.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/block_reward.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/block_reward.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/block_reward.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/block_reward.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/block_reward.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/block_reward.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/block_reward.o.provides.build: CMakeFiles/unit_tests.dir/block_reward.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/block_reward.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/block_reward.cpp.o
 
 
-CMakeFiles/unit_tests.dir/canonical_amounts.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/canonical_amounts.o: canonical_amounts.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/unit_tests.dir/canonical_amounts.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/canonical_amounts.o -c /home/chip/Downloads/monero/tests/unit_tests/canonical_amounts.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/canonical_amounts.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/canonical_amounts.cpp.o: tests/unit_tests/canonical_amounts.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/canonical_amounts.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/canonical_amounts.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/canonical_amounts.cpp
 
-CMakeFiles/unit_tests.dir/canonical_amounts.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/canonical_amounts.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/canonical_amounts.cpp > CMakeFiles/unit_tests.dir/canonical_amounts.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/canonical_amounts.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/canonical_amounts.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/canonical_amounts.cpp > CMakeFiles/unit_tests.dir/canonical_amounts.cpp.i
 
-CMakeFiles/unit_tests.dir/canonical_amounts.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/canonical_amounts.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/canonical_amounts.cpp -o CMakeFiles/unit_tests.dir/canonical_amounts.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/canonical_amounts.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/canonical_amounts.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/canonical_amounts.cpp -o CMakeFiles/unit_tests.dir/canonical_amounts.cpp.s
 
-CMakeFiles/unit_tests.dir/canonical_amounts.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/canonical_amounts.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/canonical_amounts.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/canonical_amounts.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/canonical_amounts.o.provides: CMakeFiles/unit_tests.dir/canonical_amounts.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/canonical_amounts.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/canonical_amounts.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/canonical_amounts.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/canonical_amounts.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/canonical_amounts.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/canonical_amounts.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/canonical_amounts.o.provides.build: CMakeFiles/unit_tests.dir/canonical_amounts.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/canonical_amounts.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/canonical_amounts.cpp.o
 
 
-CMakeFiles/unit_tests.dir/chacha8.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/chacha8.o: chacha8.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/unit_tests.dir/chacha8.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/chacha8.o -c /home/chip/Downloads/monero/tests/unit_tests/chacha8.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/chacha8.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/chacha8.cpp.o: tests/unit_tests/chacha8.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/chacha8.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/chacha8.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/chacha8.cpp
 
-CMakeFiles/unit_tests.dir/chacha8.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/chacha8.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/chacha8.cpp > CMakeFiles/unit_tests.dir/chacha8.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/chacha8.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/chacha8.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/chacha8.cpp > CMakeFiles/unit_tests.dir/chacha8.cpp.i
 
-CMakeFiles/unit_tests.dir/chacha8.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/chacha8.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/chacha8.cpp -o CMakeFiles/unit_tests.dir/chacha8.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/chacha8.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/chacha8.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/chacha8.cpp -o CMakeFiles/unit_tests.dir/chacha8.cpp.s
 
-CMakeFiles/unit_tests.dir/chacha8.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/chacha8.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/chacha8.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/chacha8.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/chacha8.o.provides: CMakeFiles/unit_tests.dir/chacha8.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/chacha8.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/chacha8.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/chacha8.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/chacha8.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/chacha8.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/chacha8.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/chacha8.o.provides.build: CMakeFiles/unit_tests.dir/chacha8.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/chacha8.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/chacha8.cpp.o
 
 
-CMakeFiles/unit_tests.dir/checkpoints.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/checkpoints.o: checkpoints.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/unit_tests.dir/checkpoints.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/checkpoints.o -c /home/chip/Downloads/monero/tests/unit_tests/checkpoints.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/checkpoints.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/checkpoints.cpp.o: tests/unit_tests/checkpoints.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/checkpoints.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/checkpoints.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/checkpoints.cpp
 
-CMakeFiles/unit_tests.dir/checkpoints.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/checkpoints.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/checkpoints.cpp > CMakeFiles/unit_tests.dir/checkpoints.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/checkpoints.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/checkpoints.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/checkpoints.cpp > CMakeFiles/unit_tests.dir/checkpoints.cpp.i
 
-CMakeFiles/unit_tests.dir/checkpoints.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/checkpoints.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/checkpoints.cpp -o CMakeFiles/unit_tests.dir/checkpoints.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/checkpoints.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/checkpoints.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/checkpoints.cpp -o CMakeFiles/unit_tests.dir/checkpoints.cpp.s
 
-CMakeFiles/unit_tests.dir/checkpoints.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/checkpoints.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/checkpoints.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/checkpoints.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/checkpoints.o.provides: CMakeFiles/unit_tests.dir/checkpoints.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/checkpoints.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/checkpoints.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/checkpoints.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/checkpoints.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/checkpoints.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/checkpoints.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/checkpoints.o.provides.build: CMakeFiles/unit_tests.dir/checkpoints.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/checkpoints.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/checkpoints.cpp.o
 
 
-CMakeFiles/unit_tests.dir/command_line.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/command_line.o: command_line.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/unit_tests.dir/command_line.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/command_line.o -c /home/chip/Downloads/monero/tests/unit_tests/command_line.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/command_line.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/command_line.cpp.o: tests/unit_tests/command_line.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/command_line.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/command_line.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/command_line.cpp
 
-CMakeFiles/unit_tests.dir/command_line.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/command_line.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/command_line.cpp > CMakeFiles/unit_tests.dir/command_line.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/command_line.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/command_line.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/command_line.cpp > CMakeFiles/unit_tests.dir/command_line.cpp.i
 
-CMakeFiles/unit_tests.dir/command_line.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/command_line.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/command_line.cpp -o CMakeFiles/unit_tests.dir/command_line.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/command_line.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/command_line.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/command_line.cpp -o CMakeFiles/unit_tests.dir/command_line.cpp.s
 
-CMakeFiles/unit_tests.dir/command_line.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/command_line.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/command_line.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/command_line.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/command_line.o.provides: CMakeFiles/unit_tests.dir/command_line.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/command_line.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/command_line.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/command_line.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/command_line.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/command_line.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/command_line.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/command_line.o.provides.build: CMakeFiles/unit_tests.dir/command_line.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/command_line.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/command_line.cpp.o
 
 
-CMakeFiles/unit_tests.dir/crypto.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/crypto.o: crypto.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/unit_tests.dir/crypto.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/crypto.o -c /home/chip/Downloads/monero/tests/unit_tests/crypto.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/crypto.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/crypto.cpp.o: tests/unit_tests/crypto.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/crypto.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/crypto.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/crypto.cpp
 
-CMakeFiles/unit_tests.dir/crypto.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/crypto.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/crypto.cpp > CMakeFiles/unit_tests.dir/crypto.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/crypto.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/crypto.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/crypto.cpp > CMakeFiles/unit_tests.dir/crypto.cpp.i
 
-CMakeFiles/unit_tests.dir/crypto.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/crypto.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/crypto.cpp -o CMakeFiles/unit_tests.dir/crypto.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/crypto.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/crypto.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/crypto.cpp -o CMakeFiles/unit_tests.dir/crypto.cpp.s
 
-CMakeFiles/unit_tests.dir/crypto.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/crypto.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/crypto.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/crypto.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/crypto.o.provides: CMakeFiles/unit_tests.dir/crypto.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/crypto.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/crypto.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/crypto.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/crypto.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/crypto.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/crypto.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/crypto.o.provides.build: CMakeFiles/unit_tests.dir/crypto.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/crypto.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/crypto.cpp.o
 
 
-CMakeFiles/unit_tests.dir/decompose_amount_into_digits.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/decompose_amount_into_digits.o: decompose_amount_into_digits.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/unit_tests.dir/decompose_amount_into_digits.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/decompose_amount_into_digits.o -c /home/chip/Downloads/monero/tests/unit_tests/decompose_amount_into_digits.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.o: tests/unit_tests/decompose_amount_into_digits.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/decompose_amount_into_digits.cpp
 
-CMakeFiles/unit_tests.dir/decompose_amount_into_digits.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/decompose_amount_into_digits.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/decompose_amount_into_digits.cpp > CMakeFiles/unit_tests.dir/decompose_amount_into_digits.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/decompose_amount_into_digits.cpp > CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.i
 
-CMakeFiles/unit_tests.dir/decompose_amount_into_digits.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/decompose_amount_into_digits.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/decompose_amount_into_digits.cpp -o CMakeFiles/unit_tests.dir/decompose_amount_into_digits.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/decompose_amount_into_digits.cpp -o CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.s
 
-CMakeFiles/unit_tests.dir/decompose_amount_into_digits.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/decompose_amount_into_digits.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/decompose_amount_into_digits.o.provides: CMakeFiles/unit_tests.dir/decompose_amount_into_digits.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/decompose_amount_into_digits.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/decompose_amount_into_digits.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/decompose_amount_into_digits.o.provides.build: CMakeFiles/unit_tests.dir/decompose_amount_into_digits.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.o
 
 
-CMakeFiles/unit_tests.dir/dns_resolver.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/dns_resolver.o: dns_resolver.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/unit_tests.dir/dns_resolver.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/dns_resolver.o -c /home/chip/Downloads/monero/tests/unit_tests/dns_resolver.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/dns_resolver.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/dns_resolver.cpp.o: tests/unit_tests/dns_resolver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/dns_resolver.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/dns_resolver.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/dns_resolver.cpp
 
-CMakeFiles/unit_tests.dir/dns_resolver.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/dns_resolver.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/dns_resolver.cpp > CMakeFiles/unit_tests.dir/dns_resolver.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/dns_resolver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/dns_resolver.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/dns_resolver.cpp > CMakeFiles/unit_tests.dir/dns_resolver.cpp.i
 
-CMakeFiles/unit_tests.dir/dns_resolver.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/dns_resolver.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/dns_resolver.cpp -o CMakeFiles/unit_tests.dir/dns_resolver.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/dns_resolver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/dns_resolver.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/dns_resolver.cpp -o CMakeFiles/unit_tests.dir/dns_resolver.cpp.s
 
-CMakeFiles/unit_tests.dir/dns_resolver.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/dns_resolver.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/dns_resolver.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/dns_resolver.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/dns_resolver.o.provides: CMakeFiles/unit_tests.dir/dns_resolver.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/dns_resolver.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/dns_resolver.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/dns_resolver.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/dns_resolver.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/dns_resolver.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/dns_resolver.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/dns_resolver.o.provides.build: CMakeFiles/unit_tests.dir/dns_resolver.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/dns_resolver.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/dns_resolver.cpp.o
 
 
-CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.o: epee_boosted_tcp_server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.o -c /home/chip/Downloads/monero/tests/unit_tests/epee_boosted_tcp_server.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.o: tests/unit_tests/epee_boosted_tcp_server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/epee_boosted_tcp_server.cpp
 
-CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/epee_boosted_tcp_server.cpp > CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/epee_boosted_tcp_server.cpp > CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.i
 
-CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/epee_boosted_tcp_server.cpp -o CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/epee_boosted_tcp_server.cpp -o CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.s
 
-CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.o.provides: CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.o.provides.build: CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.o
 
 
-CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.o: epee_levin_protocol_handler_async.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.o -c /home/chip/Downloads/monero/tests/unit_tests/epee_levin_protocol_handler_async.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.o: tests/unit_tests/epee_levin_protocol_handler_async.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/epee_levin_protocol_handler_async.cpp
 
-CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/epee_levin_protocol_handler_async.cpp > CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/epee_levin_protocol_handler_async.cpp > CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.i
 
-CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/epee_levin_protocol_handler_async.cpp -o CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/epee_levin_protocol_handler_async.cpp -o CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.s
 
-CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.o.provides: CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.o.provides.build: CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.o
 
 
-CMakeFiles/unit_tests.dir/epee_utils.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/epee_utils.o: epee_utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/unit_tests.dir/epee_utils.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/epee_utils.o -c /home/chip/Downloads/monero/tests/unit_tests/epee_utils.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_utils.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_utils.cpp.o: tests/unit_tests/epee_utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/epee_utils.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/epee_utils.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/epee_utils.cpp
 
-CMakeFiles/unit_tests.dir/epee_utils.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/epee_utils.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/epee_utils.cpp > CMakeFiles/unit_tests.dir/epee_utils.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/epee_utils.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/epee_utils.cpp > CMakeFiles/unit_tests.dir/epee_utils.cpp.i
 
-CMakeFiles/unit_tests.dir/epee_utils.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/epee_utils.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/epee_utils.cpp -o CMakeFiles/unit_tests.dir/epee_utils.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/epee_utils.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/epee_utils.cpp -o CMakeFiles/unit_tests.dir/epee_utils.cpp.s
 
-CMakeFiles/unit_tests.dir/epee_utils.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_utils.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/epee_utils.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/epee_utils.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/epee_utils.o.provides: CMakeFiles/unit_tests.dir/epee_utils.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/epee_utils.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/epee_utils.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_utils.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/epee_utils.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/epee_utils.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/epee_utils.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/epee_utils.o.provides.build: CMakeFiles/unit_tests.dir/epee_utils.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/epee_utils.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/epee_utils.cpp.o
 
 
-CMakeFiles/unit_tests.dir/fee.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/fee.o: fee.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/unit_tests.dir/fee.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/fee.o -c /home/chip/Downloads/monero/tests/unit_tests/fee.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/fee.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/fee.cpp.o: tests/unit_tests/fee.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/fee.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/fee.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/fee.cpp
 
-CMakeFiles/unit_tests.dir/fee.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/fee.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/fee.cpp > CMakeFiles/unit_tests.dir/fee.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/fee.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/fee.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/fee.cpp > CMakeFiles/unit_tests.dir/fee.cpp.i
 
-CMakeFiles/unit_tests.dir/fee.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/fee.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/fee.cpp -o CMakeFiles/unit_tests.dir/fee.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/fee.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/fee.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/fee.cpp -o CMakeFiles/unit_tests.dir/fee.cpp.s
 
-CMakeFiles/unit_tests.dir/fee.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/fee.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/fee.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/fee.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/fee.o.provides: CMakeFiles/unit_tests.dir/fee.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/fee.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/fee.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/fee.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/fee.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/fee.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/fee.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/fee.o.provides.build: CMakeFiles/unit_tests.dir/fee.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/fee.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/fee.cpp.o
 
 
-CMakeFiles/unit_tests.dir/get_xtype_from_string.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/get_xtype_from_string.o: get_xtype_from_string.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/unit_tests.dir/get_xtype_from_string.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/get_xtype_from_string.o -c /home/chip/Downloads/monero/tests/unit_tests/get_xtype_from_string.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.o: tests/unit_tests/get_xtype_from_string.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/get_xtype_from_string.cpp
 
-CMakeFiles/unit_tests.dir/get_xtype_from_string.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/get_xtype_from_string.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/get_xtype_from_string.cpp > CMakeFiles/unit_tests.dir/get_xtype_from_string.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/get_xtype_from_string.cpp > CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.i
 
-CMakeFiles/unit_tests.dir/get_xtype_from_string.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/get_xtype_from_string.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/get_xtype_from_string.cpp -o CMakeFiles/unit_tests.dir/get_xtype_from_string.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/get_xtype_from_string.cpp -o CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.s
 
-CMakeFiles/unit_tests.dir/get_xtype_from_string.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/get_xtype_from_string.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/get_xtype_from_string.o.provides: CMakeFiles/unit_tests.dir/get_xtype_from_string.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/get_xtype_from_string.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/get_xtype_from_string.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/get_xtype_from_string.o.provides.build: CMakeFiles/unit_tests.dir/get_xtype_from_string.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.o
 
 
-CMakeFiles/unit_tests.dir/http.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/http.o: http.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/unit_tests.dir/http.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/http.o -c /home/chip/Downloads/monero/tests/unit_tests/http.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/http.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/http.cpp.o: tests/unit_tests/http.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/http.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/http.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/http.cpp
 
-CMakeFiles/unit_tests.dir/http.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/http.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/http.cpp > CMakeFiles/unit_tests.dir/http.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/http.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/http.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/http.cpp > CMakeFiles/unit_tests.dir/http.cpp.i
 
-CMakeFiles/unit_tests.dir/http.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/http.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/http.cpp -o CMakeFiles/unit_tests.dir/http.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/http.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/http.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/http.cpp -o CMakeFiles/unit_tests.dir/http.cpp.s
 
-CMakeFiles/unit_tests.dir/http.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/http.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/http.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/http.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/http.o.provides: CMakeFiles/unit_tests.dir/http.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/http.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/http.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/http.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/http.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/http.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/http.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/http.o.provides.build: CMakeFiles/unit_tests.dir/http.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/http.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/http.cpp.o
 
 
-CMakeFiles/unit_tests.dir/main.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/main.o: main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/unit_tests.dir/main.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/main.o -c /home/chip/Downloads/monero/tests/unit_tests/main.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/main.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/main.cpp.o: tests/unit_tests/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/main.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/main.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/main.cpp
 
-CMakeFiles/unit_tests.dir/main.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/main.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/main.cpp > CMakeFiles/unit_tests.dir/main.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/main.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/main.cpp > CMakeFiles/unit_tests.dir/main.cpp.i
 
-CMakeFiles/unit_tests.dir/main.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/main.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/main.cpp -o CMakeFiles/unit_tests.dir/main.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/main.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/main.cpp -o CMakeFiles/unit_tests.dir/main.cpp.s
 
-CMakeFiles/unit_tests.dir/main.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/main.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/main.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/main.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/main.o.provides: CMakeFiles/unit_tests.dir/main.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/main.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/main.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/main.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/main.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/main.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/main.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/main.o.provides.build: CMakeFiles/unit_tests.dir/main.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/main.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/main.cpp.o
 
 
-CMakeFiles/unit_tests.dir/mnemonics.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/mnemonics.o: mnemonics.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/unit_tests.dir/mnemonics.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/mnemonics.o -c /home/chip/Downloads/monero/tests/unit_tests/mnemonics.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/mnemonics.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/mnemonics.cpp.o: tests/unit_tests/mnemonics.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/mnemonics.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/mnemonics.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/mnemonics.cpp
 
-CMakeFiles/unit_tests.dir/mnemonics.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/mnemonics.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/mnemonics.cpp > CMakeFiles/unit_tests.dir/mnemonics.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/mnemonics.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/mnemonics.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/mnemonics.cpp > CMakeFiles/unit_tests.dir/mnemonics.cpp.i
 
-CMakeFiles/unit_tests.dir/mnemonics.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/mnemonics.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/mnemonics.cpp -o CMakeFiles/unit_tests.dir/mnemonics.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/mnemonics.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/mnemonics.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/mnemonics.cpp -o CMakeFiles/unit_tests.dir/mnemonics.cpp.s
 
-CMakeFiles/unit_tests.dir/mnemonics.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/mnemonics.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/mnemonics.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/mnemonics.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/mnemonics.o.provides: CMakeFiles/unit_tests.dir/mnemonics.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/mnemonics.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/mnemonics.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/mnemonics.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/mnemonics.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/mnemonics.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/mnemonics.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/mnemonics.o.provides.build: CMakeFiles/unit_tests.dir/mnemonics.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/mnemonics.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/mnemonics.cpp.o
 
 
-CMakeFiles/unit_tests.dir/mul_div.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/mul_div.o: mul_div.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/unit_tests.dir/mul_div.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/mul_div.o -c /home/chip/Downloads/monero/tests/unit_tests/mul_div.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/mul_div.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/mul_div.cpp.o: tests/unit_tests/mul_div.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/mul_div.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/mul_div.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/mul_div.cpp
 
-CMakeFiles/unit_tests.dir/mul_div.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/mul_div.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/mul_div.cpp > CMakeFiles/unit_tests.dir/mul_div.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/mul_div.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/mul_div.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/mul_div.cpp > CMakeFiles/unit_tests.dir/mul_div.cpp.i
 
-CMakeFiles/unit_tests.dir/mul_div.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/mul_div.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/mul_div.cpp -o CMakeFiles/unit_tests.dir/mul_div.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/mul_div.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/mul_div.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/mul_div.cpp -o CMakeFiles/unit_tests.dir/mul_div.cpp.s
 
-CMakeFiles/unit_tests.dir/mul_div.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/mul_div.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/mul_div.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/mul_div.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/mul_div.o.provides: CMakeFiles/unit_tests.dir/mul_div.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/mul_div.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/mul_div.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/mul_div.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/mul_div.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/mul_div.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/mul_div.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/mul_div.o.provides.build: CMakeFiles/unit_tests.dir/mul_div.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/mul_div.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/mul_div.cpp.o
 
 
-CMakeFiles/unit_tests.dir/parse_amount.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/parse_amount.o: parse_amount.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/unit_tests.dir/parse_amount.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/parse_amount.o -c /home/chip/Downloads/monero/tests/unit_tests/parse_amount.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/parse_amount.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/parse_amount.cpp.o: tests/unit_tests/parse_amount.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/parse_amount.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/parse_amount.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/parse_amount.cpp
 
-CMakeFiles/unit_tests.dir/parse_amount.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/parse_amount.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/parse_amount.cpp > CMakeFiles/unit_tests.dir/parse_amount.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/parse_amount.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/parse_amount.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/parse_amount.cpp > CMakeFiles/unit_tests.dir/parse_amount.cpp.i
 
-CMakeFiles/unit_tests.dir/parse_amount.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/parse_amount.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/parse_amount.cpp -o CMakeFiles/unit_tests.dir/parse_amount.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/parse_amount.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/parse_amount.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/parse_amount.cpp -o CMakeFiles/unit_tests.dir/parse_amount.cpp.s
 
-CMakeFiles/unit_tests.dir/parse_amount.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/parse_amount.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/parse_amount.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/parse_amount.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/parse_amount.o.provides: CMakeFiles/unit_tests.dir/parse_amount.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/parse_amount.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/parse_amount.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/parse_amount.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/parse_amount.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/parse_amount.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/parse_amount.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/parse_amount.o.provides.build: CMakeFiles/unit_tests.dir/parse_amount.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/parse_amount.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/parse_amount.cpp.o
 
 
-CMakeFiles/unit_tests.dir/serialization.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/serialization.o: serialization.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/unit_tests.dir/serialization.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/serialization.o -c /home/chip/Downloads/monero/tests/unit_tests/serialization.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/serialization.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/serialization.cpp.o: tests/unit_tests/serialization.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/serialization.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/serialization.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/serialization.cpp
 
-CMakeFiles/unit_tests.dir/serialization.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/serialization.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/serialization.cpp > CMakeFiles/unit_tests.dir/serialization.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/serialization.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/serialization.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/serialization.cpp > CMakeFiles/unit_tests.dir/serialization.cpp.i
 
-CMakeFiles/unit_tests.dir/serialization.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/serialization.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/serialization.cpp -o CMakeFiles/unit_tests.dir/serialization.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/serialization.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/serialization.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/serialization.cpp -o CMakeFiles/unit_tests.dir/serialization.cpp.s
 
-CMakeFiles/unit_tests.dir/serialization.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/serialization.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/serialization.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/serialization.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/serialization.o.provides: CMakeFiles/unit_tests.dir/serialization.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/serialization.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/serialization.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/serialization.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/serialization.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/serialization.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/serialization.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/serialization.o.provides.build: CMakeFiles/unit_tests.dir/serialization.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/serialization.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/serialization.cpp.o
 
 
-CMakeFiles/unit_tests.dir/slow_memmem.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/slow_memmem.o: slow_memmem.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/unit_tests.dir/slow_memmem.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/slow_memmem.o -c /home/chip/Downloads/monero/tests/unit_tests/slow_memmem.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/slow_memmem.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/slow_memmem.cpp.o: tests/unit_tests/slow_memmem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/slow_memmem.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/slow_memmem.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/slow_memmem.cpp
 
-CMakeFiles/unit_tests.dir/slow_memmem.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/slow_memmem.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/slow_memmem.cpp > CMakeFiles/unit_tests.dir/slow_memmem.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/slow_memmem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/slow_memmem.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/slow_memmem.cpp > CMakeFiles/unit_tests.dir/slow_memmem.cpp.i
 
-CMakeFiles/unit_tests.dir/slow_memmem.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/slow_memmem.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/slow_memmem.cpp -o CMakeFiles/unit_tests.dir/slow_memmem.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/slow_memmem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/slow_memmem.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/slow_memmem.cpp -o CMakeFiles/unit_tests.dir/slow_memmem.cpp.s
 
-CMakeFiles/unit_tests.dir/slow_memmem.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/slow_memmem.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/slow_memmem.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/slow_memmem.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/slow_memmem.o.provides: CMakeFiles/unit_tests.dir/slow_memmem.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/slow_memmem.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/slow_memmem.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/slow_memmem.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/slow_memmem.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/slow_memmem.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/slow_memmem.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/slow_memmem.o.provides.build: CMakeFiles/unit_tests.dir/slow_memmem.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/slow_memmem.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/slow_memmem.cpp.o
 
 
-CMakeFiles/unit_tests.dir/test_tx_utils.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/test_tx_utils.o: test_tx_utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/unit_tests.dir/test_tx_utils.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/test_tx_utils.o -c /home/chip/Downloads/monero/tests/unit_tests/test_tx_utils.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_tx_utils.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_tx_utils.cpp.o: tests/unit_tests/test_tx_utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/test_tx_utils.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/test_tx_utils.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/test_tx_utils.cpp
 
-CMakeFiles/unit_tests.dir/test_tx_utils.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/test_tx_utils.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/test_tx_utils.cpp > CMakeFiles/unit_tests.dir/test_tx_utils.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_tx_utils.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/test_tx_utils.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/test_tx_utils.cpp > CMakeFiles/unit_tests.dir/test_tx_utils.cpp.i
 
-CMakeFiles/unit_tests.dir/test_tx_utils.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/test_tx_utils.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/test_tx_utils.cpp -o CMakeFiles/unit_tests.dir/test_tx_utils.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_tx_utils.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/test_tx_utils.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/test_tx_utils.cpp -o CMakeFiles/unit_tests.dir/test_tx_utils.cpp.s
 
-CMakeFiles/unit_tests.dir/test_tx_utils.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_tx_utils.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/test_tx_utils.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/test_tx_utils.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/test_tx_utils.o.provides: CMakeFiles/unit_tests.dir/test_tx_utils.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test_tx_utils.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/test_tx_utils.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_tx_utils.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/test_tx_utils.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/test_tx_utils.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/test_tx_utils.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/test_tx_utils.o.provides.build: CMakeFiles/unit_tests.dir/test_tx_utils.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_tx_utils.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/test_tx_utils.cpp.o
 
 
-CMakeFiles/unit_tests.dir/test_peerlist.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/test_peerlist.o: test_peerlist.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/unit_tests.dir/test_peerlist.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/test_peerlist.o -c /home/chip/Downloads/monero/tests/unit_tests/test_peerlist.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_peerlist.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_peerlist.cpp.o: tests/unit_tests/test_peerlist.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/test_peerlist.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/test_peerlist.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/test_peerlist.cpp
 
-CMakeFiles/unit_tests.dir/test_peerlist.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/test_peerlist.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/test_peerlist.cpp > CMakeFiles/unit_tests.dir/test_peerlist.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_peerlist.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/test_peerlist.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/test_peerlist.cpp > CMakeFiles/unit_tests.dir/test_peerlist.cpp.i
 
-CMakeFiles/unit_tests.dir/test_peerlist.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/test_peerlist.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/test_peerlist.cpp -o CMakeFiles/unit_tests.dir/test_peerlist.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_peerlist.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/test_peerlist.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/test_peerlist.cpp -o CMakeFiles/unit_tests.dir/test_peerlist.cpp.s
 
-CMakeFiles/unit_tests.dir/test_peerlist.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_peerlist.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/test_peerlist.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/test_peerlist.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/test_peerlist.o.provides: CMakeFiles/unit_tests.dir/test_peerlist.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test_peerlist.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/test_peerlist.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_peerlist.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/test_peerlist.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/test_peerlist.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/test_peerlist.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/test_peerlist.o.provides.build: CMakeFiles/unit_tests.dir/test_peerlist.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_peerlist.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/test_peerlist.cpp.o
 
 
-CMakeFiles/unit_tests.dir/test_protocol_pack.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/test_protocol_pack.o: test_protocol_pack.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/unit_tests.dir/test_protocol_pack.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/test_protocol_pack.o -c /home/chip/Downloads/monero/tests/unit_tests/test_protocol_pack.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.o: tests/unit_tests/test_protocol_pack.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/test_protocol_pack.cpp
 
-CMakeFiles/unit_tests.dir/test_protocol_pack.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/test_protocol_pack.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/test_protocol_pack.cpp > CMakeFiles/unit_tests.dir/test_protocol_pack.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/test_protocol_pack.cpp > CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.i
 
-CMakeFiles/unit_tests.dir/test_protocol_pack.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/test_protocol_pack.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/test_protocol_pack.cpp -o CMakeFiles/unit_tests.dir/test_protocol_pack.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/test_protocol_pack.cpp -o CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.s
 
-CMakeFiles/unit_tests.dir/test_protocol_pack.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/test_protocol_pack.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/test_protocol_pack.o.provides: CMakeFiles/unit_tests.dir/test_protocol_pack.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/test_protocol_pack.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/test_protocol_pack.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/test_protocol_pack.o.provides.build: CMakeFiles/unit_tests.dir/test_protocol_pack.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.o
 
 
-CMakeFiles/unit_tests.dir/thread_group.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/thread_group.o: thread_group.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/unit_tests.dir/thread_group.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/thread_group.o -c /home/chip/Downloads/monero/tests/unit_tests/thread_group.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/thread_group.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/thread_group.cpp.o: tests/unit_tests/thread_group.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/thread_group.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/thread_group.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/thread_group.cpp
 
-CMakeFiles/unit_tests.dir/thread_group.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/thread_group.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/thread_group.cpp > CMakeFiles/unit_tests.dir/thread_group.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/thread_group.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/thread_group.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/thread_group.cpp > CMakeFiles/unit_tests.dir/thread_group.cpp.i
 
-CMakeFiles/unit_tests.dir/thread_group.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/thread_group.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/thread_group.cpp -o CMakeFiles/unit_tests.dir/thread_group.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/thread_group.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/thread_group.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/thread_group.cpp -o CMakeFiles/unit_tests.dir/thread_group.cpp.s
 
-CMakeFiles/unit_tests.dir/thread_group.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/thread_group.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/thread_group.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/thread_group.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/thread_group.o.provides: CMakeFiles/unit_tests.dir/thread_group.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/thread_group.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/thread_group.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/thread_group.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/thread_group.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/thread_group.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/thread_group.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/thread_group.o.provides.build: CMakeFiles/unit_tests.dir/thread_group.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/thread_group.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/thread_group.cpp.o
 
 
-CMakeFiles/unit_tests.dir/hardfork.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/hardfork.o: hardfork.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/unit_tests.dir/hardfork.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/hardfork.o -c /home/chip/Downloads/monero/tests/unit_tests/hardfork.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/hardfork.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/hardfork.cpp.o: tests/unit_tests/hardfork.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/hardfork.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/hardfork.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/hardfork.cpp
 
-CMakeFiles/unit_tests.dir/hardfork.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/hardfork.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/hardfork.cpp > CMakeFiles/unit_tests.dir/hardfork.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/hardfork.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/hardfork.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/hardfork.cpp > CMakeFiles/unit_tests.dir/hardfork.cpp.i
 
-CMakeFiles/unit_tests.dir/hardfork.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/hardfork.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/hardfork.cpp -o CMakeFiles/unit_tests.dir/hardfork.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/hardfork.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/hardfork.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/hardfork.cpp -o CMakeFiles/unit_tests.dir/hardfork.cpp.s
 
-CMakeFiles/unit_tests.dir/hardfork.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/hardfork.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/hardfork.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/hardfork.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/hardfork.o.provides: CMakeFiles/unit_tests.dir/hardfork.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/hardfork.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/hardfork.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/hardfork.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/hardfork.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/hardfork.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/hardfork.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/hardfork.o.provides.build: CMakeFiles/unit_tests.dir/hardfork.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/hardfork.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/hardfork.cpp.o
 
 
-CMakeFiles/unit_tests.dir/unbound.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/unbound.o: unbound.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/unit_tests.dir/unbound.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/unbound.o -c /home/chip/Downloads/monero/tests/unit_tests/unbound.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/unbound.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/unbound.cpp.o: tests/unit_tests/unbound.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/unbound.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/unbound.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/unbound.cpp
 
-CMakeFiles/unit_tests.dir/unbound.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/unbound.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/unbound.cpp > CMakeFiles/unit_tests.dir/unbound.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/unbound.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/unbound.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/unbound.cpp > CMakeFiles/unit_tests.dir/unbound.cpp.i
 
-CMakeFiles/unit_tests.dir/unbound.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unbound.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/unbound.cpp -o CMakeFiles/unit_tests.dir/unbound.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/unbound.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/unbound.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/unbound.cpp -o CMakeFiles/unit_tests.dir/unbound.cpp.s
 
-CMakeFiles/unit_tests.dir/unbound.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/unbound.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/unbound.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/unbound.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/unbound.o.provides: CMakeFiles/unit_tests.dir/unbound.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/unbound.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/unbound.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/unbound.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/unbound.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/unbound.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/unbound.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/unbound.o.provides.build: CMakeFiles/unit_tests.dir/unbound.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/unbound.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/unbound.cpp.o
 
 
-CMakeFiles/unit_tests.dir/uri.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/uri.o: uri.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/unit_tests.dir/uri.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/uri.o -c /home/chip/Downloads/monero/tests/unit_tests/uri.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/uri.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/uri.cpp.o: tests/unit_tests/uri.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/uri.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/uri.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/uri.cpp
 
-CMakeFiles/unit_tests.dir/uri.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/uri.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/uri.cpp > CMakeFiles/unit_tests.dir/uri.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/uri.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/uri.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/uri.cpp > CMakeFiles/unit_tests.dir/uri.cpp.i
 
-CMakeFiles/unit_tests.dir/uri.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/uri.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/uri.cpp -o CMakeFiles/unit_tests.dir/uri.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/uri.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/uri.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/uri.cpp -o CMakeFiles/unit_tests.dir/uri.cpp.s
 
-CMakeFiles/unit_tests.dir/uri.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/uri.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/uri.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/uri.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/uri.o.provides: CMakeFiles/unit_tests.dir/uri.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/uri.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/uri.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/uri.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/uri.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/uri.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/uri.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/uri.o.provides.build: CMakeFiles/unit_tests.dir/uri.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/uri.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/uri.cpp.o
 
 
-CMakeFiles/unit_tests.dir/varint.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/varint.o: varint.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/unit_tests.dir/varint.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/varint.o -c /home/chip/Downloads/monero/tests/unit_tests/varint.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/varint.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/varint.cpp.o: tests/unit_tests/varint.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/varint.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/varint.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/varint.cpp
 
-CMakeFiles/unit_tests.dir/varint.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/varint.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/varint.cpp > CMakeFiles/unit_tests.dir/varint.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/varint.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/varint.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/varint.cpp > CMakeFiles/unit_tests.dir/varint.cpp.i
 
-CMakeFiles/unit_tests.dir/varint.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/varint.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/varint.cpp -o CMakeFiles/unit_tests.dir/varint.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/varint.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/varint.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/varint.cpp -o CMakeFiles/unit_tests.dir/varint.cpp.s
 
-CMakeFiles/unit_tests.dir/varint.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/varint.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/varint.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/varint.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/varint.o.provides: CMakeFiles/unit_tests.dir/varint.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/varint.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/varint.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/varint.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/varint.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/varint.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/varint.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/varint.o.provides.build: CMakeFiles/unit_tests.dir/varint.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/varint.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/varint.cpp.o
 
 
-CMakeFiles/unit_tests.dir/ringct.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/ringct.o: ringct.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/unit_tests.dir/ringct.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/ringct.o -c /home/chip/Downloads/monero/tests/unit_tests/ringct.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/ringct.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/ringct.cpp.o: tests/unit_tests/ringct.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/ringct.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/ringct.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/ringct.cpp
 
-CMakeFiles/unit_tests.dir/ringct.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/ringct.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/ringct.cpp > CMakeFiles/unit_tests.dir/ringct.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/ringct.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/ringct.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/ringct.cpp > CMakeFiles/unit_tests.dir/ringct.cpp.i
 
-CMakeFiles/unit_tests.dir/ringct.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/ringct.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/ringct.cpp -o CMakeFiles/unit_tests.dir/ringct.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/ringct.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/ringct.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/ringct.cpp -o CMakeFiles/unit_tests.dir/ringct.cpp.s
 
-CMakeFiles/unit_tests.dir/ringct.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/ringct.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/ringct.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/ringct.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/ringct.o.provides: CMakeFiles/unit_tests.dir/ringct.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/ringct.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/ringct.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/ringct.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/ringct.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/ringct.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/ringct.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/ringct.o.provides.build: CMakeFiles/unit_tests.dir/ringct.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/ringct.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/ringct.cpp.o
 
 
-CMakeFiles/unit_tests.dir/output_selection.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/output_selection.o: output_selection.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/unit_tests.dir/output_selection.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/output_selection.o -c /home/chip/Downloads/monero/tests/unit_tests/output_selection.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/output_selection.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/output_selection.cpp.o: tests/unit_tests/output_selection.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/output_selection.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/output_selection.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/output_selection.cpp
 
-CMakeFiles/unit_tests.dir/output_selection.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/output_selection.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/output_selection.cpp > CMakeFiles/unit_tests.dir/output_selection.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/output_selection.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/output_selection.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/output_selection.cpp > CMakeFiles/unit_tests.dir/output_selection.cpp.i
 
-CMakeFiles/unit_tests.dir/output_selection.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/output_selection.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/output_selection.cpp -o CMakeFiles/unit_tests.dir/output_selection.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/output_selection.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/output_selection.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/output_selection.cpp -o CMakeFiles/unit_tests.dir/output_selection.cpp.s
 
-CMakeFiles/unit_tests.dir/output_selection.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/output_selection.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/output_selection.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/output_selection.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/output_selection.o.provides: CMakeFiles/unit_tests.dir/output_selection.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/output_selection.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/output_selection.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/output_selection.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/output_selection.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/output_selection.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/output_selection.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/output_selection.o.provides.build: CMakeFiles/unit_tests.dir/output_selection.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/output_selection.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/output_selection.cpp.o
 
 
-CMakeFiles/unit_tests.dir/vercmp.o: CMakeFiles/unit_tests.dir/flags.make
-CMakeFiles/unit_tests.dir/vercmp.o: vercmp.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/unit_tests.dir/vercmp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/vercmp.o -c /home/chip/Downloads/monero/tests/unit_tests/vercmp.cpp
+tests/unit_tests/CMakeFiles/unit_tests.dir/vercmp.cpp.o: tests/unit_tests/CMakeFiles/unit_tests.dir/flags.make
+tests/unit_tests/CMakeFiles/unit_tests.dir/vercmp.cpp.o: tests/unit_tests/vercmp.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object tests/unit_tests/CMakeFiles/unit_tests.dir/vercmp.cpp.o"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/unit_tests.dir/vercmp.cpp.o -c /home/chip/Downloads/monero/tests/unit_tests/vercmp.cpp
 
-CMakeFiles/unit_tests.dir/vercmp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/vercmp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/vercmp.cpp > CMakeFiles/unit_tests.dir/vercmp.i
+tests/unit_tests/CMakeFiles/unit_tests.dir/vercmp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/unit_tests.dir/vercmp.cpp.i"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/unit_tests/vercmp.cpp > CMakeFiles/unit_tests.dir/vercmp.cpp.i
 
-CMakeFiles/unit_tests.dir/vercmp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/vercmp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/vercmp.cpp -o CMakeFiles/unit_tests.dir/vercmp.s
+tests/unit_tests/CMakeFiles/unit_tests.dir/vercmp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/unit_tests.dir/vercmp.cpp.s"
+	cd /home/chip/Downloads/monero/tests/unit_tests && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/unit_tests/vercmp.cpp -o CMakeFiles/unit_tests.dir/vercmp.cpp.s
 
-CMakeFiles/unit_tests.dir/vercmp.o.requires:
+tests/unit_tests/CMakeFiles/unit_tests.dir/vercmp.cpp.o.requires:
 
-.PHONY : CMakeFiles/unit_tests.dir/vercmp.o.requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/vercmp.cpp.o.requires
 
-CMakeFiles/unit_tests.dir/vercmp.o.provides: CMakeFiles/unit_tests.dir/vercmp.o.requires
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/vercmp.o.provides.build
-.PHONY : CMakeFiles/unit_tests.dir/vercmp.o.provides
+tests/unit_tests/CMakeFiles/unit_tests.dir/vercmp.cpp.o.provides: tests/unit_tests/CMakeFiles/unit_tests.dir/vercmp.cpp.o.requires
+	$(MAKE) -f tests/unit_tests/CMakeFiles/unit_tests.dir/build.make tests/unit_tests/CMakeFiles/unit_tests.dir/vercmp.cpp.o.provides.build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/vercmp.cpp.o.provides
 
-CMakeFiles/unit_tests.dir/vercmp.o.provides.build: CMakeFiles/unit_tests.dir/vercmp.o
+tests/unit_tests/CMakeFiles/unit_tests.dir/vercmp.cpp.o.provides.build: tests/unit_tests/CMakeFiles/unit_tests.dir/vercmp.cpp.o
 
 
 # Object files for target unit_tests
 unit_tests_OBJECTS = \
-"CMakeFiles/unit_tests.dir/address_from_url.o" \
-"CMakeFiles/unit_tests.dir/ban.o" \
-"CMakeFiles/unit_tests.dir/base58.o" \
-"CMakeFiles/unit_tests.dir/blockchain_db.o" \
-"CMakeFiles/unit_tests.dir/block_reward.o" \
-"CMakeFiles/unit_tests.dir/canonical_amounts.o" \
-"CMakeFiles/unit_tests.dir/chacha8.o" \
-"CMakeFiles/unit_tests.dir/checkpoints.o" \
-"CMakeFiles/unit_tests.dir/command_line.o" \
-"CMakeFiles/unit_tests.dir/crypto.o" \
-"CMakeFiles/unit_tests.dir/decompose_amount_into_digits.o" \
-"CMakeFiles/unit_tests.dir/dns_resolver.o" \
-"CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.o" \
-"CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.o" \
-"CMakeFiles/unit_tests.dir/epee_utils.o" \
-"CMakeFiles/unit_tests.dir/fee.o" \
-"CMakeFiles/unit_tests.dir/get_xtype_from_string.o" \
-"CMakeFiles/unit_tests.dir/http.o" \
-"CMakeFiles/unit_tests.dir/main.o" \
-"CMakeFiles/unit_tests.dir/mnemonics.o" \
-"CMakeFiles/unit_tests.dir/mul_div.o" \
-"CMakeFiles/unit_tests.dir/parse_amount.o" \
-"CMakeFiles/unit_tests.dir/serialization.o" \
-"CMakeFiles/unit_tests.dir/slow_memmem.o" \
-"CMakeFiles/unit_tests.dir/test_tx_utils.o" \
-"CMakeFiles/unit_tests.dir/test_peerlist.o" \
-"CMakeFiles/unit_tests.dir/test_protocol_pack.o" \
-"CMakeFiles/unit_tests.dir/thread_group.o" \
-"CMakeFiles/unit_tests.dir/hardfork.o" \
-"CMakeFiles/unit_tests.dir/unbound.o" \
-"CMakeFiles/unit_tests.dir/uri.o" \
-"CMakeFiles/unit_tests.dir/varint.o" \
-"CMakeFiles/unit_tests.dir/ringct.o" \
-"CMakeFiles/unit_tests.dir/output_selection.o" \
-"CMakeFiles/unit_tests.dir/vercmp.o"
+"CMakeFiles/unit_tests.dir/address_from_url.cpp.o" \
+"CMakeFiles/unit_tests.dir/ban.cpp.o" \
+"CMakeFiles/unit_tests.dir/base58.cpp.o" \
+"CMakeFiles/unit_tests.dir/blockchain_db.cpp.o" \
+"CMakeFiles/unit_tests.dir/block_reward.cpp.o" \
+"CMakeFiles/unit_tests.dir/canonical_amounts.cpp.o" \
+"CMakeFiles/unit_tests.dir/chacha8.cpp.o" \
+"CMakeFiles/unit_tests.dir/checkpoints.cpp.o" \
+"CMakeFiles/unit_tests.dir/command_line.cpp.o" \
+"CMakeFiles/unit_tests.dir/crypto.cpp.o" \
+"CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.o" \
+"CMakeFiles/unit_tests.dir/dns_resolver.cpp.o" \
+"CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.o" \
+"CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.o" \
+"CMakeFiles/unit_tests.dir/epee_utils.cpp.o" \
+"CMakeFiles/unit_tests.dir/fee.cpp.o" \
+"CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.o" \
+"CMakeFiles/unit_tests.dir/http.cpp.o" \
+"CMakeFiles/unit_tests.dir/main.cpp.o" \
+"CMakeFiles/unit_tests.dir/mnemonics.cpp.o" \
+"CMakeFiles/unit_tests.dir/mul_div.cpp.o" \
+"CMakeFiles/unit_tests.dir/parse_amount.cpp.o" \
+"CMakeFiles/unit_tests.dir/serialization.cpp.o" \
+"CMakeFiles/unit_tests.dir/slow_memmem.cpp.o" \
+"CMakeFiles/unit_tests.dir/test_tx_utils.cpp.o" \
+"CMakeFiles/unit_tests.dir/test_peerlist.cpp.o" \
+"CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.o" \
+"CMakeFiles/unit_tests.dir/thread_group.cpp.o" \
+"CMakeFiles/unit_tests.dir/hardfork.cpp.o" \
+"CMakeFiles/unit_tests.dir/unbound.cpp.o" \
+"CMakeFiles/unit_tests.dir/uri.cpp.o" \
+"CMakeFiles/unit_tests.dir/varint.cpp.o" \
+"CMakeFiles/unit_tests.dir/ringct.cpp.o" \
+"CMakeFiles/unit_tests.dir/output_selection.cpp.o" \
+"CMakeFiles/unit_tests.dir/vercmp.cpp.o"
 
 # External object files for target unit_tests
 unit_tests_EXTERNAL_OBJECTS =
 
-unit_tests: CMakeFiles/unit_tests.dir/address_from_url.o
-unit_tests: CMakeFiles/unit_tests.dir/ban.o
-unit_tests: CMakeFiles/unit_tests.dir/base58.o
-unit_tests: CMakeFiles/unit_tests.dir/blockchain_db.o
-unit_tests: CMakeFiles/unit_tests.dir/block_reward.o
-unit_tests: CMakeFiles/unit_tests.dir/canonical_amounts.o
-unit_tests: CMakeFiles/unit_tests.dir/chacha8.o
-unit_tests: CMakeFiles/unit_tests.dir/checkpoints.o
-unit_tests: CMakeFiles/unit_tests.dir/command_line.o
-unit_tests: CMakeFiles/unit_tests.dir/crypto.o
-unit_tests: CMakeFiles/unit_tests.dir/decompose_amount_into_digits.o
-unit_tests: CMakeFiles/unit_tests.dir/dns_resolver.o
-unit_tests: CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.o
-unit_tests: CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.o
-unit_tests: CMakeFiles/unit_tests.dir/epee_utils.o
-unit_tests: CMakeFiles/unit_tests.dir/fee.o
-unit_tests: CMakeFiles/unit_tests.dir/get_xtype_from_string.o
-unit_tests: CMakeFiles/unit_tests.dir/http.o
-unit_tests: CMakeFiles/unit_tests.dir/main.o
-unit_tests: CMakeFiles/unit_tests.dir/mnemonics.o
-unit_tests: CMakeFiles/unit_tests.dir/mul_div.o
-unit_tests: CMakeFiles/unit_tests.dir/parse_amount.o
-unit_tests: CMakeFiles/unit_tests.dir/serialization.o
-unit_tests: CMakeFiles/unit_tests.dir/slow_memmem.o
-unit_tests: CMakeFiles/unit_tests.dir/test_tx_utils.o
-unit_tests: CMakeFiles/unit_tests.dir/test_peerlist.o
-unit_tests: CMakeFiles/unit_tests.dir/test_protocol_pack.o
-unit_tests: CMakeFiles/unit_tests.dir/thread_group.o
-unit_tests: CMakeFiles/unit_tests.dir/hardfork.o
-unit_tests: CMakeFiles/unit_tests.dir/unbound.o
-unit_tests: CMakeFiles/unit_tests.dir/uri.o
-unit_tests: CMakeFiles/unit_tests.dir/varint.o
-unit_tests: CMakeFiles/unit_tests.dir/ringct.o
-unit_tests: CMakeFiles/unit_tests.dir/output_selection.o
-unit_tests: CMakeFiles/unit_tests.dir/vercmp.o
-unit_tests: CMakeFiles/unit_tests.dir/build.make
-unit_tests: CMakeFiles/unit_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/tests/unit_tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Linking CXX executable unit_tests"
-	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/unit_tests.dir/link.txt --verbose=$(VERBOSE)
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/address_from_url.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/ban.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/base58.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/blockchain_db.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/block_reward.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/canonical_amounts.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/chacha8.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/checkpoints.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/command_line.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/crypto.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/dns_resolver.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/epee_utils.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/fee.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/http.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/main.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/mnemonics.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/mul_div.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/parse_amount.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/serialization.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/slow_memmem.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/test_tx_utils.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/test_peerlist.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/thread_group.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/hardfork.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/unbound.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/uri.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/varint.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/ringct.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/output_selection.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/vercmp.cpp.o
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/build.make
+tests/unit_tests/unit_tests: src/ringct/libringct.a
+tests/unit_tests/unit_tests: src/cryptonote_core/libcryptonote_core.a
+tests/unit_tests/unit_tests: src/blockchain_db/libblockchain_db.a
+tests/unit_tests/unit_tests: src/rpc/librpc.a
+tests/unit_tests/unit_tests: lib/libwallet.a
+tests/unit_tests/unit_tests: src/p2p/libp2p.a
+tests/unit_tests/unit_tests: contrib/epee/src/libepee.a
+tests/unit_tests/unit_tests: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+tests/unit_tests/unit_tests: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+tests/unit_tests/unit_tests: /usr/lib/libgtest.a
+tests/unit_tests/unit_tests: /usr/lib/x86_64-linux-gnu/librt.so
+tests/unit_tests/unit_tests: src/cryptonote_protocol/libcryptonote_protocol.a
+tests/unit_tests/unit_tests: src/cryptonote_core/libcryptonote_core.a
+tests/unit_tests/unit_tests: src/blockchain_db/libblockchain_db.a
+tests/unit_tests/unit_tests: src/ringct/libringct.a
+tests/unit_tests/unit_tests: src/cryptonote_basic/libcryptonote_basic.a
+tests/unit_tests/unit_tests: external/db_drivers/liblmdb/liblmdb.a
+tests/unit_tests/unit_tests: src/blocks/libblocks.a
+tests/unit_tests/unit_tests: src/p2p/libp2p.a
+tests/unit_tests/unit_tests: /usr/lib/x86_64-linux-gnu/libminiupnpc.so
+tests/unit_tests/unit_tests: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+tests/unit_tests/unit_tests: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+tests/unit_tests/unit_tests: src/common/libcommon.a
+tests/unit_tests/unit_tests: contrib/epee/src/libepee.a
+tests/unit_tests/unit_tests: src/crypto/libcncrypto.a
+tests/unit_tests/unit_tests: /usr/lib/x86_64-linux-gnu/libunbound.so
+tests/unit_tests/unit_tests: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+tests/unit_tests/unit_tests: /usr/lib/x86_64-linux-gnu/libssl.so
+tests/unit_tests/unit_tests: /usr/lib/x86_64-linux-gnu/libcrypto.so
+tests/unit_tests/unit_tests: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+tests/unit_tests/unit_tests: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+tests/unit_tests/unit_tests: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+tests/unit_tests/unit_tests: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+tests/unit_tests/unit_tests: src/mnemonics/libmnemonics.a
+tests/unit_tests/unit_tests: /usr/lib/x86_64-linux-gnu/libboost_system.so
+tests/unit_tests/unit_tests: external/easylogging++/libeasylogging.a
+tests/unit_tests/unit_tests: /usr/lib/x86_64-linux-gnu/librt.so
+tests/unit_tests/unit_tests: tests/unit_tests/CMakeFiles/unit_tests.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Linking CXX executable unit_tests"
+	cd /home/chip/Downloads/monero/tests/unit_tests && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/unit_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/unit_tests.dir/build: unit_tests
+tests/unit_tests/CMakeFiles/unit_tests.dir/build: tests/unit_tests/unit_tests
 
-.PHONY : CMakeFiles/unit_tests.dir/build
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/build
 
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/address_from_url.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/ban.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/base58.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/blockchain_db.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/block_reward.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/canonical_amounts.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/chacha8.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/checkpoints.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/command_line.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/crypto.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/decompose_amount_into_digits.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/dns_resolver.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/epee_utils.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/fee.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/get_xtype_from_string.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/http.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/main.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/mnemonics.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/mul_div.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/parse_amount.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/serialization.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/slow_memmem.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/test_tx_utils.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/test_peerlist.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/test_protocol_pack.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/thread_group.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/hardfork.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/unbound.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/uri.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/varint.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/ringct.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/output_selection.o.requires
-CMakeFiles/unit_tests.dir/requires: CMakeFiles/unit_tests.dir/vercmp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/address_from_url.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/ban.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/base58.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/blockchain_db.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/block_reward.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/canonical_amounts.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/chacha8.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/checkpoints.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/command_line.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/crypto.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/decompose_amount_into_digits.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/dns_resolver.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/epee_boosted_tcp_server.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/epee_levin_protocol_handler_async.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/epee_utils.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/fee.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/get_xtype_from_string.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/http.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/main.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/mnemonics.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/mul_div.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/parse_amount.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/serialization.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/slow_memmem.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/test_tx_utils.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/test_peerlist.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/test_protocol_pack.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/thread_group.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/hardfork.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/unbound.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/uri.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/varint.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/ringct.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/output_selection.cpp.o.requires
+tests/unit_tests/CMakeFiles/unit_tests.dir/requires: tests/unit_tests/CMakeFiles/unit_tests.dir/vercmp.cpp.o.requires
 
-.PHONY : CMakeFiles/unit_tests.dir/requires
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/requires
 
-CMakeFiles/unit_tests.dir/clean:
-	$(CMAKE_COMMAND) -P CMakeFiles/unit_tests.dir/cmake_clean.cmake
-.PHONY : CMakeFiles/unit_tests.dir/clean
+tests/unit_tests/CMakeFiles/unit_tests.dir/clean:
+	cd /home/chip/Downloads/monero/tests/unit_tests && $(CMAKE_COMMAND) -P CMakeFiles/unit_tests.dir/cmake_clean.cmake
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/clean
 
-CMakeFiles/unit_tests.dir/depend:
-	cd /home/chip/Downloads/monero/tests/unit_tests && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/tests/unit_tests /home/chip/Downloads/monero/tests/unit_tests /home/chip/Downloads/monero/tests/unit_tests /home/chip/Downloads/monero/tests/unit_tests /home/chip/Downloads/monero/tests/unit_tests/CMakeFiles/unit_tests.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : CMakeFiles/unit_tests.dir/depend
+tests/unit_tests/CMakeFiles/unit_tests.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/unit_tests /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/unit_tests /home/chip/Downloads/monero/tests/unit_tests/CMakeFiles/unit_tests.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : tests/unit_tests/CMakeFiles/unit_tests.dir/depend
 

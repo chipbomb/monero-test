@@ -48,13 +48,35 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/tests
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/tests
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,16 +100,38 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/tests/CMakeFiles /home/chip/Downloads/monero/tests/functional_tests/CMakeFiles/progress.marks
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 functional_tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/tests/CMakeFiles 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles /home/chip/Downloads/monero/tests/functional_tests/CMakeFiles/progress.marks
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/functional_tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 functional_tests/clean
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/functional_tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,78 +141,114 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 functional_tests/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/functional_tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 functional_tests/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/functional_tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-functional_tests/CMakeFiles/functional_tests.dir/rule:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 functional_tests/CMakeFiles/functional_tests.dir/rule
-.PHONY : functional_tests/CMakeFiles/functional_tests.dir/rule
+tests/functional_tests/CMakeFiles/functional_tests.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/functional_tests/CMakeFiles/functional_tests.dir/rule
+.PHONY : tests/functional_tests/CMakeFiles/functional_tests.dir/rule
 
 # Convenience name for target.
-functional_tests: functional_tests/CMakeFiles/functional_tests.dir/rule
+functional_tests: tests/functional_tests/CMakeFiles/functional_tests.dir/rule
 
 .PHONY : functional_tests
 
 # fast build rule for target.
 functional_tests/fast:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f functional_tests/CMakeFiles/functional_tests.dir/build.make functional_tests/CMakeFiles/functional_tests.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/functional_tests/CMakeFiles/functional_tests.dir/build.make tests/functional_tests/CMakeFiles/functional_tests.dir/build
 .PHONY : functional_tests/fast
 
-# target to build an object file
-main.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f functional_tests/CMakeFiles/functional_tests.dir/build.make functional_tests/CMakeFiles/functional_tests.dir/main.o
+main.o: main.cpp.o
+
 .PHONY : main.o
 
-# target to preprocess a source file
-main.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f functional_tests/CMakeFiles/functional_tests.dir/build.make functional_tests/CMakeFiles/functional_tests.dir/main.i
+# target to build an object file
+main.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/functional_tests/CMakeFiles/functional_tests.dir/build.make tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
 .PHONY : main.i
 
-# target to generate assembly for a file
-main.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f functional_tests/CMakeFiles/functional_tests.dir/build.make functional_tests/CMakeFiles/functional_tests.dir/main.s
+# target to preprocess a source file
+main.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/functional_tests/CMakeFiles/functional_tests.dir/build.make tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
 .PHONY : main.s
 
-# target to build an object file
-transactions_flow_test.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f functional_tests/CMakeFiles/functional_tests.dir/build.make functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.o
+# target to generate assembly for a file
+main.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/functional_tests/CMakeFiles/functional_tests.dir/build.make tests/functional_tests/CMakeFiles/functional_tests.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+transactions_flow_test.o: transactions_flow_test.cpp.o
+
 .PHONY : transactions_flow_test.o
 
-# target to preprocess a source file
-transactions_flow_test.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f functional_tests/CMakeFiles/functional_tests.dir/build.make functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.i
+# target to build an object file
+transactions_flow_test.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/functional_tests/CMakeFiles/functional_tests.dir/build.make tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.o
+.PHONY : transactions_flow_test.cpp.o
+
+transactions_flow_test.i: transactions_flow_test.cpp.i
+
 .PHONY : transactions_flow_test.i
 
-# target to generate assembly for a file
-transactions_flow_test.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f functional_tests/CMakeFiles/functional_tests.dir/build.make functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.s
+# target to preprocess a source file
+transactions_flow_test.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/functional_tests/CMakeFiles/functional_tests.dir/build.make tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.i
+.PHONY : transactions_flow_test.cpp.i
+
+transactions_flow_test.s: transactions_flow_test.cpp.s
+
 .PHONY : transactions_flow_test.s
 
-# target to build an object file
-transactions_generation_from_blockchain.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f functional_tests/CMakeFiles/functional_tests.dir/build.make functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.o
+# target to generate assembly for a file
+transactions_flow_test.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/functional_tests/CMakeFiles/functional_tests.dir/build.make tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_flow_test.cpp.s
+.PHONY : transactions_flow_test.cpp.s
+
+transactions_generation_from_blockchain.o: transactions_generation_from_blockchain.cpp.o
+
 .PHONY : transactions_generation_from_blockchain.o
 
-# target to preprocess a source file
-transactions_generation_from_blockchain.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f functional_tests/CMakeFiles/functional_tests.dir/build.make functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.i
+# target to build an object file
+transactions_generation_from_blockchain.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/functional_tests/CMakeFiles/functional_tests.dir/build.make tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.o
+.PHONY : transactions_generation_from_blockchain.cpp.o
+
+transactions_generation_from_blockchain.i: transactions_generation_from_blockchain.cpp.i
+
 .PHONY : transactions_generation_from_blockchain.i
 
-# target to generate assembly for a file
-transactions_generation_from_blockchain.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f functional_tests/CMakeFiles/functional_tests.dir/build.make functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.s
+# target to preprocess a source file
+transactions_generation_from_blockchain.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/functional_tests/CMakeFiles/functional_tests.dir/build.make tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.i
+.PHONY : transactions_generation_from_blockchain.cpp.i
+
+transactions_generation_from_blockchain.s: transactions_generation_from_blockchain.cpp.s
+
 .PHONY : transactions_generation_from_blockchain.s
+
+# target to generate assembly for a file
+transactions_generation_from_blockchain.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/functional_tests/CMakeFiles/functional_tests.dir/build.make tests/functional_tests/CMakeFiles/functional_tests.dir/transactions_generation_from_blockchain.cpp.s
+.PHONY : transactions_generation_from_blockchain.cpp.s
 
 # Help Target
 help:
@@ -176,9 +256,13 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... functional_tests"
+	@echo "... edit_cache"
+	@echo "... install/local"
+	@echo "... test"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
@@ -199,6 +283,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

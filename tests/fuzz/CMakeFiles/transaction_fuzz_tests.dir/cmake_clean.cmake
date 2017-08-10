@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/transaction_fuzz_tests.dir/transaction.o"
-  "CMakeFiles/transaction_fuzz_tests.dir/fuzzer.o"
+  "CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.o"
+  "CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.o"
   "transaction_fuzz_tests.pdb"
   "transaction_fuzz_tests"
 )

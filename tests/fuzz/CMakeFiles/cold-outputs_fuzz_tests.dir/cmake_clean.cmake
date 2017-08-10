@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/cold-outputs_fuzz_tests.dir/cold-outputs.o"
-  "CMakeFiles/cold-outputs_fuzz_tests.dir/fuzzer.o"
+  "CMakeFiles/cold-outputs_fuzz_tests.dir/cold-outputs.cpp.o"
+  "CMakeFiles/cold-outputs_fuzz_tests.dir/fuzzer.cpp.o"
   "cold-outputs_fuzz_tests.pdb"
   "cold-outputs_fuzz_tests"
 )

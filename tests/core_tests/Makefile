@@ -48,24 +48,35 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/tests
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/tests
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-.PHONY : edit_cache/fast
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -78,16 +89,49 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/tests/CMakeFiles /home/chip/Downloads/monero/tests/core_tests/CMakeFiles/progress.marks
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 core_tests/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/tests/CMakeFiles 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles /home/chip/Downloads/monero/tests/core_tests/CMakeFiles/progress.marks
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/core_tests/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 core_tests/clean
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/core_tests/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,243 +141,411 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 core_tests/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/core_tests/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 core_tests/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/core_tests/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-core_tests/CMakeFiles/coretests.dir/rule:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 core_tests/CMakeFiles/coretests.dir/rule
-.PHONY : core_tests/CMakeFiles/coretests.dir/rule
+tests/core_tests/CMakeFiles/coretests.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/core_tests/CMakeFiles/coretests.dir/rule
+.PHONY : tests/core_tests/CMakeFiles/coretests.dir/rule
 
 # Convenience name for target.
-coretests: core_tests/CMakeFiles/coretests.dir/rule
+coretests: tests/core_tests/CMakeFiles/coretests.dir/rule
 
 .PHONY : coretests
 
 # fast build rule for target.
 coretests/fast:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/build
 .PHONY : coretests/fast
 
-# target to build an object file
-block_reward.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/block_reward.o
+block_reward.o: block_reward.cpp.o
+
 .PHONY : block_reward.o
 
-# target to preprocess a source file
-block_reward.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/block_reward.i
+# target to build an object file
+block_reward.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/block_reward.cpp.o
+.PHONY : block_reward.cpp.o
+
+block_reward.i: block_reward.cpp.i
+
 .PHONY : block_reward.i
 
-# target to generate assembly for a file
-block_reward.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/block_reward.s
+# target to preprocess a source file
+block_reward.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/block_reward.cpp.i
+.PHONY : block_reward.cpp.i
+
+block_reward.s: block_reward.cpp.s
+
 .PHONY : block_reward.s
 
-# target to build an object file
-block_validation.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/block_validation.o
+# target to generate assembly for a file
+block_reward.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/block_reward.cpp.s
+.PHONY : block_reward.cpp.s
+
+block_validation.o: block_validation.cpp.o
+
 .PHONY : block_validation.o
 
-# target to preprocess a source file
-block_validation.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/block_validation.i
+# target to build an object file
+block_validation.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/block_validation.cpp.o
+.PHONY : block_validation.cpp.o
+
+block_validation.i: block_validation.cpp.i
+
 .PHONY : block_validation.i
 
-# target to generate assembly for a file
-block_validation.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/block_validation.s
+# target to preprocess a source file
+block_validation.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/block_validation.cpp.i
+.PHONY : block_validation.cpp.i
+
+block_validation.s: block_validation.cpp.s
+
 .PHONY : block_validation.s
 
-# target to build an object file
-chain_split_1.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/chain_split_1.o
+# target to generate assembly for a file
+block_validation.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/block_validation.cpp.s
+.PHONY : block_validation.cpp.s
+
+chain_split_1.o: chain_split_1.cpp.o
+
 .PHONY : chain_split_1.o
 
-# target to preprocess a source file
-chain_split_1.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/chain_split_1.i
+# target to build an object file
+chain_split_1.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/chain_split_1.cpp.o
+.PHONY : chain_split_1.cpp.o
+
+chain_split_1.i: chain_split_1.cpp.i
+
 .PHONY : chain_split_1.i
 
-# target to generate assembly for a file
-chain_split_1.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/chain_split_1.s
+# target to preprocess a source file
+chain_split_1.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/chain_split_1.cpp.i
+.PHONY : chain_split_1.cpp.i
+
+chain_split_1.s: chain_split_1.cpp.s
+
 .PHONY : chain_split_1.s
 
-# target to build an object file
-chain_switch_1.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/chain_switch_1.o
+# target to generate assembly for a file
+chain_split_1.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/chain_split_1.cpp.s
+.PHONY : chain_split_1.cpp.s
+
+chain_switch_1.o: chain_switch_1.cpp.o
+
 .PHONY : chain_switch_1.o
 
-# target to preprocess a source file
-chain_switch_1.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/chain_switch_1.i
+# target to build an object file
+chain_switch_1.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/chain_switch_1.cpp.o
+.PHONY : chain_switch_1.cpp.o
+
+chain_switch_1.i: chain_switch_1.cpp.i
+
 .PHONY : chain_switch_1.i
 
-# target to generate assembly for a file
-chain_switch_1.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/chain_switch_1.s
+# target to preprocess a source file
+chain_switch_1.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/chain_switch_1.cpp.i
+.PHONY : chain_switch_1.cpp.i
+
+chain_switch_1.s: chain_switch_1.cpp.s
+
 .PHONY : chain_switch_1.s
 
-# target to build an object file
-chaingen.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/chaingen.o
+# target to generate assembly for a file
+chain_switch_1.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/chain_switch_1.cpp.s
+.PHONY : chain_switch_1.cpp.s
+
+chaingen.o: chaingen.cpp.o
+
 .PHONY : chaingen.o
 
-# target to preprocess a source file
-chaingen.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/chaingen.i
+# target to build an object file
+chaingen.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/chaingen.cpp.o
+.PHONY : chaingen.cpp.o
+
+chaingen.i: chaingen.cpp.i
+
 .PHONY : chaingen.i
 
-# target to generate assembly for a file
-chaingen.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/chaingen.s
+# target to preprocess a source file
+chaingen.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/chaingen.cpp.i
+.PHONY : chaingen.cpp.i
+
+chaingen.s: chaingen.cpp.s
+
 .PHONY : chaingen.s
 
-# target to build an object file
-chaingen001.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/chaingen001.o
+# target to generate assembly for a file
+chaingen.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/chaingen.cpp.s
+.PHONY : chaingen.cpp.s
+
+chaingen001.o: chaingen001.cpp.o
+
 .PHONY : chaingen001.o
 
-# target to preprocess a source file
-chaingen001.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/chaingen001.i
+# target to build an object file
+chaingen001.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/chaingen001.cpp.o
+.PHONY : chaingen001.cpp.o
+
+chaingen001.i: chaingen001.cpp.i
+
 .PHONY : chaingen001.i
 
-# target to generate assembly for a file
-chaingen001.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/chaingen001.s
+# target to preprocess a source file
+chaingen001.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/chaingen001.cpp.i
+.PHONY : chaingen001.cpp.i
+
+chaingen001.s: chaingen001.cpp.s
+
 .PHONY : chaingen001.s
 
-# target to build an object file
-chaingen_main.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/chaingen_main.o
+# target to generate assembly for a file
+chaingen001.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/chaingen001.cpp.s
+.PHONY : chaingen001.cpp.s
+
+chaingen_main.o: chaingen_main.cpp.o
+
 .PHONY : chaingen_main.o
 
-# target to preprocess a source file
-chaingen_main.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/chaingen_main.i
+# target to build an object file
+chaingen_main.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/chaingen_main.cpp.o
+.PHONY : chaingen_main.cpp.o
+
+chaingen_main.i: chaingen_main.cpp.i
+
 .PHONY : chaingen_main.i
 
-# target to generate assembly for a file
-chaingen_main.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/chaingen_main.s
+# target to preprocess a source file
+chaingen_main.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/chaingen_main.cpp.i
+.PHONY : chaingen_main.cpp.i
+
+chaingen_main.s: chaingen_main.cpp.s
+
 .PHONY : chaingen_main.s
 
-# target to build an object file
-double_spend.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/double_spend.o
+# target to generate assembly for a file
+chaingen_main.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/chaingen_main.cpp.s
+.PHONY : chaingen_main.cpp.s
+
+double_spend.o: double_spend.cpp.o
+
 .PHONY : double_spend.o
 
-# target to preprocess a source file
-double_spend.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/double_spend.i
+# target to build an object file
+double_spend.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/double_spend.cpp.o
+.PHONY : double_spend.cpp.o
+
+double_spend.i: double_spend.cpp.i
+
 .PHONY : double_spend.i
 
-# target to generate assembly for a file
-double_spend.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/double_spend.s
+# target to preprocess a source file
+double_spend.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/double_spend.cpp.i
+.PHONY : double_spend.cpp.i
+
+double_spend.s: double_spend.cpp.s
+
 .PHONY : double_spend.s
 
-# target to build an object file
-integer_overflow.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/integer_overflow.o
+# target to generate assembly for a file
+double_spend.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/double_spend.cpp.s
+.PHONY : double_spend.cpp.s
+
+integer_overflow.o: integer_overflow.cpp.o
+
 .PHONY : integer_overflow.o
 
-# target to preprocess a source file
-integer_overflow.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/integer_overflow.i
+# target to build an object file
+integer_overflow.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/integer_overflow.cpp.o
+.PHONY : integer_overflow.cpp.o
+
+integer_overflow.i: integer_overflow.cpp.i
+
 .PHONY : integer_overflow.i
 
-# target to generate assembly for a file
-integer_overflow.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/integer_overflow.s
+# target to preprocess a source file
+integer_overflow.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/integer_overflow.cpp.i
+.PHONY : integer_overflow.cpp.i
+
+integer_overflow.s: integer_overflow.cpp.s
+
 .PHONY : integer_overflow.s
 
-# target to build an object file
-rct.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/rct.o
+# target to generate assembly for a file
+integer_overflow.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/integer_overflow.cpp.s
+.PHONY : integer_overflow.cpp.s
+
+rct.o: rct.cpp.o
+
 .PHONY : rct.o
 
-# target to preprocess a source file
-rct.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/rct.i
+# target to build an object file
+rct.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/rct.cpp.o
+.PHONY : rct.cpp.o
+
+rct.i: rct.cpp.i
+
 .PHONY : rct.i
 
-# target to generate assembly for a file
-rct.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/rct.s
+# target to preprocess a source file
+rct.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/rct.cpp.i
+.PHONY : rct.cpp.i
+
+rct.s: rct.cpp.s
+
 .PHONY : rct.s
 
-# target to build an object file
-ring_signature_1.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/ring_signature_1.o
+# target to generate assembly for a file
+rct.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/rct.cpp.s
+.PHONY : rct.cpp.s
+
+ring_signature_1.o: ring_signature_1.cpp.o
+
 .PHONY : ring_signature_1.o
 
-# target to preprocess a source file
-ring_signature_1.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/ring_signature_1.i
+# target to build an object file
+ring_signature_1.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/ring_signature_1.cpp.o
+.PHONY : ring_signature_1.cpp.o
+
+ring_signature_1.i: ring_signature_1.cpp.i
+
 .PHONY : ring_signature_1.i
 
-# target to generate assembly for a file
-ring_signature_1.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/ring_signature_1.s
+# target to preprocess a source file
+ring_signature_1.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/ring_signature_1.cpp.i
+.PHONY : ring_signature_1.cpp.i
+
+ring_signature_1.s: ring_signature_1.cpp.s
+
 .PHONY : ring_signature_1.s
 
-# target to build an object file
-transaction_tests.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/transaction_tests.o
+# target to generate assembly for a file
+ring_signature_1.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/ring_signature_1.cpp.s
+.PHONY : ring_signature_1.cpp.s
+
+transaction_tests.o: transaction_tests.cpp.o
+
 .PHONY : transaction_tests.o
 
-# target to preprocess a source file
-transaction_tests.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/transaction_tests.i
+# target to build an object file
+transaction_tests.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/transaction_tests.cpp.o
+.PHONY : transaction_tests.cpp.o
+
+transaction_tests.i: transaction_tests.cpp.i
+
 .PHONY : transaction_tests.i
 
-# target to generate assembly for a file
-transaction_tests.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/transaction_tests.s
+# target to preprocess a source file
+transaction_tests.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/transaction_tests.cpp.i
+.PHONY : transaction_tests.cpp.i
+
+transaction_tests.s: transaction_tests.cpp.s
+
 .PHONY : transaction_tests.s
 
-# target to build an object file
-tx_validation.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/tx_validation.o
+# target to generate assembly for a file
+transaction_tests.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/transaction_tests.cpp.s
+.PHONY : transaction_tests.cpp.s
+
+tx_validation.o: tx_validation.cpp.o
+
 .PHONY : tx_validation.o
 
-# target to preprocess a source file
-tx_validation.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/tx_validation.i
+# target to build an object file
+tx_validation.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/tx_validation.cpp.o
+.PHONY : tx_validation.cpp.o
+
+tx_validation.i: tx_validation.cpp.i
+
 .PHONY : tx_validation.i
 
-# target to generate assembly for a file
-tx_validation.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/tx_validation.s
+# target to preprocess a source file
+tx_validation.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/tx_validation.cpp.i
+.PHONY : tx_validation.cpp.i
+
+tx_validation.s: tx_validation.cpp.s
+
 .PHONY : tx_validation.s
 
-# target to build an object file
-v2_tests.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/v2_tests.o
+# target to generate assembly for a file
+tx_validation.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/tx_validation.cpp.s
+.PHONY : tx_validation.cpp.s
+
+v2_tests.o: v2_tests.cpp.o
+
 .PHONY : v2_tests.o
 
-# target to preprocess a source file
-v2_tests.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/v2_tests.i
+# target to build an object file
+v2_tests.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/v2_tests.cpp.o
+.PHONY : v2_tests.cpp.o
+
+v2_tests.i: v2_tests.cpp.i
+
 .PHONY : v2_tests.i
 
-# target to generate assembly for a file
-v2_tests.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f core_tests/CMakeFiles/coretests.dir/build.make core_tests/CMakeFiles/coretests.dir/v2_tests.s
+# target to preprocess a source file
+v2_tests.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/v2_tests.cpp.i
+.PHONY : v2_tests.cpp.i
+
+v2_tests.s: v2_tests.cpp.s
+
 .PHONY : v2_tests.s
+
+# target to generate assembly for a file
+v2_tests.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/core_tests/CMakeFiles/coretests.dir/build.make tests/core_tests/CMakeFiles/coretests.dir/v2_tests.cpp.s
+.PHONY : v2_tests.cpp.s
 
 # Help Target
 help:
@@ -341,9 +553,13 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... edit_cache"
+	@echo "... list_install_components"
+	@echo "... install"
 	@echo "... rebuild_cache"
+	@echo "... install/local"
 	@echo "... coretests"
+	@echo "... test"
+	@echo "... edit_cache"
 	@echo "... block_reward.o"
 	@echo "... block_reward.i"
 	@echo "... block_reward.s"
@@ -397,6 +613,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

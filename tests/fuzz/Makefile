@@ -48,13 +48,45 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/tests
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/tests
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 #=============================================================================
 # Targets provided globally by CMake.
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -78,16 +110,28 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
 # The main all target
 all: cmake_check_build_system
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/tests/CMakeFiles /home/chip/Downloads/monero/tests/fuzz/CMakeFiles/progress.marks
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 fuzz/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/tests/CMakeFiles 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles /home/chip/Downloads/monero/tests/fuzz/CMakeFiles/progress.marks
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/fuzz/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/chip/Downloads/monero/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 fuzz/clean
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/fuzz/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,195 +141,267 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 fuzz/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/fuzz/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 fuzz/preinstall
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/fuzz/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
-fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/rule:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/rule
-.PHONY : fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/rule
+tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/rule
+.PHONY : tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/rule
 
 # Convenience name for target.
-cold-transaction_fuzz_tests: fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/rule
-
-.PHONY : cold-transaction_fuzz_tests
-
-# fast build rule for target.
-cold-transaction_fuzz_tests/fast:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build
-.PHONY : cold-transaction_fuzz_tests/fast
-
-# Convenience name for target.
-fuzz/CMakeFiles/block_fuzz_tests.dir/rule:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 fuzz/CMakeFiles/block_fuzz_tests.dir/rule
-.PHONY : fuzz/CMakeFiles/block_fuzz_tests.dir/rule
-
-# Convenience name for target.
-block_fuzz_tests: fuzz/CMakeFiles/block_fuzz_tests.dir/rule
-
-.PHONY : block_fuzz_tests
-
-# fast build rule for target.
-block_fuzz_tests/fast:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/block_fuzz_tests.dir/build.make fuzz/CMakeFiles/block_fuzz_tests.dir/build
-.PHONY : block_fuzz_tests/fast
-
-# Convenience name for target.
-fuzz/CMakeFiles/transaction_fuzz_tests.dir/rule:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 fuzz/CMakeFiles/transaction_fuzz_tests.dir/rule
-.PHONY : fuzz/CMakeFiles/transaction_fuzz_tests.dir/rule
-
-# Convenience name for target.
-transaction_fuzz_tests: fuzz/CMakeFiles/transaction_fuzz_tests.dir/rule
-
-.PHONY : transaction_fuzz_tests
-
-# fast build rule for target.
-transaction_fuzz_tests/fast:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/transaction_fuzz_tests.dir/build
-.PHONY : transaction_fuzz_tests/fast
-
-# Convenience name for target.
-fuzz/CMakeFiles/signature_fuzz_tests.dir/rule:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 fuzz/CMakeFiles/signature_fuzz_tests.dir/rule
-.PHONY : fuzz/CMakeFiles/signature_fuzz_tests.dir/rule
-
-# Convenience name for target.
-signature_fuzz_tests: fuzz/CMakeFiles/signature_fuzz_tests.dir/rule
-
-.PHONY : signature_fuzz_tests
-
-# fast build rule for target.
-signature_fuzz_tests/fast:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make fuzz/CMakeFiles/signature_fuzz_tests.dir/build
-.PHONY : signature_fuzz_tests/fast
-
-# Convenience name for target.
-fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/rule:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f CMakeFiles/Makefile2 fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/rule
-.PHONY : fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/rule
-
-# Convenience name for target.
-cold-outputs_fuzz_tests: fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/rule
+cold-outputs_fuzz_tests: tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/rule
 
 .PHONY : cold-outputs_fuzz_tests
 
 # fast build rule for target.
 cold-outputs_fuzz_tests/fast:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build.make fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build
 .PHONY : cold-outputs_fuzz_tests/fast
 
-# target to build an object file
-block.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/block_fuzz_tests.dir/build.make fuzz/CMakeFiles/block_fuzz_tests.dir/block.o
+# Convenience name for target.
+tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/rule
+.PHONY : tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/rule
+
+# Convenience name for target.
+transaction_fuzz_tests: tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/rule
+
+.PHONY : transaction_fuzz_tests
+
+# fast build rule for target.
+transaction_fuzz_tests/fast:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/build
+.PHONY : transaction_fuzz_tests/fast
+
+# Convenience name for target.
+tests/fuzz/CMakeFiles/block_fuzz_tests.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/fuzz/CMakeFiles/block_fuzz_tests.dir/rule
+.PHONY : tests/fuzz/CMakeFiles/block_fuzz_tests.dir/rule
+
+# Convenience name for target.
+block_fuzz_tests: tests/fuzz/CMakeFiles/block_fuzz_tests.dir/rule
+
+.PHONY : block_fuzz_tests
+
+# fast build rule for target.
+block_fuzz_tests/fast:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/block_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/block_fuzz_tests.dir/build
+.PHONY : block_fuzz_tests/fast
+
+# Convenience name for target.
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/rule
+.PHONY : tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/rule
+
+# Convenience name for target.
+signature_fuzz_tests: tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/rule
+
+.PHONY : signature_fuzz_tests
+
+# fast build rule for target.
+signature_fuzz_tests/fast:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/build
+.PHONY : signature_fuzz_tests/fast
+
+# Convenience name for target.
+tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/rule:
+	cd /home/chip/Downloads/monero && $(MAKE) -f CMakeFiles/Makefile2 tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/rule
+.PHONY : tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/rule
+
+# Convenience name for target.
+cold-transaction_fuzz_tests: tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/rule
+
+.PHONY : cold-transaction_fuzz_tests
+
+# fast build rule for target.
+cold-transaction_fuzz_tests/fast:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build
+.PHONY : cold-transaction_fuzz_tests/fast
+
+block.o: block.cpp.o
+
 .PHONY : block.o
 
-# target to preprocess a source file
-block.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/block_fuzz_tests.dir/build.make fuzz/CMakeFiles/block_fuzz_tests.dir/block.i
+# target to build an object file
+block.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/block_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.o
+.PHONY : block.cpp.o
+
+block.i: block.cpp.i
+
 .PHONY : block.i
 
-# target to generate assembly for a file
-block.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/block_fuzz_tests.dir/build.make fuzz/CMakeFiles/block_fuzz_tests.dir/block.s
+# target to preprocess a source file
+block.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/block_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.i
+.PHONY : block.cpp.i
+
+block.s: block.cpp.s
+
 .PHONY : block.s
 
-# target to build an object file
-cold-outputs.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build.make fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/cold-outputs.o
+# target to generate assembly for a file
+block.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/block_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/block_fuzz_tests.dir/block.cpp.s
+.PHONY : block.cpp.s
+
+cold-outputs.o: cold-outputs.cpp.o
+
 .PHONY : cold-outputs.o
 
-# target to preprocess a source file
-cold-outputs.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build.make fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/cold-outputs.i
+# target to build an object file
+cold-outputs.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/cold-outputs.cpp.o
+.PHONY : cold-outputs.cpp.o
+
+cold-outputs.i: cold-outputs.cpp.i
+
 .PHONY : cold-outputs.i
 
-# target to generate assembly for a file
-cold-outputs.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build.make fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/cold-outputs.s
+# target to preprocess a source file
+cold-outputs.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/cold-outputs.cpp.i
+.PHONY : cold-outputs.cpp.i
+
+cold-outputs.s: cold-outputs.cpp.s
+
 .PHONY : cold-outputs.s
 
-# target to build an object file
-cold-transaction.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/cold-transaction.o
+# target to generate assembly for a file
+cold-outputs.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/cold-outputs.cpp.s
+.PHONY : cold-outputs.cpp.s
+
+cold-transaction.o: cold-transaction.cpp.o
+
 .PHONY : cold-transaction.o
 
-# target to preprocess a source file
-cold-transaction.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/cold-transaction.i
+# target to build an object file
+cold-transaction.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/cold-transaction.cpp.o
+.PHONY : cold-transaction.cpp.o
+
+cold-transaction.i: cold-transaction.cpp.i
+
 .PHONY : cold-transaction.i
 
-# target to generate assembly for a file
-cold-transaction.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/cold-transaction.s
+# target to preprocess a source file
+cold-transaction.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/cold-transaction.cpp.i
+.PHONY : cold-transaction.cpp.i
+
+cold-transaction.s: cold-transaction.cpp.s
+
 .PHONY : cold-transaction.s
 
-# target to build an object file
-fuzzer.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/fuzzer.o
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/block_fuzz_tests.dir/build.make fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.o
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.o
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.o
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build.make fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/fuzzer.o
+# target to generate assembly for a file
+cold-transaction.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/cold-transaction.cpp.s
+.PHONY : cold-transaction.cpp.s
+
+fuzzer.o: fuzzer.cpp.o
+
 .PHONY : fuzzer.o
 
-# target to preprocess a source file
-fuzzer.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/fuzzer.i
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/block_fuzz_tests.dir/build.make fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.i
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.i
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.i
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build.make fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/fuzzer.i
+# target to build an object file
+fuzzer.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/fuzzer.cpp.o
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.o
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/block_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.o
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.o
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/fuzzer.cpp.o
+.PHONY : fuzzer.cpp.o
+
+fuzzer.i: fuzzer.cpp.i
+
 .PHONY : fuzzer.i
 
-# target to generate assembly for a file
-fuzzer.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/fuzzer.s
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/block_fuzz_tests.dir/build.make fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.s
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.s
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.s
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build.make fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/fuzzer.s
+# target to preprocess a source file
+fuzzer.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/fuzzer.cpp.i
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.i
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/block_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.i
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.i
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/fuzzer.cpp.i
+.PHONY : fuzzer.cpp.i
+
+fuzzer.s: fuzzer.cpp.s
+
 .PHONY : fuzzer.s
 
-# target to build an object file
-signature.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.o
+# target to generate assembly for a file
+fuzzer.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/cold-outputs_fuzz_tests.dir/fuzzer.cpp.s
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/fuzzer.cpp.s
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/block_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/block_fuzz_tests.dir/fuzzer.cpp.s
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.s
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/cold-transaction_fuzz_tests.dir/fuzzer.cpp.s
+.PHONY : fuzzer.cpp.s
+
+signature.o: signature.cpp.o
+
 .PHONY : signature.o
 
-# target to preprocess a source file
-signature.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.i
+# target to build an object file
+signature.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.o
+.PHONY : signature.cpp.o
+
+signature.i: signature.cpp.i
+
 .PHONY : signature.i
 
-# target to generate assembly for a file
-signature.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.s
+# target to preprocess a source file
+signature.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.i
+.PHONY : signature.cpp.i
+
+signature.s: signature.cpp.s
+
 .PHONY : signature.s
 
-# target to build an object file
-transaction.o:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.o
+# target to generate assembly for a file
+signature.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.s
+.PHONY : signature.cpp.s
+
+transaction.o: transaction.cpp.o
+
 .PHONY : transaction.o
 
-# target to preprocess a source file
-transaction.i:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.i
+# target to build an object file
+transaction.cpp.o:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.o
+.PHONY : transaction.cpp.o
+
+transaction.i: transaction.cpp.i
+
 .PHONY : transaction.i
 
-# target to generate assembly for a file
-transaction.s:
-	cd /home/chip/Downloads/monero/tests && $(MAKE) -f fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.s
+# target to preprocess a source file
+transaction.cpp.i:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.i
+.PHONY : transaction.cpp.i
+
+transaction.s: transaction.cpp.s
+
 .PHONY : transaction.s
+
+# target to generate assembly for a file
+transaction.cpp.s:
+	cd /home/chip/Downloads/monero && $(MAKE) -f tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/transaction_fuzz_tests.dir/transaction.cpp.s
+.PHONY : transaction.cpp.s
 
 # Help Target
 help:
@@ -293,13 +409,17 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... list_install_components"
+	@echo "... cold-outputs_fuzz_tests"
+	@echo "... transaction_fuzz_tests"
+	@echo "... block_fuzz_tests"
+	@echo "... signature_fuzz_tests"
+	@echo "... cold-transaction_fuzz_tests"
+	@echo "... install/local"
+	@echo "... test"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... cold-transaction_fuzz_tests"
-	@echo "... block_fuzz_tests"
-	@echo "... transaction_fuzz_tests"
-	@echo "... signature_fuzz_tests"
-	@echo "... cold-outputs_fuzz_tests"
+	@echo "... install"
 	@echo "... block.o"
 	@echo "... block.i"
 	@echo "... block.s"
@@ -329,6 +449,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

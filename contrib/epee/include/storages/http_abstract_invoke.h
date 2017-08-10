@@ -43,6 +43,8 @@ namespace epee
       std::string req_param;
       if(!serialization::store_t_to_json(out_struct, req_param))
         return false;
+        
+      cout << "http abstract invoke " << req_param << endl;
 
       const http::http_response_info* pri = NULL;
       if(!transport.invoke(uri, method, req_param, timeout, std::addressof(pri)))

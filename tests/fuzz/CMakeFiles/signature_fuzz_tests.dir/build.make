@@ -43,98 +43,126 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chip/Downloads/monero/tests
+CMAKE_SOURCE_DIR = /home/chip/Downloads/monero
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chip/Downloads/monero/tests
+CMAKE_BINARY_DIR = /home/chip/Downloads/monero
 
 # Include any dependencies generated for this target.
-include fuzz/CMakeFiles/signature_fuzz_tests.dir/depend.make
+include tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/depend.make
 
 # Include the progress variables for this target.
-include fuzz/CMakeFiles/signature_fuzz_tests.dir/progress.make
+include tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/progress.make
 
 # Include the compile flags for this target's objects.
-include fuzz/CMakeFiles/signature_fuzz_tests.dir/flags.make
+include tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/flags.make
 
-fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.o: fuzz/CMakeFiles/signature_fuzz_tests.dir/flags.make
-fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.o: fuzz/signature.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.o"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/signature_fuzz_tests.dir/signature.o -c /home/chip/Downloads/monero/tests/fuzz/signature.cpp
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.o: tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/flags.make
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.o: tests/fuzz/signature.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.o"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/signature_fuzz_tests.dir/signature.cpp.o -c /home/chip/Downloads/monero/tests/fuzz/signature.cpp
 
-fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/signature_fuzz_tests.dir/signature.i"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/fuzz/signature.cpp > CMakeFiles/signature_fuzz_tests.dir/signature.i
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/signature_fuzz_tests.dir/signature.cpp.i"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/fuzz/signature.cpp > CMakeFiles/signature_fuzz_tests.dir/signature.cpp.i
 
-fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/signature_fuzz_tests.dir/signature.s"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/fuzz/signature.cpp -o CMakeFiles/signature_fuzz_tests.dir/signature.s
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/signature_fuzz_tests.dir/signature.cpp.s"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/fuzz/signature.cpp -o CMakeFiles/signature_fuzz_tests.dir/signature.cpp.s
 
-fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.o.requires:
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.o.requires:
 
-.PHONY : fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.o.requires
+.PHONY : tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.o.requires
 
-fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.o.provides: fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.o.requires
-	$(MAKE) -f fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.o.provides.build
-.PHONY : fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.o.provides
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.o.provides: tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.o.requires
+	$(MAKE) -f tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.o.provides.build
+.PHONY : tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.o.provides
 
-fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.o.provides.build: fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.o
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.o.provides.build: tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.o
 
 
-fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.o: fuzz/CMakeFiles/signature_fuzz_tests.dir/flags.make
-fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.o: fuzz/fuzzer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.o"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/signature_fuzz_tests.dir/fuzzer.o -c /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.o: tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/flags.make
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.o: tests/fuzz/fuzzer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.o"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.o -c /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp
 
-fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/signature_fuzz_tests.dir/fuzzer.i"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp > CMakeFiles/signature_fuzz_tests.dir/fuzzer.i
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.i"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp > CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.i
 
-fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/signature_fuzz_tests.dir/fuzzer.s"
-	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp -o CMakeFiles/signature_fuzz_tests.dir/fuzzer.s
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.s"
+	cd /home/chip/Downloads/monero/tests/fuzz && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chip/Downloads/monero/tests/fuzz/fuzzer.cpp -o CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.s
 
-fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.o.requires:
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.o.requires:
 
-.PHONY : fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.o.requires
+.PHONY : tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.o.requires
 
-fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.o.provides: fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.o.requires
-	$(MAKE) -f fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.o.provides.build
-.PHONY : fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.o.provides
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.o.provides: tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.o.requires
+	$(MAKE) -f tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.o.provides.build
+.PHONY : tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.o.provides
 
-fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.o.provides.build: fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.o
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.o.provides.build: tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.o
 
 
 # Object files for target signature_fuzz_tests
 signature_fuzz_tests_OBJECTS = \
-"CMakeFiles/signature_fuzz_tests.dir/signature.o" \
-"CMakeFiles/signature_fuzz_tests.dir/fuzzer.o"
+"CMakeFiles/signature_fuzz_tests.dir/signature.cpp.o" \
+"CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.o"
 
 # External object files for target signature_fuzz_tests
 signature_fuzz_tests_EXTERNAL_OBJECTS =
 
-fuzz/signature_fuzz_tests: fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.o
-fuzz/signature_fuzz_tests: fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.o
-fuzz/signature_fuzz_tests: fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make
-fuzz/signature_fuzz_tests: fuzz/CMakeFiles/signature_fuzz_tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/tests/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable signature_fuzz_tests"
+tests/fuzz/signature_fuzz_tests: tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.o
+tests/fuzz/signature_fuzz_tests: tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.o
+tests/fuzz/signature_fuzz_tests: tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/build.make
+tests/fuzz/signature_fuzz_tests: lib/libwallet.a
+tests/fuzz/signature_fuzz_tests: src/cryptonote_core/libcryptonote_core.a
+tests/fuzz/signature_fuzz_tests: src/p2p/libp2p.a
+tests/fuzz/signature_fuzz_tests: contrib/epee/src/libepee.a
+tests/fuzz/signature_fuzz_tests: /usr/lib/x86_64-linux-gnu/librt.so
+tests/fuzz/signature_fuzz_tests: src/blockchain_db/libblockchain_db.a
+tests/fuzz/signature_fuzz_tests: external/db_drivers/liblmdb/liblmdb.a
+tests/fuzz/signature_fuzz_tests: src/ringct/libringct.a
+tests/fuzz/signature_fuzz_tests: src/cryptonote_basic/libcryptonote_basic.a
+tests/fuzz/signature_fuzz_tests: src/blocks/libblocks.a
+tests/fuzz/signature_fuzz_tests: /usr/lib/x86_64-linux-gnu/libminiupnpc.so
+tests/fuzz/signature_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+tests/fuzz/signature_fuzz_tests: src/common/libcommon.a
+tests/fuzz/signature_fuzz_tests: contrib/epee/src/libepee.a
+tests/fuzz/signature_fuzz_tests: src/crypto/libcncrypto.a
+tests/fuzz/signature_fuzz_tests: /usr/lib/x86_64-linux-gnu/libunbound.so
+tests/fuzz/signature_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+tests/fuzz/signature_fuzz_tests: /usr/lib/x86_64-linux-gnu/libssl.so
+tests/fuzz/signature_fuzz_tests: /usr/lib/x86_64-linux-gnu/libcrypto.so
+tests/fuzz/signature_fuzz_tests: src/mnemonics/libmnemonics.a
+tests/fuzz/signature_fuzz_tests: external/easylogging++/libeasylogging.a
+tests/fuzz/signature_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+tests/fuzz/signature_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+tests/fuzz/signature_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+tests/fuzz/signature_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_system.so
+tests/fuzz/signature_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+tests/fuzz/signature_fuzz_tests: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+tests/fuzz/signature_fuzz_tests: /usr/lib/x86_64-linux-gnu/librt.so
+tests/fuzz/signature_fuzz_tests: tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chip/Downloads/monero/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable signature_fuzz_tests"
 	cd /home/chip/Downloads/monero/tests/fuzz && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/signature_fuzz_tests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-fuzz/CMakeFiles/signature_fuzz_tests.dir/build: fuzz/signature_fuzz_tests
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/build: tests/fuzz/signature_fuzz_tests
 
-.PHONY : fuzz/CMakeFiles/signature_fuzz_tests.dir/build
+.PHONY : tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/build
 
-fuzz/CMakeFiles/signature_fuzz_tests.dir/requires: fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.o.requires
-fuzz/CMakeFiles/signature_fuzz_tests.dir/requires: fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.o.requires
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/requires: tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/signature.cpp.o.requires
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/requires: tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.o.requires
 
-.PHONY : fuzz/CMakeFiles/signature_fuzz_tests.dir/requires
+.PHONY : tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/requires
 
-fuzz/CMakeFiles/signature_fuzz_tests.dir/clean:
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/clean:
 	cd /home/chip/Downloads/monero/tests/fuzz && $(CMAKE_COMMAND) -P CMakeFiles/signature_fuzz_tests.dir/cmake_clean.cmake
-.PHONY : fuzz/CMakeFiles/signature_fuzz_tests.dir/clean
+.PHONY : tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/clean
 
-fuzz/CMakeFiles/signature_fuzz_tests.dir/depend:
-	cd /home/chip/Downloads/monero/tests && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/fuzz /home/chip/Downloads/monero/tests /home/chip/Downloads/monero/tests/fuzz /home/chip/Downloads/monero/tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/DependInfo.cmake --color=$(COLOR)
-.PHONY : fuzz/CMakeFiles/signature_fuzz_tests.dir/depend
+tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/depend:
+	cd /home/chip/Downloads/monero && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/fuzz /home/chip/Downloads/monero /home/chip/Downloads/monero/tests/fuzz /home/chip/Downloads/monero/tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/DependInfo.cmake --color=$(COLOR)
+.PHONY : tests/fuzz/CMakeFiles/signature_fuzz_tests.dir/depend
 

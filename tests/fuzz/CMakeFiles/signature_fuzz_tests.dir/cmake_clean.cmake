@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/signature_fuzz_tests.dir/signature.o"
-  "CMakeFiles/signature_fuzz_tests.dir/fuzzer.o"
+  "CMakeFiles/signature_fuzz_tests.dir/signature.cpp.o"
+  "CMakeFiles/signature_fuzz_tests.dir/fuzzer.cpp.o"
   "signature_fuzz_tests.pdb"
   "signature_fuzz_tests"
 )
