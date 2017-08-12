@@ -1,0 +1,3 @@
+Set up Arduino client:
+- On VMware: NAT (vmnet8)
+- On Windows: vmnet8, enable Internet connection sharing with hosted network (LAN *1x)
