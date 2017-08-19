@@ -43,6 +43,7 @@ namespace crypto {
 
   extern "C" {
 #include "random.h"
+#include "sha512.h"
   }
 
   extern boost::mutex random_lock;
@@ -121,6 +122,13 @@ namespace crypto {
     friend void derive_secret_key(const key_derivation &, std::size_t, const secret_key &, secret_key &);
     static void generate_signature(const hash &, const public_key &, const secret_key &, signature &);
     friend void generate_signature(const hash &, const public_key &, const secret_key &, signature &);
+    
+    // added
+    static void generate_EdDSA_signature(unsigned char *sm,unsigned long long *smlen, const unsigned char *m,unsigned long long mlen, const unsigned char *sk);
+    friend void generate_EdDSA_signature(unsigned char *sm,unsigned long long *smlen, const unsigned char *m,unsigned long long mlen, const unsigned char *sk);
+    static bool check_EdDSA_signature(const hash &prefix_hash, const public_key &pub, const signature &sig);
+    friend bool check_EdDSA_signature(const hash &prefix_hash, const public_key &pub, const signature &sig);
+     
     static bool check_signature(const hash &, const public_key &, const signature &);
     friend bool check_signature(const hash &, const public_key &, const signature &);
     static void generate_tx_proof(const hash &, const public_key &, const public_key &, const public_key &, const secret_key &, signature &);
@@ -202,6 +210,14 @@ namespace crypto {
   }
   inline bool check_signature(const hash &prefix_hash, const public_key &pub, const signature &sig) {
     return crypto_ops::check_signature(prefix_hash, pub, sig);
+  }
+  
+  // added EdDSA signature
+  inline void generate_EdDSA_signature(unsigned char *sm,unsigned long long *smlen, const unsigned char *m,unsigned long long mlen, const unsigned char *sk) {
+    crypto_ops::generate_EdDSA_signature(sm, smlen, m, mlen, sk);
+  }
+  inline bool check_EdDSA_signature(const hash &prefix_hash, const public_key &pub, const signature &sig) {
+    return crypto_ops::check_EdDSA_signature(prefix_hash, pub, sig);
   }
 
   /* Generation and checking of a tx proof; given a tx pubkey R, the recipient's view pubkey A, and the key 

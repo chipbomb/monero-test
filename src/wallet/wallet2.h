@@ -52,7 +52,7 @@
 #include "crypto/hash.h"
 #include "ringct/rctTypes.h"
 #include "ringct/rctOps.h"
-
+#include "crypto/sha512.h"
 #include "wallet_errors.h"
 #include "common/password.h"
 #include "node_rpc_proxy.h"
@@ -142,7 +142,10 @@ namespace tools
       uint64_t m_spent_height;
       crypto::key_image m_key_image; //TODO: key_image stored twice :(
       rct::key m_mask;
+      //added
       rct::key m_cap;
+      rct::key m_maskM;
+      rct::key m_cap_orig;
       uint64_t m_amount;
       bool m_rct;
       bool m_key_image_known;
@@ -163,6 +166,8 @@ namespace tools
         FIELD(m_key_image)
         FIELD(m_mask)
         FIELD(m_cap)
+        FIELD(m_maskM)
+        FIELD(m_cap_orig)
         FIELD(m_amount)
         FIELD(m_rct)
         FIELD(m_key_image_known)
@@ -785,6 +790,9 @@ namespace boost
       }
       a & x.m_mask;
       a & x.m_cap;
+      //added
+      a & x.m_maskM;
+      a & x.m_cap_orig;
       a & x.m_amount;
       if (ver < 2)
       {

@@ -74,6 +74,7 @@ target_link_libraries(wallet
   PUBLIC
     common
     cryptonote_core
+    cncrypto
     mnemonics
     p2p
     ${Boost_CHRONO_LIBRARY}
@@ -108,7 +109,6 @@ if (NOT BUILD_GUI_DEPS)
       epee
       rpc
       cryptonote_core
-      cncrypto
       common
       ${Boost_CHRONO_LIBRARY}
       ${Boost_PROGRAM_OPTIONS_LIBRARY}

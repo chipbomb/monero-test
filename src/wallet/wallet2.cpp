@@ -35,7 +35,7 @@
 #include <boost/utility/value_init.hpp>
 #include "include_base_utils.h"
 using namespace epee;
-
+//#include "crypto/crypto_ops_builder/crypto_sign.h"
 #include "cryptonote_config.h"
 #include "wallet2.h"
 #include "wallet2_api.h"
@@ -64,6 +64,7 @@ extern "C"
 {
 #include "crypto/keccak.h"
 #include "crypto/crypto-ops.h"
+#include "crypto/sha512.h"
 }
 using namespace cryptonote;
 
@@ -640,6 +641,44 @@ static uint64_t decodeRct(const rct::rctSig & rv, const crypto::public_key &pub,
   }
 }
 //----------------------------------------------------------------------------------------------------
+static rct::keyV decodeRct_all(const rct::rctSig & rv, const crypto::public_key &pub, const crypto::secret_key &sec, unsigned int i, rct::key & mask)
+{
+  crypto::key_derivation derivation;
+  bool r = crypto::generate_key_derivation(pub, sec, derivation);
+  if (!r)
+  {
+    LOG_ERROR("Failed to generate key derivation to decode rct output " << i);
+    rct::keyV V(3);
+    return V;
+  }
+  crypto::secret_key scalar1;
+  crypto::derivation_to_scalar(derivation, i, scalar1);
+  try
+  {
+    switch (rv.type)
+    {
+    
+    case rct::RCTTypeFull:
+    	cout << "this is delegation tx" << endl;
+      return rct::decodeRct_all(rv, rct::sk2rct(scalar1), 0, mask, rv.Mc);
+    case rct::RCTTypeCap:
+      cout << "this is pub tx" << endl;
+      rct::dp(rct::sk2rct(scalar1));
+      return rct::decodeRct_all(rv, rct::sk2rct(scalar1), 0, mask, rv.Mc);
+    default:
+      LOG_ERROR("Unsupported rct type: " << rv.type);
+      rct::keyV V(3);
+      return V;
+    }
+  }
+  catch (const std::exception &e)
+  {
+    LOG_ERROR("Failed to decode input " << i);
+    rct::keyV V(3);
+    return V;
+  }
+}
+//----------------------------------------------------------------------------------------------------
 bool wallet2::wallet_generate_key_image_helper(const cryptonote::account_keys& ack, const crypto::public_key& tx_public_key, size_t real_output_index, cryptonote::keypair& in_ephemeral, crypto::key_image& ki)
 {
   if (!cryptonote::generate_key_image_helper(ack, tx_public_key, real_output_index, in_ephemeral, ki))
@@ -669,6 +708,8 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
   size_t pk_index = 0;
   while (!tx.vout.empty())
   {
+  	// added
+  	rct::keyV V;
     // if tx.vout is not empty, we loop through all tx pubkeys
 
     tx_extra_pub_key pub_key_field;
@@ -720,7 +761,12 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
           outs.push_back(0);
           if (money_transfered == 0)
           {
-            money_transfered = tools::decodeRct(tx.rct_signatures, pub_key_field.pub_key, keys.m_view_secret_key, 0, mask[0]);
+          	cout << "go here?" << endl;
+            //money_transfered = tools::decodeRct(tx.rct_signatures, pub_key_field.pub_key, keys.m_view_secret_key, 0, mask[0]);
+            
+            V = tools::decodeRct_all(tx.rct_signatures, pub_key_field.pub_key, keys.m_view_secret_key, 0, mask[0]);
+            money_transfered = h2d(V[0]);
+            cout << "money transfer " << money_transfered << endl;
           }
           amount[0] = money_transfered;
           tx_money_got_in_outs = money_transfered;
@@ -837,11 +883,12 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
 
             outs.push_back(i);
             if (money_transfered == 0)
-            { //cout << "should be here" << endl;
-              money_transfered = tools::decodeRct(tx.rct_signatures, pub_key_field.pub_key, keys.m_view_secret_key, i, mask[i]);
+            { cout << "should be here" << endl;
+            	// EDITED
+              V = tools::decodeRct_all(tx.rct_signatures, pub_key_field.pub_key, keys.m_view_secret_key, i, mask[i]);
               cout << "decoded" << endl;
             }
-            amount[i] = money_transfered;
+            amount[i] = rct::h2d(V[0]);
             tx_money_got_in_outs += money_transfered;
             ++num_vouts_received;
           }
@@ -875,15 +922,16 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
         {
           if (!pool)
           {
-	    m_transfers.push_back(boost::value_initialized<transfer_details>());
-	    transfer_details& td = m_transfers.back();
-	    //added
-	    td.m_cap = tx.rct_signatures.Mc;
-	    td.m_block_height = height;
-	    td.m_internal_output_index = o;
-	    td.m_global_output_index = o_indices[o];
-	    td.m_tx = (const cryptonote::transaction_prefix&)tx;
-	    td.m_txid = txid;
+						m_transfers.push_back(boost::value_initialized<transfer_details>());
+						transfer_details& td = m_transfers.back();
+						//added
+						td.m_cap = tx.rct_signatures.Mc;
+						
+						td.m_block_height = height;
+						td.m_internal_output_index = o;
+						td.m_global_output_index = o_indices[o];
+						td.m_tx = (const cryptonote::transaction_prefix&)tx;
+						td.m_txid = txid;
             td.m_key_image = ki[o];
             td.m_key_image_known = !m_watch_only;
             td.m_amount = tx.vout[o].amount;
@@ -892,12 +940,22 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
             {
               td.m_mask = mask[o];
               td.m_amount = amount[o];
+              
+              td.m_maskM = V[1];
+							//td.m_cap_orig = V[2];
+							
+							rct::subKeys(td.m_cap_orig, tx.rct_signatures.Mc, scalarmultBase(td.m_maskM));
+							cout << "mcap orig ";
+							rct::dp(td.m_cap_orig);
               td.m_rct = true;
             }
             else if (miner_tx && tx.version == 2)
             {
+            	cout << "miner should go here " << endl;
               td.m_mask = mask[o];
               td.m_mask = rct::identity();
+              td.m_maskM = rct::identity();
+							td.m_cap_orig = tx.rct_signatures.Mc ;
               td.m_rct = true;
             }
             else
@@ -931,11 +989,11 @@ void wallet2::process_new_transaction(const crypto::hash &txid, const cryptonote
           if (!pool)
           {
             transfer_details &td = m_transfers[kit->second];
-	    td.m_block_height = height;
-	    td.m_internal_output_index = o;
-	    td.m_global_output_index = o_indices[o];
-	    td.m_tx = (const cryptonote::transaction_prefix&)tx;
-	    td.m_txid = txid;
+						td.m_block_height = height;
+						td.m_internal_output_index = o;
+						td.m_global_output_index = o_indices[o];
+						td.m_tx = (const cryptonote::transaction_prefix&)tx;
+						td.m_txid = txid;
             td.m_amount = tx.vout[o].amount;
             td.m_pk_index = pk_index - 1;
             if (td.m_amount == 0)
@@ -3245,7 +3303,10 @@ void wallet2::transfer_cap(std::vector<cryptonote::tx_destination_entry> dsts, c
     src.real_out_tx_key = get_tx_pub_key_from_extra(td.m_tx, td.m_pk_index);
     src.real_output = it_to_replace - src.outputs.begin();
     src.real_output_in_tx_index = td.m_internal_output_index;
+    //added
     src.mask = td.m_mask;
+    src.maskM = td.m_maskM;
+    src.cap_orig = td.m_cap_orig;
     detail::print_source_entry(src);
     ++out_index;
   }
@@ -5516,6 +5577,21 @@ std::string wallet2::get_tx_note(const crypto::hash &txid) const
 
 std::string wallet2::sign(const std::string &data) const
 {
+	uint8_t alice_private[32] = {
+        0xb0, 0xef, 0x6b, 0xd5, 0x27, 0xb9, 0xb2, 0x3b,
+        0x9c, 0xee, 0xf7, 0x0d, 0xc8, 0xb4, 0xcd, 0x1e,
+        0xe8, 0x3c, 0xa1, 0x45, 0x41, 0x96, 0x4e, 0x76,
+        0x4a, 0xd2, 0x3f, 0x51, 0x51, 0x20, 0x4f, 0x0f
+    };
+  rct::key alice;
+  memcpy(alice.bytes,alice_private, 32);
+  unsigned char sm[64];
+  unsigned long long smlen = 0;
+  cout << "data " << data << endl;
+  crypto::generate_EdDSA_signature(sm, &smlen, (const unsigned char*)data.c_str(), data.length(), alice.bytes);
+  cout << "EdDSA " << tools::base58::encode(std::string((const char *)sm, 64)) << endl;
+  rct::dp((const char *)sm, 64);
+  
   crypto::hash hash;
   crypto::cn_fast_hash(data.data(), data.size(), hash);
   const cryptonote::account_keys &keys = m_account.get_keys();

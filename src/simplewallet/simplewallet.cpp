@@ -727,6 +727,7 @@ simple_wallet::simple_wallet()
   m_cmd_binder.set_handler("get_tx_proof", boost::bind(&simple_wallet::get_tx_proof, this, _1), tr("Generate a signature to prove payment to <address> in <txid> using the transaction secret key (r) without revealing it"));
   m_cmd_binder.set_handler("check_tx_proof", boost::bind(&simple_wallet::check_tx_proof, this, _1), tr("Check tx proof for payment going to <address> in <txid>"));
   m_cmd_binder.set_handler("show_transfers", boost::bind(&simple_wallet::show_transfers, this, _1), tr("show_transfers [in|out|pending|failed|pool] [<min_height> [<max_height>]] - Show incoming/outgoing transfers within an optional height range"));
+  m_cmd_binder.set_handler("show_caps", boost::bind(&simple_wallet::show_caps, this, _1), tr("show_caps - Show capabilities"));
   m_cmd_binder.set_handler("unspent_outputs", boost::bind(&simple_wallet::unspent_outputs, this, _1), tr("unspent_outputs [<min_amount> <max_amount>] - Show unspent outputs within an optional amount range"));
   //added
   m_cmd_binder.set_handler("find_cap", boost::bind(&simple_wallet::find_cap, this, _1), tr("find_cap [capid] - Show cap"));
@@ -4178,6 +4179,33 @@ bool simple_wallet::find_cap(const std::vector<std::string> &args)
   
   return true;
 }
+
+bool simple_wallet::show_caps(const std::vector<std::string> &args)
+{
+  if(args.size() > 1)
+  {
+    fail_msg_writer() << tr("usage: show_caps doesn't take any argument");
+    return true;
+  }
+  tools::wallet2::transfer_container transfers;
+  m_wallet->get_transfers(transfers);
+  if (transfers.empty())
+  {
+    success_msg_writer() << "There is no unspent output in this wallet.";
+    return true;
+  }
+  
+  for (const auto& td : transfers)
+  {
+  	if (!td.m_spent) {
+			success_msg_writer() << print_cap(td.m_cap_orig)
+			<< " obfuscated as " << print_cap(td.m_cap)
+		  	<< tr(" expired at ") << print_time(td.m_amount);
+    }
+  }
+  
+  return true;
+}
 //----------------------------------------------------------------------------------------------------
 bool simple_wallet::rescan_blockchain(const std::vector<std::string> &args_)
 {
@@ -4465,8 +4493,12 @@ bool simple_wallet::sign(const std::vector<std::string> &args)
     fail_msg_writer() << tr("failed to read file ") << filename;
     return true;
   }
+  //added to test signature
+  std::string test_string = "Tam Le";
+  std::string test_signature = m_wallet->sign(test_string);
   std::string signature = m_wallet->sign(data);
   success_msg_writer() << signature;
+  success_msg_writer() << test_signature;
   return true;
 }
 //----------------------------------------------------------------------------------------------------

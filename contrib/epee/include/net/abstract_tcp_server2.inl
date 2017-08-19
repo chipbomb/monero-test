@@ -808,7 +808,7 @@ POP_WARNINGS
     m_threads_count = threads_count;
     m_main_thread_id = boost::this_thread::get_id();
     MLOG_SET_THREAD_NAME("[SRV_MAIN]");
-    cout << "abstract tcp server" << endl;
+    //cout << "abstract tcp server" << endl;
     add_idle_handler(boost::bind(&boosted_tcp_server::cleanup_connections, this), 5000);
     while(!m_stop_signal_sent)
     {
@@ -933,13 +933,13 @@ POP_WARNINGS
     TRY_ENTRY();
     if (!e)
     {
-    	cout << "abstract_tcp_server2 before handle" << endl;
+    	//cout << "abstract_tcp_server2 before handle" << endl;
 			if (m_connection_type == e_connection_type_RPC) {
 				MDEBUG("New server for RPC connections");
 				new_connection_->setRpcStation(); // hopefully this is not needed actually
-				cout << "RPC connect" << endl;
+				//cout << "RPC connect" << endl;
 			}
-			cout << "abstract_tcp_server2 after handle" << endl;
+			//cout << "abstract_tcp_server2 after handle" << endl;
 			connection_ptr conn(std::move(new_connection_));
       new_connection_.reset(new connection<t_protocol_handler>(io_service_, m_config, m_sock_count, m_sock_number, m_pfilter, m_connection_type));
       acceptor_.async_accept(new_connection_->socket(),

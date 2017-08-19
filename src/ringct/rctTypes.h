@@ -113,11 +113,15 @@ namespace rct {
     struct ecdhTuple {
         key mask;
         key amount;
+        key maskM;
+        key M;
         key senderPk;
 
         BEGIN_SERIALIZE_OBJECT()
           FIELD(mask)
           FIELD(amount)
+          FIELD(maskM)
+          FIELD(M)
           // FIELD(senderPk) // not serialized, as we do not use it in monero currently
         END_SERIALIZE()
     };

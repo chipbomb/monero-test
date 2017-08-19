@@ -42,6 +42,7 @@
 #include "crypto.h"
 #include "hash.h"
 
+
 #if !defined(__FreeBSD__) && !defined(__OpenBSD__) && !defined(__DragonFly__)
  #include <alloca.h>
 #else
@@ -60,6 +61,7 @@ namespace crypto {
   extern "C" {
 #include "crypto-ops.h"
 #include "random.h"
+#include "sha512.h"
   }
 
   boost::mutex random_lock;
@@ -207,6 +209,50 @@ namespace crypto {
     ec_point Y;
   };
 
+/**************************************ADDED**************************************************/
+	void crypto_ops::generate_EdDSA_signature(unsigned char *sm,unsigned long long *smlen, const unsigned char *m,unsigned long long mlen, const unsigned char *sk) {
+    unsigned char pk[32];
+		unsigned char az[64];
+		unsigned char nonce[64];
+		unsigned char hram[64];
+		ge_p3 R;
+		ge_p3 A;
+
+		crypto_hash_sha512(az,sk,32); // az = H(sk)
+		az[0] &= 248;
+		az[31] &= 63;
+		az[31] |= 64;
+		
+		memmove(pk,az,32); // s = pk = H_{0-31}(sk)
+		ge_scalarmult_base(&A,pk); // A = sG
+		
+
+		*smlen = mlen + 64;
+		memmove(sm + 64,m,mlen); // message m at 64
+		memmove(sm + 32,az + 32,32); // H_{32-63}(sk) at 32
+		crypto_hash_sha512(nonce,sm + 32,mlen + 32); // nonce = H(H_{32-63}(sk),m) = r
+		ge_p3_tobytes(sm+32,&A); // copy A to sm at 32
+
+		int j = 0;
+    printf("\"");
+    for (j = 32; j < 64; j++) {
+        printf("%02x", (unsigned char)sm[j]);
+    }
+    printf("\"");
+    printf("\n");
+		sc_reduce(nonce);
+		ge_scalarmult_base(&R,nonce); // R = rG
+		ge_p3_tobytes(sm,&R); // copy R to sm at 0
+
+		crypto_hash_sha512(hram,sm,mlen + 64); // hram = H(R,A,M)
+		sc_reduce(hram);
+		sc_muladd(sm + 32,hram,az,nonce);
+
+		//return 0;
+  }
+  
+  
+/*********************************************************************************************/
   void crypto_ops::generate_signature(const hash &prefix_hash, const public_key &pub, const secret_key &sec, signature &sig) {
     ge_p3 tmp3;
     ec_scalar k;

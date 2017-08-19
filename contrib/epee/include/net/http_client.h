@@ -364,7 +364,7 @@ using namespace std;
 					}
 				}
 				
-				cout << "http client" << endl;
+				//cout << "http client" << endl;
 
 				std::string req_buff{};
 				req_buff.reserve(2048);
@@ -386,8 +386,8 @@ using namespace std;
 					req_buff += "\r\n";
 					//--
 					
-					cout << req_buff << endl;
-					cout << body << endl;
+					//cout << req_buff << endl;
+					//cout << body << endl;
 					bool res = m_net_client.send(req_buff, timeout);
 					CHECK_AND_ASSERT_MES(res, false, "HTTP_CLIENT: Failed to SEND");
 					if(body.size())

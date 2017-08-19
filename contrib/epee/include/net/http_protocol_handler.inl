@@ -338,9 +338,9 @@ namespace net_utils
 		//											    123         4     5      6      7     8        9        10          11     12    
 		//size_t match_len = 0;
 		boost::smatch result;	
-		cout << "http protocol handler" << endl;
-		cout << "m cahce" << endl;
-		cout << m_cache ;
+		//cout << "http protocol handler" << endl;
+		//cout << "m cahce" << endl;
+		//cout << m_cache ;
 		if(boost::regex_search(m_cache, result, rexp_match_command_line, boost::match_default) && result[0].matched)
 		{
 			analize_http_method(result, m_query_info.m_http_method, m_query_info.m_http_ver_hi, m_query_info.m_http_ver_hi);

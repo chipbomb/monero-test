@@ -441,15 +441,23 @@ namespace rct {
     void ecdhEncode(ecdhTuple & unmasked, const key & sharedSec) {
         key sharedSec1 = hash_to_scalar(sharedSec);
         key sharedSec2 = hash_to_scalar(sharedSec1);
+        key sharedSec3 = hash_to_scalar(sharedSec2);
+        key sharedSec4 = hash_to_scalar(sharedSec3);
         //encode
         sc_add(unmasked.mask.bytes, unmasked.mask.bytes, sharedSec1.bytes);
         sc_add(unmasked.amount.bytes, unmasked.amount.bytes, sharedSec2.bytes);
+        sc_add(unmasked.maskM.bytes, unmasked.maskM.bytes, sharedSec3.bytes);
+        sc_add(unmasked.M.bytes, unmasked.M.bytes, sharedSec4.bytes);
     }
     void ecdhDecode(ecdhTuple & masked, const key & sharedSec) {
         key sharedSec1 = hash_to_scalar(sharedSec);
         key sharedSec2 = hash_to_scalar(sharedSec1);
+        key sharedSec3 = hash_to_scalar(sharedSec2);
+        key sharedSec4 = hash_to_scalar(sharedSec3);
         //decode
         sc_sub(masked.mask.bytes, masked.mask.bytes, sharedSec1.bytes);
         sc_sub(masked.amount.bytes, masked.amount.bytes, sharedSec2.bytes);
+        sc_sub(masked.maskM.bytes, masked.maskM.bytes, sharedSec3.bytes);
+        sc_sub(masked.M.bytes, masked.M.bytes, sharedSec4.bytes);
     }
 }

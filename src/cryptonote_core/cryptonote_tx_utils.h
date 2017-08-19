@@ -53,7 +53,9 @@ namespace cryptonote
     rct::key mask;                      //ringct amount mask
     
     //added
-    rct::key cap;
+    rct::key cap; // intermediate cap
+    rct::key cap_orig; // root cap
+    rct::key maskM; // cap mask
 
     void push_output(uint64_t idx, const crypto::public_key &k, uint64_t amount) { outputs.push_back(std::make_pair(idx, rct::ctkey({rct::pk2rct(k), rct::zeroCommit(amount)}))); }
   };
@@ -105,6 +107,8 @@ namespace boost
       a & x.rct;
       a & x.mask;
       a & x.cap;
+      a & x.cap_orig;
+      a & x.maskM;
     }
   }
 }

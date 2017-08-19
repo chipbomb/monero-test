@@ -197,10 +197,10 @@ namespace cryptonote
 	  //rct::xmr_amount a = 4119879553;
 	  // create capability
 	  	std::vector<rct::key> amount_keys;
-		amount_keys.clear();
-		crypto::secret_key scalar1;
-        crypto::derivation_to_scalar(derivation, 0, scalar1);
-        amount_keys.push_back(rct::sk2rct(scalar1));
+			amount_keys.clear();
+			crypto::secret_key scalar1;
+      crypto::derivation_to_scalar(derivation, 0, scalar1);
+      amount_keys.push_back(rct::sk2rct(scalar1));
 		  rct::rctSig sig;
 		  sig.type = rct::RCTTypeCap;
 		  sig.message = rct::zero();
@@ -212,25 +212,27 @@ namespace cryptonote
 		  addKeys2(pk.mask, mask, rct::d2h(block_reward), M);
 		
 
-		sig.Mc = M;
+			sig.Mc = M;
 		
-		pk.dest = rct::pk2rct(boost::get<txout_to_key>(out.target).key);
-		sig.outPk.push_back(pk);
-		/*cout << "outpk " ;
-		dp(pk.mask);
-		cout << "mask ";
-		dp(mask);
-		cout <<"M ";
-		dp(M);*/
+			pk.dest = rct::pk2rct(boost::get<txout_to_key>(out.target).key);
+			sig.outPk.push_back(pk);
+			/*cout << "outpk " ;
+			dp(pk.mask);
+			cout << "mask ";
+			dp(mask);*/
+			///cout <<"M ";
+			//dp(M);
 		
-		sig.ecdhInfo.resize(sig.outPk.size());
-		sig.ecdhInfo[0].mask = mask;
-        sig.ecdhInfo[0].amount = rct::d2h(block_reward);
-        rct::ecdhEncode(sig.ecdhInfo[0], amount_keys[0]);
+			sig.ecdhInfo.resize(sig.outPk.size());
+			sig.ecdhInfo[0].mask = mask;
+      sig.ecdhInfo[0].amount = rct::d2h(block_reward);
+      sig.ecdhInfo[0].maskM = rct::zero();
+      sig.ecdhInfo[0].M = M;
+      rct::ecdhEncode(sig.ecdhInfo[0], amount_keys[0]);
 
-		out.amount = 0;
-		tx.vout.push_back(out);
-		tx.rct_signatures = sig;
+			out.amount = 0;
+			tx.vout.push_back(out);
+			tx.rct_signatures = sig;
     
       tx.version = 2;
     
@@ -358,7 +360,7 @@ namespace cryptonote
 
     // "Shuffle" outs
     std::vector<tx_destination_entry> shuffled_dsts(destinations);
-    std::sort(shuffled_dsts.begin(), shuffled_dsts.end(), [](const tx_destination_entry& de1, const tx_destination_entry& de2) { return de1.amount < de2.amount; } );
+    //std::sort(shuffled_dsts.begin(), shuffled_dsts.end(), [](const tx_destination_entry& de1, const tx_destination_entry& de2) { return de1.amount < de2.amount; } );
 
     uint64_t summary_outs_money = 0;
     //fill outputs
@@ -493,7 +495,7 @@ namespace cryptonote
 			
 			rct::keyM mixRingCap = rct::populateFakeRingCap(); // temporary, not implement cap selection yet
 			rct::key depth_key = rct::zero();
-      tx.rct_signatures = rct::genRctCap(rct::hash2rct(tx_prefix_hash), inSk, destinations, outamounts, mixRing, amount_keys, sources[0].real_output, outSk, 0, sources[0].cap, mixRingCap, m, depth_key); // same index assumption
+      tx.rct_signatures = rct::genRctCap(rct::hash2rct(tx_prefix_hash), inSk, destinations, outamounts, mixRing, amount_keys, sources[0].real_output, outSk, 0, sources[0].cap, mixRingCap, m, depth_key, sources[0].cap_orig, sources[0].maskM); // same index assumption
       cout << "source cap: " << endl;
       rct::dp(sources[0].cap);
 

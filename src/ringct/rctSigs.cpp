@@ -995,7 +995,7 @@ rangeSig proveRange(key & C, key & mask, const xmr_amount & amount, const key & 
     //   must know the destination private key to find the correct amount, else will return a random number
     //   Note: For txn fees, the last index in the amounts vector should contain that
     //   Thus the amounts vector will be "one" longer than the destinations vectort
-    rctSig genRctCap(const key &message, const ctkeyV & inSk, const keyV & destinations, const vector<xmr_amount> & amounts, const ctkeyM &mixRing, const keyV &amount_keys, unsigned int index, ctkeyV &outSk, xmr_amount d, const key & M, keyM & mixRingCap, key m, const key & depth_key) {
+    rctSig genRctCap(const key &message, const ctkeyV & inSk, const keyV & destinations, const vector<xmr_amount> & amounts, const ctkeyM &mixRing, const keyV &amount_keys, unsigned int index, ctkeyV &outSk, xmr_amount d, const key & M, keyM & mixRingCap, key m, const key & depth_key, const key & M_orig, key mi) {
         CHECK_AND_ASSERT_THROW_MES(amounts.size() == destinations.size() || amounts.size() == destinations.size() + 1, "Different number of amounts/destinations");
         CHECK_AND_ASSERT_THROW_MES(amount_keys.size() == destinations.size(), "Different number of amount_keys/destinations");
         CHECK_AND_ASSERT_THROW_MES(index < mixRing.size(), "Bad index into mixRing");
@@ -1015,7 +1015,10 @@ rangeSig proveRange(key & C, key & mask, const xmr_amount & amount, const key & 
         rv.p.MG_cap = gen_MGcap(message, d, M, mixRingCap, inSk[0].dest, m, depth_key);
         rv.mixRingCap = mixRingCap;
         addKeys1(rv.Mc, m, M);
-
+				cout << "M M Mc " << endl;
+				dp(M);
+				dp(m);
+				dp(rv.Mc);
         size_t i = 0;
         keyV masks(destinations.size()); //sk mask..
         outSk.resize(destinations.size());
@@ -1032,39 +1035,7 @@ rangeSig proveRange(key & C, key & mask, const xmr_amount & amount, const key & 
                 CHECK_AND_ASSERT_THROW_MES(verRange(rv.outPk[i].mask, rv.p.rangeSigs[i], rv.Mc), "verRange failed on newly created proof");
             #endif
 
-            //mask amount and mask
             
-            //some test
-            /*cout << "test" << endl;
-            key T = pkGen();
-            key t = skGen();
-            for (int i=16;i<32;i++) {
-							t.bytes[i] = t.bytes[i] & 0;
-						}
-            //key t = d2h(2);
-            xmr_amount a = 1000;
-            cout << "t" << endl;
-            dp(t);
-            key Tp;
-            addKeys1(Tp, t, T); // Tp = tG + T
-            key x = skGen();
-            key c1;
-            addKeys2(c1, x, d2h(a), Tp); // c = xG + aTp
-            dp(c1);
-            // c = xG + a(tG+T) = (x+at)G + aT
-            key c2;
-            key xat;
-            multKeys(xat, d2h(a), t);
-            dp(d2h(a));
-            cout << "at" << endl;           
-            dp(xat);
-            sc_add(xat.bytes, xat.bytes, x.bytes);
-            sc_reduce32(xat.bytes);
-            dp(xat);
-            addKeys2(c2, xat, d2h(a), T);
-            dp(c2);*/
-             
-            //uint64_t d = amounts[i]*h2d(m);
             key maskM;// = d2h(d);
             multKeys(maskM, d2h(amounts[i]), m);
             sc_add(maskM.bytes,outSk[i].mask.bytes,maskM.bytes);
@@ -1080,8 +1051,19 @@ rangeSig proveRange(key & C, key & mask, const xmr_amount & amount, const key & 
             outSk_new[i].mask = copy(maskM);
             //rv.ecdhInfo[i].mask = copy(maskM);
             rv.ecdhInfo[i].amount = d2h(amounts[i]);
+            sc_add(rv.ecdhInfo[i].maskM.bytes, m.bytes, mi.bytes);
+            rv.ecdhInfo[i].M = M_orig;
+            cout << "in genRct, (M,m) = " << endl ;
+            dp(M);
+            dp(m);
+            addKeys1(temp, m, M);
+            cout << "M + mG = " ;
+            dp(temp);
             ecdhEncode(rv.ecdhInfo[i], amount_keys[i]);
-
+						cout << "amount after encode ";
+						dp(rv.ecdhInfo[i].amount);
+						cout << "with amount keys ";
+						dp(amount_keys[i]);
         }
 
         //set txn fee
@@ -1102,14 +1084,14 @@ rangeSig proveRange(key & C, key & mask, const xmr_amount & amount, const key & 
         return rv;
     }
 
-    rctSig genRctCap(const key &message, const ctkeyV & inSk, const ctkeyV  & inPk, const keyV & destinations, const vector<xmr_amount> & amounts, const keyV &amount_keys, const int mixin, xmr_amount d, const key & M, key m, const key & depth_key) {
+    rctSig genRctCap(const key &message, const ctkeyV & inSk, const ctkeyV  & inPk, const keyV & destinations, const vector<xmr_amount> & amounts, const keyV &amount_keys, const int mixin, xmr_amount d, const key & M, key m, const key & depth_key, const key & M_orig,  key mi) {
         unsigned int index;
         ctkeyM mixRing;
         ctkeyV outSk;
         keyM mixRingCap = populateFakeRingCap();
         tie(mixRing, index) = populateFromBlockchain(inPk, mixin);
         
-        return genRctCap(message, inSk, destinations, amounts, mixRing, amount_keys, index, outSk, d, M, mixRingCap, m, depth_key);
+        return genRctCap(message, inSk, destinations, amounts, mixRing, amount_keys, index, outSk, d, M, mixRingCap, m, depth_key, M_orig, mi);
     }
 
 	xmr_amount decodeRct_cap(const rctSig & rv, const key & sk, unsigned int i, key & mask, const key & M) {
@@ -1134,6 +1116,56 @@ rangeSig proveRange(key & C, key & mask, const xmr_amount & amount, const key & 
         }
         //cout << "decode amount " << h2d(amount) << endl;
         return h2d(amount);
+    }
+    
+    keyV decodeRct_all(const rctSig & rv, const key & sk, unsigned int i, key & mask, const key & M) {
+        //CHECK_AND_ASSERT_MES(rv.type == RCTTypeFull || rv.type == RCTTypeCap, false, "decodeRct called on non-full rctSig");
+        CHECK_AND_ASSERT_THROW_MES(rv.outPk.size() == rv.ecdhInfo.size(), "Mismatched sizes of rv.outPk and rv.ecdhInfo");
+        CHECK_AND_ASSERT_THROW_MES(i < rv.ecdhInfo.size(), "Bad index");
+        //mask amount and mask
+        keyV V;
+        cout << "start decoding" << endl;
+        ecdhTuple ecdh_info = rv.ecdhInfo[i];
+        cout << "before decode" ;
+        dp(ecdh_info.M);
+        cout << "amount before decode ";
+						dp(ecdh_info.amount);
+        ecdhDecode(ecdh_info, sk);
+        mask = ecdh_info.mask;
+        key amount = ecdh_info.amount;
+        cout << "rctSigs decoded amount " << h2d(amount) << endl;
+        cout << "amount after decode ";
+						dp(amount);
+						cout << "with amount keys ";
+						dp(sk);
+        key C = rv.outPk[i].mask;
+        DP("C");
+        DP(C);
+        key Ctmp;
+        addKeys2(Ctmp, mask, amount, M);
+        DP("Ctmp");
+        DP(Ctmp);
+        if (equalKeys(C, Ctmp) == false) {
+            CHECK_AND_ASSERT_THROW_MES(false, "warning, amount decoded incorrectly, will be unable to spend");
+        }
+        
+        V.push_back(amount); // V = [amount, maskM, M]
+        
+        key maskM = ecdh_info.maskM;
+        key M1 = ecdh_info.M;
+        subKeys(M1, rv.Mc, scalarmultBase(maskM));
+        dp(maskM);
+        dp(M1);
+        /*if (!equalKeys(maskM, rct::zero())) {
+		      addKeys1(Ctmp, maskM, M1);
+		      if (equalKeys(rv.Mc, Ctmp) == false) {
+		          CHECK_AND_ASSERT_THROW_MES(false, "warning, capability decoded incorrectly, will be unable to spend");
+		      }
+		    }*/
+		    
+        V.push_back(maskM); 
+        V.push_back(M1);
+        return V;
     }
 
     xmr_amount decodeRct_cap(const rctSig & rv, const key & sk, unsigned int i, const key & M) {
