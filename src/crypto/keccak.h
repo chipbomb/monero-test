@@ -20,7 +20,8 @@ int keccak(const uint8_t *in, size_t inlen, uint8_t *md, int mdlen);
 
 // update the state
 void keccakf(uint64_t st[25], int norounds);
-
+//void keccakf(uint64_t st[25]);
 void keccak1600(const uint8_t *in, size_t inlen, uint8_t *md);
 
+void sha3_256(const uint8_t *in, size_t inlen, uint8_t *hash);
 #endif

@@ -593,6 +593,9 @@ namespace tools
     std::string get_tx_note(const crypto::hash &txid) const;
 
     std::string sign(const std::string &data) const;
+		// added
+		std::string sign_EdDSA(const std::string &data) const;
+		std::string derive_EdDSA_public_key() const;
     bool verify(const std::string &data, const cryptonote::account_public_address &address, const std::string &signature) const;
 
     std::vector<tools::wallet2::transfer_details> export_outputs() const;

@@ -59,7 +59,7 @@ using namespace epee;
 #include "common/base58.h"
 #include "common/scoped_message_writer.h"
 #include "ringct/rctSigs.h"
-
+#include <string>
 extern "C"
 {
 #include "crypto/keccak.h"
@@ -5587,17 +5587,45 @@ std::string wallet2::sign(const std::string &data) const
   memcpy(alice.bytes,alice_private, 32);
   unsigned char sm[64];
   unsigned long long smlen = 0;
-  cout << "data " << data << endl;
+  cout << "data\n" << data << endl;
   crypto::generate_EdDSA_signature(sm, &smlen, (const unsigned char*)data.c_str(), data.length(), alice.bytes);
   cout << "EdDSA " << tools::base58::encode(std::string((const char *)sm, 64)) << endl;
   rct::dp((const char *)sm, 64);
   
   crypto::hash hash;
-  crypto::cn_fast_hash(data.data(), data.size(), hash);
+  crypto::cn_fast_hash((const unsigned char*)data.c_str(), data.size(), hash);
   const cryptonote::account_keys &keys = m_account.get_keys();
   crypto::signature signature;
   crypto::generate_signature(hash, keys.m_account_address.m_spend_public_key, keys.m_spend_secret_key, signature);
   return std::string("SigV1") + tools::base58::encode(std::string((const char *)&signature, sizeof(signature)));
+}
+
+// ADDED
+std::string wallet2::sign_EdDSA(const std::string &data) const
+{
+	unsigned char sm[100];
+  unsigned long long smlen = 0;
+  cout << "data\n " << data << endl;
+	const cryptonote::account_keys &keys = m_account.get_keys();
+	crypto::hash hash;
+  //crypto::cn_fast_hash((const unsigned char*)data.c_str(), data.length(), hash);
+	crypto::cn_sha3_256((const unsigned char*)data.c_str(), data.length(), hash);
+	cout <<"hashed data" << endl;
+	rct::dp((const char*)hash.data, 32);
+  crypto::generate_EdDSA_signature(sm, &smlen, (const unsigned char*)hash.data, 32, (const unsigned char*)keys.m_spend_secret_key.data);
+	
+	std::string sm_base64;
+	sm_base64 = epee::string_encoding::base64_encode(sm, 64);
+  cout << sm_base64 << endl;
+  return sm_base64;
+ 
+}
+
+std::string wallet2::derive_EdDSA_public_key() const {
+	const cryptonote::account_keys &keys = m_account.get_keys();
+	unsigned char pk[32];
+	crypto::derive_EdDSA_public_key(pk, (const unsigned char*)keys.m_spend_secret_key.data);
+	return epee::string_encoding::base64_encode(pk, 32);
 }
 
 bool wallet2::verify(const std::string &data, const cryptonote::account_public_address &address, const std::string &signature) const

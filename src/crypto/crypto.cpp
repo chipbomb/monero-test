@@ -251,6 +251,23 @@ namespace crypto {
 		//return 0;
   }
   
+void crypto_ops::derive_EdDSA_public_key(unsigned char *pk, const unsigned char *sk) {
+
+	unsigned char az[64];
+	
+	ge_p3 R;
+	ge_p3 A;
+
+	crypto_hash_sha512(az,sk,32); // az = H(sk)
+	az[0] &= 248;
+	az[31] &= 63;
+	az[31] |= 64;
+	
+	memmove(pk,az,32); // s = pk = H_{0-31}(sk)
+	ge_scalarmult_base(&A,pk); // A = sG
+	
+	ge_p3_tobytes(pk,&A); // copy A to sm at 32
+}
   
 /*********************************************************************************************/
   void crypto_ops::generate_signature(const hash &prefix_hash, const public_key &pub, const secret_key &sec, signature &sig) {

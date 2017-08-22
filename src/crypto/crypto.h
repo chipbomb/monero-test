@@ -129,6 +129,9 @@ namespace crypto {
     static bool check_EdDSA_signature(const hash &prefix_hash, const public_key &pub, const signature &sig);
     friend bool check_EdDSA_signature(const hash &prefix_hash, const public_key &pub, const signature &sig);
      
+		static void derive_EdDSA_public_key(unsigned char *pk, const unsigned char *sk);
+		friend void derive_EdDSA_public_key(unsigned char *pk, const unsigned char *sk);
+
     static bool check_signature(const hash &, const public_key &, const signature &);
     friend bool check_signature(const hash &, const public_key &, const signature &);
     static void generate_tx_proof(const hash &, const public_key &, const public_key &, const public_key &, const secret_key &, signature &);
@@ -218,6 +221,9 @@ namespace crypto {
   }
   inline bool check_EdDSA_signature(const hash &prefix_hash, const public_key &pub, const signature &sig) {
     return crypto_ops::check_EdDSA_signature(prefix_hash, pub, sig);
+  }
+	inline void derive_EdDSA_public_key(unsigned char *pk, const unsigned char *sk) {
+    crypto_ops::derive_EdDSA_public_key(pk, sk);
   }
 
   /* Generation and checking of a tx proof; given a tx pubkey R, the recipient's view pubkey A, and the key 

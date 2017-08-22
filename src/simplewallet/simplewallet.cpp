@@ -62,6 +62,14 @@
 #include "wallet/wallet_args.h"
 #include <stdexcept>
 
+#include <boost/array.hpp>
+#include <boost/asio.hpp>
+#include <ostream>
+#include <sstream>
+#include <chrono>
+
+using boost::asio::ip::tcp;
+using namespace std;
 #ifdef HAVE_READLINE
   #include "readline_buffer.h"
   #define PAUSE_READLINE() \
@@ -732,6 +740,7 @@ simple_wallet::simple_wallet()
   //added
   m_cmd_binder.set_handler("find_cap", boost::bind(&simple_wallet::find_cap, this, _1), tr("find_cap [capid] - Show cap"));
   m_cmd_binder.set_handler("transfer_cap", boost::bind(&simple_wallet::transfer_cap, this, _1), tr("transfer_cap [addr] [amount] [capid]- Show cap"));
+	m_cmd_binder.set_handler("use_cap", boost::bind(&simple_wallet::use_cap, this, _1), tr("use_cap [capid]"));
   
   m_cmd_binder.set_handler("rescan_bc", boost::bind(&simple_wallet::rescan_blockchain, this, _1), tr("Rescan blockchain from scratch"));
   m_cmd_binder.set_handler("set_tx_note", boost::bind(&simple_wallet::set_tx_note, this, _1), tr("Set an arbitrary string note for a txid"));
@@ -4148,13 +4157,13 @@ bool simple_wallet::find_cap(const std::vector<std::string> &args)
   if(args.size() != 1)
   {
     fail_msg_writer() << tr("usage: find_cap <capid>");
-    return true;
+    return false;
   }
   cryptonote::blobdata txid_data;
   if(!epee::string_tools::parse_hexstr_to_binbuff(args.front(), txid_data) || txid_data.size() != sizeof(crypto::hash))
   {
     fail_msg_writer() << tr("failed to parse capid");
-    return true;
+    return false;
   }
   const char* capid = reinterpret_cast<const char*>(txid_data.data());
 
@@ -4163,7 +4172,7 @@ bool simple_wallet::find_cap(const std::vector<std::string> &args)
   if (transfers.empty())
   {
     success_msg_writer() << "There is no unspent output in this wallet.";
-    return true;
+    return false;
   }
   
   for (const auto& td : transfers)
@@ -4177,7 +4186,7 @@ bool simple_wallet::find_cap(const std::vector<std::string> &args)
   
   fail_msg_writer() << "Capability not found.";
   
-  return true;
+  return false;
 }
 
 bool simple_wallet::show_caps(const std::vector<std::string> &args)
@@ -4205,6 +4214,189 @@ bool simple_wallet::show_caps(const std::vector<std::string> &args)
   }
   
   return true;
+}
+
+
+bool simple_wallet::construct_message(string cap, string &msg)
+{
+	//msg = "{";
+	//string body = "{";
+
+  cryptonote::blobdata txid_data;
+  if(!epee::string_tools::parse_hexstr_to_binbuff(cap, txid_data) || txid_data.size() != sizeof(crypto::hash))
+  {
+    fail_msg_writer() << tr("failed to parse capid");
+    return false;
+  }
+  const char* capid = reinterpret_cast<const char*>(txid_data.data());
+
+  tools::wallet2::transfer_container transfers;
+  m_wallet->get_transfers(transfers);
+  if (transfers.empty())
+  {
+    success_msg_writer() << "There is no unspent output in this wallet.";
+    return false;
+  }
+  
+  for (const auto& td : transfers)
+  {
+    if (!memcmp(capid,td.m_cap.bytes,sizeof(td.m_cap.bytes))) {
+    	success_msg_writer() << tr("Found output ") << print_cap(td.m_cap)
+    	<< tr("expired at ") << print_time(td.m_amount) << tr(" value ") << td.m_amount;
+			
+
+			stringstream ss;
+			
+			ss << "{\"cap\":\"" << cap; 
+			ss << "\",\"exp\":" << td.m_amount;
+			ss << ",\"pk\":\"" << m_wallet->derive_EdDSA_public_key();
+			ss << "\",\"txid\":\"" << td.m_txid ;
+			ss << "\"}";
+
+			string body = ss.str();
+			string sign_msg = m_wallet->sign_EdDSA(body);
+
+			ss.str("");
+			ss << "{\n";
+			ss << "\"body\": \n" << body;
+			ss << ",\n\"sign_msg\": \"" << sign_msg;
+			ss << "\"\n}\n";
+			
+			msg = ss.str();
+			cout << msg << endl;
+			/*body += "\"cap: \" " + capid; 
+			body += ",\n\"exp: \"" + td.m_amount;
+			body += ",\n\"addr: \" \"" + m_wallet->get_account().get_public_address_str(m_wallet->testnet());
+			body += "\",\n\"txid:\"" + td.m_txid ;
+			body += "\n}";*/
+			
+			
+			
+			//msg += "\"sign_msg: \"" + "\n}";
+
+    	return true; 
+    }
+  }
+  
+  fail_msg_writer() << "Capability not found.";  
+  return false;
+}
+
+
+bool simple_wallet::use_cap(const std::vector<std::string> &args) {
+	if(args.size() > 2 || args.size() < 1)
+  {
+    fail_msg_writer() << tr("usage: use_cap [capid]");
+    return true;
+  }
+	 
+	try
+	{
+		
+		boost::asio::io_service io_service;
+
+		tcp::resolver resolver(io_service);
+		tcp::resolver::query query(boost::asio::ip::tcp::v4(), "192.168.137.15", "84", boost::asio::ip::tcp::resolver::query::canonical_name);
+		tcp::resolver::iterator endpoint_iterator = resolver.resolve(query);
+
+		tcp::socket socket(io_service);
+		boost::asio::connect(socket, endpoint_iterator);
+	
+		// Form the request. We specify the "Connection: close" header so that the
+		// server will close the socket after transmitting the response. This will
+		// allow us to treat all data up until the EOF as the content.
+
+		// construct msg
+		string msg = "";
+		construct_message(args.front(), msg);
+
+		boost::asio::streambuf request;
+		std::ostream request_stream(&request);
+		std::string json = "{\n\t\"decode_as_json\": false,\n\t\"txs_hashes\": [\"1a073337225d4fbf3bb349b5dd5d6a2e06dd3d356c804fab5744788f7c9fe670\"]\n}";
+		request_stream << "GET /getaccess HTTP/1.1\r\n";
+		request_stream << "Host: 192.168.137.15" << "\r\n";
+		//request_stream << "Accept: */*\r\n";
+		request_stream << "Content-Length: " << msg.length() << "\r\n\r\n";
+
+		request_stream << msg;
+		boost::asio::write(socket, request);
+		
+		// Read the response status line. The response streambuf will automatically
+		// grow to accommodate the entire line. The growth may be limited by passing
+		// a maximum size to the streambuf constructor.
+		boost::asio::streambuf response;
+		boost::asio::read_until(socket, response, "\r\n");
+
+		// Check that response is OK.
+		std::istream response_stream(&response);
+		std::string http_version;
+		response_stream >> http_version;
+		unsigned int status_code;
+		response_stream >> status_code;
+		std::string status_message;
+		std::getline(response_stream, status_message);
+		if (!response_stream || http_version.substr(0, 5) != "HTTP/")
+		{
+		  std::cout << "Invalid response\n";
+		  return 1;
+		}
+		if (status_code != 200)
+		{
+		  std::cout << "Response returned with status code " << status_code << "\n";
+		  return 1;
+		}
+
+		// Read the response headers, which are terminated by a blank line.
+		boost::asio::read_until(socket, response, "\r\n\r\n");
+
+		// Process the response headers.
+		std::string header;
+		int l = 0;
+		while (std::getline(response_stream, header) && header != "\r") {
+		  std::cout << header << "\n";
+		  size_t pos = header.find("Content-Length");
+		  size_t pos2 = header.find("\r");
+		  if (pos != std::string::npos) {
+		  	std::string content_length = header.substr(pos+16);
+		  	//cout <<"content length " << content_length << endl;
+		  	l = stoi(content_length,nullptr,10);
+		  }
+		}
+		std::cout << "\n";
+
+		//cout << "first" << endl;
+		// Write whatever content we already have to output.
+		int l1 = 0;
+		if (response.size() > 0) {
+			 l1 = response.size();
+			 //cout << "response size 1 " << l1 << endl;
+			 std::cout << &response;
+		}
+		cout << endl << "second " << l << endl;
+		// Read until EOF, writing data to output as we go.
+		boost::system::error_code error;
+		while (boost::asio::read(socket, response, boost::asio::transfer_at_least(1), error)) {
+			cout << "response size 2 " << response.size() << endl;
+		  std::cout << &response;     
+		}
+ 		//boost::asio::read(socket, response, boost::asio::transfer_at_least(1), error);
+		cout << "finish reading" << endl;
+ 		//std::cout << &response;   
+		
+		if (error != boost::asio::error::eof)
+		  throw boost::system::system_error(error);
+	 	socket.shutdown(boost::asio::ip::tcp::socket::shutdown_both, error);
+		socket.close();
+		cout << "connection closed" << endl;
+
+	}
+	catch (std::exception& e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+	return true; 
+
+
 }
 //----------------------------------------------------------------------------------------------------
 bool simple_wallet::rescan_blockchain(const std::vector<std::string> &args_)

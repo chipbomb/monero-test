@@ -48,3 +48,7 @@ void cn_fast_hash(const void *data, size_t length, char *hash) {
   hash_process(&state, data, length);
   memcpy(hash, &state, HASH_SIZE);
 }
+
+void cn_sha3_256(const void *data, size_t length, char *hash) {
+	sha3_256(data, length, hash);
+}

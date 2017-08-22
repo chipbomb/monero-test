@@ -61,6 +61,10 @@ namespace crypto {
     cn_fast_hash(data, length, reinterpret_cast<char *>(&hash));
   }
 
+	inline void cn_sha3_256(const void *data, std::size_t length, hash &hash) {
+    cn_sha3_256(data, length, reinterpret_cast<char *>(&hash));
+  }
+
   inline hash cn_fast_hash(const void *data, std::size_t length) {
     hash h;
     cn_fast_hash(data, length, reinterpret_cast<char *>(&h));
